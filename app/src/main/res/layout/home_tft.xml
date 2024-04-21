@@ -23,7 +23,8 @@
             android:background="@drawable/btn_square"
             android:text="huodon"
             android:textColor="#FFFFFF"
-            android:onClick="goTohuodong"/>
+            android:onClick="goTohuodong"
+            />
         <Button
             android:id="@+id/LOL"
             android:layout_width="0dp"
