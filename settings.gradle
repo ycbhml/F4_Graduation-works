@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Graduation"
+rootProject.name = "F4"
 include ':app'

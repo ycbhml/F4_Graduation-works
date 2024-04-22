@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.graduation'
+    namespace 'com.example.f4'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.graduation"
-        minSdk 31
+        applicationId "com.example.f4"
+        minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
