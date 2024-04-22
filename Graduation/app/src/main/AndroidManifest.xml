@@ -18,6 +18,7 @@
         <activity android:name=".Home_huodongActivity"/>
         <activity android:name=".Home_lolActivity"/>
         <activity android:name=".Home_tftActivity"/>
+        <activity android:name=".SetupActivity"/>
 
         <activity
             android:name=".MainActivity"
