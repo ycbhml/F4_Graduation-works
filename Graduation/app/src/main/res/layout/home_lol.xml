@@ -8,49 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" /> <!-- 占位 View，使用权重填充剩余空间 -->
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/Activity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/btn_square"
-            android:text="huodon"
-            android:textColor="#FFFFFF"
-            android:onClick="goTohuodong"/>
-
-        <Button
-            android:id="@+id/LOL"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/btn_square"
-            android:text="LOL"
-            android:textColor="#00BCD4"/>
-        <Button
-            android:id="@+id/TFT"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="TFT"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/btn_square"
-            android:onClick="goTotft"/>
-
-        <Button
-            android:id="@+id/mypage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/btn_square"
-            android:text="My"
-            android:textColor="#FFFFFF"
-            android:onClick="goTomy"/>
-    </LinearLayout>
-
+        android:text="lol"
+        android:textSize="20dp" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:background="#FFFFFF"
+        android:textColor="#000000"/>
 </LinearLayout>
