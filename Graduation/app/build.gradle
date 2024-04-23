@@ -38,3 +38,6 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 }
+dependencies {
+    implementation 'com.airbnb.android:lottie:3.4.0' // 检查最新版本
+}
