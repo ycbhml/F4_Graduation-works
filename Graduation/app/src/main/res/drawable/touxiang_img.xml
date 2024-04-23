@@ -1,0 +1,5 @@
+<!-- res/drawable/circle_shape.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@android:color/black" /> <!-- 设置圆形的填充颜色 -->
+</shape>
