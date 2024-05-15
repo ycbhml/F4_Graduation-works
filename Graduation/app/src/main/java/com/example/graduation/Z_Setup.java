@@ -12,16 +12,4 @@ public class Z_Setup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.z_setup);
     }
-
-    public void goToHome(View view) {  //按钮去Home_myActivity
-        Intent intent = new Intent(this, C_my.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void goToMain(View view) {  //按钮去Home_myActivity
-        Intent intent = new Intent(this, A_Login.class);
-        startActivity(intent);
-        finish();
-    }
 }

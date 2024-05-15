@@ -11,18 +11,3 @@ public class C_lol extends AppCompatActivity {
 
     }
 }
-//    public void goTohuodong(View view) {
-//        Intent intent = new Intent(this, Home_huodongActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
-//    public void goTotft(View view) {
-//        Intent intent = new Intent(this, Home_tftActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
-//    public void goTomy(View view) {
-//        Intent intent = new Intent(this, Home_myActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }

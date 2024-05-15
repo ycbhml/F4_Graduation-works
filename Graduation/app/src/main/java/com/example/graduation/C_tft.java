@@ -11,17 +11,3 @@ public class C_tft extends AppCompatActivity {
         setContentView(R.layout.c_tft);
     }
 }
-//public void goTomy(View view) {
-//        Intent intent = new Intent(this, Home_myActivity.class);
-//        startActivity(intent);
-//        finish();
-//        }
-//public void goTolol(View view) {
-//        Intent intent = new Intent(this, Home_lolActivity.class);
-//        startActivity(intent);
-//        finish();
-//        }
-//public void goTohuodong(View view) {
-//        Intent intent = new Intent(this, Home_huodongActivity.class);
-//        startActivity(intent);
-//        finish();

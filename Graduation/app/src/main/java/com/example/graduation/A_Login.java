@@ -12,7 +12,7 @@ public class A_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_login);
     }
-    public void goToHome(View view) {  //按钮去Home_myActivity
+    public void goToHome(View view) {  //按钮去B_tablayout
         Intent intent = new Intent(this, B_tablayout.class);
         startActivity(intent);
         finish();

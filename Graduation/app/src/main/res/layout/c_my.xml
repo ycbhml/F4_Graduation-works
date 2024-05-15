@@ -49,12 +49,11 @@
         <!-- 右边部分的内容 -->
             <!-- 这里放置右边部分 LinearLayout 中的内容 -->
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/setup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_manage"
                 android:background="@android:color/transparent"
-                android:onClick="goToSetup"/>
+                app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
         </LinearLayout>
     </LinearLayout>
 
