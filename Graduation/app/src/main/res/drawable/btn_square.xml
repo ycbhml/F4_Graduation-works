@@ -1,6 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <corners android:radius="0dp" /> <!-- 设置边角为 0dp，即去除圆角 -->
-</shape>
-
-    <!-- 底部方形的按钮 -->
