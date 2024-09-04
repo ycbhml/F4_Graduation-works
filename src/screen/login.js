@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { TextInput, StyleSheet, View, ImageBackground, Alert, Button, Dimensions, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
+//定义和检查输入的账号密码（#id）
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,6 +34,8 @@ const LoginScreen = ({ navigation }) => {
     }
   };
 
+
+  //主页面
   return (
     <ImageBackground
       source={require('../assets/images/login_backgroudImg.png')}
@@ -65,6 +69,8 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
+
+//style sheet
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
