@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Event_home_screen from './Event_home_screen';
-import LOL_home_screen from './LOL_home_screen';
-import TFT_home_screen from './TFT_home_screen';
-import MY_home_screen from './MY_home_screen';
+import Event_home_screen from './Event/Event_home_screen';
+import LOL_home_screen from './LOL/LOL_home_screen';
+import TFT_home_screen from './TFT/TFT_home_screen';
+import MY_home_screen from './MY/MY_home_screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,20 +22,20 @@ const HomeScreen = () => {
 
             if (route.name === 'Event') {
               iconName = focused
-                ? require('../assets/images/event.png')
-                : require('../assets/images/event.png');
+                ? require('../assets/images/event_active.png')
+                : require('../assets/images/event_common.png');
             } else if (route.name === 'LOL') {
               iconName = focused
-                ? require('../assets/images/lol.png')
-                : require('../assets/images/lol.png');
+                ? require('../assets/images/lol_active.png')
+                : require('../assets/images/lol_common.png');
             } else if (route.name === 'TFT') {
               iconName = focused
-                ? require('../assets/images/tft.png')
-                : require('../assets/images/tft.png');
+                ? require('../assets/images/tft_active.png')
+                : require('../assets/images/tft_common.png');
             } else if (route.name === 'MY') {
               iconName = focused
-                ? require('../assets/images/my.png')
-                : require('../assets/images/my.png');
+                ? require('../assets/images/my_active.png')
+                : require('../assets/images/my_common.png');
             }
 
             return <Image 
