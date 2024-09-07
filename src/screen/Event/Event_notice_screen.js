@@ -4,9 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import EventDetailScreen from './Event_Detail/Event_Detail_screen';  // 引入事件详情页面
 import { getEvents, addEvent } from '../../components/Event/Event_notice_data';
 
-
-
-//内容由 Event_event_ata.js 导入
+// 内容由 Event_event_ata.js 导入
 const NoticeListScreen = ({ navigation }) => {
     const events = getEvents();
   
@@ -25,7 +23,8 @@ const NoticeListScreen = ({ navigation }) => {
       <FlatList
         data={events}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id}  // 保证每个项目有唯一的键
+        contentContainerStyle={styles.listContent}  // 滚动内容的样式
       />
     );
 };
@@ -50,13 +49,17 @@ const EventStackNavigator = () => {
   );
 };
 
-
-//styles
+// 样式
 const styles = StyleSheet.create({
+  listContent: {
+    paddingBottom: 20,  // 确保在滚动的底部有足够的空间
+    paddingTop: 10,     // 顶部间距
+  },
   card: {
     flexDirection: 'row',
     padding: 10,
-    margin: 10,
+    marginHorizontal: 10,
+    marginVertical: 5,  // 确保每个卡片之间有间距
     backgroundColor: '#fff',
     borderRadius: 5,
     shadowColor: '#000',
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 5,
     borderColor: 'red',
-    borderWidth: 2, // 红色边框
+    borderWidth: 2,  // 红色边框
   },
   textContainer: {
     flex: 1,

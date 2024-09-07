@@ -1,7 +1,7 @@
 // src/screen/Event/EventDetailScreen.js
 
 import React, { useEffect } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { ScrollView, View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const EventDetailScreen = ({ route }) => {
@@ -30,35 +30,44 @@ const EventDetailScreen = ({ route }) => {
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
-      <Image source={item.image} style={styles.eventImage} />
-      <Text style={styles.eventTitle}>Title: {item.title}</Text>
-      <Text style={styles.eventDescription}>{item.description}</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.container}>
+        <Image source={item.image} style={styles.eventImage} />
+        <Text style={styles.eventTitle}>Title: {item.title}</Text>
+        <Text style={styles.eventDescription}>{item.description}</Text>
+      </View>
+    </ScrollView>
   );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  scrollContainer: {
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: Dimensions.get('window').width * 0.05,
+    padding: width * 0.05,
+  },
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: width * 0.05,
   },
   eventImage: {
-    width: Dimensions.get('window').width * 0.6,
-    height: Dimensions.get('window').width * 0.4,
+    width: width * 0.6,
+    height: width * 0.4,
     marginBottom: 20,
   },
   eventTitle: {
-    fontSize: Dimensions.get('window').height * 0.03,
+    fontSize: height * 0.03,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   eventDescription: {
-    fontSize: Dimensions.get('window').height * 0.02,
+    fontSize: height * 0.02,
     textAlign: 'center',
-    marginHorizontal: Dimensions.get('window').width * 0.05,
+    marginHorizontal: width * 0.05,
   },
 });
 
