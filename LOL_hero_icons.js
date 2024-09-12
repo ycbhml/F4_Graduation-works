@@ -25,9 +25,9 @@
 export const ICON_DATA = [
   {
     id: '1', 
-    name: '黑暗之女', 
-    description: '黑暗之女', 
-    image: require('../../assets/lol_hero_icon/黑暗之女.png'), 
+    name: 'Annie_mid_sup', 
+    description: '애니', 
+    image: require('../../assets/lol_hero_icon/Annie.png'), 
     detail: '拥有危险夺命的能力，却长着一幅小大人儿的可爱模样，这就是掌握深不可测占火魔法的女孩——安妮。安妮生活在诺克萨斯北边的山脚下，但即便是在这种地方，她也依然是魔法师中的异类。她与火焰的紧密关系与生俱来——最初那些火焰是伴随着喜怒无常的冲动情绪出现的，后来她学会了如何掌握这些“好玩的小把戏”。其中，安妮最喜欢的就是她召唤亲爱的泰迪熊提伯斯——那头狂野的守护火兽。如今安妮已经迷失在了永恒的天真里，她在黑暗森林中游荡，寻觅着能陪自己玩耍的人。', 
     stats: {
         armor: 19,
@@ -75,9 +75,9 @@ export const ICON_DATA = [
   },
   {
     id: '2', 
-    name: '狂战士', 
-    description: '狂战士', 
-    image: require('../../assets/lol_hero_icon/狂战士.png'), 
+    name: 'Olaf_top_jug', 
+    description: '올라프', 
+    image: require('../../assets/lol_hero_icon/Olaf.png'),
     detail: '来自弗雷尔卓德海岸洛克法半岛的奥拉夫，是一股无坚不摧的毁灭之力，手持战斧的他一心渴望光荣地战死。奥拉夫曾在一次占卜中听到了自己将安详辞世的预言——这是懦夫的命运，也是对他们族人的莫大侮辱。为了追寻另外一种结局，在狂怒的驱动下，他在这片土地上暴跳横行，屠杀了数十名伟大的战士和传说中的野兽，只希望能够找到能够阻止自己的对手。如今的奥拉夫，是凛冬之爪部族的残酷执法者，他期待在即将到来的大战中终结自己的性命。', 
     stats: {
         armor: 35,
@@ -125,9 +125,9 @@ export const ICON_DATA = [
   },
   {
     id: '3', 
-    name: '正义巨像', 
-    description: '正义巨像', 
-    image: require('../../assets/lol_hero_icon/正义巨像.png'), 
+    name: 'Galio_mid_sup', 
+    description: '갈리오', 
+    image: require('../../assets/lol_hero_icon/Galio.png'), 
     detail: '光彩熠熠的德玛西亚城外，石巨像加里奥始终如一地守望着。他被创造出来是为了抵挡来犯的法师，却往往伫立不动数十年，直至受到强烈魔法干扰的时候才会苏醒。只要加里奥醒来，他便会利用这段时间仔细品味战斗的刺激与守护人民的荣耀。可惜胜利对他而言永远都是一件喜忧参半的事情。因为他必须摧毁的魔法力量，同时也是激活他的泉源，而每一次战斗的胜利，都会让他再次陷入不知世事的深眠之中。', 
     stats: {
         armor: 24,
@@ -175,9 +175,9 @@ export const ICON_DATA = [
   },
   {
     id: '4', 
-    name: '卡牌大师', 
-    description: '卡牌大师', 
-    image: require('../../assets/lol_hero_icon/卡牌大师.png'), 
+    name: 'TwistedFate_mid', 
+    description: '트위스티드 페이트', 
+    image: require('../../assets/lol_hero_icon/TwistedFate.png'), 
     detail: '崔斯特是一名声名狼藉的诈骗惯犯，他让那些富人既羡慕又嫉恨，这世上任何有人烟之地都有过这位纸牌高手施展“魅力”与赌艺的足迹。他鲜少会认真干一件事，总是用一抹轻蔑的微笑和一副漫不经心的样子面对每一天。但无论什么情况，崔斯特的袖子里永远都会藏着一张王牌。', 
     stats: {
         armor: 21,
@@ -225,9 +225,9 @@ export const ICON_DATA = [
   },
   {
     id: '5', 
-    name: '德邦总管', 
-    description: '德邦总管', 
-    image: require('../../assets/lol_hero_icon/德邦总管.png'), 
+    name: 'XinZhao_jug', 
+    description: '신 짜오', 
+    image: require('../../assets/lol_hero_icon/XinZhao.png'), 
     detail: '赵信是效忠于光盾王朝的坚毅勇士。他曾经沦落于诺克萨斯的角斗场，在无数次角斗中得以幸存。被德玛西亚军队解救以后，他便立誓为这群勇敢的解放者奉献生命和忠诚。如今手持三爪长枪的赵信，正为自己的第二祖国而战，一往无前，暴虎冯河。', 
     stats: {
         armor: 35,
@@ -275,9 +275,9 @@ export const ICON_DATA = [
   },
   {
     id: '6', 
-    name: '无畏战车', 
-    description: '无畏战车', 
-    image: require('../../assets/lol_hero_icon/无畏战车.png'), 
+    name: 'Urgot_top', 
+    description: '우르곳', 
+    image: require('../../assets/lol_hero_icon/Urgot.png'), 
     detail: '厄加特曾一度是诺克萨斯强大的处刑人，但这个让他为之杀人如麻的帝国，最后却背叛了他。铁链束缚着他，并迫使他在一个新的地方懂得了力量的真正意义——祖安地下深处的监牢矿坑——“沉钩”。后来的一场灾难让祖安城中混乱肆虐，厄加特也借机破土而出，在祖安的地下犯罪世界傲视群雄。曾经奴役他的铁链，现在是他折磨猎物的工具，他会用枪火洗礼自己新的家园，肃清那些不配苟活的人，将祖安铸成一座痛苦的熔炉。', 
     stats: {
         armor: 36,
@@ -324,10 +324,10 @@ export const ICON_DATA = [
     skins: [{'id': '6000', 'num': 0, 'name': 'default', 'chromas': False}, {'id': '6001', 'num': 1, 'name': '深渊巨蟹 厄加特', 'chromas': False}, {'id': '6002', 'num': 2, 'name': '电锯狂人 厄加特', 'chromas': False}, {'id': '6003', 'num': 3, 'name': '战地机甲 厄加特', 'chromas': True}, {'id': '6009', 'num': 9, 'name': '西部魔影 厄加特', 'chromas': True}, {'id': '6015', 'num': 15, 'name': '星之守护者COS 厄加特', 'chromas': True}, {'id': '6023', 'num': 23, 'name': '魔域梦魇 厄加特', 'chromas': True}]
   },
   {
-    id: '7', 
-    name: '诡术妖姬', 
-    description: '诡术妖姬', 
-    image: require('../../assets/lol_hero_icon/诡术妖姬.png'), 
+    id: '7',
+    name: 'Leblanc_mid_sup', 
+    description: '르블랑', 
+    image: require('../../assets/lol_hero_icon/Leblanc.png'), 
     detail: '即使是在秘密团体黑色玫瑰的成员内部，乐芙兰也同样保持神秘，而乐芙兰这个名字也只是众多化名之一。这个皮肤惨白的女人自从诺克萨斯建国初期就开始操纵大小人物，推动事态发展。这位女法师能用魔法制造自己的镜像，她可以出现在任何地点、任何人面前,甚至同时现身于许多地方。乐芙兰永远都在暗处密谋策划，而她真正的动机和她变换不定的身份一样令人难以捉摸。', 
     stats: {
         armor: 22,
@@ -375,9 +375,9 @@ export const ICON_DATA = [
   },
   {
     id: '8', 
-    name: '猩红收割者', 
-    description: '猩红收割者', 
-    image: require('../../assets/lol_hero_icon/猩红收割者.png'), 
+    name: 'Vladimir_top_mid', 
+    description: '블라디미르', 
+    image: require('../../assets/lol_hero_icon/Vladimir.png'), 
     detail: '弗拉基米尔是一个渴望凡人鲜血的魔鬼，早在诺克萨斯帝国建立之初，他就开始干涉帝国内政。他熟练掌握的血巫术，不仅能超越自然规律延长其寿命，还能让他随心所欲地控制他人的身体和思想。他用这个能力在诺克萨斯贵族奢华的沙龙聚会上聚拢了一群狂热的教众，也让他在社会底层的后巷里吸干了敌人的鲜血。', 
     stats: {
         armor: 27,
@@ -425,9 +425,9 @@ export const ICON_DATA = [
   },
   {
     id: '9', 
-    name: '远古恐惧', 
-    description: '远古恐惧', 
-    image: require('../../assets/lol_hero_icon/远古恐惧.png'), 
+    name: 'Fiddlesticks_mid_sup', 
+    description: '피들스틱', 
+    image: require('../../assets/lol_hero_icon/Fiddlesticks.png'), 
     detail: '某物已在符文之地苏醒，远古且可怖。它潜伏于人类世界的边缘，被浓烈的妄想所吸引，以受害者的惊骇为食，人们将这永恒的恐怖之物称为费德提克。这个狂乱的拼凑之物挥舞着镰刀收割恐惧，摧毁不幸与之相逢的人的神志。当心乌鸦的声响，或是那<i>近乎</i>人形的怪物所发出的呓语吧……费德提克已经归来。', 
     stats: {
         armor: 34,
@@ -475,9 +475,9 @@ export const ICON_DATA = [
   },
   {
     id: '10', 
-    name: '正义天使', 
-    description: '正义天使', 
-    image: require('../../assets/lol_hero_icon/正义天使.png'), 
+    name: 'Kayle_top_mid', 
+    description: '케일', 
+    image: require('../../assets/lol_hero_icon/Kayle.png'), 
     detail: '在符文战争最激烈的时刻，一位巨神星灵诞下了凯尔，她传承了母亲的荣耀，在圣火飞翼的承载下为了正义而战。她和孪生妹妹莫甘娜曾是德玛西亚的保护神——但凡人反反复复的失败最终让凯尔的幻想破灭，彻底抛弃了这个国度。但关于她用火焰长剑惩罚不义之徒的传说依然在流传，关于她终将回归的希望也依然在持续……', 
     stats: {
         armor: 26,
@@ -525,9 +525,9 @@ export const ICON_DATA = [
   },
   {
     id: '11', 
-    name: '无极剑圣', 
-    description: '无极剑圣', 
-    image: require('../../assets/lol_hero_icon/无极剑圣.png'), 
+    name: 'MasterYi_mid_jug', 
+    description: '마스터 이', 
+    image: require('../../assets/lol_hero_icon/MasterYi.png'), 
     detail: '易师锤炼身体、磨砺心智，直至身心合一。尽管他将暴力作为不得已的选择，但他优雅迅猛的剑法总是让这一手段显得尤为快捷。作为无极之道最后的门徒，易大师致力于这个门派的传承，用七度洞悉目镜搜寻着最有资格的人，寻找潜在的新弟子。', 
     stats: {
         armor: 33,
@@ -575,9 +575,9 @@ export const ICON_DATA = [
   },
   {
     id: '12', 
-    name: '牛头酋长', 
-    description: '牛头酋长', 
-    image: require('../../assets/lol_hero_icon/牛头酋长.png'), 
+    name: 'Alistar_sup', 
+    description: '알리스타', 
+    image: require('../../assets/lol_hero_icon/Alistar.png'), 
     detail: '阿利斯塔是一名威名远扬的巨力勇士，誓要为自己被屠杀的氏族向诺克萨斯帝国复仇。虽然他曾被奴役，被迫成为斗兽场中的角斗士，但他坚不可摧的意志使他免于沦为真正的野兽。现在，挣脱了奴役枷锁的他继续以受苦之人和弱者的名义战斗。他的愤怒，还有犄角、蹄子和拳头，都是他的武器。', 
     stats: {
         armor: 47,
@@ -625,9 +625,9 @@ export const ICON_DATA = [
   },
   {
     id: '13', 
-    name: '符文法师', 
-    description: '符文法师', 
-    image: require('../../assets/lol_hero_icon/符文法师.png'), 
+    name: 'Ryze_top_mid', 
+    description: '라이즈', 
+    image: require('../../assets/lol_hero_icon/Ryze.png'), 
     detail: '瑞兹是符文之地广为人知的最老练的法师之一。他生于远古，饱经风霜，肩负着不可承受之重任。这位大法师的武器，是他无可摧折的决心和丰富的秘法学识，他一生都在寻找着世界符文 ——它们是令这世界从无到有、万物成形的原生魔法所留下的碎片。他一定要找到所有这些神秘的字符，以免落入恶人之手，因为瑞兹知道它们可能给符文之地带来怎样的浩劫。', 
     stats: {
         armor: 22,
@@ -675,9 +675,9 @@ export const ICON_DATA = [
   },
   {
     id: '14', 
-    name: '亡灵战神', 
-    description: '亡灵战神', 
-    image: require('../../assets/lol_hero_icon/亡灵战神.png'), 
+    name: 'Sion_top_mid', 
+    description: '사이온', 
+    image: require('../../assets/lol_hero_icon/Sion.png'), 
     detail: '赛恩是一个来自先前时代的诺克萨斯战争英雄，曾经徒手掐死过一代德玛西亚国王。但他拒绝了死亡和湮灭，以活尸的状态继续为帝国效命。只要挡住他的去路，都会被他无差别地屠杀，敌我不分，足可证明他已经失去了从前的人性。即便如此，他腐朽的身体还是被钉进了粗糙的装甲，继续以丧心病狂的鲁莽冲上战场，在每一下巨斧的挥砍中艰难地回忆真正的自我。', 
     stats: {
         armor: 32,
@@ -725,9 +725,9 @@ export const ICON_DATA = [
   },
   {
     id: '15', 
-    name: '战争女神', 
-    description: '战争女神', 
-    image: require('../../assets/lol_hero_icon/战争女神.png'), 
+    name: 'Sivir_adc', 
+    description: '시비르', 
+    image: require('../../assets/lol_hero_icon/Sivir.png'), 
     detail: '希维尔是著名的宝藏猎人和雇佣兵队长，在恕瑞玛沙漠中进行频繁的契约交易。她的兵器是一柄颇具传奇色彩的十字刃，她曾赢得过无数次战斗，虽然她本人报价不菲，但却深得雇主青睐。她有着著名的无畏决心和无尽的野心，并且以自己的事业为傲——只要赏金够高，她就能从凶险的恕瑞玛古墓中寻回深埋于地下的宝藏。不过随着好几股远古的力量搅动着恕瑞玛的根骨，希维尔突然发现自己被裹挟着、拉扯着，卷入了截然不同的命运。', 
     stats: {
         armor: 30,
@@ -775,9 +775,9 @@ export const ICON_DATA = [
   },
   {
     id: '16', 
-    name: '众星之子', 
-    description: '众星之子', 
-    image: require('../../assets/lol_hero_icon/众星之子.png'), 
+    name: 'Soraka_sup', 
+    description: '소라카', 
+    image: require('../../assets/lol_hero_icon/Soraka.png'), 
     detail: '作为一个来自天界的流浪者，索拉卡放弃了不朽的神格，只为保护凡人免于受到无知与暴力天性的危害。她对遇见的每一个人都施以慈悲与怜悯——即便是那些对她心存恶念的人也不例外。尽管早已经看遍这世上的苦痛与挣扎，索拉卡依然相信符文之地的人们有着更多的潜力等待发现。', 
     stats: {
         armor: 32,
@@ -825,9 +825,9 @@ export const ICON_DATA = [
   },
   {
     id: '17', 
-    name: '迅捷斥候', 
-    description: '迅捷斥候', 
-    image: require('../../assets/lol_hero_icon/迅捷斥候.png'), 
+    name: 'Teemo_top_sup', 
+    description: '티모', 
+    image: require('../../assets/lol_hero_icon/Teemo.png'), 
     detail: '不畏艰难险阻、不惧坎坷危途，提莫怀着无比的热情和欢欣的精神探索着整个世界。作为一个约德尔人，他对自己的道德观坚定不移，也对班德尔斥候的信条倍感自豪，有时候，过分的热忱甚至会让他无法看到自己的行为将会导致什么样的后果。虽然有人认为，“班德尔斥候小队”是否真实存在还有待商榷，但有一件事可以肯定，那就是提莫的信念。', 
     stats: {
         armor: 24,
@@ -875,9 +875,9 @@ export const ICON_DATA = [
   },
   {
     id: '18', 
-    name: '麦林炮手', 
-    description: '麦林炮手', 
-    image: require('../../assets/lol_hero_icon/麦林炮手.png'), 
+    name: 'Tristana_adc_mid', 
+    description: '트리스타나', 
+    image: require('../../assets/lol_hero_icon/Tristana.png'), 
     detail: '许多约德尔人都将自己的精力花在了探索发现、发明创造或者搞恶作剧上，但崔丝塔娜却一心向往伟大勇者的冒险传奇。她听过太多关于符文之地的故事，关于不同的势力、庞大的战争。崔丝塔娜相信自己也有资格成为传奇。她毅然踏进了这个世界，扛着她信赖的加农炮“轰隆”，带着坚定的勇气和乐观精神飞身跃入战场。', 
     stats: {
         armor: 30,
@@ -925,9 +925,9 @@ export const ICON_DATA = [
   },
   {
     id: '19', 
-    name: '祖安怒兽', 
-    description: '祖安怒兽', 
-    image: require('../../assets/lol_hero_icon/祖安怒兽.png'), 
+    name: 'Warwick_top_jug', 
+    description: '워윅', 
+    image: require('../../assets/lol_hero_icon/Warwick.png'), 
     detail: '沃里克是一头游猎于祖安灰色小巷的怪兽。他的身体接受了痛苦的实验并发生了变异，融合了精密复杂的储液舱和药泵，向他的血管中注入炼金合成的愤怒激素。他从阴影中一跃而出，猎杀那些在城市最深处肆虐的罪犯。沃里克会被鲜血吸引，血腥味让他失去理智。没有哪个沾血的人能够逃过他的猎杀。', 
     stats: {
         armor: 33,
@@ -975,9 +975,9 @@ export const ICON_DATA = [
   },
   {
     id: '20', 
-    name: '雪原双子', 
-    description: '雪原双子', 
-    image: require('../../assets/lol_hero_icon/雪原双子.png'), 
+    name: 'Nunu_jug', 
+    description: '누누와 윌럼프', 
+    image: require('../../assets/lol_hero_icon/Nunu.png'), 
     detail: '很久以前，曾有个小男孩，他要证明自己是个英雄，于是决定去杀掉一头凶猛的怪兽——但他却发现这个怪兽其实是个孤独的魔法雪人，而且他需要的只是一个朋友。雪人和男孩被古老的力量所连结，也因对雪球的共同爱好而玩到一起。努努和威朗普如今在弗雷尔卓德的土地上肆意撒欢打滚，为想象中的冒险注入鲜活的生命力。他们希望能够在前面的某个地方找到努努的母亲。如果他们能拯救她，或许他们就真的是英雄了。', 
     stats: {
         armor: 29,
@@ -1025,9 +1025,9 @@ export const ICON_DATA = [
   },
   {
     id: '21', 
-    name: '赏金猎人', 
-    description: '赏金猎人', 
-    image: require('../../assets/lol_hero_icon/赏金猎人.png'), 
+    name: 'MissFortune_adc_sup', 
+    description: '미스 포츈', 
+    image: require('../../assets/lol_hero_icon/MissFortune.png'), 
     detail: '以美貌闻名，但却以无情立命的莎拉是一位比尔吉沃特的船长，她在这座彪悍港城的犯罪集团中塑造了不容轻视的形象。在她还是个孩子的时候，曾亲眼目睹海盗之王普朗克谋杀了自己的家人。多年以后，她残忍地报仇雪恨，将普朗克连人带舰一同炸飞。所有低估她的人都会发现，自己面对的是一个极具欺骗性的狡黠对手，一不留神就得处理几颗射进肚子里的子弹。', 
     stats: {
         armor: 28,
@@ -1075,9 +1075,9 @@ export const ICON_DATA = [
   },
   {
     id: '22', 
-    name: '寒冰射手', 
-    description: '寒冰射手', 
-    image: require('../../assets/lol_hero_icon/寒冰射手.png'), 
+    name: 'Ashe_adc_sup', 
+    description: '애쉬', 
+    image: require('../../assets/lol_hero_icon/Ashe.png'), 
     detail: '作为阿瓦罗萨部族的战母，拥有寒冰血脉的艾希率领着这个北方人数最多的部落。她克己、智慧、忠于理想，但并不太适应自己作为领袖的角色。艾希与自己血脉中蕴藏的先祖魔法相通，挽起了臻冰打造的长弓，她的族人相信她就是神话中的女英雄阿瓦罗萨的转世。在人们的追随下，艾希渴望夺回那些属于部族的古代领土，让伟大的弗雷尔卓德再次实现统一。', 
     stats: {
         armor: 26,
@@ -1125,9 +1125,9 @@ export const ICON_DATA = [
   },
   {
     id: '23', 
-    name: '蛮族之王', 
-    description: '蛮族之王', 
-    image: require('../../assets/lol_hero_icon/蛮族之王.png'), 
+    name: 'Tryndamere_top_mid', 
+    description: '트린다미어', 
+    image: require('../../assets/lol_hero_icon/Tryndamere.png'), 
     detail: '桀骜不羁和无尽的愤怒，驱使着泰达米尔在弗雷尔卓德一路所向披靡。为了对即将到来的黑暗时代做好准备，他曾公开挑战北方最伟大的战士。这位愤怒的野蛮人，一直奔走在为自己被灭绝的氏族复仇的路上。但最近他开始与阿瓦洛萨部族的战母艾希联手，并在她的部落中重新安定下来。拥有非人力量与毅力的泰达米尔，是众人皆知的传奇，为自己与新盟友带来了无数次奇迹般的胜利。', 
     stats: {
         armor: 33,
@@ -1175,9 +1175,9 @@ export const ICON_DATA = [
   },
   {
     id: '24', 
-    name: '武器大师', 
-    description: '武器大师', 
-    image: require('../../assets/lol_hero_icon/武器大师.png'), 
+    name: 'Jax_top', 
+    description: '잭스', 
+    image: require('../../assets/lol_hero_icon/Jax.png'), 
     detail: '无论是各种兵器的攻防技法，还是挖苦嘲讽的刻薄口才，贾克斯都无人能及。他是目前已知的最后一名艾卡西亚武器大师。曾经，故土的人们因狂妄自大而引来了虚空，导致家园被夷为平地，在那之后，贾克斯和幸存的同胞们发誓要保护仅存的一切。如今，魔法再次涌起，沉睡的威胁也再次被触动，于是贾克斯开始在瓦洛兰大陆上四处漫游。他手握艾卡西亚最后的光明，考验他遇到的每一名战士，为的是寻找与自己不相伯仲的强者，并肩作战。', 
     stats: {
         armor: 36,
@@ -1225,9 +1225,9 @@ export const ICON_DATA = [
   },
   {
     id: '25', 
-    name: '堕落天使', 
-    description: '堕落天使', 
-    image: require('../../assets/lol_hero_icon/堕落天使.png'), 
+    name: 'Morgana_sup_jug', 
+    description: '모르가나', 
+    image: require('../../assets/lol_hero_icon/Morgana.png'), 
     detail: '在天界与凡间双重本性的夹缝中左右为难的莫甘娜，束缚了自己的双翼并拥抱了人性，还将自己的痛苦和怨恨施加给那些失信和堕落之人。她抗拒一切在她眼中不公正的法律和传统，并从德玛西亚的黑影中投出保护的盾牌和暗焰的锁链，在别人想要打压的暗处为真理而战。最重要的是，莫甘娜坚信，即使是被放逐、被遗弃的人，也可能有朝一日东山再起。', 
     stats: {
         armor: 25,
@@ -1275,9 +1275,9 @@ export const ICON_DATA = [
   },
   {
     id: '26', 
-    name: '时光守护者', 
-    description: '时光守护者', 
-    image: require('../../assets/lol_hero_icon/时光守护者.png'), 
+    name: 'Zilean_sup', 
+    description: '질리언', 
+    image: require('../../assets/lol_hero_icon/Zilean.png'), 
     detail: '基兰曾是一位强大的艾卡西亚法师，在目睹了家园被虚空毁灭以后，他开始执迷于时间的流逝。他甚至没有时间为这场灾难感到悲哀，立刻就召唤了远古的时间魔法，预测全部的发展结局。从实际结果来说，他已成为不朽的存在。如今的基兰在过去、现在、未来之间漂泊，弯折、扭曲自己周围的时间，追寻那稍纵即逝的关键时刻，逆转时光，阻止艾卡西亚的毁灭。', 
     stats: {
         armor: 24,
@@ -1325,9 +1325,9 @@ export const ICON_DATA = [
   },
   {
     id: '27', 
-    name: '炼金术士', 
-    description: '炼金术士', 
-    image: require('../../assets/lol_hero_icon/炼金术士.png'), 
+    name: 'Singed_top', 
+    description: '신지드', 
+    image: require('../../assets/lol_hero_icon/Singed.png'), 
     detail: '辛吉德是一名智力超群的祖安炼金术士，一生致力于超越知识的边界，为此他不惜一切代价，哪怕付出理智也在所不惜——这种疯狂算不算无药可救？虽说他的药物实验极少失手，但在许多人眼里，辛吉德早已丧失了一切理性，所到之处只会留下苦难与骇人的剧毒踪迹。', 
     stats: {
         armor: 34,
@@ -1375,9 +1375,9 @@ export const ICON_DATA = [
   },
   {
     id: '28', 
-    name: '痛苦之拥', 
-    description: '痛苦之拥', 
-    image: require('../../assets/lol_hero_icon/痛苦之拥.png'), 
+    name: 'Evelynn_jug', 
+    description: '이블린', 
+    image: require('../../assets/lol_hero_icon/Evelynn.png'), 
     detail: '在符文之地的黑暗裂缝中，恶魔伊芙琳一直在搜寻着下一个目标。她披着人类女性的撩人外表，勾引她的猎物。只要有人被她魅惑，伊芙琳就会显露出真正的形态，对其施加难以言喻的折磨，再从他们的痛苦中获得满足。对于这个恶魔来说，这样的欢愉只是单纯的纵情享受；但是对于符文之地上的其他人，则是一个个血肉模糊的传说，提醒着人们肉欲的危险和纵欲的代价。', 
     stats: {
         armor: 37,
@@ -1425,9 +1425,9 @@ export const ICON_DATA = [
   },
   {
     id: '29', 
-    name: '瘟疫之源', 
-    description: '瘟疫之源', 
-    image: require('../../assets/lol_hero_icon/瘟疫之源.png'), 
+    name: 'Twitch_adc_sup', 
+    description: '트위치', 
+    image: require('../../assets/lol_hero_icon/Twitch.png'), 
     detail: '虽然出身只是一只瘟疫老鼠，但图奇却靠热情成为了一位污秽的鉴赏家，他可不介意弄脏自己的爪子。他使用一把炼金动力十字弩瞄准皮城人的镀金心脏，发誓要让这些生活在上层都市的人们知道他们真实的自我究竟有多么肮脏。他总是鬼鬼祟祟蹑手蹑脚，不是在地沟区翻来翻去，就是在别的地方深挖人类的垃圾堆，寻找被丢弃的宝藏……或者是一块发霉的三明治。', 
     stats: {
         armor: 27,
@@ -1475,9 +1475,9 @@ export const ICON_DATA = [
   },
   {
     id: '30', 
-    name: '死亡颂唱者', 
-    description: '死亡颂唱者', 
-    image: require('../../assets/lol_hero_icon/死亡颂唱者.png'), 
+    name: 'Karthus_jug', 
+    description: '카서스', 
+    image: require('../../assets/lol_hero_icon/Karthus.png'), 
     detail: '卡尔萨斯是湮灭的使者，是不死的亡灵。从来都是未见其恐怖身影，先闻其鬼魅挽歌。活着的人惧怕那些永世不得超生的亡灵，但卡尔萨斯却在亡灵的存在中只看到了美丽和纯洁，这是生与死的完美融合。当卡尔萨斯从暗影岛获得新生的时候，他决心要担任不死亡灵的使徒，把死亡的欣喜带给所有凡人。', 
     stats: {
         armor: 21,
@@ -1525,9 +1525,9 @@ export const ICON_DATA = [
   },
   {
     id: '31', 
-    name: '虚空恐惧', 
-    description: '虚空恐惧', 
-    image: require('../../assets/lol_hero_icon/虚空恐惧.png'), 
+    name: 'Chogath_top_mid', 
+    description: '초가스', 
+    image: require('../../assets/lol_hero_icon/Chogath.png'), 
     detail: '自从科加斯出现在符文之地烈日照射之下的那一刻起，它就被永不餍足的饥饿所驱使。虚空吞噬一切生命的欲望完美地体现在科加斯的身上，它复杂的生物构造能够迅速将物质转化为身体的成长，不仅会增加肌肉的质量和密度，还能让外壳变得有如钻石般坚硬。当单纯的体型增长已经不能满足它时，这只虚空生物就会将多余的物质形成锋利的骨刺吐出体外，刺穿猎物，为稍后的盛宴进行准备。', 
     stats: {
         armor: 38,
@@ -1575,9 +1575,9 @@ export const ICON_DATA = [
   },
   {
     id: '32', 
-    name: '殇之木乃伊', 
-    description: '殇之木乃伊', 
-    image: require('../../assets/lol_hero_icon/殇之木乃伊.png'), 
+    name: 'Amumu_jug_sup', 
+    description: '아무무', 
+    image: require('../../assets/lol_hero_icon/Amumu.png'), 
     detail: '在远古的恕瑞玛，有一个孤独而又忧郁的灵魂，阿木木。他在世间游荡，只为找到一个朋友。他遭受了一种远古的巫术诅咒，注定忍受永世的孤单——因为他的喜爱便是毁灭，被他触碰就意味着死亡。所有自称见过阿木木的人都说他是一具活生生的死尸，身材矮小，通体捆绑着青灰色的绷带。世人围绕阿木木编造了许多神话故事、民间传说和史诗传奇。这些故事世代传颂，以至于再也没人能分得清哪些是真相，哪些是幻想。', 
     stats: {
         armor: 33,
@@ -1625,9 +1625,9 @@ export const ICON_DATA = [
   },
   {
     id: '33', 
-    name: '披甲龙龟', 
-    description: '披甲龙龟', 
-    image: require('../../assets/lol_hero_icon/披甲龙龟.png'), 
+    name: 'Rammus_jug', 
+    description: '람머스', 
+    image: require('../../assets/lol_hero_icon/Rammus.png'), 
     detail: '许多人对其崇拜敬仰，少数人对其嗤之以鼻，但所有人都对其一无所知。奇怪而有趣的生物拉莫斯就是一个谜团。他全身覆盖尖刺硬壳，人们对他的出身来历的猜测层出不穷——有人说他是半神，有人说他是神谕者，有人说他只是普通的野兽，遭遇了魔法的影响而发生彻底变异。无论真相如何，拉莫斯始终都默不作声，而且不会为任何人停留，永远都在沙漠中奔走游荡。', 
     stats: {
         armor: 40,
@@ -1675,9 +1675,9 @@ export const ICON_DATA = [
   },
   {
     id: '34', 
-    name: '冰晶凤凰', 
-    description: '冰晶凤凰', 
-    image: require('../../assets/lol_hero_icon/冰晶凤凰.png'), 
+    name: 'Anivia_mid', 
+    description: '애니비아', 
+    image: require('../../assets/lol_hero_icon/Anivia.png'), 
     detail: '艾尼维亚是一个充满仁慈的飞禽形态灵体，曾经历过无数次诞生、死亡与重生的轮回，始终眷顾着弗雷尔卓德。她是生于凛冽冰风中的半神，可以操控冰雪的元素之力，阻挡那些胆敢侵犯她家园的人。艾尼维亚指引并保护着北方贫瘠土地上的人类部落，而这些人类也将她奉为希望的象征和重大变革的预兆。她的每一次奋战都不遗余力，因为她知道，自己的记忆将会超越牺牲，长久地留存，而她也将在崭新的明天中重生。', 
     stats: {
         armor: 21,
@@ -1725,9 +1725,9 @@ export const ICON_DATA = [
   },
   {
     id: '35', 
-    name: '恶魔小丑', 
-    description: '恶魔小丑', 
-    image: require('../../assets/lol_hero_icon/恶魔小丑.png'), 
+    name: 'Shaco_jug_sup', 
+    description: '샤코', 
+    image: require('../../assets/lol_hero_icon/Shaco.png'), 
     detail: '很久以前有人为一个孤独的小王子制作了一个玩物，一只附有魔法的提线人偶，它就是如今那个以杀人和破坏取乐的萨科。由于黑魔法的腐化，再加上痛失爱主，曾经友善的人偶如今只能在折磨灵魂制造苦痛的时候才能感到愉悦。小孩子的玩具和简单的戏法在他手中都有了致命的效果。而且，他觉得自己的血腥“游戏”滑稽至极——如果有谁在死寂的夜里听到了阴森的窃笑，或许那就是恶魔小丑看中了他们，作为自己新的玩物。', 
     stats: {
         armor: 30,
@@ -1775,9 +1775,9 @@ export const ICON_DATA = [
   },
   {
     id: '36', 
-    name: '祖安狂人', 
-    description: '祖安狂人', 
-    image: require('../../assets/lol_hero_icon/祖安狂人.png'), 
+    name: 'DrMundo_top', 
+    description: '문도', 
+    image: require('../../assets/lol_hero_icon/DrMundo.png'), 
     detail: '精神与认知彻底崩坏、杀人的欲望永不满足、浑身皮肤紫得发黑，这就是蒙多医生，这就是祖安人在漆黑的夜里不敢出门的原因。如今的他自封为一名医生，但在以前，他是祖安最臭名昭著的疯人院里的病人。在“治愈”疯人院里的全体工作人员后，蒙多医生在过去收治他的空病房里搭起了手术台，有模有样地还原起他当年亲历的各种非人实验。蒙多医生的药柜里装满了瓶瓶罐罐，脑子里却丝毫没有半点医学知识。随着他把药剂一针针注入体内，他的外貌也变得愈发丑陋骇人，把误入他办公室周围的“病人”吓得魂飞胆散。', 
     stats: {
         armor: 32,
@@ -1825,9 +1825,9 @@ export const ICON_DATA = [
   },
   {
     id: '37', 
-    name: '琴瑟仙女', 
-    description: '琴瑟仙女', 
-    image: require('../../assets/lol_hero_icon/琴瑟仙女.png'), 
+    name: 'Sona_sup', 
+    description: '소나', 
+    image: require('../../assets/lol_hero_icon/Sona.png'), 
     detail: '作为德玛西亚一流的琴师，娑娜唯一的语言就是“叆华”优美的和声与多变的曲调。抚琴的才华让她深得上流社会的宠爱，不过也有人怀疑娑娜如魔咒一般的迷人的旋律，其实是在施放魔法——而这在德玛西亚可是大忌。对此娑娜始终一言不发，但她最亲密的盟友却能完全理解她。娑娜指间流淌的和声，不仅能够安抚受伤的盟友，还能打击掉以轻心的敌人。', 
     stats: {
         armor: 26,
@@ -1875,9 +1875,9 @@ export const ICON_DATA = [
   },
   {
     id: '38', 
-    name: '虚空行者', 
-    description: '虚空行者', 
-    image: require('../../assets/lol_hero_icon/虚空行者.png'), 
+    name: 'Kassadin_mid', 
+    description: '카사딘', 
+    image: require('../../assets/lol_hero_icon/Kassadin.png'), 
     detail: '在世界上最黑暗的地方，卡萨丁切出了一道燃烧的裂口，他知道自己已经时日无多。他曾是恕瑞玛地区的向导和冒险家，后来选择在恕瑞玛南方平静的部落中安家落户——直到那一天，他的村庄被虚空吞噬。卡萨丁发誓要报仇雪恨，于是整合了许多秘法器物和禁忌之术，以便应对前方的险阻。最后，卡萨丁动身前往艾卡西亚的废土，准备面对任何虚空的造物，寻找那位自封的先知，玛尔扎哈。', 
     stats: {
         armor: 19,
@@ -1925,9 +1925,9 @@ export const ICON_DATA = [
   },
   {
     id: '39', 
-    name: '刀锋舞者', 
-    description: '刀锋舞者', 
-    image: require('../../assets/lol_hero_icon/刀锋舞者.png'), 
+    name: 'Irelia_mid_top', 
+    description: '이렐리아', 
+    image: require('../../assets/lol_hero_icon/Irelia.png'), 
     detail: '诺克萨斯对艾欧尼亚的占领催生了许多英雄，但没有谁像来自纳沃利的艾瑞莉娅一般令人意外。她将家乡的古老舞艺化为战技，以精心修习的优雅身姿操控着致命的刀阵。在向众人证明了自己的战斗实力后，这位刀锋舞者被推举为反抗军的领袖和首脑，为守卫家园奋斗至今。', 
     stats: {
         armor: 36,
@@ -1975,9 +1975,9 @@ export const ICON_DATA = [
   },
   {
     id: '40', 
-    name: '风暴之怒', 
-    description: '风暴之怒', 
-    image: require('../../assets/lol_hero_icon/风暴之怒.png'), 
+    name: 'Janna_sup', 
+    description: '잔나', 
+    image: require('../../assets/lol_hero_icon/Janna.png'), 
     detail: '风暴是她的武器，符文之地是她的家园。神秘的迦娜是风元素的精灵，保护着祖安城内无依无靠的人们。有人相信她的诞生是源于符文之地水手们的祈愿，他们会祈祷友善的风伴他们渡过险恶的海域，战胜无情的风暴。后来她的眷顾和庇护被召唤到了祖安深处，在那里，迦娜成为了无助之人的希望灯塔。没人知道她会在何时何地出现，但大多数时候，她的到来都意味着援手。', 
     stats: {
         armor: 28,
@@ -2025,9 +2025,9 @@ export const ICON_DATA = [
   },
   {
     id: '41', 
-    name: '海洋之灾', 
-    description: '海洋之灾', 
-    image: require('../../assets/lol_hero_icon/海洋之灾.png'), 
+    name: 'Gangplank_top', 
+    description: '갱플랭크', 
+    image: require('../../assets/lol_hero_icon/Gangplank.png'), 
     detail: '诡计多端、心狠手辣的普朗克是被废黜的强盗之王，他令人恐惧的名号广达远至。他一度是港口城市比尔吉沃特的统治者。虽然现在他的威权已经不再，但人们相信这只会让他变得更加可怖。普朗克若是知道有人要从他手中抢走比尔吉沃特，必然会大肆血洗这座城市。而如今有了火枪、弯刀，还有一桶桶的火药，他决心要夺回自己失去的东西。', 
     stats: {
         armor: 31,
@@ -2075,9 +2075,9 @@ export const ICON_DATA = [
   },
   {
     id: '42', 
-    name: '英勇投弹手', 
-    description: '英勇投弹手', 
-    image: require('../../assets/lol_hero_icon/英勇投弹手.png'), 
+    name: 'Corki_mid', 
+    description: '코르키', 
+    image: require('../../assets/lol_hero_icon/Corki.png'), 
     detail: '约德尔飞行员库奇的最爱有二：一是飞行，二是自己英俊的小胡子，排名不分先后。离开班德尔城以后，他在皮尔特沃夫安家，自此爱上了这里奇异壮观的各式机器。他决定投身于飞行装置的开发事业，带领着一群老练飞行员组成了一支空中防御力量——“尖啸之蛇”。如今库奇临危不乱地在第二故乡的空域戒备巡逻，他还从没见过有什么问题，是一轮导弹齐射不能解决的。', 
     stats: {
         armor: 30,
@@ -2125,9 +2125,9 @@ export const ICON_DATA = [
   },
   {
     id: '43', 
-    name: '天启者', 
-    description: '天启者', 
-    image: require('../../assets/lol_hero_icon/天启者.png'), 
+    name: 'Karma_sup', 
+    description: '카르마', 
+    image: require('../../assets/lol_hero_icon/Karma.png'), 
     detail: '要说哪位英雄能代表艾欧尼亚的精神传统，没有谁比卡尔玛更合适。作为一个经历过无数次转世的古老灵魂，她的每次新生都会继承以前的全部记忆，同时也会获得常人无法理解的力量。在最近这一世遭遇危难之时，卡尔玛倾尽全力地引领她的人民，她知道，要想获得和平与和谐，就必须付出重大代价——对她自己是如此，对她深爱的土地亦是如此。', 
     stats: {
         armor: 28,
@@ -2175,9 +2175,9 @@ export const ICON_DATA = [
   },
   {
     id: '44', 
-    name: '瓦洛兰之盾', 
-    description: '瓦洛兰之盾', 
-    image: require('../../assets/lol_hero_icon/瓦洛兰之盾.png'), 
+    name: 'Taric_sup', 
+    description: '타릭', 
+    image: require('../../assets/lol_hero_icon/Taric.png'), 
     detail: '塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。', 
     stats: {
         armor: 40,
@@ -2225,9 +2225,9 @@ export const ICON_DATA = [
   },
   {
     id: '45', 
-    name: '邪恶小法师', 
-    description: '邪恶小法师', 
-    image: require('../../assets/lol_hero_icon/邪恶小法师.png'), 
+    name: 'Veigar_mid_sup', 
+    description: '베이가', 
+    image: require('../../assets/lol_hero_icon/Veigar.png'), 
     detail: '维迦是热衷于黑暗巫术的大师。几乎没有哪个凡人敢碰的恐怖力量，他却能敞开怀抱。作为拥有自由精神的班德尔城居民，他渴望突破约德尔魔法的边界，于是转而研究那些被隐藏数千年的秘法文字。现在他已经变成了一个偏执的生物，对宇宙的奥秘无限向往。人们总会低估维迦的力量。虽然维迦发自心底地觉得自己是邪恶的，不过他的一些心底的原则也的确会让人质疑他的深层动机。', 
     stats: {
         armor: 18,
@@ -2275,9 +2275,9 @@ export const ICON_DATA = [
   },
   {
     id: '46', 
-    name: '巨魔之王', 
-    description: '巨魔之王', 
-    image: require('../../assets/lol_hero_icon/巨魔之王.png'), 
+    name: 'Trundle_top_jug', 
+    description: '트런들', 
+    image: require('../../assets/lol_hero_icon/Trundle.png'), 
     detail: '特朗德尔是一个粗鄙且狡猾的巨魔，性格非常顽劣。没有什么东西不能被他打到屈服认输，甚至是弗雷尔卓德本身。他的领土意识极强，任何进入他领地的蠢蛋都会被他追杀。巨大的臻冰棍棒随时伺候。他会让敌人感到刺骨寒冷，并且用锯齿状的冰柱刺穿他们，最后在他们血溅冰原的时候放声大笑。', 
     stats: {
         armor: 37,
@@ -2325,9 +2325,9 @@ export const ICON_DATA = [
   },
   {
     id: '47', 
-    name: '诺克萨斯统领', 
-    description: '诺克萨斯统领', 
-    image: require('../../assets/lol_hero_icon/诺克萨斯统领.png'), 
+    name: 'Swain_mid_sup', 
+    description: '스웨인', 
+    image: require('../../assets/lol_hero_icon/Swain.png'), 
     detail: '杰里柯·斯维因是诺克萨斯高瞻远瞩的统治者，执掌一个独尊力量的扩张主义国度。虽然他曾在艾欧尼亚战争中被击倒并留下残疾，失去了左臂，但他却成功用无情的决心掌控了整个帝国……也获得了一只新的恶魔之手。现在，斯维因在前线亲自指挥，对抗着只有他才能看到的压境黑暗——只有他才能通过黑影般的渡鸦窥见周围死尸的秘密。在献祭与秘密的漩涡中，最惊天的秘密是，真正的敌人来自内部。', 
     stats: {
         armor: 26,
@@ -2375,9 +2375,9 @@ export const ICON_DATA = [
   },
   {
     id: '48', 
-    name: '皮城女警', 
-    description: '皮城女警', 
-    image: require('../../assets/lol_hero_icon/皮城女警.png'), 
+    name: 'Caitlyn_adc', 
+    description: '케이틀린', 
+    image: require('../../assets/lol_hero_icon/Caitlyn.png'), 
     detail: '凯特琳被誉为皮尔特沃夫最顶尖的和平卫士，同时也是让这座城市真正摆脱地下隐秘犯罪的最有希望的人选。她经常和蔚联手执行任务，以冷静和沉着弥补自己搭档的鲁莽天性。虽然她的海克斯科技步枪独一无二，但凯特琳最强大的武器其实是她过人的智谋，总是能设下天罗地网，迎接任何傻到敢在进步之城作案的不法之徒。', 
     stats: {
         armor: 27,
@@ -2425,9 +2425,9 @@ export const ICON_DATA = [
   },
   {
     id: '49', 
-    name: '蒸汽机器人', 
-    description: '蒸汽机器人', 
-    image: require('../../assets/lol_hero_icon/蒸汽机器人.png'), 
+    name: 'Blitzcrank_sup', 
+    description: '블리츠크', 
+    image: require('../../assets/lol_hero_icon/Blitzcrank.png'), 
     detail: '布里茨是来自祖安的一个巨大的、几乎坚不可摧的机械体，最初被制造出来的目的是为了处理有毒废料。然而他觉得自己存在的意义太过狭隘，于是就改装了自己的形态，以便更好地效力于地沟区的孱弱人群。布里茨无私地使用自己的力量和钢铁之躯保护其他人，伸出长长的机械援手，或者发出能量脉冲，制服任何带来麻烦的人。', 
     stats: {
         armor: 37,
@@ -2475,9 +2475,9 @@ export const ICON_DATA = [
   },
   {
     id: '50', 
-    name: '熔岩巨兽', 
-    description: '熔岩巨兽', 
-    image: require('../../assets/lol_hero_icon/熔岩巨兽.png'), 
+    name: 'Malphite_top_mid_sup', 
+    description: '말파이트', 
+    image: require('../../assets/lol_hero_icon/Malphite.png'), 
     detail: '墨菲特是一个庞大的岩石生物，为了给混乱的世界赐予秩序而不懈奋斗。他诞生之初的身份只是一个石仆，侍奉着一块超乎凡人理解、名为“独石”的石碑。他用万钧元素之力维护独石，最终却还是失败了。在那场大毁灭中，墨菲特成了唯一的幸存者。如今他忍受着符文之地的脆弱凡人以及他们流水一般多变的性情，想尽办法在世间寻找一个新的立足之地，让自己不愧这世上最后一个岩石生物之名。', 
     stats: {
         armor: 37,
@@ -2525,9 +2525,9 @@ export const ICON_DATA = [
   },
   {
     id: '51', 
-    name: '不祥之刃', 
-    description: '不祥之刃', 
-    image: require('../../assets/lol_hero_icon/不祥之刃.png'), 
+    name: 'Katarina_mid', 
+    description: '카타리나', 
+    image: require('../../assets/lol_hero_icon/Katarina.png'), 
     detail: '果断坚决、心狠手辣，卡特琳娜是诺克萨斯的顶尖刺客。作为传奇将军杜·克卡奥的长女，她凭借出其不意的迅猛刺杀很快声名鹊起。强烈的野心曾经驱使她挑战重兵把守的暗杀目标，甚至不惜冒险让友军暴露在危险中。不过无论是怎样的任务，卡特琳娜都会毫不迟疑地在锯刃匕首的风暴中履行自己的使命。', 
     stats: {
         armor: 28,
@@ -2575,9 +2575,9 @@ export const ICON_DATA = [
   },
   {
     id: '52', 
-    name: '永恒梦魇', 
-    description: '永恒梦魇', 
-    image: require('../../assets/lol_hero_icon/永恒梦魇.png'), 
+    name: 'Nocturne_mid_jug', 
+    description: '녹턴', 
+    image: require('../../assets/lol_hero_icon/Nocturne.png'), 
     detail: '将一切有知觉的脑海中萦绕的噩梦提取出来，进而融合成一个恶魔般的实体，这就是被人称为魔腾的存在，它已成为一种纯粹邪恶的原始力量。它的外形捉摸不定，一团无面的黑影中睁着一双冰冷的眼睛，身体两侧是一对形状恐怖的刀刃。魔腾摆脱了精神领域的束缚，进入了梦醒后的凡尘世界，寻觅那些在真正的黑暗中疯长的恐惧，作为自己的食粮。', 
     stats: {
         armor: 38,
@@ -2625,9 +2625,9 @@ export const ICON_DATA = [
   },
   {
     id: '53', 
-    name: '扭曲树精', 
-    description: '扭曲树精', 
-    image: require('../../assets/lol_hero_icon/扭曲树精.png'), 
+    name: 'Maokai_sup', 
+    description: '마오카이', 
+    image: require('../../assets/lol_hero_icon/Maokai.png'), 
     detail: '茂凯是一只内心暴怒外形魁梧的树精，不知疲倦地对抗暗影岛的骇人异象。一场魔法灾变摧毁了他的家园，同时也将他变成一股复仇的力量，使他免遭不死诅咒的，全靠他芯中灌注融合的生命之水。曾经的茂凯是一只平和的自然之灵，而现在的他则一直在暴怒地战斗，只为了将不死的灾祸逐出暗影岛，让他的家园重归往日的秀美。', 
     stats: {
         armor: 35,
@@ -2675,9 +2675,9 @@ export const ICON_DATA = [
   },
   {
     id: '54', 
-    name: '荒漠屠夫', 
-    description: '荒漠屠夫', 
-    image: require('../../assets/lol_hero_icon/荒漠屠夫.png'), 
+    name: 'Renekton_top_mid', 
+    description: '레넥톤', 
+    image: require('../../assets/lol_hero_icon/Renekton.png'), 
     detail: '雷克顿是一位来自恕瑞玛炙热沙漠中的面目可怖、野蛮狂怒的飞升者。他曾经是帝国最受尊敬的战士，带领恕瑞玛的军队取得过无数次胜利。然而，在帝国陨落以后，雷克顿被困在了沙漠之下，慢慢地，在世界变迁的同时，雷克顿丧失了理智。现在他重获自由，但却被一个执念吞噬：找到并杀死他的哥哥内瑟斯，因为疯狂之中的他坚信内瑟斯是害他经受数百年黑暗束缚的罪魁祸首。', 
     stats: {
         armor: 35,
@@ -2725,9 +2725,9 @@ export const ICON_DATA = [
   },
   {
     id: '55', 
-    name: '德玛西亚皇子', 
-    description: '德玛西亚皇子', 
-    image: require('../../assets/lol_hero_icon/德玛西亚皇子.png'), 
+    name: 'JarvanIV_jug_sup', 
+    description: '자르반 4세', 
+    image: require('../../assets/lol_hero_icon/JarvanIV.png'), 
     detail: '皇子嘉文四世身负王家血脉，极有可能便是德玛西亚的下一任国王。他自小被寄予厚望，有朝一日能够成为德玛西亚的楷模，可如此沉重的负担却令他的心中充满了挣扎。在战场上，他英勇无畏的气势和一往无前的决心鼓舞着全军上下，显现出身为人主的真实才干。', 
     stats: {
         armor: 36,
@@ -2775,9 +2775,9 @@ export const ICON_DATA = [
   },
   {
     id: '56', 
-    name: '蜘蛛女皇', 
-    description: '蜘蛛女皇', 
-    image: require('../../assets/lol_hero_icon/蜘蛛女皇.png'), 
+    name: 'Elise_jug', 
+    description: '엘리스', 
+    image: require('../../assets/lol_hero_icon/Elise.png'), 
     detail: '诺克萨斯帝国最古老城市的地下深处，有一处不见天日的禁地，这是夺命的掠食者伊莉丝的宫殿。当她还是一个凡人的时候，她是曾经显赫一时的家族女主人，但是自从被一个卑鄙的半神咬伤之后，她就化身成了美丽的不死异类，一个形似蜘蛛的生物，用蛛网诱捕毫无防备的猎物。为了永葆青春，伊莉丝现在喜欢捕食那些无戒心、无信仰的人，而这世上也鲜少有人能够抗拒她的诱惑。', 
     stats: {
         armor: 30,
@@ -2825,9 +2825,9 @@ export const ICON_DATA = [
   },
   {
     id: '57', 
-    name: '发条魔灵', 
-    description: '发条魔灵', 
-    image: require('../../assets/lol_hero_icon/发条魔灵.png'), 
+    name: 'Orianna_mid', 
+    description: '오리아나', 
+    image: require('../../assets/lol_hero_icon/Orianna.png'), 
     detail: '对一切充满好奇的奥莉安娜也曾拥有过血肉之躯，现在却成了一具全身上下都由发条和齿轮构成的科技奇观。祖安下层地区的一次事故，间接导致奥莉安娜身染重病。她日渐衰竭的身体必须被一个接着一个地替换为精密的人造器官，直至全身上下再也没有一丝人类肉体的痕迹。她给自己制作了一枚奇妙的铜球，它既是伙伴，也是保镖。值得庆幸的是，这个女孩如今可以自由地探索壮观的皮尔特沃夫，以及更遥远的地方了。', 
     stats: {
         armor: 20,
@@ -2875,9 +2875,9 @@ export const ICON_DATA = [
   },
   {
     id: '58', 
-    name: '齐天大圣', 
-    description: '齐天大圣', 
-    image: require('../../assets/lol_hero_icon/齐天大圣.png'), 
+    name: 'MonkeyKing_top_jug', 
+    description: '오공', 
+    image: require('../../assets/lol_hero_icon/MonkeyKing.png'), 
     detail: '悟空是一个瓦斯塔亚族的机灵鬼，用自己的力量、灵敏和机智迷惑对手并抢得先机。机缘巧合让他结识了一位剑客并与之成为一生的挚友，这位剑客被人称作易大师。后来，悟空就成为了古老武术门派“无极”的最后一位弟子。如今，附魔长棍傍身的悟空，目标是让艾欧尼亚免遭崩溃的命运。', 
     stats: {
         armor: 31,
@@ -2925,9 +2925,9 @@ export const ICON_DATA = [
   },
   {
     id: '59', 
-    name: '复仇焰魂', 
-    description: '复仇焰魂', 
-    image: require('../../assets/lol_hero_icon/复仇焰魂.png'), 
+    name: 'Brand', 
+    description: '브랜드_mid_jug_sup', 
+    image: require('../../assets/lol_hero_icon/Brand.png'), 
     detail: '基根·诺和曾经是一名普通弗雷尔卓德部族居民，现在则变成了另一种生物，布兰德。他的身世警醒着后人，被更强大的力量所诱惑会带来什么后果。基根为了追寻传说中的世界符文，背叛了自己的同伴并将符文据为己有，就在那一瞬间，这个人彻底消失了。他的灵魂被彻底燃尽，他的身躯成为了活体烈焰的容器，如今，布兰德游荡在瓦洛兰，寻觅着其他的符文。他曾遭受的苦难，凡人活上十几辈子也未必能够经历，而他发誓此仇必报。', 
     stats: {
         armor: 27,
@@ -2975,9 +2975,9 @@ export const ICON_DATA = [
   },
   {
     id: '60', 
-    name: '盲僧', 
-    description: '盲僧', 
-    image: require('../../assets/lol_hero_icon/盲僧.png'), 
+    name: 'LeeSin_jug', 
+    description: '리 신', 
+    image: require('../../assets/lol_hero_icon/LeeSin.png'), 
     detail: '李青是艾欧尼亚古老武术的大师，讲原则、重信义的他能将神龙之灵的精粹运用自如，助他面对任何挑战。虽然这位武僧多年前便已双目失明，但他依然献出自己的全部力量，用生命捍卫家园，抵御任何试图打破艾欧尼亚神圣均衡之人。所有因他安静冥想的举止而掉以轻心的敌人，都将尝到他燃烧的拳头和炽烈的回旋踢。', 
     stats: {
         armor: 36,
@@ -3025,9 +3025,9 @@ export const ICON_DATA = [
   },
   {
     id: '61', 
-    name: '暗夜猎手', 
-    description: '暗夜猎手', 
-    image: require('../../assets/lol_hero_icon/暗夜猎手.png'), 
+    name: 'Vayne_adc_top', 
+    description: '베인', 
+    image: require('../../assets/lol_hero_icon/Vayne.png'), 
     detail: '来自德玛西亚的肖娜·薇恩是一位无情的怪物猎手，终其一生，都在寻找杀害她全家的恶魔。她的手臂上装着十字弩，心中燃烧着熊熊的复仇怒火，总是从暗影中射出圣银弩箭的风暴。只有在杀死那些为黑暗魔法所控制的人和生物时，薇恩才能感受到真正的愉悦。', 
     stats: {
         armor: 23,
@@ -3075,9 +3075,9 @@ export const ICON_DATA = [
   },
   {
     id: '62', 
-    name: '机械公敌', 
-    description: '机械公敌', 
-    image: require('../../assets/lol_hero_icon/机械公敌.png'), 
+    name: 'Rumble_top_mid_jug', 
+    description: '럼블', 
+    image: require('../../assets/lol_hero_icon/Rumble.png'), 
     detail: '兰博是一个有脾气的约德尔青年发明家。他仅用自己的双手和一堆废铁，就造出了一架巨大的机甲，上面还搭载了电击鱼叉和燃烧火箭弹等超常规武器。虽然其他人可能对他的垃圾场发明嗤之以鼻，但兰博根本不在乎——毕竟，喷出铄金之火的枪口，在他自己手里。', 
     stats: {
         armor: 36,
@@ -3125,9 +3125,9 @@ export const ICON_DATA = [
   },
   {
     id: '63', 
-    name: '魔蛇之拥', 
-    description: '魔蛇之拥', 
-    image: require('../../assets/lol_hero_icon/魔蛇之拥.png'), 
+    name: 'Cassiopeia_mid', 
+    description: '카시오페아', 
+    image: require('../../assets/lol_hero_icon/Cassiopeia.png'), 
     detail: '卡西奥佩娅是个夺命的生物，决心要操纵其他人屈服于自己的阴险意志之下。身为诺克萨斯贵族杜·克卡奥家族的最年轻、最漂亮的女儿，她冒险深入恕瑞玛古代墓穴找寻远古的力量。在墓穴中，她被恐怖的墓穴守卫咬中，在毒液的作用下变成了毒蛇外形的掠食者。狡猾而敏捷的卡西奥佩娅如今在夜幕的掩护下蜿蜒滑行，用阴森的凝视让敌人石化。', 
     stats: {
         armor: 18,
@@ -3175,9 +3175,9 @@ export const ICON_DATA = [
   },
   {
     id: '64', 
-    name: '上古领主', 
-    description: '上古领主', 
-    image: require('../../assets/lol_hero_icon/上古领主.png'), 
+    name: 'Skarner_top_jug', 
+    description: '스카너', 
+    image: require('../../assets/lol_hero_icon/Skarner.png'), 
     detail: '作为以绪塔尔统治阶层——育恩塔尔的初创成员之一，古老而庞大的壳人斯卡纳在这里深受景仰。他一心致力于保护这个国度免受外界所害，为此，斯卡纳栖息在以绪奥肯地下的密室中，聆听着大地的震动，只为了觉察潜在的威胁。但随着育恩塔尔越来越多的成员开始质疑他们与世隔离的做法，斯卡纳也变得越发偏执和猜疑。为了保护以绪塔尔和他的人民，他愿意不惜一切代价——无论这个代价意味着什么。', 
     stats: {
         armor: 33,
@@ -3225,9 +3225,9 @@ export const ICON_DATA = [
   },
   {
     id: '65', 
-    name: '大发明家', 
-    description: '大发明家', 
-    image: require('../../assets/lol_hero_icon/大发明家.png'), 
+    name: 'Heimerdinger_mid_top_sup', 
+    description: '하이머딩거', 
+    image: require('../../assets/lol_hero_icon/Heimerdinger.png'), 
     detail: '塞西尔·B·黑默丁格教授是一个才华横溢但古怪反常的约德尔科学家。他被称赞为皮尔特沃夫前所未见的最具革新意识和受人尊敬的发明家之一。他不间断地工作，孜孜不倦地尝试解答宇宙中最费解的难题，达到了神经痴迷的程度。尽管他的理论经常会看起来晦涩难懂，但他也曾制造出许多发明，堪称皮尔特沃夫最为惊奇，当然也同样危险的机械，他也在不断改进自己的发明，让它们更加高效。', 
     stats: {
         armor: 19,
@@ -3275,9 +3275,9 @@ export const ICON_DATA = [
   },
   {
     id: '66', 
-    name: '沙漠死神', 
-    description: '沙漠死神', 
-    image: require('../../assets/lol_hero_icon/沙漠死神.png'), 
+    name: 'Nasus_top_mid', 
+    description: '나서스', 
+    image: require('../../assets/lol_hero_icon/Nasus.png'), 
     detail: '内瑟斯是一位庄严威武的犬首人身飞升者，在古代恕瑞玛帝国时期，是被沙漠子民敬仰为半神的英雄人物。作为知识的守护者和无双的战术家，他用高绝的智慧引导着古代恕瑞玛帝国在数百年间走向了繁荣伟大。帝国陨落以后，他开始了自我放逐，成为了人们口中缥缈的传说。现在，恕瑞玛古城已经再一次崛起，他也随之回归，并决心绝不让它再度陨落。', 
     stats: {
         armor: 34,
@@ -3325,9 +3325,9 @@ export const ICON_DATA = [
   },
   {
     id: '67', 
-    name: '狂野女猎手', 
-    description: '狂野女猎手', 
-    image: require('../../assets/lol_hero_icon/狂野女猎手.png'), 
+    name: 'Nidalee_jug', 
+    description: '니달리', 
+    image: require('../../assets/lol_hero_icon/Nidalee.png'), 
     detail: '在密林深处长大的奈德丽是一位追猎大师，她可以变换形态，成为一只凶猛的美洲狮。她既不是真正的人类，也不是真正的野兽，但她会用精心布置的陷阱和灵活自如的标枪，凶狠地捍卫自己的领地不被任何人侵犯。她会先打击猎物的行动能力，然后再以大猫的形态上前扑杀。只有很少数人曾侥幸逃脱并活下来讲述一个狂野女猎手的故事，讲述她锐利的猎手本能，以及更加锐利的爪子。', 
     stats: {
         armor: 32,
@@ -3375,9 +3375,9 @@ export const ICON_DATA = [
   },
   {
     id: '68', 
-    name: '兽灵行者', 
-    description: '兽灵行者', 
-    image: require('../../assets/lol_hero_icon/兽灵行者.png'), 
+    name: 'Udyr_jug', 
+    description: '우디르', 
+    image: require('../../assets/lol_hero_icon/Udyr.png'), 
     detail: '身为最强大的兽灵行者，乌迪尔能够与弗雷尔卓德的一切灵体交流。他能感知它们的欲求，也能引导它们的超然力量，融入自己野性十足的战斗。乌迪尔追求的是内心的平衡，这样他的意志才不会在众灵的喧嚣中迷失，但他同时也在追求外在的平衡，因为弗雷尔卓德的神秘大地必须依靠争斗与冲突来获得滋养。乌迪尔十分明白，为了防止弗雷尔卓德陷入看似和平实则僵滞，牺牲在所难免。', 
     stats: {
         armor: 31,
@@ -3425,9 +3425,9 @@ export const ICON_DATA = [
   },
   {
     id: '69', 
-    name: '圣锤之毅', 
-    description: '圣锤之毅', 
-    image: require('../../assets/lol_hero_icon/圣锤之毅.png'), 
+    name: 'Poppy_top_sup', 
+    description: '뽀삐', 
+    image: require('../../assets/lol_hero_icon/Poppy.png'), 
     detail: '符文之地从来都不缺勇敢的英雄，但很少有谁能像波比一样坚毅。她一直带着奥伦的传奇圣锤，哪怕锤柄立起来有两个她那么高。这位意志坚决的约德尔人在无数个岁月中一直都在秘密地寻找“德玛西亚的英雄”，也就是传说中这把战锤的最合适的主人。在找到他之前，波比肩负起战斗的使命，用旋风般的攻击打退王国的敌人。', 
     stats: {
         armor: 38,
@@ -3475,9 +3475,9 @@ export const ICON_DATA = [
   },
   {
     id: '70', 
-    name: '酒桶', 
-    description: '酒桶', 
-    image: require('../../assets/lol_hero_icon/酒桶.png'), 
+    name: 'Gragas_top_jug', 
+    description: '그라가스', 
+    image: require('../../assets/lol_hero_icon/Gragas.png'), 
     detail: '豪爽而且威严的古拉加斯，是一位身宽体胖、吵闹喧哗的酿酒大师。他从未知之地而来，在弗雷尔卓德荒原上寻找稀有的酿酒原料，尝试着各种不同的酿制配方，只为找到最完美的那一口麦酒。他总是酩酊大醉又冲动鲁莽，所挑起的斗殴事件堪称传奇，经常造成某地一整夜的狂欢和殃及池鱼的狼藉。只要古拉加斯现身，接踵而至的肯定是饮酒和闹事——对，就按这个顺序。', 
     stats: {
         armor: 38,
@@ -3525,9 +3525,9 @@ export const ICON_DATA = [
   },
   {
     id: '71', 
-    name: '不屈之枪', 
-    description: '不屈之枪', 
-    image: require('../../assets/lol_hero_icon/不屈之枪.png'), 
+    name: 'Pantheon_top_mid_jug_sup', 
+    description: '판테온', 
+    image: require('../../assets/lol_hero_icon/Pantheon.png'), 
     detail: '曾被战争星灵附体的阿特瑞斯，在体内的天界力量被抹杀之时，便以凡人的身份活了下来。即便是那裂空摘星的一击，也无法让他屈服。在那不久以后，他学会了拥抱自身的凡性，以及凡性之中那股顽强的韧劲。如今的阿特瑞斯以潘森之名重生，与神性抗争，他坚不可摧的意志在战场上化为火焰，注入那些曾经属于星灵的武具中。', 
     stats: {
         armor: 40,
@@ -3575,9 +3575,9 @@ export const ICON_DATA = [
   },
   {
     id: '72', 
-    name: '探险家', 
-    description: '探险家', 
-    image: require('../../assets/lol_hero_icon/探险家.png'), 
+    name: 'Ezreal_mid_adc', 
+    description: '이즈리얼', 
+    image: require('../../assets/lol_hero_icon/Ezreal.png'), 
     detail: '永远神采奕奕的冒险家伊泽瑞尔，拥有一种自己也不清楚因何而来的魔法天赋。他搜刮失落已久的古墓，触碰古老的诅咒，还总是举重若轻地挑战常人不可能完成的极限。他的勇气和壮举难以计数，总能随机应对一路上的各种状况——虽然一定程度上是因为他的小聪明，但更主要的是依赖于神秘的恕瑞玛护手——这件装备能在他的操控下射出破坏性的奥术爆弹。有一件事可以肯定——只要伊泽瑞尔出现，那么麻烦一定会接踵而至，虽迟不远，随时随地。', 
     stats: {
         armor: 24,
@@ -3625,9 +3625,9 @@ export const ICON_DATA = [
   },
   {
     id: '73', 
-    name: '铁铠冥魂', 
-    description: '铁铠冥魂', 
-    image: require('../../assets/lol_hero_icon/铁铠冥魂.png'), 
+    name: 'Mordekaise_top', 
+    description: '모데카이저', 
+    image: require('../../assets/lol_hero_icon/Mordekaiser.png'), 
     detail: '两度被杀，三度重生。莫德凯撒是一位来自远古纪元的残酷军阀，他使用死灵巫术将无数灵魂禁锢在永恒的奴役中。现在几乎无人记得他早期的那些征服战争，也无人知道他有多强大的力量，但也有一些古老的灵魂认得他，而他们一直都在担心有一天他会回来，同时统治生者和死者。', 
     stats: {
         armor: 37,
@@ -3675,9 +3675,9 @@ export const ICON_DATA = [
   },
   {
     id: '74', 
-    name: '牧魂人', 
-    description: '牧魂人', 
-    image: require('../../assets/lol_hero_icon/牧魂人.png'), 
+    name: 'Yorick_top', 
+    description: '요릭', 
+    image: require('../../assets/lol_hero_icon/Yorick.png'), 
     detail: '约里克所在的教团早已被世人忘却，而他也成为了最后的幸存者。说不上是诅咒抑或是祝福，他拥有操控死者的能力。与他一同被困在暗影岛上的，只有逐渐腐败的尸体，还有他引到自己身边终日尖啸的死灵。约里克怪异的举止下掩藏着的却是他决绝的憧憬：在破败之咒的阴影下解放他的家园。', 
     stats: {
         armor: 39,
@@ -3725,9 +3725,9 @@ export const ICON_DATA = [
   },
   {
     id: '75', 
-    name: '离群之刺', 
-    description: '离群之刺', 
-    image: require('../../assets/lol_hero_icon/离群之刺.png'), 
+    name: 'Akali_top_mid', 
+    description: '아칼리', 
+    image: require('../../assets/lol_hero_icon/Akali.png'), 
     detail: '无论是均衡教派的出身，还是暗影之拳的称号，都已被阿卡丽抛弃。如今的阿卡丽独来独往，随时可以成为一柄为同胞所需的夺命利器。她牢牢铭记着从宗师“慎”身上学来的一切，效忠并保护着艾欧尼亚，每次出手都必定会换来敌人的一条性命。她的出击或许悄然无声，但传达的信息却响亮无比：不听命于任何人的刺客，才最为可怕。', 
     stats: {
         armor: 23,
@@ -3775,9 +3775,9 @@ export const ICON_DATA = [
   },
   {
     id: '76', 
-    name: '狂暴之心', 
-    description: '狂暴之心', 
-    image: require('../../assets/lol_hero_icon/狂暴之心.png'), 
+    name: 'Kennen_top', 
+    description: '케넨', 
+    image: require('../../assets/lol_hero_icon/Kennen.png'), 
     detail: '凯南不仅是一位迅猛如雷电的艾欧尼亚执法者，还是均衡教派中唯一的约德尔人。虽然他身体小巧，浑身绒毛，但他能用风暴一般的手里剑和无限热情去迎击任何敌人的威胁。他和师父慎一起在精神领域巡逻，使用雷电的能量痛击敌人。', 
     stats: {
         armor: 29,
@@ -3825,9 +3825,9 @@ export const ICON_DATA = [
   },
   {
     id: '77', 
-    name: '德玛西亚之力', 
-    description: '德玛西亚之力', 
-    image: require('../../assets/lol_hero_icon/德玛西亚之力.png'), 
+    name: 'Garen_top_mid', 
+    description: '가렌', 
+    image: require('../../assets/lol_hero_icon/Garen.png'), 
     detail: '作为一名自豪而高贵的勇士，盖伦将自己当做无畏先锋中的普通一员参与战斗。他既受到同袍手足的爱戴，也受到敌人对手的尊敬——尤其作为尊贵的冕卫家族的子嗣，他被委以重任，守卫德玛西亚的疆土和理想。他身披抵御魔法的重甲，手持阔剑，时刻准备着用正义的钢铁风暴在战场上正面迎战一切操纵魔法的狂人。', 
     stats: {
         armor: 38,
@@ -3875,9 +3875,9 @@ export const ICON_DATA = [
   },
   {
     id: '78', 
-    name: '曙光女神', 
-    description: '曙光女神', 
-    image: require('../../assets/lol_hero_icon/曙光女神.png'), 
+    name: 'Leona_sup', 
+    description: '레오나', 
+    image: require('../../assets/lol_hero_icon/Leona.png'), 
     detail: '蕾欧娜是一名被灌注了烈阳之火的烈阳教派圣殿武士，用天顶之刃和破晓之盾守护着巨神峰。她的皮肤闪烁着星火，她体内天界星灵的力量透过她的双眼炯炯燃烧。蕾欧娜身披金色铠甲，背负着沉重的上古知识，为一些人带来启示，也为另一些人带去死亡。', 
     stats: {
         armor: 47,
@@ -3925,9 +3925,9 @@ export const ICON_DATA = [
   },
   {
     id: '79', 
-    name: '虚空先知', 
-    description: '虚空先知', 
-    image: require('../../assets/lol_hero_icon/虚空先知.png'), 
+    name: 'Malzahar_mid', 
+    description: '말자하', 
+    image: require('../../assets/lol_hero_icon/Malzahar.png'), 
     detail: '玛尔扎哈是一名狂热的先知，将自己的全部奉献给一切生命的大一统。他坚信，近来新出现的虚空就是符文之地的救赎。在恕瑞玛的沙漠荒原上，他曾一度追随着脑海中的窃窃私语，一路来到古艾卡西亚。在这片废墟中，他窥见了虚空深处的黑暗核心，被赋予了新的力量和目标。玛尔扎哈现在视自己为迷途羔羊的牧人，将其他人带进畜栏，或是放出藏身地下的虚灵生物。', 
     stats: {
         armor: 18,
@@ -3975,9 +3975,9 @@ export const ICON_DATA = [
   },
   {
     id: '80', 
-    name: '刀锋之影', 
-    description: '刀锋之影', 
-    image: require('../../assets/lol_hero_icon/刀锋之影.png'), 
+    name: 'Talon_mid_jug', 
+    description: '탈론', 
+    image: require('../../assets/lol_hero_icon/Talon.png'), 
     detail: '泰隆是黑暗中的匕首，是绝无仁慈的杀手，他出手前不会有任何警告，不会留任何退路，也不会引起任何警觉。泰隆在诺克萨斯的野蛮街巷中深深烙印了自己危险的名号，在这里他被迫为了生存而战斗、杀戮、偷窃。后来恶名昭彰的杜·克卡奥家族收养了他，现在他为帝国的指挥部贡献自己的夺命手段，暗杀敌人的领袖、军官和英雄，当然也包括任何得罪了最高长官们的诺克萨斯蠢货。', 
     stats: {
         armor: 30,
@@ -4025,9 +4025,9 @@ export const ICON_DATA = [
   },
   {
     id: '81', 
-    name: '放逐之刃', 
-    description: '放逐之刃', 
-    image: require('../../assets/lol_hero_icon/放逐之刃.png'), 
+    name: 'Riven_top_mid', 
+    description: '리븐', 
+    image: require('../../assets/lol_hero_icon/Riven.png'), 
     detail: '曾担任诺克萨斯军队剑士长的锐雯，正在那片她一度想要征服的土地上流浪。她在军中以无匹的信念和蛮悍的行事风格不断获得晋升，并得到一把传奇的符文之刃和属于自己的战团作为奖赏——然而在征战艾欧尼亚的前线上，锐雯对祖国的信仰遭到了考验。最终，信仰粉碎的锐雯，切断了与帝国的一切关联，在分崩离析的世界中找寻自己的归宿。即便谣言纷传，说诺克萨斯已经重铸……', 
     stats: {
         armor: 33,
@@ -4075,9 +4075,9 @@ export const ICON_DATA = [
   },
   {
     id: '82', 
-    name: '深渊巨口', 
-    description: '深渊巨口', 
-    image: require('../../assets/lol_hero_icon/深渊巨口.png'), 
+    name: 'KogMaw_adc', 
+    description: '코그모', 
+    image: require('../../assets/lol_hero_icon/KogMaw.png'), 
     detail: '从艾卡西亚废墟深处的腐败裂口中，克格莫喷着进食后的胀气走入了符文之地，它是一只好奇的生物，然而身上散发着腐烂的恶臭，血盆大口里淌着腐蚀性的粘液。这只特别的虚空生物需要用牙齿和口水去理解周围的事物。虽然克格莫并非本性邪恶，但它的天真无知同样很危险，因为它的无知往往预示着一场疯狂的暴食——并不是为了填饱肚子，而是为了满足它无尽的好奇。', 
     stats: {
         armor: 24,
@@ -4125,9 +4125,9 @@ export const ICON_DATA = [
   },
   {
     id: '83', 
-    name: '暮光之眼', 
-    description: '暮光之眼', 
-    image: require('../../assets/lol_hero_icon/暮光之眼.png'), 
+    name: 'Shen_top', 
+    description: '쉔', 
+    image: require('../../assets/lol_hero_icon/Shen.png'), 
     detail: '在隐秘的艾欧尼亚武装力量均衡教派中，慎是被尊为“暮光之眼”的领袖。他行走于精神领域和物质世界之间无人通晓的隐秘道路，力求超脱自身的情感、偏执以及自我。为了贯彻精神与物质之间的均衡，慎用一把钢刀和一把魂刃对抗任何可能威胁这一追求的人。', 
     stats: {
         armor: 34,
@@ -4175,9 +4175,9 @@ export const ICON_DATA = [
   },
   {
     id: '84', 
-    name: '光辉女郎', 
-    description: '光辉女郎', 
-    image: require('../../assets/lol_hero_icon/光辉女郎.png'), 
+    name: 'Lux_mid_sup', 
+    description: '럭스', 
+    image: require('../../assets/lol_hero_icon/Lux.png'), 
     detail: '拉克丝全名拉克珊娜·冕卫，出身自德玛西亚颇有声望的冕卫家族。德玛西亚是一个将魔法视为禁忌的封闭国度，只要提及魔法，人们总是带着恐惧和怀疑。因此，拥有折光之力的拉克丝，在整个童年的成长过程中都担心被人发现而遭放逐，她一直强迫自己隐瞒力量，以保住家族的贵族地位。即便如此，拉克丝的乐观和顽强还是让她学会了拥抱自己独特的天赋。现在，她在暗地中使用这份能力为王国效力。', 
     stats: {
         armor: 21,
@@ -4225,9 +4225,9 @@ export const ICON_DATA = [
   },
   {
     id: '85', 
-    name: '远古巫灵', 
-    description: '远古巫灵', 
-    image: require('../../assets/lol_hero_icon/远古巫灵.png'), 
+    name: 'Xerath_mid_sup', 
+    description: '제라스', 
+    image: require('../../assets/lol_hero_icon/Xerath.png'), 
     detail: '泽拉斯是古代恕瑞玛的巫师，飞升以后的他变成了一种奥术能量体，在魔法石棺的碎片之中涌动。数千年来，他被囚禁在沙漠之下，但最近恕瑞玛的崛起却将他从远古的牢笼中解放出来。对权力的疯狂渴求驱使着他，想要夺回他认为属于自己的东西，并取代世界上这些自命不凡的文明，让自己成为唯一受膜拜的偶像，统一整个世界。', 
     stats: {
         armor: 22,
@@ -4275,9 +4275,9 @@ export const ICON_DATA = [
   },
   {
     id: '86', 
-    name: '龙血武姬', 
-    description: '龙血武姬', 
-    image: require('../../assets/lol_hero_icon/龙血武姬.png'), 
+    name: 'Shyvana_jug', 
+    description: '쉬바나', 
+    image: require('../../assets/lol_hero_icon/Shyvana.png'), 
     detail: '希瓦娜是一只魔法生物，心中有一块燃烧不灭的符文碎片。虽然她时常以人的形象出现，但她真正的形态是一条威猛的巨龙，可以用龙息烈焰吞噬敌人。希瓦娜曾拯救过皇子嘉文四世的性命，如今她心神不宁地在皇子的卫队中效力，力图让多疑的德玛西亚人接纳自己。', 
     stats: {
         armor: 38,
@@ -4325,9 +4325,9 @@ export const ICON_DATA = [
   },
   {
     id: '87', 
-    name: '九尾妖狐', 
-    description: '九尾妖狐', 
-    image: require('../../assets/lol_hero_icon/九尾妖狐.png'), 
+    name: 'Ahri_mid', 
+    description: '아리', 
+    image: require('../../assets/lol_hero_icon/Ahri.png'), 
     detail: '天生就与精神领域的魔法相通的阿狸，顾名思义，是一名狐狸模样的瓦斯塔亚。她可以操纵猎物的情感，吞噬他们的精魄——他们生前的记忆与领悟化作碎片在她心中浮现。她曾是一名强大又任性的掠食者，但现在却一心在世间寻觅着先祖留下的残迹，同时努力地创造一份真正属于自己，而非取自他人的记忆。', 
     stats: {
         armor: 21,
@@ -4375,9 +4375,9 @@ export const ICON_DATA = [
   },
   {
     id: '88', 
-    name: '法外狂徒', 
-    description: '法外狂徒', 
-    image: require('../../assets/lol_hero_icon/法外狂徒.png'), 
+    name: 'Graves_top_mid_jug', 
+    description: '그레이브즈', 
+    image: require('../../assets/lol_hero_icon/Graves.png'), 
     detail: '格雷福斯是一位鼎鼎有名的佣兵、赌徒和窃贼，但凡他所及的城邦或帝国，都在通缉悬赏他的人头。虽然他脾气暴躁，却很讲究黑道义气，他的双管散弹枪“命运”就常用于纠正背信弃义之事。几年前他和老搭档崔斯特冰释前嫌，如今二人一同在比尔吉沃特的地下黑道纷争中再次合作，如鱼得水。', 
     stats: {
         armor: 33,
@@ -4425,9 +4425,9 @@ export const ICON_DATA = [
   },
   {
     id: '89', 
-    name: '潮汐海灵', 
-    description: '潮汐海灵', 
-    image: require('../../assets/lol_hero_icon/潮汐海灵.png'), 
+    name: 'Fizz_mid', 
+    description: '피즈', 
+    image: require('../../assets/lol_hero_icon/Fizz.png'), 
     detail: '菲兹是一名水陆两栖的约德尔人，生活在比尔吉沃特周围的群礁之间。他经常把那些迷信的船长们献给大海的什一税捞上来物归原主。不过即使是最粗鲁的水手也知道不要招惹他，因为这里流传着的各种教训，都是因为低估了这个小鬼。经常有人误会他的行为只是海洋精灵的任性举动，而事实上他可以号令来自深渊的巨型猛兽，而且不管是盟友还是敌人他都喜欢捉弄。', 
     stats: {
         armor: 22,
@@ -4475,9 +4475,9 @@ export const ICON_DATA = [
   },
   {
     id: '90', 
-    name: '不灭狂雷', 
-    description: '不灭狂雷', 
-    image: require('../../assets/lol_hero_icon/不灭狂雷.png'), 
+    name: 'Volibear_top', 
+    description: '볼리베어', 
+    image: require('../../assets/lol_hero_icon/Volibear.png'), 
     detail: '对于那些敬畏旧神的人，沃利贝尔是风暴的实体化身。他充满怪力、野性和倔强的坚毅，早在凡人行走于弗雷尔卓德的冻土苔原之前，他就已经存在。这片土地由他和他的半神同胞们共同创造，是他要拼死保护的东西。人类的文明以及随之而来的软弱让他积怨已久，如今他为了旧习古道而战——要让这片土地回归野性，让鲜血畅流无阻。他渴望迎战任何反对者，亮出他的尖牙、利爪和雷霆般的压制力。', 
     stats: {
         armor: 31,
@@ -4525,9 +4525,9 @@ export const ICON_DATA = [
   },
   {
     id: '91', 
-    name: '傲之追猎者', 
-    description: '傲之追猎者', 
-    image: require('../../assets/lol_hero_icon/傲之追猎者.png'), 
+    name: 'Rengar_top_jug', 
+    description: '렝가', 
+    image: require('../../assets/lol_hero_icon/Rengar.png'), 
     detail: '瓦斯塔亚人雷恩加尔是一名声名远扬、凶悍无比的猎手，一生都在追寻猎杀危险生物时的快感。他走遍整个世界，只为寻找那些最可怕的野兽——尤其是卡兹克。那头来自虚空的怪物曾弄瞎了他的一只眼睛。雷恩加尔追寻猎物，不为捕食也不为荣耀，只是为了纯粹的猎杀所带来的暴力之美。', 
     stats: {
         armor: 34,
@@ -4575,9 +4575,9 @@ export const ICON_DATA = [
   },
   {
     id: '92', 
-    name: '惩戒之箭', 
-    description: '惩戒之箭', 
-    image: require('../../assets/lol_hero_icon/惩戒之箭.png'), 
+    name: 'Varus_adc_mid', 
+    description: '바루스_adc_mid', 
+    image: require('../../assets/lol_hero_icon/Varus.png'), 
     detail: '韦鲁斯是古老暗裔的一员。身为一名冷血杀手，他酷爱用箭矢戏弄敌人——先让他们失心发疯，再了结他们的性命。韦鲁斯俊美非常，虽然他在大暗裔战争结束后便遭囚禁，却在几百年后成功逃脱，并寄宿于用两位艾欧尼亚猎人再造的血肉之躯中。这两位猎人无意之间释放了韦鲁斯，从此便背上了那把蕴含着韦鲁斯精魄的长弓。如今重获自由的韦鲁斯，开始残酷地报复那些囚禁他的人，但他体内纠缠的两个凡人灵魂却在阻挠他的每一步。', 
     stats: {
         armor: 27,
@@ -4625,9 +4625,9 @@ export const ICON_DATA = [
   },
   {
     id: '93', 
-    name: '深海泰坦', 
-    description: '深海泰坦', 
-    image: require('../../assets/lol_hero_icon/深海泰坦.png'), 
+    name: 'Nautilus_sup', 
+    description: '노틸러스', 
+    image: require('../../assets/lol_hero_icon/Nautilus.png'), 
     detail: '早在比尔吉沃特立起第一座码头的时候，就有一个孤独的传说。身着铁甲的巨人诺提勒斯在蓝焰岛附近的黑暗水域中徘徊。他心里记恨着一桩不可原谅的背叛，毫无预警地出手。他甩动巨大的船锚，拯救落难的可怜虫，或是将贪婪的人拖进末日。据说，没有缴“比尔吉沃特什一税”的人就是他的目标。他会带着他们和自己一起沉入波涛——相当于一个铁板钉钉的提醒，没人能逃脱深海的制裁。', 
     stats: {
         armor: 39,
@@ -4675,9 +4675,9 @@ export const ICON_DATA = [
   },
   {
     id: '94', 
-    name: '机械先驱', 
-    description: '机械先驱', 
-    image: require('../../assets/lol_hero_icon/机械先驱.png'), 
+    name: 'Viktor_mid', 
+    description: '빅토르', 
+    image: require('../../assets/lol_hero_icon/Viktor.png'), 
     detail: '他是崭新科技时代的领路先驱，将自己毕生精力奉献给了人类的进步。他是寻求人性启迪的理想主义者，信奉着唯有光荣进化才能实现人类全部的潜能。在钢铁与科学的加持之下，维克托狂热地追求着自己理想中的光明未来。', 
     stats: {
         armor: 23,
@@ -4726,9 +4726,9 @@ export const ICON_DATA = [
   
   {
     id: '95', 
-    name: '无双剑姬', 
-    description: '无双剑姬', 
-    image: require('../../assets/lol_hero_icon/无双剑姬.png'), 
+    name: 'Fiora_top', 
+    description: '피오라', 
+    image: require('../../assets/lol_hero_icon/Fiora.png'), 
     detail: '菲奥娜是全瓦洛兰最可怕的决斗家。与她雷厉风行、狡黠聪慧的性格一起闻名于世的，还有她舞弄蓝钢佩剑时的矫健身姿。菲奥娜出生在德玛西亚王国的劳伦特家族，她从父亲的手中接管了家业，并在一场丑闻风波中拯救了岌岌可危的家族。如今，虽然劳伦特家族的威望已不复从前，但菲奥娜仍在一直不懈地努力着，希望重振家族荣光，让劳伦特这个名字重回德玛西亚名望贵族之列。', 
     stats: {
         armor: 33,
@@ -4776,9 +4776,9 @@ export const ICON_DATA = [
   },
   {
     id: '96', 
-    name: '爆破鬼才', 
-    description: '爆破鬼才', 
-    image: require('../../assets/lol_hero_icon/爆破鬼才.png'), 
+    name: 'Ziggs_mid_sup_adc', 
+    description: '직스', 
+    image: require('../../assets/lol_hero_icon/Ziggs.png'), 
     detail: '炸弹越大越好，引线越短越好——约德尔人吉格斯简直就是天生的爆炸狂人。他曾是皮尔特沃夫一位发明家的助手，因为千篇一律的生活过于无聊，而与一个名叫金克丝的蓝发小疯子交上了朋友。在那疯狂的皮城一夜后，吉格斯接受了金克丝的建议，搬到了祖安，更加自由地探索那些令自己着迷的东西。对爆炸无尽追逐的吉格斯，一直是炼金男爵之流和可怜的普通市民共同忌惮的人物。', 
     stats: {
         armor: 21,
@@ -4826,9 +4826,9 @@ export const ICON_DATA = [
   },
   {
     id: '97', 
-    name: '仙灵女巫', 
-    description: '仙灵女巫', 
-    image: require('../../assets/lol_hero_icon/仙灵女巫.png'), 
+    name: 'Lulu_sup', 
+    description: '룰루', 
+    image: require('../../assets/lol_hero_icon/Lulu.png'), 
     detail: '璐璐是一位约德尔女巫，最著名的能力是操纵梦境般的幻觉和召唤各种奇异的小动物。在小仙灵皮克斯的陪伴下，璐璐在符文之地上四处云游。她会突发奇想地重塑现实，改变世界的本质结构，改造这个平凡的物质领域中任何让她感觉是限制的东西。虽然其他人对她的魔法颇有微词，往好听了说是一种异象，往难听了说是一种危害。但是璐璐始终认为，一点魔力的启发对任何人都没有坏处。', 
     stats: {
         armor: 26,
@@ -4876,9 +4876,9 @@ export const ICON_DATA = [
   },
   {
     id: '98', 
-    name: '荣耀行刑官', 
-    description: '荣耀行刑官', 
-    image: require('../../assets/lol_hero_icon/荣耀行刑官.png'), 
+    name: 'Draven_adc', 
+    description: '드레이븐', 
+    image: require('../../assets/lol_hero_icon/Draven.png'), 
     detail: '在诺克萨斯，有一种战士被称为“清算人”。他们在竞技场里互相厮杀，以鲜血作为赌注进行力量的考验，不过没有任何人能像德莱文那样受人追捧。曾经参过军的他，发现竞技场的观众们尤为喜爱他的耀武扬威和刻意表演，还有他挥舞飞斧时的无匹技艺。这种出神入化的斧技所带来的赞叹令他上瘾，德莱文发誓要不惜代价打败一切对手，以此确保自己的名字在帝国之中永世传唱。', 
     stats: {
         armor: 29,
@@ -4926,9 +4926,9 @@ export const ICON_DATA = [
   },
   {
     id: '99', 
-    name: '战争之影', 
-    description: '战争之影', 
-    image: require('../../assets/lol_hero_icon/战争之影.png'), 
+    name: 'Hecarim_jug', 
+    description: '헤카림', 
+    image: require('../../assets/lol_hero_icon/Hecarim.png'), 
     detail: '赫卡里姆是人与兽的幽灵混合体，身上的诅咒让他只能永世不停地践踏生者的灵魂。在福光岛被暗影吞噬之际，这位高傲的骑士被破败之咒的毁灭能量彻底湮没——连同他的骑兵团和他们胯下的坐骑。现在，符文之地上只要是有黑雾出现的地方，就会有赫卡里姆率军冲锋的鬼影，他们肆虐雀跃，用铁蹄践踏着脚下的幽魂。', 
     stats: {
         armor: 32,
@@ -4976,9 +4976,9 @@ export const ICON_DATA = [
   },
   {
     id: '100',
-    name: '虚空掠夺者',
-    description: '卡兹克',
-    image: require('../../assets/lol_hero_icon/虚空掠夺者.png'),
+    name: 'Khazix_jug',
+    description: '카직스',
+    image: require('../../assets/lol_hero_icon/Khazix.png'),
     detail: '虚空在成长，虚空在进化——在众多虚空生物中，没有谁能比卡兹克更完美体现这一特性。进化让这种恐怖的能力不断变异，求生的本能让它不断弑杀强者，只要遇到障碍，它就会进化出新的、更有效的方法反杀猎物。',
     stats: {
         armor: 36,
@@ -5026,9 +5026,9 @@ export const ICON_DATA = [
   },
   {
     id: '101',
-    name: '诺克萨斯之手',
-    description: '德莱厄斯',
-    image: require('../../assets/lol_hero_icon/诺克萨斯之手.png'),
+    name: 'Darius_top',
+    description: '다리우스',
+    image: require('../../assets/lol_hero_icon/Darius.png'),
     detail: '若要论谁才是诺克萨斯武力的象征，帝国上下没有人能比德莱厄斯这名久经沙场的指挥官更加适合。他劈开无数敌人的身躯——其中也不乏诺克萨斯人，终从一名无名小卒逐渐成长为如今的诺克萨斯之手。他从不怀疑自己执行的公义，也从不在举起战斧后迟疑。',
     stats: {
         armor: 39,
@@ -5076,9 +5076,9 @@ export const ICON_DATA = [
   },
   {
     id: '102', 
-    name: '冰霜女巫', 
-    description: '冰霜女巫', 
-    image: require('../../assets/lol_hero_icon/冰霜女巫.png'), 
+    name: 'Lissandra_mid', 
+    description: '리산드라', 
+    image: require('../../assets/lol_hero_icon/Lissandra.png'), 
     detail: '丽桑卓的魔法将纯净的冰霜之力扭曲为某种黑暗而可怕的东西。她的黯冰之力不仅能冻结一切，还能将任何反抗之人刺穿并粉碎。在北部终日惊惶的居民中，人们只知道她是“冰霜女巫”。但事实却更为邪恶：丽桑卓是自然世界的腐化者，她的阴谋是要让全世界都进入到彻骨寒冷的冰河世纪。', 
     stats: {
         armor: 22,
@@ -5126,9 +5126,9 @@ export const ICON_DATA = [
   },
   {
     id: '103', 
-    name: '皎月女神', 
-    description: '皎月女神', 
-    image: require('../../assets/lol_hero_icon/皎月女神.png'), 
+    name: 'Diana_mid_jug', 
+    description: '다이애나', 
+    image: require('../../assets/lol_hero_icon/Diana.png'), 
     detail: '永远都佩着她的月刃的黛安娜 ，是皎月教派的武士，但这个教派在巨神峰附近几乎已经销声匿迹。身着闪烁冬夜寒雪之光铠甲的黛安娜，在巨神峰之巅与星灵精魄相融，如今的她已不再是一个单纯的凡人，而是皎月神力的凡间化身。她努力抗争命运，寻找着神的启示，以及自己的力量与存在对于这个世界的意义。', 
     stats: {
         armor: 31,
@@ -5176,9 +5176,9 @@ export const ICON_DATA = [
   },
   {
     id: '104', 
-    name: '德玛西亚之翼', 
-    description: '德玛西亚之翼', 
-    image: require('../../assets/lol_hero_icon/德玛西亚之翼.png'), 
+    name: 'Quinn_top', 
+    description: '퀸', 
+    image: require('../../assets/lol_hero_icon/Quinn.png'), 
     detail: '奎因是德玛西亚的游骑兵精锐，经常深入敌国腹地执行危险的任务，她和她的传奇巨鹰华洛之间存在着一种牢不可破的纽带。很多时候，他们的对手死到临头也没意识到，自己面对着的这位德玛西亚英雄，并不是在孤军奋战。战斗中的奎因灵巧敏捷，十字弓例无虚发，而华洛则会从空中标记隐蔽的敌人。两者之间默契的配合造就了战场上一对致命凶狠的搭档。', 
     stats: {
         armor: 28,
@@ -5226,9 +5226,9 @@ export const ICON_DATA = [
   },
   {
     id: '105', 
-    name: '暗黑元首', 
-    description: '暗黑元首', 
-    image: require('../../assets/lol_hero_icon/暗黑元首.png'), 
+    name: 'Syndra_mid', 
+    description: '신드라', 
+    image: require('../../assets/lol_hero_icon/Syndra.png'), 
     detail: '辛德拉是一位令人胆寒的艾欧尼亚魔法师，操纵着难以置信的力量。她在孩童时期就因为狂暴而不受控制的魔法而让村庄的长老们深感不安。长老们把她送到外地接受严密的监管和训练，但她发现所谓的训练其实是对自己能力的限制。辛德拉将自己感受到的背叛与痛楚融入暗黑法球，并发誓消灭所有想要控制她的人。', 
     stats: {
         armor: 25,
@@ -5276,9 +5276,9 @@ export const ICON_DATA = [
   },
   {
     id: '106', 
-    name: '铸星龙王', 
-    description: '铸星龙王', 
-    image: require('../../assets/lol_hero_icon/铸星龙王.png'), 
+    name: 'AurelionSol_mid', 
+    description: '아우렐리온 솔', 
+    image: require('../../assets/lol_hero_icon/AurelionSol.png'), 
     detail: '奥瑞利安·索尔曾创造了奇迹般的群星，在无垠的荒芜太空布下宏伟的恩典。如今祂却遭人设计，被迫服从于某个潜藏在深空中的帝国。为了重返铸星大道，奥瑞利安•索尔誓要夺回自由，哪怕召星降怒，倾覆众生。', 
     stats: {
         armor: 22,
@@ -5326,9 +5326,9 @@ export const ICON_DATA = [
   },
   {
     id: '107', 
-    name: '影流之镰', 
+    name: 'Kayn_jug', 
     description: '影流之镰', 
-    image: require('../../assets/lol_hero_icon/影流之镰.png'), 
+    image: require('../../assets/lol_hero_icon/Kayn.png'), 
     detail: '悉达·凯隐是修行暗影魔法的天纵之才，他战斗的意义，是为了实现自己真正的命运——为了有朝一日能够率领影流教派，开创艾欧尼亚霸业的新世代。他挥舞着活体暗裔武器拉亚斯特，毫不在意它对自己身体与思想的腐化侵蚀。这样做只会有两种结局：要么，凯隐让这把武器屈服于自己的意志；要么，这把恶毒的刀刃将他彻底吞噬，为符文之地的毁灭奏响序曲。', 
     stats: {
         armor: 38,
@@ -5376,9 +5376,9 @@ export const ICON_DATA = [
   },
   {
     id: '108', 
-    name: '暮光星灵', 
-    description: '暮光星灵', 
-    image: require('../../assets/lol_hero_icon/暮光星灵.png'), 
+    name: 'Zoe_mid', 
+    description: '조이', 
+    image: require('../../assets/lol_hero_icon/Zoe.png'), 
     detail: '调皮捣蛋、异想天开而且变化莫测，佐伊就是这一切的现实化身。作为巨神族的宇宙信使，她的出现就是惊天巨变的先兆。她甚至无需任何行为，只是单纯地出现在某个地方，就足以扭曲周围的奥术数学法则，从而扰乱现实的物理定律。有的时候还会带来浩劫与灾难，虽然她本身并无半点恶意。或许这就是为什么她对待自己的职责总是那么地漫不经心，给了她充足的时间用来玩游戏、捉弄凡人，或者自娱自乐。与佐伊的邂逅可能会给人带来欢乐与激励，但她的现身往往没这么简单，甚至常常意味着极大的危险。', 
     stats: {
         armor: 21,
@@ -5426,9 +5426,9 @@ export const ICON_DATA = [
   },
   {
     id: '109', 
-    name: '荆棘之兴', 
-    description: '荆棘之兴', 
-    image: require('../../assets/lol_hero_icon/荆棘之兴.png'), 
+    name: 'Zyra_sup_jug', 
+    description: '자이라', 
+    image: require('../../assets/lol_hero_icon/Zyra.png'), 
     detail: '婕拉诞生于一次远古的巫术灾难，她是获得了实体形态的自然之怒，是拥有诱人外观的植物与人类的混合体。她的每一个脚步都在点燃新的生命。在她眼里，瓦洛兰的众多凡人都只不过供她播种的猎物，用夺命的尖刺杀死他们也是一件不值一提的小事。虽然她的真正目的还是个谜，但婕拉一直在世界上流浪，肆意放纵自己占领土地的欲望，同时扼杀自己领地上的所有其他生命。', 
     stats: {
         armor: 29,
@@ -5476,9 +5476,9 @@ export const ICON_DATA = [
   },
   {
     id: '110', 
-    name: '虚空之女', 
-    description: '虚空之女', 
-    image: require('../../assets/lol_hero_icon/虚空之女.png'), 
+    name: 'Kaisa_adc', 
+    description: '카이사', 
+    image: require('../../assets/lol_hero_icon/Kaisa.png'), 
     detail: '在孩童时期就被虚空掠夺走的卡莎，凭着顽强的意志力活了下来。那些经历，让她成为了一位夺命猎手——或许有人会称她为“黑暗未来的使者”。如今，卡莎与一副活着的虚空生物甲壳形成了一种微妙的共生状态，但很快她就将面临一个重大的抉择：究竟是原谅那些称她为怪物的凡人，与之共同抵御虚空压境的黑暗……还是干脆忘记，放任虚空吞噬这个已将她抛弃的世界。', 
     stats: {
         armor: 25,
@@ -5526,9 +5526,9 @@ export const ICON_DATA = [
   },
   {
     id: '111', 
-    name: '星籁歌姬', 
-    description: '星籁歌姬', 
-    image: require('../../assets/lol_hero_icon/星籁歌姬.png'), 
+    name: 'Seraphine_sup', 
+    description: '세라핀', 
+    image: require('../../assets/lol_hero_icon/Seraphine.png'), 
     detail: '萨勒芬妮生在皮城，但父母都是祖安人。她能听到其他人的灵魂——整个世界都在对她唱歌，而她也回以自己的歌声。虽然她小的时候曾被这些声音压得不堪重负，但如今她从这些声音中汲取灵感，将混乱变为协奏。她为这对姊妹城市演唱，提醒这里的人们，他们并不孤单，他们凝聚起来会更强大，在她眼中，他们的潜力是无限的。', 
     stats: {
         armor: 26,
@@ -5576,9 +5576,9 @@ export const ICON_DATA = [
   },
   {
     id: '112', 
-    name: '迷失之牙', 
-    description: '迷失之牙', 
-    image: require('../../assets/lol_hero_icon/迷失之牙.png'), 
+    name: 'Gnar_top', 
+    description: '나르', 
+    image: require('../../assets/lol_hero_icon/Gnar.png'), 
     detail: '纳尔是一个原始约德尔人，讨人喜爱的小个子突然发起脾气来，就会变成一头巨大的野兽，脑海中只剩下破坏的念头。纳尔被臻冰冻结了数千年，如今他重获自由。这个面目全非的世界，在他充满好奇的眼里处处都是新鲜奇妙。因为纳尔在危险中会特别兴奋，所以他会随便抓起任何东西丢向自己的敌人，无论是他的骨齿回力标，还是手边的大房子。', 
     stats: {
         armor: 32,
@@ -5626,9 +5626,9 @@ export const ICON_DATA = [
   },
   {
     id: '113', 
-    name: '生化魔人', 
-    description: '生化魔人', 
-    image: require('../../assets/lol_hero_icon/生化魔人.png'), 
+    name: 'Zac_jug', 
+    description: '자크', 
+    image: require('../../assets/lol_hero_icon/Zac.png'), 
     detail: '一滩泄漏的毒液，顺着炼金科技设施的裂缝流进了祖安的地沟区，在深处一个与世隔绝的坑洞里积成了一洼。出身虽然如此低微，但扎克却从一团蒙昧的黏液长成了一个有思想的实体，栖息在城里的管道中，偶尔露面，帮助那些无助的人，或是修缮祖安的各种公共设施。', 
     stats: {
         armor: 33,
@@ -5676,9 +5676,9 @@ export const ICON_DATA = [
   },
   {
     id: '114', 
-    name: '疾风剑豪', 
-    description: '疾风剑豪', 
-    image: require('../../assets/lol_hero_icon/疾风剑豪.png'), 
+    name: 'Yasuo', 
+    description: '야스오', 
+    image: require('../../assets/lol_hero_icon/Yasuo.png'), 
     detail: '亚索是一个百折不屈的艾欧尼亚人，也是一名身手敏捷的御风剑客。这位生性自负的年轻人，被误认作杀害长老的凶手——无法自证清白的亚索因此出于自卫而出手杀死了自己的哥哥。之后，虽然长老死亡的真相已然大白，他的哥哥也已离奇重生，但亚索仍然无法原谅自己的所作所为。他将自己放逐于天涯，听任疾风指引着剑刃的方向。', 
     stats: {
         armor: 32,
@@ -5726,9 +5726,9 @@ export const ICON_DATA = [
   },
   {
     id: '115', 
-    name: '虚空之眼', 
-    description: '虚空之眼', 
-    image: require('../../assets/lol_hero_icon/虚空之眼.png'), 
+    name: 'Velkoz_mid_sup', 
+    description: '벨코즈', 
+    image: require('../../assets/lol_hero_icon/Velkoz.png'), 
     detail: '人们不太确定维克兹是否是符文之地上出现的第一个虚空生物，但可以确定的是没有第二个虚空生物能超过他的残忍和精明。他的同类通常都会吞噬或者破坏周围的一切，然而维克兹却一直在仔细观察并研究这个物质世界，以及世界上这些奇怪的好战生物，寻找虚空可以利用的弱点。但维克兹绝不是个被动的观察者，他会用致命的电浆射线回击任何威胁，甚至还能扰动世界本身的基础构造。', 
     stats: {
         armor: 22,
@@ -5776,9 +5776,9 @@ export const ICON_DATA = [
   },
   {
     id: '116', 
-    name: '岩雀', 
-    description: '岩雀', 
-    image: require('../../assets/lol_hero_icon/岩雀.png'), 
+    name: 'Taliyah_mid_jug', 
+    description: '탈리야', 
+    image: require('../../assets/lol_hero_icon/Taliyah.png'), 
     detail: '塔莉垭是一位来自恕瑞玛的游牧民族的法师，孩子的好奇与大人的责任两股力量同时拉扯着她。她曾踏遍瓦洛兰的山山水水，只为寻得控制己身异能的法门，不过最近，她已经回到了故乡，保护生她养她的部族。有些人把她的温柔善意当做是懦弱的表现，最终也为自己的愚鲁付出了代价。塔莉垭青春稚嫩的举止背后，是一颗敢于移山填海的雄心，和一个堪能倾世的灵魂。', 
     stats: {
         armor: 18,
@@ -5826,9 +5826,9 @@ export const ICON_DATA = [
   },
   {
     id: '117', 
-    name: '青钢影', 
-    description: '青钢影', 
-    image: require('../../assets/lol_hero_icon/青钢影.png'), 
+    name: 'Camille_top_sup', 
+    description: '카밀', 
+    image: require('../../assets/lol_hero_icon/Camille.png'), 
     detail: '卡蜜尔是菲罗斯家族的首席密探，游走于法律失效的边缘地带，小心地维护着皮尔特沃夫与其治下的祖安，确保一切都能顺畅运转。在灵活而精准的卡密尔看来，任何浮皮潦草的技术都是必须被禁绝的丑陋行径。她的心智也如其身下的刀刃一般锐利，为了追求极致，她对自己进行了大幅度的海克斯人体增强手术。这也让很多人不禁怀疑，她根本就是一台纯粹的机器，而不是一个女人。', 
     stats: {
         armor: 35,
@@ -5876,9 +5876,9 @@ export const ICON_DATA = [
   },
   {
     id: '118', 
-    name: '影哨', 
-    description: '影哨', 
-    image: require('../../assets/lol_hero_icon/影哨.png'), 
+    name: 'Akshan_adc', 
+    description: '악샨', 
+    image: require('../../assets/lol_hero_icon/Akshan.png'), 
     detail: '面对天大的危险，阿克尚也只会轻轻挑起一边眉毛。他身手矫健，嫉恶如仇——而且显而易见，他对服饰兴趣不大。阿克尚非常善于潜行，能够避开敌人的耳目，出现在最令人出其不意的时机。他怀着强烈的正义感，带着一把可以逆转生死的传奇武器，在符文之地上主持公道，惩治邪祟。他以自己的生命践行着自己的信条：“不做混蛋。”', 
     stats: {
         armor: 26,
@@ -5927,9 +5927,9 @@ export const ICON_DATA = [
   
   {
     id: '119', 
-    name: '弗雷尔卓德之心', 
-    description: '弗雷尔卓德之心', 
-    image: require('../../assets/lol_hero_icon/弗雷尔卓德之心.png'), 
+    name: 'Braum_sup', 
+    description: '브라움', 
+    image: require('../../assets/lol_hero_icon/Braum.png'), 
     detail: '拥有大肌肉和大心脏的布隆，是一位受人爱戴的弗雷尔卓德英雄，在弗雷尔卓德北部的任何一家蜜酒坊里，都有人在这位传奇般的强壮英雄致敬。据说他曾在一夜之间扫平一整片橡树森林，还曾用拳头把一整座山打成碎石子。那抹小胡子勾勒出的笑容和布隆的肌肉一样夺目，他手持一扇附有魔法的秘库大门当盾牌，常年在北方的冻土上漫游，真诚友善地帮助着所有陷入危难之中的人。', 
     stats: {
         armor: 47,
@@ -5977,9 +5977,9 @@ export const ICON_DATA = [
   },
   {
     id: '120', 
-    name: '戏命师', 
-    description: '戏命师', 
-    image: require('../../assets/lol_hero_icon/戏命师.png'), 
+    name: 'Jhin_adc', 
+    description: '진', 
+    image: require('../../assets/lol_hero_icon/Jhin.png'), 
     detail: '作为一名心思缜密的癫狂杀手，烬坚信如何让人直面死亡是一门精巧的艺术。他曾在艾欧尼亚的监狱中服刑，却因执政议会里涌动的暗流得到释放，最终成为权术斗争所利用的刺客。烬将手中的枪当成画笔，尽情地挥洒他所追求的残忍艺术，让受害者肝胆俱裂，令旁观者震悚难平。他在自己制作的阴森剧目里肆意取乐，让“恐怖”二字有了最合适不过的定义。', 
     stats: {
         armor: 24,
@@ -6027,9 +6027,9 @@ export const ICON_DATA = [
   },
   {
     id: '121', 
-    name: '永猎双子', 
-    description: '永猎双子', 
-    image: require('../../assets/lol_hero_icon/永猎双子.png'), 
+    name: 'Kindred_jug', 
+    description: '킨드레드', 
+    image: require('../../assets/lol_hero_icon/Kindred.png'), 
     detail: '千珏，作为象征死亡的一对精魂，他们互相独立，却从未分离。对于坦然接受命运的人来说，羊灵的长弓可以痛快地送他们离开生者的乐园，而妄图逃脱宿命的人则由狼灵追捕，痛苦地倒在他有力的撕咬下。虽然在符文之地上到处是关于千珏的不同传言，但每个人在临终时都会看到死亡的真正面孔。至于是哪一面，完全出自个人的抉择。', 
     stats: {
         armor: 29,
@@ -6077,9 +6077,9 @@ export const ICON_DATA = [
   },
   {
     id: '122', 
-    name: '祖安花火', 
-    description: '祖安花火', 
-    image: require('../../assets/lol_hero_icon/祖安花火.png'), 
+    name: 'Zeri_adc_mid', 
+    description: '제리', 
+    image: require('../../assets/lol_hero_icon/Zeri.png'), 
     detail: '泽丽是一个顽强固执、意志坚定的女孩。她出身自祖安的工人阶层，可以引导电能魔法来为自身和她特制的枪械充能。动荡难测的能量也是她内心情绪的写照，闪烁的火花反映出她轻快如电的生活态度。泽丽对他人抱有深切的同情，而来自家人和故乡的爱也伴随着她投身于每一场战斗。虽然这种迫切的渴望有时也会给她带来麻烦，但是泽丽毫不怀疑的是，为你的同胞奋起抗争，便一定能够一呼百应。', 
     stats: {
         armor: 24,
@@ -6127,9 +6127,9 @@ export const ICON_DATA = [
   },
   {
     id: '123', 
-    name: '暴走萝莉', 
-    description: '暴走萝莉', 
-    image: require('../../assets/lol_hero_icon/暴走萝莉.png'), 
+    name: 'Jinx_adc', 
+    description: '징크스', 
+    image: require('../../assets/lol_hero_icon/Jinx.png'), 
     detail: '神经狂躁、冲动任性、劣迹斑斑……金克丝出身自祖安，生来就爱不计后果地大搞破坏。她就是一座人形自走军火库，所经之处必定会留下夺目的火光和震耳的爆炸。金克丝最讨厌无聊，所以不管她去到哪里，混乱和骚动就会如期而至，这就是她留下的“到此一游”。', 
     stats: {
         armor: 26,
@@ -6177,9 +6177,9 @@ export const ICON_DATA = [
   },
   {
     id: '124', 
-    name: '河流之王', 
-    description: '河流之王', 
-    image: require('../../assets/lol_hero_icon/河流之王.png'), 
+    name: 'TahmKench_top_sup', 
+    description: '탐 켄치', 
+    image: require('../../assets/lol_hero_icon/TahmKench.png'), 
     detail: '塔姆在历史上有许多不同的名字，他游历于符文之地的各条水道，用大意之人的悲惨喂养自己贪得无厌的食欲。虽然他的外表可能富有古怪的魅力和得意，但他在物质领域的漫游只是为了寻找毫无戒心的猎物。他的舌头像巨大的鞭子，即使是全副武装的重甲士兵也会被他从十几步以外的距离击晕，而如果跌入了他隆隆作响的肚子里，就相当于掉进了九死一生的绝命深渊。', 
     stats: {
         armor: 42,
@@ -6227,9 +6227,9 @@ export const ICON_DATA = [
   },
   {
     id: '125', 
-    name: '狂厄蔷薇', 
-    description: '狂厄蔷薇', 
-    image: require('../../assets/lol_hero_icon/狂厄蔷薇.png'), 
+    name: 'Briar_jug', 
+    description: '브라이어', 
+    image: require('../../assets/lol_hero_icon/Briar.png'), 
     detail: '身为黑色玫瑰实验失败的产物，贝蕾亚不受控制的嗜血欲必须使用一种特殊的囚枷进行压制，进而让她保持清醒的头脑。经过多年的监禁，这具活体武器突破了拘束，闯到了外面的世界。如今的她不受任何人的掌控，只遵循自己对知识与鲜血的渴望。如果遇到合适的机会，她将细细品味放纵的感觉，只不过嗜血的狂意一旦释放就很难压制。', 
     stats: {
         armor: 30,
@@ -6277,9 +6277,9 @@ export const ICON_DATA = [
   },
   {
     id: '126', 
-    name: '破败之王', 
-    description: '破败之王', 
-    image: require('../../assets/lol_hero_icon/破败之王.png'), 
+    name: 'Viego_jug', 
+    description: '비에고', 
+    image: require('../../assets/lol_hero_icon/Viego.png'), 
     detail: '这位失落千年的王国之主——佛耶戈，为了让亡妻死而复生，引发了一场被后世称为“破败之咒”的魔灾，自己也不幸因此殒命。如今的佛耶戈已经变成了一个强大的亡魂怨灵，依然执着地迷恋着几百年前便已死去的王后。他号称破败之王，操纵着夺命的蚀魂夜，在符文之地上不懈地搜寻着，希望有朝一日能将她追回。无穷无尽的黑雾从他早已支离的心中涌出，扫除他面前的一切阻碍。', 
     stats: {
         armor: 34,
@@ -6327,9 +6327,9 @@ export const ICON_DATA = [
   },
   {
     id: '127', 
-    name: '涤魂圣枪', 
-    description: '涤魂圣枪', 
-    image: require('../../assets/lol_hero_icon/涤魂圣枪.png'), 
+    name: 'Senna_sup', 
+    description: '세나', 
+    image: require('../../assets/lol_hero_icon/Senna.png'), 
     detail: '自幼便遭遇诅咒的赛娜，注定会被那些超自然的诡秘黑雾不断侵扰，后来她加入了神圣的“光明哨兵”教团，对黑雾发起了勇猛的反击。可惜，最后她却牺牲在战场上，灵魂则被囚禁在残忍的怨灵——锤石的灯笼中。身陷囹圄的赛娜并没有放弃希望，而是学会了利用黑雾的力量，把握机会重获新生，也因此而面目全非。如今的赛娜可以同时操纵黑暗和光明的力量，动用黑雾的力量来终结黑雾——圣石武器的每一发炮火，都能救赎黑雾中迷失的灵魂。', 
     stats: {
         armor: 28,
@@ -6377,9 +6377,9 @@ export const ICON_DATA = [
   },
   {
     id: '128', 
-    name: '圣枪游侠', 
-    description: '圣枪游侠', 
-    image: require('../../assets/lol_hero_icon/圣枪游侠.png'), 
+    name: 'Lucian_top_mid_adc', 
+    description: '루시안', 
+    image: require('../../assets/lol_hero_icon/Lucian.png'), 
     detail: '卢锡安，一名光明哨兵，使用一双圣石手枪对不死亡灵进行无情追踪与狩猎的残酷猎手。当怨灵锤石夺走他妻子的生命后，卢锡安便踏上了复仇之路。即便如今他的妻子已重获新生，卢锡安的怒火也依然没有平息。铁血又固执的卢锡安将不惜一切代价，对抗黑雾中那些亡故已久的恐怖，保护活着的人们。', 
     stats: {
         armor: 28,
@@ -6427,9 +6427,9 @@ export const ICON_DATA = [
   },
   {
     id: '129', 
-    name: '影流之主', 
-    description: '影流之主', 
-    image: require('../../assets/lol_hero_icon/影流之主.png'), 
+    name: 'Zed_mid_jug', 
+    description: '제드',
+    image: require('../../assets/lol_hero_icon/Zed.png'), 
     detail: '作为影流教派的领袖，劫已彻底抛弃了仁慈与怜悯。他创立影流的目的，是将艾欧尼亚的魔法和传统武术融于实战之中，以驱逐诺克萨斯侵略者。在战争中，绝望指引他开启了神秘的暗影形态——这是一种恶灵魔法，虽然强大，但非常危险，且容易被腐化之力侵蚀。劫已完全掌握了这种禁忌之术，他用它来摧毁自己眼中的威胁、维护自己的国家以及自己的教派。', 
     stats: {
         armor: 32,
@@ -6477,9 +6477,9 @@ export const ICON_DATA = [
   },
   {
     id: '130', 
-    name: '暴怒骑士', 
-    description: '暴怒骑士', 
-    image: require('../../assets/lol_hero_icon/暴怒骑士.png'), 
+    name: 'Kled_top_mid', 
+    description: '클레드', 
+    image: require('../../assets/lol_hero_icon/Kled.png'), 
     detail: '无畏而且无赖的约德尔人克烈是诺克萨斯的意志化身、帝国士兵的仰慕偶像、长官眼里的定时炸弹、贵族鄙夷的送死小卒。很多军士都说，克烈参与了有史以来军团所挑起的每一场征战，“获得”了军中的每一份头衔，而且从来没有却步于任何一次战斗。虽然传闻总是不可全信，但至少有一件事毋庸置疑：只要克烈骑着胆小的斯嘎尔冲进战场，他的战斗便是为了保住所拥有的一切……或是抢走他想要的一切。', 
     stats: {
         armor: 35,
@@ -6527,9 +6527,9 @@ export const ICON_DATA = [
   },
   {
     id: '131', 
-    name: '时间刺客', 
-    description: '时间刺客', 
-    image: require('../../assets/lol_hero_icon/时间刺客.png'), 
+    name: 'Ekko_mid_jug', 
+    description: '에코', 
+    image: require('../../assets/lol_hero_icon/Ekko.png'), 
     detail: '艾克是一名来自祖安不良街区的天才少年。他能操纵时间，以使任何处境都变得对自己有利。通过使用自己的发明——Z型驱动——艾克可以在现实世界与其它平行分支之间探索。尽管他酷爱这种自由，但只要朋友们遇到了威胁，他就会不顾一切地去保护他们。在旁观者眼里，艾克总是能轻而易举地完成那些看似不可能办到的事情，且屡试不爽。', 
     stats: {
         armor: 32,
@@ -6577,9 +6577,9 @@ export const ICON_DATA = [
   },
   {
     id: '132', 
-    name: '元素女皇', 
-    description: '元素女皇', 
-    image: require('../../assets/lol_hero_icon/元素女皇.png'), 
+    name: 'Qiyana_mid_jug', 
+    description: '키아나', 
+    image: require('../../assets/lol_hero_icon/Qiyana.png'), 
     detail: '在丛林都市以绪奥肯中，奇亚娜谋划着自己荣登育恩塔尔塔座的无情之路。作为父母的末位继承人，她以前无古人的元素魔法技艺，傲视所有挡在面前的人。这片大地服从着奇亚娜的每一道指令，她认为自己是以绪奥肯历史上最伟大的元素使——就凭这点，她理应执掌的不仅是一座城邦，而是一个帝国。', 
     stats: {
         armor: 31,
@@ -6627,9 +6627,9 @@ export const ICON_DATA = [
   },
   {
     id: '133', 
-    name: '皮城执法官', 
-    description: '皮城执法官', 
-    image: require('../../assets/lol_hero_icon/皮城执法官.png'), 
+    name: 'Vi_jug', 
+    description: '바이', 
+    image: require('../../assets/lol_hero_icon/Vi.png'), 
     detail: '蔚曾经是祖安黑街上的破坏分子。她性格急躁、脾气火爆、凶神恶煞，对权威满心不屑。很早就是孤身一人的蔚，练就了一身独自生存的本领，也培养出一种恶毒刻薄的幽默感。现在，蔚与皮尔特沃夫守卫一起合作，维护着皮城的安宁。无论是铜墙铁壁还是敌人的心理防线，她手上那副巨型海克斯科技拳套都可以轻易将之击破。', 
     stats: {
         armor: 30,
@@ -6677,9 +6677,9 @@ export const ICON_DATA = [
   },
   {
     id: '134', 
-    name: '暗裔剑魔', 
-    description: '暗裔剑魔', 
-    image: require('../../assets/lol_hero_icon/暗裔剑魔.png'), 
+    name: 'Aatrox_mid_top', 
+    description: '아트록스', 
+    image: require('../../assets/lol_hero_icon/Aatrox.png'), 
     detail: '亚托克斯和他的同胞曾是为恕瑞玛对抗虚空的守护者一族。曾经满载荣誉的他们，却成了符文之地上更大的威胁，最后被人类设下的圈套所击败。在被囚禁数个世纪后，亚托克斯率先找到了重获自由的方法：他的精魂被封印在了那把神奇武器之中，而那些妄图挥舞它的愚昧之徒都会被他腐蚀、侵占。如今，他凭借偷来的身躯，以一种近似他曾经形态的凶残外表行走于符文之地，寻求着一次毁天灭地、迟来许久的复仇。', 
     stats: {
         armor: 38,
@@ -6727,9 +6727,9 @@ export const ICON_DATA = [
   },
   {
     id: '135', 
-    name: '唤潮鲛姬', 
-    description: '唤潮鲛姬', 
-    image: require('../../assets/lol_hero_icon/唤潮鲛姬.png'), 
+    name: 'Nami_sup', 
+    description: '나미', 
+    image: require('../../assets/lol_hero_icon/Nami.png'), 
     detail: '娜美是一名强大年轻的瓦斯塔亚海族。当鲛人族与巨神族自古订立的契约被打破，她是第一个离开海洋、踏上陆地的人。她别无选择，只能挺身而出担此重任，完成神圣的仪式以确保族人的安全。在这崭新时代的混乱浪潮中，娜美以无比的决心和无畏的斗志面对未知的明天，用手中的唤潮者之杖召唤来自海洋的力量。', 
     stats: {
         armor: 29,
@@ -6777,9 +6777,9 @@ export const ICON_DATA = [
   },
   {
     id: '136', 
-    name: '沙漠皇帝', 
-    description: '沙漠皇帝', 
-    image: require('../../assets/lol_hero_icon/沙漠皇帝.png'), 
+    name: 'Azir_mid', 
+    description: '아지르', 
+    image: require('../../assets/lol_hero_icon/Azir.png'), 
     detail: '阿兹尔是上古时期恕瑞玛的一位凡人皇帝，一位站在不朽神话巅峰的自豪之人。但他的狂妄引来了旁人的背叛，在最伟大胜利降临的那一刻将他杀害。而现在，数千年后，他重获新生并成为了力量无边的飞升者。阿兹尔的城市已经从黄沙之下崛起，他要让恕瑞玛恢复曾经的荣光。', 
     stats: {
         armor: 25,
@@ -6827,9 +6827,9 @@ export const ICON_DATA = [
   },
   {
     id: '137', 
-    name: '魔法猫咪', 
-    description: '魔法猫咪', 
-    image: require('../../assets/lol_hero_icon/魔法猫咪.png'), 
+    name: 'Yuumi_sup', 
+    description: '유미',
+    image: require('../../assets/lol_hero_icon/Yuumi.png'), 
     detail: '作为一只来自班德尔城的魔法猫咪，悠米曾是一名约德尔魔女的守护灵，她的主人名叫诺拉。而当主人神秘消失以后，悠米就成为了《门扉魔典》的守护者，这是诺拉留下的一本有灵性的书，他们一起穿越书页中的传送门，共同寻找诺拉。渴望被宠爱的悠米在她的旅途中寻找着友善的同伴，为同伴们提供闪光护盾和坚决意志作为保护。虽然魔典竭尽全力让她把注意力留在最初的任务上，但悠米经常会被世俗的安逸所吸引，比如打盹和吃鱼。但安逸过后，她总是会回归自己的任务，找寻自己的朋友。', 
     stats: {
         armor: 25,
@@ -6877,9 +6877,9 @@ export const ICON_DATA = [
   },
   {
     id: '138', 
-    name: '沙漠玫瑰', 
-    description: '沙漠玫瑰', 
-    image: require('../../assets/lol_hero_icon/沙漠玫瑰.png'), 
+    name: 'Samira_adc', 
+    description: '사미라',
+    image: require('../../assets/lol_hero_icon/Samira.png'), 
     detail: '莎弥拉以寸步不让的自信直视死亡，无论走到哪里都要寻找刺激。生于恕瑞玛的她在很小的时候就被摧毁了家园，后来受到了诺克萨斯的感召，在那里，她成为了英姿飒爽的孤胆女将，专门处理最高规格的凶险任务。莎弥拉使用黑火药双枪外加一把特殊制程工艺的大刀，她在生死存亡的关头尤为勇猛，以闪钢与烈焰终结任何拦路者。', 
     stats: {
         armor: 26,
@@ -6927,9 +6927,9 @@ export const ICON_DATA = [
   },
   {
     id: '139',
-    name: '魂锁典狱长', 
-    description: '魂锁典狱长', 
-    image: require('../../assets/lol_hero_icon/魂锁典狱长.png'), 
+    name: 'Thresh_sup', 
+    description: '쓰레쉬',
+    image: require('../../assets/lol_hero_icon/Thresh.png'),
     detail: '暴虐又狡猾的锤石是一个来自暗影岛的亡灵，野心勃勃、不知疲倦。他曾经是无数奥秘的看守，在一种超越生死的力量下骨肉瓦解，而现在他则使用自己独创的钻心痛苦缓慢地折磨并击溃其他人，以此作为自己存在下去的手段。被他迫害的人需要承受远超死亡的痛苦，因为锤石会让他们的灵魂也饱尝剧痛，将他们的灵魂囚禁在自己的灯笼中，经受永世的折磨。', 
     stats: {
         armor: 33,
@@ -6977,9 +6977,9 @@ export const ICON_DATA = [
   },
   {
     id: '140', 
-    name: '海兽祭司', 
-    description: '海兽祭司', 
-    image: require('../../assets/lol_hero_icon/海兽祭司.png'), 
+    name: 'Illaoi_top', 
+    description: '일라오이', 
+    image: require('../../assets/lol_hero_icon/Illaoi.png'), 
     detail: '俄洛伊的体格强横无比，却唯独会在她的坚定信仰面前屈身。作为大海兽的先知，她挥舞着一个巨大的金色神像，将敌人的灵魂抽离体外，完全击毁他们对现实的感知。所有对“娜伽卡波洛丝的真者”发起挑战的人，很快就会发现，俄洛伊从来不单打独斗——蟒行群岛的神明会与她并肩作战。', 
     stats: {
         armor: 35,
@@ -7027,9 +7027,9 @@ export const ICON_DATA = [
   },
   {
     id: '141', 
-    name: '虚空遁地兽', 
-    description: '虚空遁地兽', 
-    image: require('../../assets/lol_hero_icon/虚空遁地兽.png'), 
+    name: 'RekSai_jug', 
+    description: '렉사이', 
+    image: require('../../assets/lol_hero_icon/RekSai.png'), 
     detail: '作为食物链顶端的掠食者，残忍无情的虚空生物，雷克赛能够在地下挖掘隧道，偷袭并吞食毫无防备的猎物。她那永不满足的饥渴让曾经鼎盛一时的恕瑞玛帝国所在的地区满目疮痍。商人、贸易者和武装商队都会绕行百里，来躲开这些广袤的地区。一旦有人在遥远的地平线看到雷克赛，就等于看到自己葬身沙砾之下的命运。', 
     stats: {
         armor: 36,
@@ -7077,9 +7077,9 @@ export const ICON_DATA = [
   },
   {
     id: '142', 
-    name: '翠神', 
-    description: '翠神', 
-    image: require('../../assets/lol_hero_icon/翠神.png'), 
+    name: 'Ivern_jug', 
+    description: '아이번', 
+    image: require('../../assets/lol_hero_icon/Ivern.png'), 
     detail: '半人半树的艾翁•荆足常在符文之地的丛林中游荡，所经之处无不生机盎然。他知晓自然界的种种秘密，无论是飞禽走兽还是游鱼虫孑，都与他交谊深厚。在逍遥四野的途中，艾翁会向路遇的人传授奇特的智慧，或是培植丰茂的丛林。时不时地，他也会向口风不严的蝴蝶托付自己所知的秘密。', 
     stats: {
         armor: 27,
@@ -7127,9 +7127,9 @@ export const ICON_DATA = [
   },
   {
     id: '143', 
-    name: '复仇之矛', 
-    description: '复仇之矛', 
-    image: require('../../assets/lol_hero_icon/复仇之矛.png'), 
+    name: 'Kalista_adc_top', 
+    description: '칼리스타', 
+    image: require('../../assets/lol_hero_icon/Kalista.png'), 
     detail: '卡莉丝塔是充满复仇怨念的幽灵，是不灭的复仇之魂，是召唤自暗影岛的噩梦，专门猎杀背信弃义之人。因遭人背叛而受害的人会以血泪盼望着复仇，但只有甘愿献上自己灵魂的人，才能获得卡莉丝塔的回应。所有被卡莉丝塔盯上的人都将不可避免地遭遇不幸，因为这位死亡猎手完成誓约的方式只有一种，那就是她灵魂标枪上的冷酷灵火。', 
     stats: {
         armor: 24,
@@ -7177,9 +7177,9 @@ export const ICON_DATA = [
   },
   {
     id: '144', 
-    name: '星界游神', 
-    description: '星界游神', 
-    image: require('../../assets/lol_hero_icon/星界游神.png'), 
+    name: 'Bard_sup', 
+    description: '바드', 
+    image: require('../../assets/lol_hero_icon/Bard.png'), 
     detail: '巴德是星界彼端的旅者，是奇缘巧遇的使者。他艰难地维护着宇宙的平衡，从而让生命能够抵御无情的混乱。符文之地有许多人传唱关于他的歌谣，内容里流露出对他超凡本质的猜想，而所有这些歌谣都会提及同一件事：这位星界游荡者总是会被强大的魔法圣物所吸引。一群木灵欢唱乐团始终围绕在巴德身边充当小帮手，他的行为绝不会被误会带有任何恶意，因为他永远都是在为更大的良善尽职尽责，只不过他的方式不为常人理解。', 
     stats: {
         armor: 34,
@@ -7227,9 +7227,9 @@ export const ICON_DATA = [
   },
   {
     id: '145', 
-    name: '幻翎', 
-    description: '幻翎', 
-    image: require('../../assets/lol_hero_icon/幻翎.png'), 
+    name: 'Rakan_sup', 
+    description: '라칸', 
+    image: require('../../assets/lol_hero_icon/Rakan.png'), 
     detail: '对洛特兰部落而言，瓦斯塔亚的洛是臭名远播的捣蛋鬼，同时也是有史以来最为出色的战舞舞者。他风流潇洒，魅力无穷，同时却令人难以捉摸。在艾欧尼亚高地的居民眼中，“洛”这个名字一旦出现，就一定会带来热闹非凡的节日庆典、热火朝天的狂欢派对和杂乱无章的音乐。很少人知道，这个精力充沛的浪荡子和叛逆的霞是一对儿，而他的一举一动就是为了全力配合她的行动。', 
     stats: {
         armor: 30,
@@ -7277,9 +7277,9 @@ export const ICON_DATA = [
   },
   {
     id: '146', 
-    name: '逆羽', 
-    description: '逆羽', 
-    image: require('../../assets/lol_hero_icon/逆羽.png'), 
+    name: 'Xayah_adc', 
+    description: '샤야', 
+    image: require('../../assets/lol_hero_icon/Xayah.png'), 
     detail: '身为瓦斯塔亚的一名有志之士，霞意在掀起一场革命来拯救她的族群。她身法敏捷又慧心独具，凭借锋芒逼人的羽刃，扫除任何异己。霞与她的灵魂伴侣洛并肩作战，守护着他们日渐衰落的部族，韬光养晦，希望终有一天能率领全族重夺昔日荣光。', 
     stats: {
         armor: 25,
@@ -7327,9 +7327,9 @@ export const ICON_DATA = [
   },
   {
     id: '147', 
-    name: '山隐之焰', 
-    description: '山隐之焰', 
-    image: require('../../assets/lol_hero_icon/山隐之焰.png'), 
+    name: 'Ornn_top', 
+    description: '오른', 
+    image: require('../../assets/lol_hero_icon/Ornn.png'), 
     detail: '奥恩是弗雷尔卓德的一位半神，主掌着锻造和工艺。他在名为炉乡的火山下的溶洞中凿出了一座雄伟的工坊，独自一人在里头干活。他摆弄着熔岩沸腾的坩埚，提炼矿石，打造出无与伦比的精良物件。当其他神灵——尤其是沃利贝尔，在大地上行走并且介入了凡间的事务时，奥恩就会出面，将这些鲁莽的家伙劝回各自的位置上。要么是用手里可靠的锤子，要么就是群山的烈火。', 
     stats: {
         armor: 33,
@@ -7377,9 +7377,9 @@ export const ICON_DATA = [
   },
   {
     id: '148', 
-    name: '解脱者', 
-    description: '解脱者', 
-    image: require('../../assets/lol_hero_icon/解脱者.png'), 
+    name: 'Sylas_mid_jug_top_sup', 
+    description: '사일러스', 
+    image: require('../../assets/lol_hero_icon/Sylas.png'), 
     detail: '在小城边沟镇长大的塞拉斯，如今却成了德玛西亚雄都的黑暗面的代表人物。当他还是个男孩的时候，人人避之唯恐不及的搜魔人发现他拥有感知法师的能力，便将他控制起来，利用这种能力来对付塞拉斯的同类。逃出生天之后的塞拉斯现在是一个坚定的抗命者，他要借助法师的力量摧毁自己曾经侍奉过的王国。遭到放逐而前来追随他的法师也与日俱增。', 
     stats: {
         armor: 29,
@@ -7427,9 +7427,9 @@ export const ICON_DATA = [
   },
   {
     id: '149', 
-    name: '万花通灵', 
-    description: '万花通灵', 
-    image: require('../../assets/lol_hero_icon/万花通灵.png'), 
+    name: 'Neeko_mid_sup', 
+    description: '니코', 
+    image: require('../../assets/lol_hero_icon/Neeko.png'), 
     detail: '妮蔻来自一个早已迷失的瓦斯塔亚部落。她可以借用别人的外表来伪装自己，融入人群，甚至通过影响别人的情绪状态，一瞬间就能化敌为友。没人知道妮蔻到底在哪儿——或者到底是谁，但是想要为难她的人会立刻见识到她的本色，感受原始的精神魔法倾泻在自己身上的痛苦。', 
     stats: {
         armor: 21,
@@ -7477,9 +7477,9 @@ export const ICON_DATA = [
   },
   {
     id: '150', 
-    name: '残月之肃', 
-    description: '残月之肃', 
-    image: require('../../assets/lol_hero_icon/残月之肃.png'), 
+    name: 'Aphelios_adc', 
+    description: '아펠리오스', 
+    image: require('../../assets/lol_hero_icon/Aphelios.png'), 
     detail: '如月影般神出鬼没、时刻剑拔弩张的厄斐琉斯沉默地弑杀一切自身信仰的敌人。他的语言只有精确的瞄准和枪火。虽然他饮下了让他失声的毒药，但他也因此得到了妹妹拉露恩的引导，从遥远的神庙中将月石打造的各种武器送到他手里。只要头顶的明月依然皎洁，厄斐琉斯就永不孤单。', 
     stats: {
         armor: 26,
@@ -7527,9 +7527,9 @@ export const ICON_DATA = [
   },
   {
     id: '151', 
-    name: '镕铁少女', 
-    description: '镕铁少女', 
-    image: require('../../assets/lol_hero_icon/镕铁少女.png'), 
+    name: 'Rell_sup_jug', 
+    description: '렐', 
+    image: require('../../assets/lol_hero_icon/Rell.png'), 
     detail: '芮尔是黑色玫瑰用凶残的试验一手制造出来的产物，她是狂妄的活体武器，决心要颠覆诺克萨斯。她的童年悲惨且惊悚，那些不可言说的处理过程将她的魔法塑造成完美的武器，让她可以任意控制金属。直到最后她展开了一场暴力的逃离，从数量众多的看管者中杀出一条血路。如今，被认定为逃犯的芮尔对诺克萨斯士兵进行无差别攻击，同时寻找着曾经“学院”里的幸存者，保护柔弱者，对曾经的那些教员送去无情的死亡。', 
     stats: {
         armor: 36,
@@ -7577,9 +7577,9 @@ export const ICON_DATA = [
   },
   {
     id: '152', 
-    name: '血港鬼影', 
-    description: '血港鬼影', 
-    image: require('../../assets/lol_hero_icon/血港鬼影.png'), 
+    name: 'Pyke_sup', 
+    description: '파이크', 
+    image: require('../../assets/lol_hero_icon/Pyke.png'), 
     detail: '在比尔吉沃特屠宰码头颇有名气的鱼叉手派克，据说早已葬身于一条巨大的琢珥鱼腹内……现在，他却回来了。派克在阴街陋巷中徘徊，用常人无法理解的手段解决那些鱼肉他人的恶棍——这座因捕猎怪物而闻名的码头，如今反而成了他的猎场。', 
     stats: {
         armor: 43,
@@ -7627,9 +7627,9 @@ export const ICON_DATA = [
   },
   {
     id: '153', 
-    name: '愁云使者', 
-    description: '愁云使者', 
-    image: require('../../assets/lol_hero_icon/愁云使者.png'), 
+    name: 'Vex_mid', 
+    description: '벡스', 
+    image: require('../../assets/lol_hero_icon/Vex.png'), 
     detail: '在暗影岛的黑色中心，一个约德尔人孤独地踯躅在鬼魅的浓雾中，在那片阴郁的惨象中安然自得。薇古丝有着取之不尽的少年烦恼，身后还跟着一个强大的黑影，她为自己打造了一片阴郁的小天地，沉浸其中，远离 “正常人”世界里恶心的欢快气氛。虽然她没什么远大志向，但她会毫不犹豫地抹杀任何色彩和欢笑，用她的颓废魔法阻止所有试图闯入的人。', 
     stats: {
         armor: 23,
@@ -7677,9 +7677,9 @@ export const ICON_DATA = [
   },
   {
     id: '154', 
-    name: '封魔剑魂', 
-    description: '封魔剑魂', 
-    image: require('../../assets/lol_hero_icon/封魔剑魂.png'), 
+    name: 'Yone_mid_top', 
+    description: '요네', 
+    image: require('../../assets/lol_hero_icon/Yone.png'), 
     detail: '生前，他是永恩，是亚索同母异父的哥哥，是故乡剑术道场的知名弟子。但当他死在弟弟手下以后，却发现自己被精神领域中的恶毒灵体所侵扰，不得不拿起恶魔的刀剑将它弑杀。如今，诅咒缠身的永恩戴上了它的恶魔面具，开始了不懈地追猎，他誓要猎尽所有同种的恶魔，以查清自己究竟成为了什么。\n', 
     stats: {
         armor: 33,
@@ -7727,9 +7727,9 @@ export const ICON_DATA = [
   },
   {
     id: '155', 
-    name: '腕豪', 
-    description: '腕豪', 
-    image: require('../../assets/lol_hero_icon/腕豪.png'), 
+    name: 'Sett_top_sup', 
+    description: '세트', 
+    image: require('../../assets/lol_hero_icon/Sett.png'), 
     detail: '在与诺克萨斯的战争结束之后，艾欧尼亚的地下王国日渐兴起，瑟提在其中脱颖而出，成为了一方霸主。虽然他一开始只是纳沃利的搏击场里的无名小卒，但他有着一身蛮力，而且极其耐打，很快就名声鹊起。等到当地的搏击手尽数被他击败之后，瑟提靠着一腔勇武，掌控了自己曾经浴血奋战的搏击场。', 
     stats: {
         armor: 33,
@@ -7777,9 +7777,9 @@ export const ICON_DATA = [
   },
   {
     id: '156', 
-    name: '含羞蓓蕾', 
-    description: '含羞蓓蕾', 
-    image: require('../../assets/lol_hero_icon/含羞蓓蕾.png'), 
+    name: 'Lillia_jug', 
+    description: '릴리아', 
+    image: require('../../assets/lol_hero_icon/Lillia.png'), 
     detail: '羞怯难当的仙灵小鹿莉莉娅在艾欧尼亚的森林中蹦跳着游荡。她躲藏在凡人视线的边缘，因为凡人的神秘一直都让她着迷，同时也让她害怕。莉莉娅要查清楚为什么他们的梦境再也无法抵达幻梦树。如今她带着一根魔法树枝游历艾欧尼亚，寻找人们未实现的梦境。只有通过梦境，莉莉娅才能绽放，并帮助其他人解开恐惧的郁结，找寻内心的闪光。呦——！', 
     stats: {
         armor: 22,
@@ -7827,9 +7827,9 @@ export const ICON_DATA = [
   },
   {
     id: '157', 
-    name: '灵罗娃娃', 
-    description: '灵罗娃娃', 
-    image: require('../../assets/lol_hero_icon/灵罗娃娃.png'), 
+    name: 'Gwen_jug_top', 
+    description: '그웬', 
+    image: require('../../assets/lol_hero_icon/Gwen.png'), 
     detail: '格温是一个被魔法赋予了生命的玩偶，而她所挥使的正是当初创造了她自己的工具。格温无比珍惜这份机缘，踏出的每一步都承载着曾经主人的爱意。格温拥有控制“圣霭”的能力。这是一种来自远古的庇护性法术，她的剪刀、衣针和缝线都因圣霭而得到了庇佑。即便有这么多新奇的事物等待着格温，她既感到兴奋，但又带着强烈的使命感，决心拯救在这个破碎世界里艰难挣扎的人们。', 
     stats: {
         armor: 39,
@@ -7877,9 +7877,9 @@ export const ICON_DATA = [
   },
   {
     id: '158', 
-    name: '炼金男爵', 
-    description: '炼金男爵', 
-    image: require('../../assets/lol_hero_icon/炼金男爵.png'), 
+    name: 'Renata_sup', 
+    description: '레나타', 
+    image: require('../../assets/lol_hero_icon/Renata.png'), 
     detail: '烈娜塔•格拉斯克从童年家宅的灰烬中走出，仅凭自己的名字和父母的炼金术研究成果白手起家。在后来的几十年里，她成为了祖安炼金男爵中的首富，通过利益捆绑积累人脉。与她合作，就将获得难以计量的奖赏。与她作对，就将捶胸顿足悔不当初。但到最后，所有人都会成为她的附庸。', 
     stats: {
         armor: 27,
@@ -7927,9 +7927,9 @@ export const ICON_DATA = [
   },
   {
     id: '159', 
-    name: '双界灵兔', 
-    description: '双界灵兔', 
-    image: require('../../assets/lol_hero_icon/双界灵兔.png'), 
+    name: 'Aurora_top_mid', 
+    description: '오로라', 
+    image: require('../../assets/lol_hero_icon/Aurora.png'), 
     detail: '从诞生那一刻起，阿萝拉就能够在精神和物质领域之间游走；长大后，她决定细细探索精神领域的生物，于是远走他乡，寻觅未知。机缘巧合间，她遇见了一位迷失的半神，他在漫漫岁月中被遗忘，变得痛苦扭曲。此等绝望，阿萝拉无法坐视不管，她要帮这位狂野不羁的朋友找回他原本的身份，于是踏上了一段遍迹弗雷尔卓德的探寻之旅。', 
     stats: {
         armor: 23,
@@ -7977,9 +7977,9 @@ export const ICON_DATA = [
   },
   {
     id: '160', 
-    name: '不羁之悦', 
-    description: '不羁之悦', 
-    image: require('../../assets/lol_hero_icon/不羁之悦.png'), 
+    name: 'Nilah_adc', 
+    description: '닐라', 
+    image: require('../../assets/lol_hero_icon/Nilah.png'), 
     detail: '尼菈是一名来自遥远异国的苦行战士。她不懈地寻找着世间最凶残、最雄伟的对手，渴望将它们彻底抹杀。她从遭囚许久的欢乐之主身上夺得了力量，却也因此丢失了所有情感——唯独剩下喜悦。相比她所获得的强大能力，这也许只是一点微小的代价。来自恶魔的流水化成了她手中无可匹敌的鞭剑，让尼菈足以挑战早已被世人遗忘的可怕危险。', 
     stats: {
         armor: 27,
@@ -8027,9 +8027,9 @@ export const ICON_DATA = [
   },
   {
     id: '161', 
-    name: '纳祖芒荣耀', 
+    name: 'KSante_top', 
     description: '纳祖芒荣耀', 
-    image: require('../../assets/lol_hero_icon/纳祖芒荣耀.png'), 
+    image: require('../../assets/lol_hero_icon/KSante.png'), 
     detail: '威武不屈的奎桑提，与山峦般的巨兽和残忍的飞升者不懈地战斗，只为保护自己的家园纳祖芒——恕瑞玛沙漠中一处明珠般的绿洲。但自从与曾经的伙伴分别，奎桑提意识到他要是渴望成为一名足够领导纳祖芒的英雄，就必须克服自己一心求胜的固执。只有这样，他才不会被自己的傲慢所吞噬，最终收获他所需的智慧，击溃那些足以威胁族人的恐怖对手。', 
     stats: {
         armor: 33,
@@ -8077,9 +8077,9 @@ export const ICON_DATA = [
   },
   {
     id: '162', 
-    name: '炽炎雏龙', 
-    description: '炽炎雏龙', 
-    image: require('../../assets/lol_hero_icon/炽炎雏龙.png'), 
+    name: 'Smolder_top_mid_adc', 
+    description: '스몰더', 
+    image: require('../../assets/lol_hero_icon/Smolder.png'), 
     detail: '在诺克萨斯边境的嶙峋峭壁间，有一条幼龙正在龙母的密切注视下，学习领悟着作为卡玛维亚帝巨龙血脉继承者的意义。调皮的斯莫德每天都盼着长大，他总是寻找各式各样的借口，磨炼自己日益强大的能力。虽然他还年幼，可别对他的能力嗤之以鼻——只要打个喷嚏，他就能点燃整片森林。', 
     stats: {
         armor: 26,
@@ -8127,9 +8127,9 @@ export const ICON_DATA = [
   },
   {
     id: '163', 
-    name: '明烛', 
-    description: '明烛', 
-    image: require('../../assets/lol_hero_icon/明烛.png'), 
+    name: 'Milio_sup', 
+    description: '밀리오', 
+    image: require('../../assets/lol_hero_icon/Milio.png'), 
     detail: '米利欧是一个热心肠的以绪塔尔男孩，年纪轻轻就掌握了火焰的元素公理，还发现了一种全新的东西：安心火。有了全新的能力，米利欧打算帮全家结束流放的生活，进入育恩塔尔——就像祖母曾经那样。横穿以绪塔尔的密林，来到以绪奥肯以后，如今的米利欧准备直面维达利安并加入育恩塔尔，但他并不清楚在前方等待他的是什么样的试炼——和什么样的危险。', 
     stats: {
         armor: 26,
@@ -8177,9 +8177,9 @@ export const ICON_DATA = [
   },
   {
     id: '164', 
-    name: '异画师', 
-    description: '异画师', 
-    image: require('../../assets/lol_hero_icon/异画师.png'), 
+    name: 'Hwei_mid_sup', 
+    description: '후이', 
+    image: require('../../assets/lol_hero_icon/Hwei.png'), 
     detail: '彗是一个郁郁寡欢的画家，在艾欧尼亚四处创作惊世佳作，只为惩戒恶人，宽慰弱者。在他的忧郁之下，藏着一颗斑驳、敏感的心，想象中的绚烂色彩与回忆中的凄惨尸骸始终萦绕在他脑海。彗寻求对自身光与暗的彻悟，而这份追寻也将不可避免地把他推向他的启蒙艺术家。以画笔和色盘，彗画出无尽的可能性，同时也在不断接近最终的答案，或是冰冷的绝望。', 
     stats: {
         armor: 21,
@@ -8227,9 +8227,9 @@ export const ICON_DATA = [
   },
   {
     id: '165', 
-    name: '百裂冥犬', 
-    description: '百裂冥犬', 
-    image: require('../../assets/lol_hero_icon/百裂冥犬.png'), 
+    name: 'Naafiri_mid', 
+    description: '나아피리', 
+    image: require('../../assets/lol_hero_icon/Naafiri.png'), 
     detail: '一望无际的恕瑞玛大漠上，回荡着嗥吠啸鸣的合唱，那是沙丘猎狗的呼号。这些凶狠的食肉动物会成群结队，在这片贫瘠的土地上争夺狩猎的资格。在众多狗群之中，有一群地位最高，因为它们不仅拥有犬科动物的血性，更有来自暗裔的远古力量。', 
     stats: {
         armor: 30,
@@ -8277,9 +8277,9 @@ export const ICON_DATA = [
   },
   {
     id: "167",
-    name: "未来守护者",
-    description: "杰斯",
-    image: require('../../assets/lol_hero_icon/未来守护者.png'),
+    name: "Jayce_mid_adc",
+    description: "제이스",
+    image: require('../../assets/lol_hero_icon/Jayce.png'),
     detail: "杰斯是一位天才发明家，他为了守护皮尔特沃夫和这座城市对于进步的追求贡献了毕生的心血。杰斯依靠手中的海克斯科技变形锤，还有自己的力量、勇气和出众的智慧守护着他的故乡。虽然整座城市都将他视为英雄，但他却并没有处理好这样的声名。即便如此，杰斯的心之所向依旧纯良，即使是那些嫉妒他天赋的人，也会真心实意地感谢他给进步之城带来的保护。",
     stats: {
       hp: 590,
@@ -8328,9 +8328,9 @@ export const ICON_DATA = [
   },
   {
     id: '166', 
-    name: '虚空女皇', 
-    description: '虚空女皇', 
-    image: require('../../assets/lol_hero_icon/虚空女皇.png'), 
+    name: 'Belveth_jug', 
+    description: '벨베스', 
+    image: require('../../assets/lol_hero_icon/Belveth.png'), 
     detail: '一座被吞噬的城市，哺育了一位噩梦般的女皇。卑尔维斯就是符文之地的终结……也是她亲手规划的可怖现实的开端。地上世界无数世代的历史、知识和记忆驱使着她不知餍足地吞食所过之处的一切体验和情感。然而，区区一个世界完全不能满足她的胃口。卑尔维斯将眼光投向了虚空曾经的主人……', 
     stats: {
         armor: 32,
@@ -8378,9 +8378,9 @@ export const ICON_DATA = [
   },
   {
     id: '168', 
-    name: '北地之怒', 
-    description: '北地之怒', 
-    image: require('../../assets/lol_hero_icon/北地之怒.png'), 
+    name: 'Sejuani_jug', 
+    description: '세주아니', 
+    image: require('../../assets/lol_hero_icon/Sejuani.png'), 
     detail: '瑟庄妮是凛冬之爪部族的战母。继承了寒冰血脉的她残忍无情，带领的部族也是弗雷尔卓德土地上最令人闻风丧胆的。她的部族的生存，是一场旷日持久的、毫无希望的对抗元素之力的战斗，迫使他们劫掠诺克萨斯人、德玛西亚人，还有阿瓦罗萨部族等等，以便渡过残酷的凛冬。瑟庄妮在最危险的战斗中身先士卒，骑着居瓦斯克野猪“钢鬃”冲在最前方，用她臻冰打造的链枷让敌人粉身碎骨。', 
     stats: {
         armor: 34,
