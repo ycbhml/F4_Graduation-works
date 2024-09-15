@@ -16,6 +16,7 @@ for champion_name, champion_data in data['data'].items():
     extracted_data[champion_name] = {
         "numID": numId,
         "id": champion_data['id'],
+        "Key": champion_data['key'],
         "name": champion_data['name'],
         "title": champion_data['title'],
         "lore": champion_data['lore'],
