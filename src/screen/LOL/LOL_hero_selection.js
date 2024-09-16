@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, Image, Dimensions, StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { ICON_DATA, filterIconsByName } from '../../components/LOL/LOL_hero_icons'; // 假设英雄数据来源
-import LOLCalcShow from './LOL_show/LOL_calc_show'; // 导入你要路由到的页面
+import { HERO_DATA, filterHeroesByName } from '../../components/LOL/LOL_hero_icons'; // 假设英雄数据来源
 
 // 获取屏幕宽高
 const { width, height } = Dimensions.get('window');
 
 const HeroSelectionScreen = ({ navigation, route }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(ICON_DATA);
+  const [filteredData, setFilteredData] = useState(HERO_DATA);
 
   const { setSwipeEnabled } = route.params || {}; // 从父级路由接收 setSwipeEnabled
 
@@ -29,17 +27,18 @@ const HeroSelectionScreen = ({ navigation, route }) => {
   // 搜索英雄
   const handleSearch = (text) => {
     setSearchQuery(text);
-    setFilteredData(filterIconsByName(text));
+    setFilteredData(filterHeroesByName(text));
   };
 
   // 选择英雄并跳转到新的页面
   const handleHeroSelect = (item) => {
-    navigation.navigate('HeroCalculator', { selectedHero: item, setSwipeEnabled }); // 跳转至英雄计算页面并传递英雄数据
-  };
-
-  // 筛选英雄功能
-  const filterByRole = (role) => {
-    setFilteredData(ICON_DATA.filter(item => item.role.includes(role)));
+    navigation.navigate('HeroCalculator', { 
+      item, 
+      setSwipeEnabled,
+      callback: (data) => {
+        console.log('Data returned from LOLCalcShow:', data);
+      }
+    }); 
   };
 
   const renderIconItem = ({ item }) => (
@@ -48,7 +47,6 @@ const HeroSelectionScreen = ({ navigation, route }) => {
       <Text>{item.description}</Text>
     </TouchableOpacity>
   );
-
   return (
     <View style={styles.gridContainer}>
 
@@ -74,7 +72,7 @@ const HeroSelectionScreen = ({ navigation, route }) => {
           <Image source={require('../../assets/images/lol/sup.png')} style={styles.filterIcon} />
           <Text>Sup</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setFilteredData(ICON_DATA)} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(heroInfo)} style={styles.filterButton}>
           <Text>All</Text>
         </TouchableOpacity>
       </View>
@@ -99,6 +97,8 @@ const HeroSelectionScreen = ({ navigation, route }) => {
     </View>
   );
 };
+
+
 
 // 样式表
 const styles = StyleSheet.create({
@@ -155,26 +155,5 @@ const styles = StyleSheet.create({
       marginBottom: height * 0.01,
     },
 });
-  
 
-// Stack Navigator 实现
-const Stack = createStackNavigator();
-
-const HeroSelectionStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen 
-        name="HeroSelection" 
-        component={HeroSelectionScreen} 
-        options={{ title: 'Select Hero' }} 
-      />
-      <Stack.Screen 
-        name="HeroCalculator" 
-        component={LOLCalcShow} 
-        options={{ title: 'Hero Calculator'}} 
-      />
-    </Stack.Navigator>
-  );
-};
-
-export default HeroSelectionStack;
+export default HeroSelectionScreen;

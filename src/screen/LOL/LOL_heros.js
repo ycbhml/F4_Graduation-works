@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
-import { ICON_DATA, filterIconsByName } from '../../components/LOL/LOL_hero_icons';
+import { HERO_DATA, filterHeroesByName } from '../../components/LOL/LOL_hero_icons';
 import { createStackNavigator } from '@react-navigation/stack';
 import LOLHeroShow from './LOL_show/LOL_hero_show';
 
@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const LOLHeroList = ({ navigation, route }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(ICON_DATA);
+  const [filteredData, setFilteredData] = useState(HERO_DATA);
 
   const { setSwipeEnabled } = route?.params || {};
 
@@ -21,7 +21,7 @@ const LOLHeroList = ({ navigation, route }) => {
 
   const handleSearch = (text) => {
     setSearchQuery(text);
-    setFilteredData(filterIconsByName(text));
+    setFilteredData(filterHeroesByName(text));
   };
 
   const handleIconPress = (item) => {
@@ -39,27 +39,27 @@ const LOLHeroList = ({ navigation, route }) => {
   );
 
   const handleFilterByCharacterTop = () => {
-    setFilteredData(ICON_DATA.filter(item => item.name.includes('top')));
+    setFilteredData(HERO_DATA.filter(item => item.id.includes('top')));
   };
 
   const handleFilterByCharacterMid = () => {
-    setFilteredData(ICON_DATA.filter(item => item.name.includes('mid')));
+    setFilteredData(HERO_DATA.filter(item => item.id.includes('mid')));
   };
 
   const handleFilterByCharacterJug = () => {
-    setFilteredData(ICON_DATA.filter(item => item.name.includes('jug')));
+    setFilteredData(HERO_DATA.filter(item => item.id.includes('jug')));
   };
 
   const handleFilterByCharacterADc = () => {
-    setFilteredData(ICON_DATA.filter(item => item.name.includes('adc')));
+    setFilteredData(HERO_DATA.filter(item => item.id.includes('adc')));
   };
 
   const handleFilterByCharacterSup = () => {
-    setFilteredData(ICON_DATA.filter(item => item.name.includes('sup')));
+    setFilteredData(HERO_DATA.filter(item => item.id.includes('sup')));
   };
 
   const resetFilter = () => {
-    setFilteredData(ICON_DATA);
+    setFilteredData(HERO_DATA);
   };
 
   return (
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ddd',
     borderRadius: width * 0.02,
     marginVertical: height * 0.01,
-    width: '100%',
+    width: width * 0.13,
     alignItems: 'center',
   },
   filterIcon: {

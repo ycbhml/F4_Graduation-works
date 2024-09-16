@@ -1,113 +1,131 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, Slider, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import Slider from '@react-native-community/slider';
+import { HERO_DATA } from '../../../components/LOL/LOL_hero_icons';
+import { ICON_DATA as ITEM_DATA } from '../../../components/LOL/LOL_items';  // 引入物品数据
+import LOLItemSelection from '../LOL_item_selection'; // 导入物品选择页面
+
+const DEFAULT_ITEM_IMAGE = require('../../../assets/images/lol/hero_select.png');
 
 const LOLCalcShow = ({ route, navigation }) => {
-  const { selectedHero, setSwipeEnabled } = route.params;
-  
-  // 用于保存等级和选中的物品状态
+
+  const { item, setSwipeEnabled, callback } = route.params || {};
+  const [selectedHero, setSelectedHero] = useState(null);
+  const [selectedItems, setSelectedItems] = useState(Array(7).fill(null));
   const [level, setLevel] = useState(1);
-  const [selectedItems, setSelectedItems] = useState(Array(7).fill(null)); // 7个格子，初始为空
 
   useEffect(() => {
-    if (setSwipeEnabled) {
-      setSwipeEnabled(false);
+    if (item) {
+      const hero = HERO_DATA.find(heroItem => heroItem.id === item.id);
+      setSelectedHero(hero);
     }
-    navigation.getParent()?.setOptions({ tabBarStyle: { display: 'none' } });
+  }, [item]);
 
-    return () => {
-      if (setSwipeEnabled) {
-        setSwipeEnabled(true);
-      }
-      navigation.getParent()?.setOptions({ tabBarStyle: undefined });
-    };
-  }, [navigation, setSwipeEnabled]);
+  useEffect(() => {
+    const selectedItemId = route.params?.selectedItemId;
+    const selectedSlot = route.params?.selectedSlot;
 
-  // 用于模拟筛选弹出框，选择物品并填充到格子
-  const handleItemSelect = (index) => {
-    // 模拟选择逻辑，可以替换为真实的选择逻辑
-    const newSelectedItems = [...selectedItems];
-    newSelectedItems[index] = `Item ${index + 1}`; // 选中项示例，可以替换为实际数据
-    setSelectedItems(newSelectedItems);
+    if (selectedItemId && selectedSlot !== undefined) {
+      const selectedItem = ITEM_DATA.find(item => item.id === selectedItemId);
+      const updateItems = [...selectedItems];
+
+      updateItems[selectedSlot] = selectedItem;
+      setSelectedItems(updateItems);
+    }
+  }, [route.params?.selectedItemId, route.params?.selectedSlot]);
+
+  const handleItemSelect = (slotIndex) => {
+    navigation.navigate('ItemSelection', { selectedSlot: slotIndex });
   };
 
-  // 渲染格子
-  const renderGridItem = (item, index) => (
-    <TouchableOpacity
-      key={index}
-      style={styles.gridItem}
-      onPress={() => handleItemSelect(index)}
-    >
-      <Text>{item ? item : 'Empty'}</Text>  {/* 如果已选择，则显示物品，否则显示 Empty */}
-    </TouchableOpacity>
-  );
+  // 反向传值并返回
+  const goBackToSelection = () => {
+    if (callback) {
+      callback({ selectedHero, level });
+    }
+    navigation.goBack();
+  };
 
   return (
-    <View style={styles.container}>
-      {/* 英雄头像和名字 */}
-      <Image source={selectedHero.image} style={styles.heroImage} />
-      <Text style={styles.heroName}>{selectedHero.name}</Text>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.container}>
+        {/* 英雄头像 */}
+        <Image source={selectedHero?.image} style={styles.heroImage} />
+        <Text style={styles.heroName}>{selectedHero?.description}</Text>
 
-      {/* 等级进度条 */}
-      <Slider
-        style={styles.slider}
-        minimumValue={1}
-        maximumValue={18}
-        step={1}
-        value={level}
-        onValueChange={setLevel}  // 更新等级
-      />
-      <Text>当前等级：{level}</Text>  {/* 显示当前等级 */}
+        {/* 等级进度条 */}
+        <Slider
+          style={styles.slider}
+          minimumValue={1}
+          maximumValue={18}
+          step={1}
+          value={level}
+          onValueChange={setLevel}
+        />
+        <Text>当前等级：{level}</Text>
 
-      {/* 根据等级变化的文本介绍 */}
-      <Text>英雄描述：当前等级为 {level}</Text>  {/* 可根据实际数据动态变化 */}
+        {/* 物品格子 */}
+        <View style={styles.itemGrid}>
+          {selectedItems.map((item, index) => (
+            <TouchableOpacity key={index} onPress={() => handleItemSelect(index)}>
+              <Image
+                source={item ? item.image : DEFAULT_ITEM_IMAGE}
+                style={styles.itemImage}
+              />
+            </TouchableOpacity>
+          ))}
+        </View>
 
-      {/* 底部的7个格子 */}
-      <View style={styles.gridContainer}>
-        {selectedItems.map(renderGridItem)}  {/* 渲染7个格子 */}
+        {/* 返回并传递数据 */}
+        <TouchableOpacity onPress={goBackToSelection}>
+          <Text>返回并传递数据</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  scrollContainer: {
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: '5%',
+  },
+  container: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   heroImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    marginBottom: 10,
+    width: '30%',
+    height: undefined,
+    aspectRatio: 1,
+    borderRadius: 100,
+    marginBottom: '5%',
   },
   heroName: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: '5%',
   },
   slider: {
     width: '80%',
-    height: 40,
-    marginBottom: 10,
+    height: '5%',
+    marginBottom: '5%',
   },
-  gridContainer: {
+  itemGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     width: '100%',
-    paddingHorizontal: 10,
-    marginTop: 30,
+    paddingHorizontal: '5%',
+    marginTop: '5%',
   },
-  gridItem: {
-    width: '28%', // 7个格子，每行可以放3个
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#e0e0e0',
-    marginBottom: 10,
-    borderRadius: 5,
+  itemImage: {
+    width: 80,
+    height: 80,
+    margin: 10,
+    borderRadius: 10,
   },
 });
 

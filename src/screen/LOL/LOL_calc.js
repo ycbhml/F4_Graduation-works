@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet, Dimensions, ImageBackground, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HeroSelectionScreen from './LOL_hero_selection'; // 导入英雄选择界面
+import HeroSelectionScreen from './LOL_hero_selection';
+import LOLCalcShow from './LOL_show/LOL_calc_show';
+import LOLItemSelection from './LOL_item_selection';
 
 const Stack = createStackNavigator();
 
@@ -49,6 +51,16 @@ const LOLCalc = ({ route }) => {
         name="HeroSelection"
         component={HeroSelectionScreen}
         options={{ headerShown: false }} // 隐藏头部导航
+      />
+      <Stack.Screen 
+        name="HeroCalculator" 
+        component={LOLCalcShow} 
+        options={{ title: 'Hero Calculator'}} 
+      />
+      <Stack.Screen
+        name="ItemSelection"
+        component={LOLItemSelection}
+        options={{ title: 'Item Selection'}}
       />
     </Stack.Navigator>
   );
