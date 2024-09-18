@@ -33,27 +33,29 @@ const LOLRunes = () => {
               }
 
               return (
+                <View style={styles.iconContainer}>
                 <Image
                   source={iconSource}
                   style={{
                     transform: [{ scale: 1.3 }],
                   }}
                 />
+              </View>
               );
             },
             tabBarShowLabel: false,
             tabBarStyle: {
-              height: Dimensions.get('window').height / 10,
+              height: Dimensions.get('window').height / 15,
               backgroundColor: 'white',
             },
           })}
         >
           {/* 使用 component prop 而不是 children */}
-          <Tab.Screen name="red" component={(props) => <LOLRunesShow {...props} filter="red" />} />
-          <Tab.Screen name="yellow" component={(props) => <LOLRunesShow {...props} filter="yellow" />} />
-          <Tab.Screen name="purple" component={(props) => <LOLRunesShow {...props} filter="purple" />} />
-          <Tab.Screen name="green" component={(props) => <LOLRunesShow {...props} filter="green" />} />
-          <Tab.Screen name="blue" component={(props) => <LOLRunesShow {...props} filter="blue" />} />
+          <Tab.Screen name="red" component={(props) => <LOLRunesShow {...props} filter="Domination" />} />
+          <Tab.Screen name="yellow" component={(props) => <LOLRunesShow {...props} filter="Precision" />} />
+          <Tab.Screen name="purple" component={(props) => <LOLRunesShow {...props} filter="Sorcery" />} />
+          <Tab.Screen name="green" component={(props) => <LOLRunesShow {...props} filter="Resolve" />} />
+          <Tab.Screen name="blue" component={(props) => <LOLRunesShow {...props} filter="Inspiration" />} />
         </Tab.Navigator>
       </View>
     </View>
@@ -66,8 +68,13 @@ const styles = StyleSheet.create({
   },
   tabContainer: {
     flex: 1,
-    margin: 10,
-    padding: 10,
+    margin: "3%",
+    padding: "2%",
+  },
+  iconContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

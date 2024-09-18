@@ -15,7 +15,7 @@ const LOLRunesShow = ({ filter }) => {
   const renderRuneItem = ({ item }) => (
     <View style={styles.runeContainer}>
       <Image source={item.image} style={styles.runeImage} />
-      <Text style={styles.runeName}>{item.name}</Text>
+      <Text style={styles.runeName}>{item.name_kr}</Text>
       <Text style={styles.runeDescription}>{item.description}</Text>
     </View>
   );

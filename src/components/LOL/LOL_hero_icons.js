@@ -145,7 +145,7 @@ export const HERO_DATA = [
             {
                 id: 'AkshanW',
                 name: '악당 처단',
-                description: `아크샨이 아군 챔피언을 처치한 적 챔피언에게 악당 표식을 남깁니다. 아크샨이 악당을 처치하면 해당 적이 처치한 아군들을 부활시키고 추가 골드를 얻으며 모든 악당 표식을 없앱니다.<br><br>활성화 시 아크샨이 위장 상태에 들어가며 악당에게 다가갈 때 이동 속도와 마나 재생량이 증가합니다. 아크샨이 지형 근처나 수풀 안에 있지 않으면 위장 상태가 금방 풀립니다.`,
+                description: `아크샨이 아군 챔피언을 처치한 적 챔피언에게 악당 표식을 남깁니다. 아크샨이 악당을 처치하면 해당 적이 처치한 아군들을 부활시키고 추가 골드를 얻으며 모든 악당 표식을 없앱니다.활성화 시 아크샨이 위장 상태에 들어가며 악당에게 다가갈 때 이동 속도와 마나 재생량이 증가합니다. 아크샨이 지형 근처나 수풀 안에 있지 않으면 위장 상태가 금방 풀립니다.`,
                 cooldownBurn: '18/14/10/6/2',
                 image: require('../../assets/lol_hero_icons/skills/AkshanW.png')
             },
@@ -227,7 +227,7 @@ export const HERO_DATA = [
             {
                 id: 'AuraofDespair',
                 name: '절망',
-                description: `적이 절망으로 인해 매 초마다 최대 체력에 비례한 피해를 입고 <font color='#9b0f5f'>저주</font>가 초기화됩니다.`,
+                description: `적이 절망으로 인해 매 초마다 최대 체력에 비례한 피해를 입고 저주가 초기화됩니다.`,
                 cooldownBurn: '1',
                 image: require('../../assets/lol_hero_icons/skills/AuraofDespair.png')
             },
@@ -241,7 +241,7 @@ export const HERO_DATA = [
             {
                 id: 'CurseoftheSadMummy',
                 name: '슬픈 미라의 저주',
-                description: `아무무가 붕대로 주변 유닛을 휘감아 <keywordMajor>저주</keywordMajor>를 내리고 피해를 입히며 기절시킵니다.`,
+                description: `아무무가 붕대로 주변 유닛을 휘감아 저주를 내리고 피해를 입히며 기절시킵니다.`,
                 cooldownBurn: '150/125/100',
                 image: require('../../assets/lol_hero_icons/skills/CurseoftheSadMummy.png')
             },
@@ -343,7 +343,7 @@ export const HERO_DATA = [
             {
                 id: 'ApheliosQ_ClientTooltipWrapper',
                 name: '무기 스킬',
-                description: `아펠리오스는 주 무기에 따라 5개의 스킬을 사용할 수 있습니다.<br><br>만월총(소총): 원거리 공격으로 대상에게 표식을 남깁니다. 표식을 소모해 추가로 원거리 공격을 가할 수 있습니다.<br>절단검(낫 모양 권총): 빠르게 이동하며 주 무기와 보조 무기로 주위 적들을 공격합니다.<br>중력포(대포): 이 무기로 둔화된 모든 적을 속박합니다.<br>화염포(화염 방사기): 원뿔 형태로 적에게 화염을 발사한 후 보조 무기로 공격합니다.<br>반월검(투척 무기): 보조 무기와 동일한 무기를 사용하는 파수탑을 배치합니다.<br>`,
+                description: `아펠리오스는 주 무기에 따라 5개의 스킬을 사용할 수 있습니다.만월총(소총): 원거리 공격으로 대상에게 표식을 남깁니다. 표식을 소모해 추가로 원거리 공격을 가할 수 있습니다.절단검(낫 모양 권총): 빠르게 이동하며 주 무기와 보조 무기로 주위 적들을 공격합니다.중력포(대포): 이 무기로 둔화된 모든 적을 속박합니다.화염포(화염 방사기): 원뿔 형태로 적에게 화염을 발사한 후 보조 무기로 공격합니다.반월검(투척 무기): 보조 무기와 동일한 무기를 사용하는 파수탑을 배치합니다.`,
                 cooldownBurn: '9',
                 image: require('../../assets/lol_hero_icons/skills/ApheliosQ_ClientTooltipWrapper.png')
             },
@@ -432,7 +432,7 @@ export const HERO_DATA = [
             {
                 id: 'AurelionSolW',
                 name: '별의 비행',
-                description: `아우렐리온 솔이 지정한 방향으로 날아갑니다. 이 상태에서 다른 스킬을 사용할 수 있습니다. 비행 중 빛의 숨결은 재사용 대기시간이나 최대 정신 집중 시간이 없으며 피해가 증가합니다.<br><br>아우렐리온 솔이 피해를 입힌 지 얼마 되지 않은 적 챔피언이 죽을 때마다 별의 비행의 남은 재사용 대기시간이 감소합니다.<br><br>별가루는 별의 비행 최대 사거리를 늘립니다.`,
+                description: `아우렐리온 솔이 지정한 방향으로 날아갑니다. 이 상태에서 다른 스킬을 사용할 수 있습니다. 비행 중 빛의 숨결은 재사용 대기시간이나 최대 정신 집중 시간이 없으며 피해가 증가합니다.아우렐리온 솔이 피해를 입힌 지 얼마 되지 않은 적 챔피언이 죽을 때마다 별의 비행의 남은 재사용 대기시간이 감소합니다.별가루는 별의 비행 최대 사거리를 늘립니다.`,
                 cooldownBurn: '0',
                 image: require('../../assets/lol_hero_icons/skills/AurelionSolW.png')
             },
@@ -446,7 +446,7 @@ export const HERO_DATA = [
             {
                 id: 'AurelionSolR',
                 name: '유성 / 천상 강림',
-                description: `유성: 아우렐리온 솔이 땅으로 별을 떨어뜨립니다. 이 충격으로 마법 피해를 입히고 적을 기절시키며 적중한 적 챔피언 한 명당 별가루를 획득합니다. 별가루가 어느 정도 모이면 아우렐리온 솔의 다음 유성이 천상 강림으로 변합니다.<br><br>천상 강림: 아우렐리온 솔이 하늘에서 충돌 범위와 피해가 커진 거대한 별을 끌어내 적을 기절시키는 대신 공중에 띄웁니다. 이후 충돌 범위 가장자리에서 충격파가 퍼지며 적중한 적에게 피해를 입히고 둔화시킵니다. 별가루는 유성과 천상 강림의 충돌 범위를 넓힙니다.`,
+                description: `유성: 아우렐리온 솔이 땅으로 별을 떨어뜨립니다. 이 충격으로 마법 피해를 입히고 적을 기절시키며 적중한 적 챔피언 한 명당 별가루를 획득합니다. 별가루가 어느 정도 모이면 아우렐리온 솔의 다음 유성이 천상 강림으로 변합니다.천상 강림: 아우렐리온 솔이 하늘에서 충돌 범위와 피해가 커진 거대한 별을 끌어내 적을 기절시키는 대신 공중에 띄웁니다. 이후 충돌 범위 가장자리에서 충격파가 퍼지며 적중한 적에게 피해를 입히고 둔화시킵니다. 별가루는 유성과 천상 강림의 충돌 범위를 넓힙니다.`,
                 cooldownBurn: '120/110/100',
                 image: require('../../assets/lol_hero_icons/skills/AurelionSolR.png')
             },
@@ -712,7 +712,7 @@ export const HERO_DATA = [
             {
                 id: 'BraumQ',
                 name: '동상',
-                description: `브라움이 방패에서 빙결을 뿜어내 둔화를 적용하고 마법 피해를 입힙니다.<br><br><font color='#FFF673'>뇌진탕 펀치</font> 중첩이 1회 쌓입니다.`,
+                description: `브라움이 방패에서 빙결을 뿜어내 둔화를 적용하고 마법 피해를 입힙니다.뇌진탕 펀치 중첩이 1회 쌓입니다.`,
                 cooldownBurn: '8/7.5/7/6.5/6',
                 image: require('../../assets/lol_hero_icons/skills/BraumQ.png')
             },
@@ -760,7 +760,7 @@ export const HERO_DATA = [
             {
                 id: 'BriarW',
                 name: '핏빛 광분 / 식욕 폭발',
-                description: `브라이어가 앞으로 도약해 족쇄를 깨부수고 핏빛 광분 상태에 들어가 가장 가까운 적을 가차 없이 추격합니다. (챔피언 우선) 핏빛 광분 상태에서 공격 속도와 이동 속도가 상승하며 기본 공격으로 대상 주변에 피해를 입힙니다.<br><br>이 스킬을 핏빛 광분 상태에서 재사용하면 다음 기본 공격 시 적을 베어 먹어 대상이 잃은 체력에 비례해 추가 피해를 입히고 피해량에 비례해 체력을 회복합니다.`,
+                description: `브라이어가 앞으로 도약해 족쇄를 깨부수고 핏빛 광분 상태에 들어가 가장 가까운 적을 가차 없이 추격합니다. (챔피언 우선) 핏빛 광분 상태에서 공격 속도와 이동 속도가 상승하며 기본 공격으로 대상 주변에 피해를 입힙니다.이 스킬을 핏빛 광분 상태에서 재사용하면 다음 기본 공격 시 적을 베어 먹어 대상이 잃은 체력에 비례해 추가 피해를 입히고 피해량에 비례해 체력을 회복합니다.`,
                 cooldownBurn: '14/13/12/11/10',
                 image: require('../../assets/lol_hero_icons/skills/BriarW.png')
             },
@@ -1040,7 +1040,7 @@ export const HERO_DATA = [
             {
                 id: 'DianaQ',
                 name: '초승달 검기',
-                description: `달 에너지를 휘어지게 발사하여 마법 피해를 입힙니다.<br><br>적중당한 적들은 은신 상태가 아닐 경우 달빛을 받아 3초 동안 위치가 노출됩니다.`,
+                description: `달 에너지를 휘어지게 발사하여 마법 피해를 입힙니다.적중당한 적들은 은신 상태가 아닐 경우 달빛을 받아 3초 동안 위치가 노출됩니다.`,
                 cooldownBurn: '8/7.5/7/6.5/6',
                 image: require('../../assets/lol_hero_icons/skills/DianaQ.png')
             },
@@ -1054,14 +1054,14 @@ export const HERO_DATA = [
             {
                 id: 'DianaTeleport',
                 name: '월광 쇄도',
-                description: `복수심에 불타는 달의 화신이 되어, 적에게 돌진하여 마법 피해를 입힙니다.<br><br>달빛 효과를 받고 있는 대상에게 돌진한 경우, 월광 쇄도를 즉시 한 번 더 사용할 수 있습니다. 이 때, 다른 모든 적들은 월광 쇄도의 대상이 아니었더라도 달빛 효과가 사라집니다.`,
+                description: `복수심에 불타는 달의 화신이 되어, 적에게 돌진하여 마법 피해를 입힙니다.달빛 효과를 받고 있는 대상에게 돌진한 경우, 월광 쇄도를 즉시 한 번 더 사용할 수 있습니다. 이 때, 다른 모든 적들은 월광 쇄도의 대상이 아니었더라도 달빛 효과가 사라집니다.`,
                 cooldownBurn: '22/20/18/16/14',
                 image: require('../../assets/lol_hero_icons/skills/DianaTeleport.png')
             },
             {
                 id: 'DianaR',
                 name: '달빛 낙하',
-                description: `다이애나가 주위 모든 적을 드러내 끌어당긴 다음 이동 속도를 늦춥니다.<br><br>다이애나가 한 명 이상의 적 챔피언을 끌어당기면 잠시 후 달빛을 받아 자신의 주변 지역에 마법 피해를 입힙니다. 이 효과는 적 한 명을 추가로 끌어당길 때마다 피해량이 증가합니다.`,
+                description: `다이애나가 주위 모든 적을 드러내 끌어당긴 다음 이동 속도를 늦춥니다.다이애나가 한 명 이상의 적 챔피언을 끌어당기면 잠시 후 달빛을 받아 자신의 주변 지역에 마법 피해를 입힙니다. 이 효과는 적 한 명을 추가로 끌어당길 때마다 피해량이 증가합니다.`,
                 cooldownBurn: '100/90/80',
                 image: require('../../assets/lol_hero_icons/skills/DianaR.png')
             },
@@ -1136,7 +1136,7 @@ export const HERO_DATA = [
             {
                 id: 'DrMundoE',
                 name: '둔기에 의한 외상',
-                description: `기본 지속 효과 - 문도 박사가 최대 체력에 비례하여 추가 공격력을 얻습니다.<br><br>사용 시 - 문도 박사가 적에게 왕진 가방을 내리쳐 자신이 잃은 체력에 비례한 추가 피해를 입힙니다. 이때 처치된 적은 밀려나며 지나치는 적에게 피해를 입힙니다.`,
+                description: `기본 지속 효과 - 문도 박사가 최대 체력에 비례하여 추가 공격력을 얻습니다.사용 시 - 문도 박사가 적에게 왕진 가방을 내리쳐 자신이 잃은 체력에 비례한 추가 피해를 입힙니다. 이때 처치된 적은 밀려나며 지나치는 적에게 피해를 입힙니다.`,
                 cooldownBurn: '9/8.25/7.5/6.75/6',
                 image: require('../../assets/lol_hero_icons/skills/DrMundoE.png')
             },
@@ -1204,21 +1204,21 @@ export const HERO_DATA = [
             {
                 id: 'EliseHumanQ',
                 name: '신경독 / 독이빨',
-                description: `인간 형태: 대상 적의 체력에 비례하여 피해를 입힙니다.<br><br>거미 형태: 적 하나를 덮쳐, 적이 잃은 체력에 비례하여 피해를 입힙니다.`,
+                description: `인간 형태: 대상 적의 체력에 비례하여 피해를 입힙니다.거미 형태: 적 하나를 덮쳐, 적이 잃은 체력에 비례하여 피해를 입힙니다.`,
                 cooldownBurn: '6',
                 image: require('../../assets/lol_hero_icons/skills/EliseHumanQ.png')
             },
             {
                 id: 'EliseHumanW',
                 name: '위험한 새끼 거미 / 광란의 질주',
-                description: `인간 형태: 독을 품은 새끼 거미를 풀어놓으면 대상 적 근처에 가서 터집니다.<br><br>거미 형태: 엘리스와 새끼 거미들의 공격 속도가 상승합니다.`,
+                description: `인간 형태: 독을 품은 새끼 거미를 풀어놓으면 대상 적 근처에 가서 터집니다.거미 형태: 엘리스와 새끼 거미들의 공격 속도가 상승합니다.`,
                 cooldownBurn: '12',
                 image: require('../../assets/lol_hero_icons/skills/EliseHumanW.png')
             },
             {
                 id: 'EliseHumanE',
                 name: '고치 / 줄타기',
-                description: `인간 형태: 처음 적중한 적 유닛을 기절시키고 은신 상태가 아닐 경우 모습을 드러내 줍니다.<br><br>거미 형태: 엘리스와 새끼 거미들이 공중으로 올라간 다음 적에게 하강해 덮칩니다. 적을 덮친 후 거미 여왕의 추가 피해량과 회복량이 증가합니다.`,
+                description: `인간 형태: 처음 적중한 적 유닛을 기절시키고 은신 상태가 아닐 경우 모습을 드러내 줍니다.거미 형태: 엘리스와 새끼 거미들이 공중으로 올라간 다음 적에게 하강해 덮칩니다. 적을 덮친 후 거미 여왕의 추가 피해량과 회복량이 증가합니다.`,
                 cooldownBurn: '12/11.5/11/10.5/10',
                 image: require('../../assets/lol_hero_icons/skills/EliseHumanE.png')
             },
@@ -1573,21 +1573,21 @@ export const HERO_DATA = [
             {
                 id: 'GnarQ',
                 name: '부메랑 던지기 / 돌덩이 던지기',
-                description: `나르가 부메랑을 던지면 맞힌 적에게 피해를 입히고 속도를 늦춘 다음 나르에게 돌아옵니다. 나르가 부메랑을 받으면 재사용 대기시간이 감소합니다.<br><br>메가 나르는 돌덩어리를 던져 주위 모두에게 피해를 입히고 속도를 늦춥니다. 던져진 돌덩어리는 적에게 맞으면 그 자리에 멈추며, 메가 나르가 다시 집어들면 재사용 대기시간이 감소합니다.`,
+                description: `나르가 부메랑을 던지면 맞힌 적에게 피해를 입히고 속도를 늦춘 다음 나르에게 돌아옵니다. 나르가 부메랑을 받으면 재사용 대기시간이 감소합니다.메가 나르는 돌덩어리를 던져 주위 모두에게 피해를 입히고 속도를 늦춥니다. 던져진 돌덩어리는 적에게 맞으면 그 자리에 멈추며, 메가 나르가 다시 집어들면 재사용 대기시간이 감소합니다.`,
                 cooldownBurn: '20/17.5/15/12.5/10',
                 image: require('../../assets/lol_hero_icons/skills/GnarQ.png')
             },
             {
                 id: 'GnarW',
                 name: '슝슝 / 쿵쾅',
-                description: `나르는 기본 공격과 스킬 공격을 하면 신이 나서 추가 피해를 입히며 이동 속도가 상승합니다.<br><br>메가 나르는 너무 분노해 있어서, 뒷발로 일어나서 전방을 꽝 내리치며 일정 범위 안의 적들을 기절시킵니다.`,
+                description: `나르는 기본 공격과 스킬 공격을 하면 신이 나서 추가 피해를 입히며 이동 속도가 상승합니다.메가 나르는 너무 분노해 있어서, 뒷발로 일어나서 전방을 꽝 내리치며 일정 범위 안의 적들을 기절시킵니다.`,
                 cooldownBurn: '7',
                 image: require('../../assets/lol_hero_icons/skills/GnarW.png')
             },
             {
                 id: 'GnarE',
                 name: '폴짝 / 우지끈',
-                description: `나르가 대상 지점으로 폴짝 뛰며, 유닛의 머리 위에 착지하는 경우에는 튕겨서 더 멀리 날아갑니다.<br><br>메가 나르는 튕겨가기에는 너무 커서, 대신 착지한 지면에 균열을 일으키고 주위 일정 반경에 피해를 입힙니다.`,
+                description: `나르가 대상 지점으로 폴짝 뛰며, 유닛의 머리 위에 착지하는 경우에는 튕겨서 더 멀리 날아갑니다.메가 나르는 튕겨가기에는 너무 커서, 대신 착지한 지면에 균열을 일으키고 주위 일정 반경에 피해를 입힙니다.`,
                 cooldownBurn: '22/19.5/17/14.5/12',
                 image: require('../../assets/lol_hero_icons/skills/GnarE.png')
             },
@@ -1710,14 +1710,14 @@ export const HERO_DATA = [
             {
                 id: 'GwenE',
                 name: '돌격가위',
-                description: `짧은 거리를 돌진한 후 몇 초 동안 그웬의 공격 속도, 공격 사거리, <OnHit>적중 시</OnHit> 마법 피해가 증가합니다. 이때 적에게 공격을 적중시키면 이 스킬의 재사용 대기시간을 일부 돌려받습니다. `,
+                description: `짧은 거리를 돌진한 후 몇 초 동안 그웬의 공격 속도, 공격 사거리, 적중 시 마법 피해가 증가합니다. 이때 적에게 공격을 적중시키면 이 스킬의 재사용 대기시간을 일부 돌려받습니다. `,
                 cooldownBurn: '13/12.5/12/11.5/11',
                 image: require('../../assets/lol_hero_icons/skills/GwenE.png')
             },
             {
                 id: 'GwenR',
                 name: '바느질',
-                description: `그웬이 바늘을 던져 적중한 적에게 마법 피해를 입히고 둔화시킵니다. 챔피언에게 적중 시 가위 난도질을 적용합니다. <br><br>이 스킬은 최대 2회 더 사용할 수 있으며, 재사용할 때마다 추가 바늘을 던져 더 많은 피해를 입힙니다. 스킬 사용 후 그웬이 적에게 공격이나 스킬을 적중시켜야 이 스킬을 재사용할 수 있습니다. `,
+                description: `그웬이 바늘을 던져 적중한 적에게 마법 피해를 입히고 둔화시킵니다. 챔피언에게 적중 시 가위 난도질을 적용합니다. 이 스킬은 최대 2회 더 사용할 수 있으며, 재사용할 때마다 추가 바늘을 던져 더 많은 피해를 입힙니다. 스킬 사용 후 그웬이 적에게 공격이나 스킬을 적중시켜야 이 스킬을 재사용할 수 있습니다. `,
                 cooldownBurn: '120/100/80',
                 image: require('../../assets/lol_hero_icons/skills/GwenR.png')
             },
@@ -1819,21 +1819,21 @@ export const HERO_DATA = [
             {
                 id: 'HweiQ',
                 name: '주제: 참사',
-                description: `흐웨이가 일련의 참사를 상상하며 파괴적인 일격을 그립니다.<br><br>흐웨이의 스킬을 공격 스킬인 파멸의 화염, 절단의 번개, 녹아내린 균열로 교체합니다.`,
+                description: `흐웨이가 일련의 참사를 상상하며 파괴적인 일격을 그립니다.흐웨이의 스킬을 공격 스킬인 파멸의 화염, 절단의 번개, 녹아내린 균열로 교체합니다.`,
                 cooldownBurn: '10/9/8/7/6',
                 image: require('../../assets/lol_hero_icons/skills/HweiQ.png')
             },
             {
                 id: 'HweiW',
                 name: '주제: 평온',
-                description: `흐웨이가 일련의 평온을 상상하며 힘을 북돋는 배경을 그립니다.<br><br>흐웨이의 스킬을 보조 스킬인 쏜살같은 물살, 반사의 웅덩이, 요동치는 빛으로 교체합니다.`,
+                description: `흐웨이가 일련의 평온을 상상하며 힘을 북돋는 배경을 그립니다.흐웨이의 스킬을 보조 스킬인 쏜살같은 물살, 반사의 웅덩이, 요동치는 빛으로 교체합니다.`,
                 cooldownBurn: '18/17.5/17/16.5/16',
                 image: require('../../assets/lol_hero_icons/skills/HweiW.png')
             },
             {
                 id: 'HweiE',
                 name: '주제: 고통',
-                description: `흐웨이가 일련의 고통을 상상하며 제어하는 형상을 그립니다.<br><br>흐웨이의 스킬을 군중 제어 스킬인 암울한 형상, 심연의 응시, 파괴의 아귀로 교체합니다.`,
+                description: `흐웨이가 일련의 고통을 상상하며 제어하는 형상을 그립니다.흐웨이의 스킬을 군중 제어 스킬인 암울한 형상, 심연의 응시, 파괴의 아귀로 교체합니다.`,
                 cooldownBurn: '12/11.5/11/10.5/10',
                 image: require('../../assets/lol_hero_icons/skills/HweiE.png')
             },
@@ -1874,7 +1874,7 @@ export const HERO_DATA = [
             {
                 id: 'IllaoiE',
                 name: '영혼의 시험',
-                description: `일라오이가 적의 몸에서 영혼을 분리해 자신의 앞에 서게 만듭니다. 영혼은 자신이 입는 피해량의 일부를 원래의 대상에게 돌려줍니다. 대상이 처치되거나 영혼에서 너무 멀어지면, 대상은 <font color='#669900'>숙주</font>가 되어 촉수를 소환하기 시작합니다.`,
+                description: `일라오이가 적의 몸에서 영혼을 분리해 자신의 앞에 서게 만듭니다. 영혼은 자신이 입는 피해량의 일부를 원래의 대상에게 돌려줍니다. 대상이 처치되거나 영혼에서 너무 멀어지면, 대상은 숙주가 되어 촉수를 소환하기 시작합니다.`,
                 cooldownBurn: '16/15/14/13/12',
                 image: require('../../assets/lol_hero_icons/skills/IllaoiE.png')
             },
@@ -2106,28 +2106,28 @@ export const HERO_DATA = [
             {
                 id: 'JayceToTheSkies',
                 name: '하늘로! / 전격 폭발',
-                description: `해머 사용 시: 공중으로 도약해 적들에게 물리 피해를 입히고 이동 속도를 감소시킵니다.<br><br>캐논 사용 시: 적을 맞히거나 사거리 끝에 닿으면 폭발하는 전기 구체를 발사해 맞은 적 모두에게 물리 피해를 입힙니다.`,
+                description: `해머 사용 시: 공중으로 도약해 적들에게 물리 피해를 입히고 이동 속도를 감소시킵니다.캐논 사용 시: 적을 맞히거나 사거리 끝에 닿으면 폭발하는 전기 구체를 발사해 맞은 적 모두에게 물리 피해를 입힙니다.`,
                 cooldownBurn: '16/14/12/10/8/6',
                 image: require('../../assets/lol_hero_icons/skills/JayceToTheSkies.png')
             },
             {
                 id: 'JayceStaticField',
                 name: '전류 역장 / 초전하',
-                description: `해머 사용 시: 기본 지속 효과: 매 공격 시마다 마나가 회복됩니다. 사용 시: 몇 초 동안 주위 적에게 피해를 입히는 전류 역장을 생성합니다.<br><br>캐논 사용 시: 동력이 대폭 증가하여 다음 몇 차례의 공격에 대한 공격 속도가 최대로 증가합니다.`,
+                description: `해머 사용 시: 기본 지속 효과: 매 공격 시마다 마나가 회복됩니다. 사용 시: 몇 초 동안 주위 적에게 피해를 입히는 전류 역장을 생성합니다.캐논 사용 시: 동력이 대폭 증가하여 다음 몇 차례의 공격에 대한 공격 속도가 최대로 증가합니다.`,
                 cooldownBurn: '10',
                 image: require('../../assets/lol_hero_icons/skills/JayceStaticField.png')
             },
             {
                 id: 'JayceThunderingBlow',
                 name: '천둥 강타 / 가속 관문',
-                description: `해머 사용 시: 적에게 마법 피해를 가하고 짧은 거리 만큼 뒤로 밀쳐냅니다.<br><br>캐논 사용 시: 가속 관문을 열어, 이 관문을 통과하는 모든 아군 챔피언의 이동 속도를 증가시킵니다. 이 관문을 통해 전격 폭발을 발사할 경우 전기 구체의 이동 속도와 사거리가 증가하며, 피해량 또한 증가합니다.`,
+                description: `해머 사용 시: 적에게 마법 피해를 가하고 짧은 거리 만큼 뒤로 밀쳐냅니다.캐논 사용 시: 가속 관문을 열어, 이 관문을 통과하는 모든 아군 챔피언의 이동 속도를 증가시킵니다. 이 관문을 통해 전격 폭발을 발사할 경우 전기 구체의 이동 속도와 사거리가 증가하며, 피해량 또한 증가합니다.`,
                 cooldownBurn: '20/18/16/14/12/10',
                 image: require('../../assets/lol_hero_icons/skills/JayceThunderingBlow.png')
             },
             {
                 id: 'JayceStanceHtG',
                 name: '머큐리 캐논 / 머큐리 해머',
-                description: `해머 사용 시: 머큐리 해머를 머큐리 캐논으로 변환하여 새로운 스킬을 사용하며 사거리가 늘어납니다. 변환 후 첫 번째 공격은 적의 방어력과 마법 저항력을 감소시킵니다.<br><br>캐논 사용 시: 머큐리 캐논을 머큐리 해머로 변환하여 새로운 스킬을 사용하며 방어력과 마법 저항력이 증가합니다. 변환 후 첫 번째 공격은 추가 마법 피해를 입힙니다.`,
+                description: `해머 사용 시: 머큐리 해머를 머큐리 캐논으로 변환하여 새로운 스킬을 사용하며 사거리가 늘어납니다. 변환 후 첫 번째 공격은 적의 방어력과 마법 저항력을 감소시킵니다.캐논 사용 시: 머큐리 캐논을 머큐리 해머로 변환하여 새로운 스킬을 사용하며 방어력과 마법 저항력이 증가합니다. 변환 후 첫 번째 공격은 추가 마법 피해를 입힙니다.`,
                 cooldownBurn: '6',
                 image: require('../../assets/lol_hero_icons/skills/JayceStanceHtG.png')
             },
@@ -2161,7 +2161,7 @@ export const HERO_DATA = [
             {
                 id: 'JhinE',
                 name: '강제 관람',
-                description: `진이 은신 상태에 있다가 밟으면 작동하는 연꽃 함정을 설치합니다. 함정이 작동하면 주위 적을 둔화시킨 후 날카로운 꽃잎들이 폭발하며 피해를 입힙니다.<br><br><font color='#FFFFFF'>죽음의 미학 -</font> 진이 적 챔피언을 처치하면 사망한 챔피언 주위에 연꽃 함정이 피어납니다.`,
+                description: `진이 은신 상태에 있다가 밟으면 작동하는 연꽃 함정을 설치합니다. 함정이 작동하면 주위 적을 둔화시킨 후 날카로운 꽃잎들이 폭발하며 피해를 입힙니다.죽음의 미학 - 진이 적 챔피언을 처치하면 사망한 챔피언 주위에 연꽃 함정이 피어납니다.`,
                 cooldownBurn: '2',
                 image: require('../../assets/lol_hero_icons/skills/JhinE.png')
             },
@@ -2229,21 +2229,21 @@ export const HERO_DATA = [
             {
                 id: 'KaisaQ',
                 name: '이케시아 폭우',
-                description: `카이사가 근처 적들을 추격하는 미사일 세례를 퍼붓습니다.<br><br>살아있는 무기: 이케시아 폭우가 발사하는 미사일 개수가 증가합니다.`,
+                description: `카이사가 근처 적들을 추격하는 미사일 세례를 퍼붓습니다.살아있는 무기: 이케시아 폭우가 발사하는 미사일 개수가 증가합니다.`,
                 cooldownBurn: '10/9/8/7/6',
                 image: require('../../assets/lol_hero_icons/skills/KaisaQ.png')
             },
             {
                 id: 'KaisaW',
                 name: '공허추적자',
-                description: `카이사가 장거리 광선을 발사하며, 광선에 적중한 적에게 플라즈마 중첩이 쌓입니다.<br><br>살아있는 무기: 공허추적자 적중 시 플라즈마 중첩이 추가로 쌓이며 챔피언에게 적중 시 재사용 대기시간이 감소합니다.`,
+                description: `카이사가 장거리 광선을 발사하며, 광선에 적중한 적에게 플라즈마 중첩이 쌓입니다.살아있는 무기: 공허추적자 적중 시 플라즈마 중첩이 추가로 쌓이며 챔피언에게 적중 시 재사용 대기시간이 감소합니다.`,
                 cooldownBurn: '22/20/18/16/14',
                 image: require('../../assets/lol_hero_icons/skills/KaisaW.png')
             },
             {
                 id: 'KaisaE',
                 name: '고속 충전',
-                description: `카이사의 이동 속도가 잠시 동안 증가한 뒤 공격 속도가 증가합니다.<br><br>살아있는 무기: 고속 충전을 사용하면 잠시 투명 상태가 됩니다.`,
+                description: `카이사의 이동 속도가 잠시 동안 증가한 뒤 공격 속도가 증가합니다.살아있는 무기: 고속 충전을 사용하면 잠시 투명 상태가 됩니다.`,
                 cooldownBurn: '16/14.5/13/11.5/10',
                 image: require('../../assets/lol_hero_icons/skills/KaisaE.png')
             },
@@ -2277,7 +2277,7 @@ export const HERO_DATA = [
             {
                 id: 'KalistaW',
                 name: '감시하는 혼',
-                description: `칼리스타와 계약을 맺은 아군이 같은 대상을 공격하면 추가 피해를 입힙니다. <br><br>사용 시 혼이 일정한 경로를 순찰하며 자기 앞의 지역을 드러냅니다.`,
+                description: `칼리스타와 계약을 맺은 아군이 같은 대상을 공격하면 추가 피해를 입힙니다. 사용 시 혼이 일정한 경로를 순찰하며 자기 앞의 지역을 드러냅니다.`,
                 cooldownBurn: '30',
                 image: require('../../assets/lol_hero_icons/skills/KalistaW.png')
             },
@@ -2311,21 +2311,21 @@ export const HERO_DATA = [
             {
                 id: 'KarmaQ',
                 name: '내면의 열정',
-                description: `카르마가 영적인 에너지의 구체를 전방으로 던져, 적 유닛에게 부딪치면 폭발하며 피해를 입힙니다.<br><br>만트라 추가 효과: 만트라가 내면의 열정의 위력을 강화하여, 구체가 폭발한 잠시 후 원형 범위 내에 피해를 가합니다.`,
+                description: `카르마가 영적인 에너지의 구체를 전방으로 던져, 적 유닛에게 부딪치면 폭발하며 피해를 입힙니다.만트라 추가 효과: 만트라가 내면의 열정의 위력을 강화하여, 구체가 폭발한 잠시 후 원형 범위 내에 피해를 가합니다.`,
                 cooldownBurn: '9/8/7/6/5',
                 image: require('../../assets/lol_hero_icons/skills/KarmaQ.png')
             },
             {
                 id: 'KarmaSpiritBind',
                 name: '굳은 결의',
-                description: `카르마가 자신과 대상 적 사이에 끈을 만들어 피해를 주고 연결된 적의 위치를 드러냅니다. 끈이 끊어지지 않으면 적은 발이 묶이고 피해를 한 번 더 입습니다.<br><br>만트라 추가 효과: 카르마가 결속을 강화하여 체력을 회복하며 속박 지속시간이 증가합니다.`,
+                description: `카르마가 자신과 대상 적 사이에 끈을 만들어 피해를 주고 연결된 적의 위치를 드러냅니다. 끈이 끊어지지 않으면 적은 발이 묶이고 피해를 한 번 더 입습니다.만트라 추가 효과: 카르마가 결속을 강화하여 체력을 회복하며 속박 지속시간이 증가합니다.`,
                 cooldownBurn: '12',
                 image: require('../../assets/lol_hero_icons/skills/KarmaSpiritBind.png')
             },
             {
                 id: 'KarmaSolKimShield',
                 name: '고무',
-                description: `카르마가 보호막을 소환하여 적이 가하는 피해를 막아내고, 보호받는 아군은 이동 속도가 상승합니다.<br><br>만트라 추가 효과: 대상에게서 에너지가 흘러나와 보호막을 강화하고 주변 아군 챔피언들에게도 고무 효과를 적용합니다.`,
+                description: `카르마가 보호막을 소환하여 적이 가하는 피해를 막아내고, 보호받는 아군은 이동 속도가 상승합니다.만트라 추가 효과: 대상에게서 에너지가 흘러나와 보호막을 강화하고 주변 아군 챔피언들에게도 고무 효과를 적용합니다.`,
                 cooldownBurn: '10/9.5/9/8.5/8',
                 image: require('../../assets/lol_hero_icons/skills/KarmaSolKimShield.png')
             },
@@ -2434,14 +2434,14 @@ export const HERO_DATA = [
             {
                 id: 'KatarinaQ',
                 name: '단검 투척',
-                description: `카타리나가 대상에게 <font color='#FFF673'>단검</font>을 던집니다. 단검은 근처 적들에게 튕겼다가 땅에 떨어집니다.`,
+                description: `카타리나가 대상에게 단검을 던집니다. 단검은 근처 적들에게 튕겼다가 땅에 떨어집니다.`,
                 cooldownBurn: '11/10/9/8/7',
                 image: require('../../assets/lol_hero_icons/skills/KatarinaQ.png')
             },
             {
                 id: 'KatarinaW',
                 name: '준비',
-                description: `카타리나가 <font color='#FFF673'>단검</font>을 머리 위로 던지며 이동 속도가 크게 빨라집니다.`,
+                description: `카타리나가 단검을 머리 위로 던지며 이동 속도가 크게 빨라집니다.`,
                 cooldownBurn: '15/14/13/12/11',
                 image: require('../../assets/lol_hero_icons/skills/KatarinaW.png')
             },
@@ -2489,7 +2489,7 @@ export const HERO_DATA = [
             {
                 id: 'KayleE',
                 name: '화염주문검',
-                description: `기본 지속 효과: 천상의 검 '선의'가 케일이 공격하는 적에게 추가 마법 피해를 입힙니다.<br><br>사용 시: 다음 공격 시 천상의 화염으로 대상을 강타하여 대상이 잃은 체력에 비례해 추가 피해를 입힙니다.`,
+                description: `기본 지속 효과: 천상의 검 '선의'가 케일이 공격하는 적에게 추가 마법 피해를 입힙니다.사용 시: 다음 공격 시 천상의 화염으로 대상을 강타하여 대상이 잃은 체력에 비례해 추가 피해를 입힙니다.`,
                 cooldownBurn: '8/7.5/7/6.5/6',
                 image: require('../../assets/lol_hero_icons/skills/KayleE.png')
             },
@@ -2598,28 +2598,28 @@ export const HERO_DATA = [
             {
                 id: 'KhazixQ',
                 name: '공포 감지',
-                description: `대상에게 물리 피해를 줍니다. <font color='#FFF673'>고립</font>된 대상에게는 피해량이 늘어납니다. <font color='#00DD33'>거대 갈고리 진화</font>를 <font color='#FFF673'>고립</font>된 대상에게 사용 시, 재사용 대기시간이 일부 감소합니다. 또한, 카직스의 기본 공격과 공포 감지 범위도 증가합니다.`,
+                description: `대상에게 물리 피해를 줍니다. 고립된 대상에게는 피해량이 늘어납니다. 거대 갈고리 진화를 고립된 대상에게 사용 시, 재사용 대기시간이 일부 감소합니다. 또한, 카직스의 기본 공격과 공포 감지 범위도 증가합니다.`,
                 cooldownBurn: '4',
                 image: require('../../assets/lol_hero_icons/skills/KhazixQ.png')
             },
             {
                 id: 'KhazixW',
                 name: '공허의 가시',
-                description: `카직스가 폭발하는 가시를 발사하여 적중한 적에게 물리 피해를 가합니다. 폭발 범위 안에 있으면 카직스의 체력이 회복됩니다. <font color='#00DD33'>가시 어깨 진화</font>를 선택하면, 공허의 가시 세 개가 원뿔 형태로 발사되며 적중한 적에게 둔화를 걸고 2초 동안 적 챔피언을 드러냅니다. <font color='#FFF673'>고립</font>된 대상에게는 둔화 효과가 증가합니다.`,
+                description: `카직스가 폭발하는 가시를 발사하여 적중한 적에게 물리 피해를 가합니다. 폭발 범위 안에 있으면 카직스의 체력이 회복됩니다. 가시 어깨 진화를 선택하면, 공허의 가시 세 개가 원뿔 형태로 발사되며 적중한 적에게 둔화를 걸고 2초 동안 적 챔피언을 드러냅니다. 고립된 대상에게는 둔화 효과가 증가합니다.`,
                 cooldownBurn: '9',
                 image: require('../../assets/lol_hero_icons/skills/KhazixW.png')
             },
             {
                 id: 'KhazixE',
                 name: '도약',
-                description: `카직스가 도약하여, 착지할 때 물리 피해를 가합니다. <font color='#00DD33'>날개 진화</font>를 선택하면 도약 범위가 200 증가하며, 킬이나 어시스트를 기록하면 도약의 재사용 대기시간이 초기화됩니다.`,
+                description: `카직스가 도약하여, 착지할 때 물리 피해를 가합니다. 날개 진화를 선택하면 도약 범위가 200 증가하며, 킬이나 어시스트를 기록하면 도약의 재사용 대기시간이 초기화됩니다.`,
                 cooldownBurn: '20/18/16/14/12',
                 image: require('../../assets/lol_hero_icons/skills/KhazixE.png')
             },
             {
                 id: 'KhazixR',
                 name: '공허의 습격',
-                description: `카직스의 스킬을 하나 진화시켜 고유한 추가 효과를 부여합니다. 공허의 습격을 활성화하면 카직스가 <font color='#91d7ee'>은신</font> 상태가 되고 보이지 않는 위협이 발동되어, 이동 속도가 증가합니다. <font color='#00DD33'>활성 보호색 진화</font>를 선택하면, <font color='#91d7ee'>은신</font>의 지속시간이 증가하며 공허의 습격을 추가로 사용할 수 있습니다.`,
+                description: `카직스의 스킬을 하나 진화시켜 고유한 추가 효과를 부여합니다. 공허의 습격을 활성화하면 카직스가 은신 상태가 되고 보이지 않는 위협이 발동되어, 이동 속도가 증가합니다. 활성 보호색 진화를 선택하면, 은신의 지속시간이 증가하며 공허의 습격을 추가로 사용할 수 있습니다.`,
                 cooldownBurn: '100/85/70',
                 image: require('../../assets/lol_hero_icons/skills/KhazixR.png')
             },
@@ -2680,7 +2680,7 @@ export const HERO_DATA = [
             {
                 id: 'KledQ',
                 name: '덫날리기',
-                description: `클레드가 밧줄에 묶인 덫을 던져 적 챔피언에게 피해를 입히고 붙잡습니다. 해당 챔피언과 잠시 동안 근거리를 유지하면 클레드 쪽으로 끌어당기면서 추가 물리 피해를 입힙니다.<br><br>스칼 미탑승 시에는 원거리 공격이 가능한 빵야!로 바뀝니다. 빵야!를 사용하면 클레드가 뒤로 밀려나며 스칼의 용기를 회복시킬 수 있습니다.`,
+                description: `클레드가 밧줄에 묶인 덫을 던져 적 챔피언에게 피해를 입히고 붙잡습니다. 해당 챔피언과 잠시 동안 근거리를 유지하면 클레드 쪽으로 끌어당기면서 추가 물리 피해를 입힙니다.스칼 미탑승 시에는 원거리 공격이 가능한 빵야!로 바뀝니다. 빵야!를 사용하면 클레드가 뒤로 밀려나며 스칼의 용기를 회복시킬 수 있습니다.`,
                 cooldownBurn: '11/10/9/8/7',
                 image: require('../../assets/lol_hero_icons/skills/KledQ.png')
             },
@@ -2762,28 +2762,28 @@ export const HERO_DATA = [
             {
                 id: 'KSanteQ',
                 name: '엔토포 타격',
-                description: `전방으로 무기를 휘둘러 짧은 일직선상에 있는 모든 적에게 피해를 입히고 둔화 효과를 적용합니다.<br><br>적중 시 몇 초 동안 중첩을 1회 얻습니다. 2번 중첩되면 이 스킬이 적들을 끌어당기는 충격파를 발사합니다.`,
+                description: `전방으로 무기를 휘둘러 짧은 일직선상에 있는 모든 적에게 피해를 입히고 둔화 효과를 적용합니다.적중 시 몇 초 동안 중첩을 1회 얻습니다. 2번 중첩되면 이 스킬이 적들을 끌어당기는 충격파를 발사합니다.`,
                 cooldownBurn: '4',
                 image: require('../../assets/lol_hero_icons/skills/KSanteQ.png')
             },
             {
                 id: 'KSanteW',
                 name: '길을 여는 자',
-                description: `크산테가 충전한 후 돌진합니다. 돌진 중에는 저지 불가 상태가 되고 받는 피해량이 감소합니다. 돌진 시 부딪힌 적은 돌진 경로 끝으로 밀려나고 기절합니다.<br><br>`,
+                description: `크산테가 충전한 후 돌진합니다. 돌진 중에는 저지 불가 상태가 되고 받는 피해량이 감소합니다. 돌진 시 부딪힌 적은 돌진 경로 끝으로 밀려나고 기절합니다.`,
                 cooldownBurn: '24/22/20/18/16',
                 image: require('../../assets/lol_hero_icons/skills/KSanteW.png')
             },
             {
                 id: 'KSanteE',
                 name: '발놀림',
-                description: `크산테가 아군에게 돌진해 함께 보호막을 얻습니다. 아군이 없다면 돌진 사거리가 감소하며 보호막을 얻습니다.<br>`,
+                description: `크산테가 아군에게 돌진해 함께 보호막을 얻습니다. 아군이 없다면 돌진 사거리가 감소하며 보호막을 얻습니다.`,
                 cooldownBurn: '10.5/10/9.5/9/8.5',
                 image: require('../../assets/lol_hero_icons/skills/KSanteE.png')
             },
             {
                 id: 'KSanteR',
                 name: '총공세',
-                description: `크산테가 적을 강타해 밀어냅니다. 대상이 벽에 부딪히면 벽을 통과해 추가 피해를 입습니다. 크산테는 대상 뒤에 나타나 총공세 상태에 돌입하며, 이때 방어력이 감소하고 피해량은 크게 증가합니다.<br><br>`,
+                description: `크산테가 적을 강타해 밀어냅니다. 대상이 벽에 부딪히면 벽을 통과해 추가 피해를 입습니다. 크산테는 대상 뒤에 나타나 총공세 상태에 돌입하며, 이때 방어력이 감소하고 피해량은 크게 증가합니다.`,
                 cooldownBurn: '120/100/80',
                 image: require('../../assets/lol_hero_icons/skills/KSanteR.png')
             },
@@ -2844,21 +2844,21 @@ export const HERO_DATA = [
             {
                 id: 'LeeSinQOne',
                 name: '음파 / 공명의 일격',
-                description: `음파: 리 신이 음파를 발사하여 적의 위치를 파악하며, 음파에 맞은 적에게 물리 피해를 입힙니다. 적이 음파에 명중하면 다음 3초 안에 공명의 일격을 시전할 수 있습니다.<br>공명의 일격: 리 신이 음파에 맞은 적에게 돌격해 적이 잃은 체력에 비례한 물리 피해를 입힙니다.`,
+                description: `음파: 리 신이 음파를 발사하여 적의 위치를 파악하며, 음파에 맞은 적에게 물리 피해를 입힙니다. 적이 음파에 명중하면 다음 3초 안에 공명의 일격을 시전할 수 있습니다.공명의 일격: 리 신이 음파에 맞은 적에게 돌격해 적이 잃은 체력에 비례한 물리 피해를 입힙니다.`,
                 cooldownBurn: '10/9/8/7/6',
                 image: require('../../assets/lol_hero_icons/skills/LeeSinQOne.png')
             },
             {
                 id: 'LeeSinWOne',
                 name: '방호 / 강철의 의지',
-                description: `방호: 리 신이 대상 아군에게 돌격하여 자신에게 피해를 흡수하는 보호막을 생성합니다. 해당 아군이 챔피언일 경우 아군에게도 보호막이 적용됩니다. 방호를 사용하고 난 뒤 강철의 의지를 시전할 수 있습니다.<br>강철의 의지: 고된 수행으로 리 신이 전투에서 보다 잘 살아남을 수 있게 됩니다. 생명력 흡수와 주문 흡혈 효과를 얻습니다.`,
+                description: `방호: 리 신이 대상 아군에게 돌격하여 자신에게 피해를 흡수하는 보호막을 생성합니다. 해당 아군이 챔피언일 경우 아군에게도 보호막이 적용됩니다. 방호를 사용하고 난 뒤 강철의 의지를 시전할 수 있습니다.강철의 의지: 고된 수행으로 리 신이 전투에서 보다 잘 살아남을 수 있게 됩니다. 생명력 흡수와 주문 흡혈 효과를 얻습니다.`,
                 cooldownBurn: '12',
                 image: require('../../assets/lol_hero_icons/skills/LeeSinWOne.png')
             },
             {
                 id: 'LeeSinEOne',
                 name: '폭풍/무력화',
-                description: `폭풍: 리 신이 바닥을 내리쳐 마법 피해를 입히고 은신한 유닛을 드러내는 충격파를 발생시킵니다. 폭풍이 적에게 명중하면 무력화를 사용할 수 있습니다.<br>무력화: 리 신이 폭풍에 피해를 입은 적을 약화시키며 이동 속도를 낮춥니다. 저하된 이동 속도는 시간이 지남에 따라 점차 회복됩니다.`,
+                description: `폭풍: 리 신이 바닥을 내리쳐 마법 피해를 입히고 은신한 유닛을 드러내는 충격파를 발생시킵니다. 폭풍이 적에게 명중하면 무력화를 사용할 수 있습니다.무력화: 리 신이 폭풍에 피해를 입은 적을 약화시키며 이동 속도를 낮춥니다. 저하된 이동 속도는 시간이 지남에 따라 점차 회복됩니다.`,
                 cooldownBurn: '9',
                 image: require('../../assets/lol_hero_icons/skills/LeeSinEOne.png')
             },
@@ -3186,7 +3186,7 @@ export const HERO_DATA = [
             {
                 id: 'MalzaharE',
                 name: '재앙의 환상',
-                description: `말자하가 대상의 머릿속에 최후의 광경을 보여주며 지속적으로 피해를 입힙니다. 말자하가 대상에게 다른 스킬을 사용하면 환상의 지속시간이 초기화됩니다.<br><br>이 동안 대상이 쓰러지면 환상은 주변 적에게 옮겨가고, 말자하는 마나를 획득합니다. 말자하의 공허충은 환상으로 오염된 대상에게 몰려갑니다.`,
+                description: `말자하가 대상의 머릿속에 최후의 광경을 보여주며 지속적으로 피해를 입힙니다. 말자하가 대상에게 다른 스킬을 사용하면 환상의 지속시간이 초기화됩니다.이 동안 대상이 쓰러지면 환상은 주변 적에게 옮겨가고, 말자하는 마나를 획득합니다. 말자하의 공허충은 환상으로 오염된 대상에게 몰려갑니다.`,
                 cooldownBurn: '11/10/9/8/7',
                 image: require('../../assets/lol_hero_icons/skills/MalzaharE.png')
             },
@@ -3384,7 +3384,7 @@ export const HERO_DATA = [
             {
                 id: 'MonkeyKingDecoy',
                 name: '분신 전사',
-                description: `오공이 잠깐 동안 <font color='#91d7ee'>투명</font> 상태가 되고 지정한 방향으로 돌진하며 근처 적을 공격하는 분신을 남깁니다.`,
+                description: `오공이 잠깐 동안 투명 상태가 되고 지정한 방향으로 돌진하며 근처 적을 공격하는 분신을 남깁니다.`,
                 cooldownBurn: '22/20/18/16/14',
                 image: require('../../assets/lol_hero_icons/skills/MonkeyKingDecoy.png')
             },
@@ -3398,7 +3398,7 @@ export const HERO_DATA = [
             {
                 id: 'MonkeyKingSpinToWin',
                 name: '회전격',
-                description: `오공이 여의봉을 늘린 후 빙빙 휘두르며 이동 속도가 증가합니다.<br><br>적중당한 적은 피해를 입고 공중에 떠오릅니다.`,
+                description: `오공이 여의봉을 늘린 후 빙빙 휘두르며 이동 속도가 증가합니다.적중당한 적은 피해를 입고 공중에 떠오릅니다.`,
                 cooldownBurn: '130/110/90',
                 image: require('../../assets/lol_hero_icons/skills/MonkeyKingSpinToWin.png')
             },
@@ -3500,7 +3500,7 @@ export const HERO_DATA = [
             {
                 id: 'NaafiriQ',
                 name: '다르킨 단검',
-                description: `나피리가 최대 두 개의 단검을 던져 각 단검으로 출혈을 일으킵니다. 대상이 이미 출혈 상태라면 그 대신 추가 피해를 입힙니다.<br><br>무리가 이 스킬에 적중당한 챔피언을 향해 도약해 공격합니다.<br>`,
+                description: `나피리가 최대 두 개의 단검을 던져 각 단검으로 출혈을 일으킵니다. 대상이 이미 출혈 상태라면 그 대신 추가 피해를 입힙니다.무리가 이 스킬에 적중당한 챔피언을 향해 도약해 공격합니다.`,
                 cooldownBurn: '9/8.5/8/7.5/7',
                 image: require('../../assets/lol_hero_icons/skills/NaafiriQ.png')
             },
@@ -3521,7 +3521,7 @@ export const HERO_DATA = [
             {
                 id: 'NaafiriR',
                 name: '무리의 부름',
-                description: `나피리가 무리를 강화하고 추가로 무리를 소환합니다. 즉시 이동 속도와 시야가 증가하며 처음으로 다른 챔피언을 적중시키면 보호막을 획득합니다.<br><br>처음으로 다른 챔피언을 처치하면 모든 효과가 초기화됩니다.<br>`,
+                description: `나피리가 무리를 강화하고 추가로 무리를 소환합니다. 즉시 이동 속도와 시야가 증가하며 처음으로 다른 챔피언을 적중시키면 보호막을 획득합니다.처음으로 다른 챔피언을 처치하면 모든 효과가 초기화됩니다.`,
                 cooldownBurn: '120/110/100',
                 image: require('../../assets/lol_hero_icons/skills/NaafiriR.png')
             },
@@ -4163,7 +4163,7 @@ export const HERO_DATA = [
             {
                 id: 'QuinnW',
                 name: '예리한 감각',
-                description: `기본 지속 효과로 퀸이 <font color='#FFF673'>취약</font>해진 대상을 공격한 이후 공격 속도와 이동 속도가 상승합니다. 사용하면 발러가 주변의 넓은 지역을 드러냅니다.`,
+                description: `기본 지속 효과로 퀸이 취약해진 대상을 공격한 이후 공격 속도와 이동 속도가 상승합니다. 사용하면 발러가 주변의 넓은 지역을 드러냅니다.`,
                 cooldownBurn: '50/45/40/35/30',
                 image: require('../../assets/lol_hero_icons/skills/QuinnW.png')
             },
@@ -4279,21 +4279,21 @@ export const HERO_DATA = [
             {
                 id: 'RekSaiQ',
                 name: '여왕의 진노 / 먹잇감 추적',
-                description: `렉사이의 다음 3번의 기본 공격은 주변 적들에게 추가 물리 피해를 입힙니다.<br><br>매복 상태일 때는 렉사이가 공허 에너지가 주입된 흙을 발사하여, 여기 맞는 적들은 피해를 입고 위치가 드러납니다.`,
+                description: `렉사이의 다음 3번의 기본 공격은 주변 적들에게 추가 물리 피해를 입힙니다.매복 상태일 때는 렉사이가 공허 에너지가 주입된 흙을 발사하여, 여기 맞는 적들은 피해를 입고 위치가 드러납니다.`,
                 cooldownBurn: '4/3.5/3/2.5/2',
                 image: require('../../assets/lol_hero_icons/skills/RekSaiQ.png')
             },
             {
                 id: 'RekSaiW',
                 name: '매복 / 돌출',
-                description: `렉사이가 지면을 파고들어가 새로운 스킬을 사용하게 되며 이동 속도가 상승합니다. 시야 범위가 좁아지며 기본 공격을 할 수 없게 됩니다.<br><br>매복 상태일 때는 렉사이가 돌출 스킬을 사용하여 튀어 올라, 주위 적들을 공중으로 띄우고 피해를 입힐 수 있습니다.`,
+                description: `렉사이가 지면을 파고들어가 새로운 스킬을 사용하게 되며 이동 속도가 상승합니다. 시야 범위가 좁아지며 기본 공격을 할 수 없게 됩니다.매복 상태일 때는 렉사이가 돌출 스킬을 사용하여 튀어 올라, 주위 적들을 공중으로 띄우고 피해를 입힐 수 있습니다.`,
                 cooldownBurn: '4',
                 image: require('../../assets/lol_hero_icons/skills/RekSaiW.png')
             },
             {
                 id: 'RekSaiE',
                 name: '성난 이빨 / 땅굴 파기',
-                description: `렉사이가 대상을 물어뜯습니다. 분노가 최대치일 때는 추가 피해를 입힙니다.<br><br>매복 상태일 때 렉사이가 재사용 가능하며 오래 지속되는 땅굴을 만듭니다. 적이 이 땅굴 입구에 올라서면 파괴됩니다.`,
+                description: `렉사이가 대상을 물어뜯습니다. 분노가 최대치일 때는 추가 피해를 입힙니다.매복 상태일 때 렉사이가 재사용 가능하며 오래 지속되는 땅굴을 만듭니다. 적이 이 땅굴 입구에 올라서면 파괴됩니다.`,
                 cooldownBurn: '10',
                 image: require('../../assets/lol_hero_icons/skills/RekSaiE.png')
             },
@@ -4327,14 +4327,14 @@ export const HERO_DATA = [
             {
                 id: 'RellW_Dismount',
                 name: '철마술: 붕괴',
-                description: `탑승: 렐이 탈것에서 중갑 형태로 뛰어내리며 적들을 공중으로 띄우고 큰 피해를 흡수하는 보호막을 얻습니다. 보행 시 방어력, 마법 저항력, 공격 속도, 공격 사거리가 증가하지만 둔화됩니다.<br><br>보행: 렐이 탈것에 올라타며 이동 속도가 상승하고 다음 기본 공격 시 적을 공중으로 띄워 올립니다.<br><br>`,
+                description: `탑승: 렐이 탈것에서 중갑 형태로 뛰어내리며 적들을 공중으로 띄우고 큰 피해를 흡수하는 보호막을 얻습니다. 보행 시 방어력, 마법 저항력, 공격 속도, 공격 사거리가 증가하지만 둔화됩니다.보행: 렐이 탈것에 올라타며 이동 속도가 상승하고 다음 기본 공격 시 적을 공중으로 띄워 올립니다.`,
                 cooldownBurn: '11',
                 image: require('../../assets/lol_hero_icons/skills/RellW_Dismount.png')
             },
             {
                 id: 'RellE',
                 name: '전속력',
-                description: `기본 지속 효과: 비전투 시 이동 속도가 증가합니다.<br><br>사용 시: 렐과 아군 하나의 이동 속도가 서서히 증가합니다. 적이나 서로를 향해 이동하면 두 배로 증가합니다. 렐의 다음 공격은 폭발하며 마법 피해를 입힙니다.<br>`,
+                description: `기본 지속 효과: 비전투 시 이동 속도가 증가합니다.사용 시: 렐과 아군 하나의 이동 속도가 서서히 증가합니다. 적이나 서로를 향해 이동하면 두 배로 증가합니다. 렐의 다음 공격은 폭발하며 마법 피해를 입힙니다.`,
                 cooldownBurn: '15',
                 image: require('../../assets/lol_hero_icons/skills/RellE.png')
             },
@@ -4443,28 +4443,28 @@ export const HERO_DATA = [
             {
                 id: 'RengarQ',
                 name: '포악함',
-                description: `렝가의 다음 기본 공격이 적을 찌르며 추가 피해를 입힙니다.<br><br>야성 효과: 피해량과 공격 속도가 증가합니다.`,
+                description: `렝가의 다음 기본 공격이 적을 찌르며 추가 피해를 입힙니다.야성 효과: 피해량과 공격 속도가 증가합니다.`,
                 cooldownBurn: '0.25',
                 image: require('../../assets/lol_hero_icons/skills/RengarQ.png')
             },
             {
                 id: 'RengarW',
                 name: '전투의 포효',
-                description: `렝가가 전투의 포효를 내질러 적에게 피해를 입히고 지난 몇 초 동안 입은 피해의 일부를 회복합니다.<br><br>야성 효과: 모든 군중 제어 효과를 없앱니다.`,
+                description: `렝가가 전투의 포효를 내질러 적에게 피해를 입히고 지난 몇 초 동안 입은 피해의 일부를 회복합니다.야성 효과: 모든 군중 제어 효과를 없앱니다.`,
                 cooldownBurn: '0.25',
                 image: require('../../assets/lol_hero_icons/skills/RengarW.png')
             },
             {
                 id: 'RengarE',
                 name: '올가미 투척',
-                description: `렝가가 올가미를 투척하여, 처음 맞은 대상에게 짧은 시간 동안 둔화를 겁니다.<br><br>야성 효과: 대상을 제자리에 묶습니다.`,
+                description: `렝가가 올가미를 투척하여, 처음 맞은 대상에게 짧은 시간 동안 둔화를 겁니다.야성 효과: 대상을 제자리에 묶습니다.`,
                 cooldownBurn: '0.25',
                 image: require('../../assets/lol_hero_icons/skills/RengarE.png')
             },
             {
                 id: 'RengarR',
                 name: '사냥의 전율',
-                description: `렝가가 맹수의 본능을 발동해 <font color='#cd90ee'>위장</font> 상태가 되고 일정 범위 내에서 가장 가까이에 있는 적을 드러내 확인할 수 있습니다. 사냥의 전율이 활성화된 동안에는 이동 속도가 빨라지고 수풀에 있지 않아도 확인한 적에게 도약할 수 있으며, 이때 대상의 방어력을 감소시킵니다.`,
+                description: `렝가가 맹수의 본능을 발동해 위장 상태가 되고 일정 범위 내에서 가장 가까이에 있는 적을 드러내 확인할 수 있습니다. 사냥의 전율이 활성화된 동안에는 이동 속도가 빨라지고 수풀에 있지 않아도 확인한 적에게 도약할 수 있으며, 이때 대상의 방어력을 감소시킵니다.`,
                 cooldownBurn: '110/100/90',
                 image: require('../../assets/lol_hero_icons/skills/RengarR.png')
             },
@@ -4566,7 +4566,7 @@ export const HERO_DATA = [
             {
                 id: 'RyzeQWrapper',
                 name: '과부하',
-                description: `기본 지속 효과로 라이즈가 다른 스킬을 사용하면 과부하의 재사용 대기시간이 초기화되고 룬 하나를 충전합니다. 룬이 2개 충전된 상태에서 과부하를 사용하면 이동 속도가 잠시 대폭 증가합니다.<br><br>사용 시 라이즈가 순수한 에너지를 일직선으로 발사해 첫 번째 맞는 적에게 피해를 입힙니다. 대상에게 전이 표식이 있으면 과부하가 추가 피해를 입히고 전이 표식이 있는 주변 적에게 튕깁니다.`,
+                description: `기본 지속 효과로 라이즈가 다른 스킬을 사용하면 과부하의 재사용 대기시간이 초기화되고 룬 하나를 충전합니다. 룬이 2개 충전된 상태에서 과부하를 사용하면 이동 속도가 잠시 대폭 증가합니다.사용 시 라이즈가 순수한 에너지를 일직선으로 발사해 첫 번째 맞는 적에게 피해를 입힙니다. 대상에게 전이 표식이 있으면 과부하가 추가 피해를 입히고 전이 표식이 있는 주변 적에게 튕깁니다.`,
                 cooldownBurn: '5',
                 image: require('../../assets/lol_hero_icons/skills/RyzeQWrapper.png')
             },
@@ -4587,7 +4587,7 @@ export const HERO_DATA = [
             {
                 id: 'RyzeR',
                 name: '공간 왜곡',
-                description: `기본 지속 효과로 과부하가 전이 표식이 있는 적에게 더 큰 피해를 입힙니다.<br><br>사용 시 라이즈가 근처에 차원문을 생성합니다. 몇 초 후, 차원문 주변의 모든 아군이 대상 지점으로 순간이동 합니다.`,
+                description: `기본 지속 효과로 과부하가 전이 표식이 있는 적에게 더 큰 피해를 입힙니다.사용 시 라이즈가 근처에 차원문을 생성합니다. 몇 초 후, 차원문 주변의 모든 아군이 대상 지점으로 순간이동 합니다.`,
                 cooldownBurn: '180/160/140',
                 image: require('../../assets/lol_hero_icons/skills/RyzeR.png')
             },
@@ -4812,7 +4812,7 @@ export const HERO_DATA = [
             {
                 id: 'Deceive',
                 name: '속임수',
-                description: `샤코가 즉시 투명해지며 지정한 위치로 순간이동합니다.<br><br>투명 상태에서 가하는 첫 번째 기본 공격이 강화되어 추가 피해를 입히고 뒤에서 공격 시 치명타로 적중합니다.`,
+                description: `샤코가 즉시 투명해지며 지정한 위치로 순간이동합니다.투명 상태에서 가하는 첫 번째 기본 공격이 강화되어 추가 피해를 입히고 뒤에서 공격 시 치명타로 적중합니다.`,
                 cooldownBurn: '12/11.5/11/10.5/10',
                 image: require('../../assets/lol_hero_icons/skills/Deceive.png')
             },
@@ -4894,28 +4894,28 @@ export const HERO_DATA = [
             {
                 id: 'ShyvanaDoubleAttack',
                 name: '두 번 물어뜯기',
-                description: `쉬바나는 다음 공격 시 두 번 공격하고 공격 속도가 증가합니다. 기본 공격 시 두 번 물어뜯기의 재사용 대기시간이 0.5초 감소합니다.<br><br><font color='#FF3300'>용 형상: </font>두 번 물어뜯기를 사용하면 쉬바나 앞에 있는 모든 유닛을 베어 가릅니다.`,
+                description: `쉬바나는 다음 공격 시 두 번 공격하고 공격 속도가 증가합니다. 기본 공격 시 두 번 물어뜯기의 재사용 대기시간이 0.5초 감소합니다.용 형상: 두 번 물어뜯기를 사용하면 쉬바나 앞에 있는 모든 유닛을 베어 가릅니다.`,
                 cooldownBurn: '8/7.5/7/6.5/6',
                 image: require('../../assets/lol_hero_icons/skills/ShyvanaDoubleAttack.png')
             },
             {
                 id: 'ShyvanaImmolationAura',
                 name: '연소',
-                description: `쉬바나가 화염으로 몸을 감싸 3초간 주위 적에게 초당 마법 피해를 입히며 이동 속도가 빨라집니다. 연소가 활성화되어 있는 적을 쉬바나가 기본 공격하면 이 피해량의 일부가 다시 적용됩니다. 이동 속도는 시간이 흐를수록 점차 정상으로 줄어듭니다. 기본 공격 시 연소의 지속시간이 늘어납니다.<br><br><font color='#FF3300'>용 형상: </font>연소의 크기가 커집니다.`,
+                description: `쉬바나가 화염으로 몸을 감싸 3초간 주위 적에게 초당 마법 피해를 입히며 이동 속도가 빨라집니다. 연소가 활성화되어 있는 적을 쉬바나가 기본 공격하면 이 피해량의 일부가 다시 적용됩니다. 이동 속도는 시간이 흐를수록 점차 정상으로 줄어듭니다. 기본 공격 시 연소의 지속시간이 늘어납니다.용 형상: 연소의 크기가 커집니다.`,
                 cooldownBurn: '12',
                 image: require('../../assets/lol_hero_icons/skills/ShyvanaImmolationAura.png')
             },
             {
                 id: 'ShyvanaFireball',
                 name: '화염 숨결',
-                description: `쉬바나가 화염구를 던져 맞은 적 모두에게 피해를 가하며 맞은 적에게 5초간 불타는 재 표식을 남깁니다. 표식이 남은 대상에게 쉬바나의 기본 공격이 적중하면 대상의 최대 체력의 일정 비율에 해당하는 피해를 입힙니다.<br><br><font color='#FF3300'>용 형상: </font>화염 숨결이 대상에게 닿거나 목표 지점에 도달하면 폭발하며 추가 피해를 입히고 잠깐 동안 땅을 불태웁니다.`,
+                description: `쉬바나가 화염구를 던져 맞은 적 모두에게 피해를 가하며 맞은 적에게 5초간 불타는 재 표식을 남깁니다. 표식이 남은 대상에게 쉬바나의 기본 공격이 적중하면 대상의 최대 체력의 일정 비율에 해당하는 피해를 입힙니다.용 형상: 화염 숨결이 대상에게 닿거나 목표 지점에 도달하면 폭발하며 추가 피해를 입히고 잠깐 동안 땅을 불태웁니다.`,
                 cooldownBurn: '12/11/10/9/8',
                 image: require('../../assets/lol_hero_icons/skills/ShyvanaFireball.png')
             },
             {
                 id: 'ShyvanaTransformCast',
                 name: '용의 강림',
-                description: `쉬바나가 용으로 변신해 목표 지점으로 날아갑니다. 비행 중 쉬바나와 부딪힌 적들은 피해를 입으며 목표 지점 쪽으로 밀려납니다.<br><br>쉬바나는 기본 지속 효과로 매 초 분노가 오르며, 기본 공격 시 분노가 2씩 오릅니다.`,
+                description: `쉬바나가 용으로 변신해 목표 지점으로 날아갑니다. 비행 중 쉬바나와 부딪힌 적들은 피해를 입으며 목표 지점 쪽으로 밀려납니다.쉬바나는 기본 지속 효과로 매 초 분노가 오르며, 기본 공격 시 분노가 2씩 오릅니다.`,
                 cooldownBurn: '0',
                 image: require('../../assets/lol_hero_icons/skills/ShyvanaTransformCast.png')
             },
@@ -5263,7 +5263,7 @@ export const HERO_DATA = [
             {
                 id: 'SylasQ',
                 name: '사슬 후려치기',
-                description: `사일러스가 사슬을 후려쳐 교차시키며 대상 지점에 있는 적에게 피해를 입히고 이동 속도를 늦춥니다. <br><br>잠시 후 사슬이 교차한 지점에서 마력이 폭발해 피해를 입힙니다.`,
+                description: `사일러스가 사슬을 후려쳐 교차시키며 대상 지점에 있는 적에게 피해를 입히고 이동 속도를 늦춥니다. 잠시 후 사슬이 교차한 지점에서 마력이 폭발해 피해를 입힙니다.`,
                 cooldownBurn: '10/9/8/7/6',
                 image: require('../../assets/lol_hero_icons/skills/SylasQ.png')
             },
@@ -5345,7 +5345,7 @@ export const HERO_DATA = [
             {
                 id: 'TahmKenchQ',
                 name: '혀 채찍',
-                description: `탐 켄치가 혀를 채찍처럼 휘둘러 처음 맞는 유닛에 피해를 입히고 속도를 늦춥니다. 적 챔피언에게 적중하면 자신의 체력을 회복합니다.<br><br>적 챔피언에게 <spellName>절대 미각</spellName> 중첩을 적용합니다. 해당 챔피언에게 <spellName>절대 미각</spellName> 중첩이 이미 3회 쌓였다면 챔피언은 기절하고 중첩이 소모됩니다.`,
+                description: `탐 켄치가 혀를 채찍처럼 휘둘러 처음 맞는 유닛에 피해를 입히고 속도를 늦춥니다. 적 챔피언에게 적중하면 자신의 체력을 회복합니다.적 챔피언에게 절대 미각 중첩을 적용합니다. 해당 챔피언에게 절대 미각 중첩이 이미 3회 쌓였다면 챔피언은 기절하고 중첩이 소모됩니다.`,
                 cooldownBurn: '7/6.5/6/5.5/5',
                 image: require('../../assets/lol_hero_icons/skills/TahmKenchQ.png')
             },
@@ -5359,7 +5359,7 @@ export const HERO_DATA = [
             {
                 id: 'TahmKenchE',
                 name: '두꺼운 피부',
-                description: `<passive>기본 지속 효과:</passive> 탐 켄치가 입은 피해량의 일부를 비축하고 전투에서 벗어났을 때 비축량에 비례하여 체력을 회복합니다.<br><br><active>사용 시:</active> 비축한 모든 피해량을 일시적인 보호막으로 전환합니다.`,
+                description: `기본 지속 효과: 탐 켄치가 입은 피해량의 일부를 비축하고 전투에서 벗어났을 때 비축량에 비례하여 체력을 회복합니다.사용 시: 비축한 모든 피해량을 일시적인 보호막으로 전환합니다.`,
                 cooldownBurn: '3',
                 image: require('../../assets/lol_hero_icons/skills/TahmKenchE.png')
             },
@@ -5468,14 +5468,14 @@ export const HERO_DATA = [
             {
                 id: 'TaricQ',
                 name: '별빛 손길',
-                description: `충전량을 모두 소모해 근처의 아군 챔피언을 회복시킵니다.<br><br>담대함으로 강화된 기본 공격 시 충전 대기시간이 줄어듭니다.`,
+                description: `충전량을 모두 소모해 근처의 아군 챔피언을 회복시킵니다.담대함으로 강화된 기본 공격 시 충전 대기시간이 줄어듭니다.`,
                 cooldownBurn: '3',
                 image: require('../../assets/lol_hero_icons/skills/TaricQ.png')
             },
             {
                 id: 'TaricW',
                 name: '수호의 고리',
-                description: `수호의 고리로 연결된 아군 챔피언과 타릭의 방어력이 상승합니다.<br><br>연결된 아군 챔피언이 타릭 근처에 있는 동안 수호의 고리를 사용하면 연결된 아군에게 보호막을 씌웁니다. 타릭이 스킬을 사용하면 연결된 아군도 같은 스킬을 사용합니다.`,
+                description: `수호의 고리로 연결된 아군 챔피언과 타릭의 방어력이 상승합니다.연결된 아군 챔피언이 타릭 근처에 있는 동안 수호의 고리를 사용하면 연결된 아군에게 보호막을 씌웁니다. 타릭이 스킬을 사용하면 연결된 아군도 같은 스킬을 사용합니다.`,
                 cooldownBurn: '15',
                 image: require('../../assets/lol_hero_icons/skills/TaricW.png')
             },
@@ -5755,7 +5755,7 @@ export const HERO_DATA = [
             {
                 id: 'TwitchHideInShadows',
                 name: '매복',
-                description: `트위치의 이동 속도가 빨라지고 짧은 시간 동안 위장 상태가 됩니다. 위장 효과가 끝나면 잠시 공격 속도가 증가합니다.<br><br>맹독에 걸린 적 챔피언이 죽으면 매복의 재사용 대기시간이 초기화됩니다.`,
+                description: `트위치의 이동 속도가 빨라지고 짧은 시간 동안 위장 상태가 됩니다. 위장 효과가 끝나면 잠시 공격 속도가 증가합니다.맹독에 걸린 적 챔피언이 죽으면 매복의 재사용 대기시간이 초기화됩니다.`,
                 cooldownBurn: '16',
                 image: require('../../assets/lol_hero_icons/skills/TwitchHideInShadows.png')
             },
@@ -6124,7 +6124,7 @@ export const HERO_DATA = [
             {
                 id: 'ViegoQ',
                 name: '몰락한 왕의 검',
-                description: `비에고의 유령 칼날이 <OnHit>적중 시</OnHit> 현재 체력에 비례한 추가 피해를 입히고 최근 비에고의 스킬에 적중당한 적들을 두 번 공격하여 체력을 훔칩니다.<br><br>비에고는 이 스킬을 사용해 양손검을 찔러 전방의 적을 꿰뚫을 수 있습니다.`,
+                description: `비에고의 유령 칼날이 적중 시 현재 체력에 비례한 추가 피해를 입히고 최근 비에고의 스킬에 적중당한 적들을 두 번 공격하여 체력을 훔칩니다.비에고는 이 스킬을 사용해 양손검을 찔러 전방의 적을 꿰뚫을 수 있습니다.`,
                 cooldownBurn: '5/4.5/4/3.5/3',
                 image: require('../../assets/lol_hero_icons/skills/ViegoQ.png')
             },
@@ -6165,28 +6165,28 @@ export const HERO_DATA = [
             {
                 id: 'ViktorPowerTransfer',
                 name: '힘의 흡수',
-                description: `빅토르가 대상에게 강력한 에너지를 주입해 마법 피해를 주고, 보호막이 생기면서 다음번 기본 공격이 강화됩니다.<br><br>증강: 사용 시 빅토르의 이동 속도가 빨라지고 보호막 흡수량이 60% 증가합니다.`,
+                description: `빅토르가 대상에게 강력한 에너지를 주입해 마법 피해를 주고, 보호막이 생기면서 다음번 기본 공격이 강화됩니다.증강: 사용 시 빅토르의 이동 속도가 빨라지고 보호막 흡수량이 60% 증가합니다.`,
                 cooldownBurn: '9/8/7/6/5',
                 image: require('../../assets/lol_hero_icons/skills/ViktorPowerTransfer.png')
             },
             {
                 id: 'ViktorGravitonField',
                 name: '중력장',
-                description: `빅토르가 강력한 중력장을 생성해 해당 지역 안에 들어온 적들을 느리게 만듭니다. 해당 지역 위에 오래 머무르는 적은 기절합니다.<br><br>증강: 빅토르의 단발성 피해를 입히는 스킬이 적을 둔화시킵니다.`,
+                description: `빅토르가 강력한 중력장을 생성해 해당 지역 안에 들어온 적들을 느리게 만듭니다. 해당 지역 위에 오래 머무르는 적은 기절합니다.증강: 빅토르의 단발성 피해를 입히는 스킬이 적을 둔화시킵니다.`,
                 cooldownBurn: '17/16/15/14/13',
                 image: require('../../assets/lol_hero_icons/skills/ViktorGravitonField.png')
             },
             {
                 id: 'ViktorDeathRay',
                 name: '죽음의 광선',
-                description: `빅토르가 기계 팔을 사용해 땅을 일직선으로 가르는 혼돈의 빛줄기를 쏘아 경로상의 적 모두에게 피해를 가합니다.<br><br>증강: 죽음의 광선 파동에 이어 폭발이 일어나 마법 피해를 입힙니다.`,
+                description: `빅토르가 기계 팔을 사용해 땅을 일직선으로 가르는 혼돈의 빛줄기를 쏘아 경로상의 적 모두에게 피해를 가합니다.증강: 죽음의 광선 파동에 이어 폭발이 일어나 마법 피해를 입힙니다.`,
                 cooldownBurn: '12/11/10/9/8',
                 image: require('../../assets/lol_hero_icons/skills/ViktorDeathRay.png')
             },
             {
                 id: 'ViktorChaosStorm',
                 name: '혼돈의 폭풍',
-                description: `빅토르가 목표 위치에 공간 왜곡을 일으켜 대상 지역에 있는 적에게 마법 피해를 주며 적의 정신 집중을 끊습니다. 왜곡된 공간은 주위 적에게 주기적으로 마법 피해를 줍니다. 빅토르는 이 공간 왜곡 폭풍을 움직일 수 있습니다.<br><br>증강: 혼돈의 폭풍이 25% 더 빠르게 이동합니다.`,
+                description: `빅토르가 목표 위치에 공간 왜곡을 일으켜 대상 지역에 있는 적에게 마법 피해를 주며 적의 정신 집중을 끊습니다. 왜곡된 공간은 주위 적에게 주기적으로 마법 피해를 줍니다. 빅토르는 이 공간 왜곡 폭풍을 움직일 수 있습니다.증강: 혼돈의 폭풍이 25% 더 빠르게 이동합니다.`,
                 cooldownBurn: '120/100/80',
                 image: require('../../assets/lol_hero_icons/skills/ViktorChaosStorm.png')
             },
@@ -6247,7 +6247,7 @@ export const HERO_DATA = [
             {
                 id: 'VolibearQ',
                 name: '번개 강타',
-                description: `볼리베어가 적을 향해 이동할 때 이동 속도가 증가하며 처음으로 기본 공격하는 대상을 <status>기절</status>시키고 피해를 입힙니다.`,
+                description: `볼리베어가 적을 향해 이동할 때 이동 속도가 증가하며 처음으로 기본 공격하는 대상을 기절시키고 피해를 입힙니다.`,
                 cooldownBurn: '14/13/12/11/10',
                 image: require('../../assets/lol_hero_icons/skills/VolibearQ.png')
             },
@@ -6452,7 +6452,7 @@ export const HERO_DATA = [
             {
                 id: 'YasuoQ1Wrapper',
                 name: '강철 폭풍',
-                description: `전방으로 내질러 일직선 상의 모든 적에게 피해를 입힙니다.<br><br>적중 시, 몇 초간 폭풍 구름 효과가 1회 중첩됩니다. 2회 중첩되면 강철 폭풍 스킬이 회오리바람을 발사하여 <font color='#6655CC'>공중으로</font> 띄워올립니다.<br><br>강철 폭풍은 기본 공격으로 간주되어 같은 효과가 적용됩니다.`,
+                description: `전방으로 내질러 일직선 상의 모든 적에게 피해를 입힙니다.적중 시, 몇 초간 폭풍 구름 효과가 1회 중첩됩니다. 2회 중첩되면 강철 폭풍 스킬이 회오리바람을 발사하여 공중으로 띄워올립니다.강철 폭풍은 기본 공격으로 간주되어 같은 효과가 적용됩니다.`,
                 cooldownBurn: '4',
                 image: require('../../assets/lol_hero_icons/skills/YasuoQ1Wrapper.png')
             },
@@ -6466,14 +6466,14 @@ export const HERO_DATA = [
             {
                 id: 'YasuoE',
                 name: '질풍검',
-                description: `대상 적을 뚫고 돌진하여 마법 피해를 입힙니다. 이후 사용할 때마다 돌진의 피해량이 증가하며 최대치에 도달하면 더 이상 증가하지 않습니다.<br><br>몇 초 내에는 동일한 대상에게 재사용할 수 없습니다.<br><br><font color='#99FF99'>돌진 도중 사용할 경우, 강철 폭풍이 원형으로 타격합니다.</font>`,
+                description: `대상 적을 뚫고 돌진하여 마법 피해를 입힙니다. 이후 사용할 때마다 돌진의 피해량이 증가하며 최대치에 도달하면 더 이상 증가하지 않습니다.몇 초 내에는 동일한 대상에게 재사용할 수 없습니다.돌진 도중 사용할 경우, 강철 폭풍이 원형으로 타격합니다.`,
                 cooldownBurn: '0.5/0.4/0.3/0.2/0.1',
                 image: require('../../assets/lol_hero_icons/skills/YasuoE.png')
             },
             {
                 id: 'YasuoR',
                 name: '최후의 숨결',
-                description: `<factionIonia1>공중에 뜬</factionIonia1> 적 챔피언에게 점멸하여 물리 피해를 입히고, 해당 지역에서 <factionIonia1>공중에 떠 있는</factionIonia1> 모든 적을 공중에 붙들어둡니다. 기류가 최대치로 차는 대신, 폭풍 구름의 중첩이 모두 초기화됩니다.<br><br>이후 몇 초 동안 야스오의 치명타에 높은 방어구 관통력이 추가로 적용됩니다.`,
+                description: `공중에 뜬 적 챔피언에게 점멸하여 물리 피해를 입히고, 해당 지역에서 공중에 떠 있는 모든 적을 공중에 붙들어둡니다. 기류가 최대치로 차는 대신, 폭풍 구름의 중첩이 모두 초기화됩니다.이후 몇 초 동안 야스오의 치명타에 높은 방어구 관통력이 추가로 적용됩니다.`,
                 cooldownBurn: '70/50/30',
                 image: require('../../assets/lol_hero_icons/skills/YasuoR.png')
             },
@@ -6493,14 +6493,14 @@ export const HERO_DATA = [
             {
                 id: 'YoneQ',
                 name: '필멸의 검',
-                description: `전방으로 검을 내질러 일직선상의 모든 적에게 피해를 입힙니다.<br><br>적중 시, 몇 초간 폭풍 구름 효과가 1회 중첩됩니다. 2회 중첩되면 전방으로 돌진하며 돌풍을 날려 적을 <status>공중으로 띄워 올립니다</status>.<br><br>필멸의 검은 기본 공격으로 간주되어 같은 효과가 적용됩니다.`,
+                description: `전방으로 검을 내질러 일직선상의 모든 적에게 피해를 입힙니다.적중 시, 몇 초간 폭풍 구름 효과가 1회 중첩됩니다. 2회 중첩되면 전방으로 돌진하며 돌풍을 날려 적을 공중으로 띄워 올립니다.필멸의 검은 기본 공격으로 간주되어 같은 효과가 적용됩니다.`,
                 cooldownBurn: '4',
                 image: require('../../assets/lol_hero_icons/skills/YoneQ.png')
             },
             {
                 id: 'YoneW',
                 name: '영혼 가르기',
-                description: `전방 원뿔 범위 내 모든 적을 가르며 보호막을 획득합니다. 적중한 챔피언 수만큼 보호막 흡수량이 증가합니다.<br><br>영혼 가르기의 재사용 대기시간과 시전 시간은 공격 속도에 비례합니다.`,
+                description: `전방 원뿔 범위 내 모든 적을 가르며 보호막을 획득합니다. 적중한 챔피언 수만큼 보호막 흡수량이 증가합니다.영혼 가르기의 재사용 대기시간과 시전 시간은 공격 속도에 비례합니다.`,
                 cooldownBurn: '14',
                 image: require('../../assets/lol_hero_icons/skills/YoneW.png')
             },
@@ -6575,7 +6575,7 @@ export const HERO_DATA = [
             {
                 id: 'YuumiQ',
                 name: '사르르탄',
-                description: `유미가 미사일을 발사해 처음으로 맞힌 적에게 피해를 입히고 둔화시킵니다. 미사일이 1.35초 이상 날아가 적중할 경우 피해량이 추가되고 둔화 효과가 강화됩니다. 단짝에게 붙어있을 때는 둔화 효과가 항상 강화되며, 둔화 적용 시 단짝이 강화되어 적중 시 추가 피해를 입힙니다.<br><br>아군과 밀착한 상태일 때는 미사일의 궤도를 잠시 마우스로 조종할 수 있습니다.`,
+                description: `유미가 미사일을 발사해 처음으로 맞힌 적에게 피해를 입히고 둔화시킵니다. 미사일이 1.35초 이상 날아가 적중할 경우 피해량이 추가되고 둔화 효과가 강화됩니다. 단짝에게 붙어있을 때는 둔화 효과가 항상 강화되며, 둔화 적용 시 단짝이 강화되어 적중 시 추가 피해를 입힙니다.아군과 밀착한 상태일 때는 미사일의 궤도를 잠시 마우스로 조종할 수 있습니다.`,
                 cooldownBurn: '6.5',
                 image: require('../../assets/lol_hero_icons/skills/YuumiQ.png')
             },
@@ -6589,7 +6589,7 @@ export const HERO_DATA = [
             {
                 id: 'YuumiE',
                 name: '슈우우웅',
-                description: `유미가 보호막을 얻고 이동 속도와 공격 속도가 증가합니다. 아군과 밀착된 상태인 경우 이 효과는 유미 대신 해당 아군에게 적용됩니다.<br>`,
+                description: `유미가 보호막을 얻고 이동 속도와 공격 속도가 증가합니다. 아군과 밀착된 상태인 경우 이 효과는 유미 대신 해당 아군에게 적용됩니다.`,
                 cooldownBurn: '10',
                 image: require('../../assets/lol_hero_icons/skills/YuumiE.png')
             },
@@ -6657,14 +6657,14 @@ export const HERO_DATA = [
             {
                 id: 'ZedQ',
                 name: '예리한 표창',
-                description: `제드와 그림자가 표창을 던집니다.<br><br>각 표창은 적에게 명중하면 피해를 입힙니다.`,
+                description: `제드와 그림자가 표창을 던집니다.각 표창은 적에게 명중하면 피해를 입힙니다.`,
                 cooldownBurn: '6',
                 image: require('../../assets/lol_hero_icons/skills/ZedQ.png')
             },
             {
                 id: 'ZedW',
                 name: '살아있는 그림자',
-                description: `<font color='#FF9900'>기본 지속 효과: </font>제드와 그림자가 같은 스킬로 동일한 대상을 공격하면 제드가 기력을 회복합니다. 기력 회복은 스킬 사용 시마다 한 번씩만 가능합니다.<br><br><font color='#FF9900'>사용 시:</font> 제드의 그림자가 전방으로 질주하여, 몇 초간 그 자리에 유지됩니다. 이 스킬을 다시 사용하면 제드가 그림자와 위치를 바꿉니다.`,
+                description: `기본 지속 효과: 제드와 그림자가 같은 스킬로 동일한 대상을 공격하면 제드가 기력을 회복합니다. 기력 회복은 스킬 사용 시마다 한 번씩만 가능합니다.사용 시: 제드의 그림자가 전방으로 질주하여, 몇 초간 그 자리에 유지됩니다. 이 스킬을 다시 사용하면 제드가 그림자와 위치를 바꿉니다.`,
                 cooldownBurn: '20/19/18/17/16',
                 image: require('../../assets/lol_hero_icons/skills/ZedW.png')
             },
@@ -6746,7 +6746,7 @@ export const HERO_DATA = [
             {
                 id: 'ZiggsW',
                 name: '휴대용 폭약',
-                description: `직스가 폭약을 던지면 잠시 후, 혹은 스킬을 다시 사용할 때 폭발합니다. 폭발하면 적에게 마법 피해를 입히며 뒤로 밀어냅니다. 직스 역시 밀려나지만 피해는 입지 않습니다. <br><br>약해진 적 포탑에는 휴대용 폭약이 마법공학 폭발을 일으켜 피해를 입힐 수 있습니다.`,
+                description: `직스가 폭약을 던지면 잠시 후, 혹은 스킬을 다시 사용할 때 폭발합니다. 폭발하면 적에게 마법 피해를 입히며 뒤로 밀어냅니다. 직스 역시 밀려나지만 피해는 입지 않습니다. 약해진 적 포탑에는 휴대용 폭약이 마법공학 폭발을 일으켜 피해를 입힐 수 있습니다.`,
                 cooldownBurn: '20/18/16/14/12',
                 image: require('../../assets/lol_hero_icons/skills/ZiggsW.png')
             },
