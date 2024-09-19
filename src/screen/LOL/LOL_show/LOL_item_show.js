@@ -15,11 +15,11 @@ const LOLItemShow = ({ route, navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image source={item.image} style={styles.image} />
-      <Text>Name: {item.name}</Text>
-      <Text>Description: {item.description}</Text>
-      <Text>Other Attribute: Example</Text>
-      {/* compound_img 部分 */}
-      <Image source={item.compound_img} style={styles.compoundImage} />
+      <Text style={styles.title}>{item.name_kr}</Text>
+      <Text style={styles.des}>  {item.description_kr}</Text>
+      {item.into_image && (
+        <Image source={item.into_image} style={styles.intoImage} />
+      )}
     </ScrollView>
   );
 };
@@ -37,12 +37,28 @@ const styles = StyleSheet.create({
     height: width * 0.5,
     borderRadius: width * 0.25,
     marginBottom: 20,
+    transform: [{scale: 0.8}]
   },
   compoundImage: {
     width: width * 0.6,
     height: width * 0.3,
     marginTop: 20,
   },
+  intoImage: {
+    width: width,
+    height: width,
+    marginTop: 20,
+  },
+  title: {
+    fontSize: 40, // 设置字体大小
+    fontWeight: 'bold', // 设置加粗
+    marginBottom: 10,
+  },
+  des: {
+    textAlign: 'left', // 左对齐
+    alignSelf: 'stretch', // 使文本内容填充容器的宽度
+    marginBottom: 20,
+  }
 });
 
 export default LOLItemShow;

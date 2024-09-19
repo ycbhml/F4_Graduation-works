@@ -49,7 +49,7 @@ def determine_filter(stat_names):
 
 # filter by is from
 def filter_is_from(item_info):
-    return "none" if not item_info.get("from") else f"require('../../assets/lol_items/into/{item_info['name']}.png')"
+    return "'base'" if not item_info.get("from") else f"require('../../assets/lol_items/into/{item_info['name']}.png')"
 
 # 函数：获取所有唯一的 tags
 def get_all_unique_tags(cn_data):
@@ -73,6 +73,8 @@ all_tags = get_all_unique_tags(cn_data)
 excluded_ids = ["3400", "1500", "1501", "1502", "1503", "1506", "1507", "1508","1522", "1521", "1520", "1519", "1518", "1517", "1516", "1515","1512", "1511", "1510", "1509",     #防御塔，小兵相关
                 "4641", "2052", "2403", "3117", "3330", "3599", "3600", #萌动眼石，魄罗佳肴，小兵去致器，急行之靴，草间人，卡莉斯塔的黑色长矛，卡莉斯塔的黑色长矛
                 "3901", "3902", "3903", "7050", #船长相关
+                "2150", "2151", "2152", #技能合剂, 贪财合剂，原力合剂
+                "2033", "3011", "4635", "4636", "4637", "6693", "8001" #腐败药水，炼金科技纯化器，榨血睥睨，暗夜收割者，恶魔之拥，暗行者之爪，厌恨锁链
 ]
 
 # 构建 JavaScript 代码
@@ -98,7 +100,7 @@ for item_id, item_info in cn_data['data'].items():
             clean_kr_description = remove_html_tags(kr_description)  # 去除 HTML 标签的韩文描述
             buy_price = item_info['gold']['total']  # 购入价格
             sell_price = item_info['gold']['sell']  # 出售价格
-            image_path = f"require('../../assets/lol_items/{item_info['name']}.png')"  # 图片路径
+            image_path = f"require('../../assets/lol_items/{item_id}.png')"  # 图片路径
             
             # 使用过滤函数确定 into_image_path
             into_image_path = filter_is_from(item_info)

@@ -83,14 +83,15 @@ const LOLCalcShow = ({ route, navigation }) => {
       // 添加其他属性
     };
 
-    // 累加物品属性
-    selectedItems.forEach(item => {
-      if (item && item.stats) {
-        for (let key in item.stats) {
-          baseAttributes[key] = (baseAttributes[key] || 0) + item.stats[key];
-        }
+     // 累加物品属性
+     selectedItems.forEach(item => {
+      if (item && item.statValues && item.statNames_eng) {
+          item.statNames_eng.forEach((statName, index) => {
+              let statValue = parseFloat(item.statValues[index].replace('%', '')) || 0;
+              baseAttributes[statName] = (baseAttributes[statName] || 0) + statValue;
+          });
       }
-    });
+  });
 
     const formatValue = (value, decimalPlaces = 0) => {
       if (decimalPlaces > 0) {

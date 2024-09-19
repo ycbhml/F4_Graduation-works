@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, TextInput, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions, Text, ScrollView } from 'react-native';
-import { ICON_DATA, filterIconsByName } from '../../components/LOL/LOL_items';
+import { ITEMS_DATA, filterIconsByTags, filterIconsByName } from '../../components/LOL/LOL_items';
 import { createStackNavigator } from '@react-navigation/stack';
 import LOLitemshow from './LOL_show/LOL_item_show';
 
@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 // 项目列表页面
 const LOLItemList = ({ navigation, route }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(ICON_DATA);
+  const [filteredData, setFilteredData] = useState(ITEMS_DATA);
   const [numColumns, setNumColumns] = useState(4); // 初始列数为 4
 
   const { setSwipeEnabled } = route?.params || {};
@@ -23,7 +23,7 @@ const LOLItemList = ({ navigation, route }) => {
 
   const handleSearch = (text) => {
     setSearchQuery(text);
-    setFilteredData(filterIconsByName(text));
+    setFilteredData(filterIconsByTags(text));
   };
 
   const handleIconPress = (item) => {
@@ -48,31 +48,81 @@ const LOLItemList = ({ navigation, route }) => {
         {/* 筛选栏移至左侧 */}
         <View style={styles.filterBar}>
           <Text>Search Filter</Text>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('warrior')))} style={styles.filterButton}>
+          
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.tags(item => item.tags.includes('warrior')))} style={styles.filterButton}>
             <Image source={require('../../assets/images/lol/warrior.png')} style={styles.filterIcon} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('mage')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/mage.png')} style={styles.filterIcon} />
+
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Damage')))} style={styles.filterButton}>
+            <Text>Damage</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('assassin')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/assassin.png')} style={styles.filterIcon} />
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('CriticalStrike')))} style={styles.filterButton}>
+            <Text>CriticalStrike</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('support')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/support.png')} style={styles.filterIcon} />
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('AttackSpeed')))} style={styles.filterButton}>
+            <Text>AttackSpeed</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('shooter')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/shooter.png')} style={styles.filterIcon} />
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('OnHit')))} style={styles.filterButton}>
+            <Text>OnHit</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('tank')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/tank.png')} style={styles.filterIcon} />
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('ArmorPenetration')))} style={styles.filterButton}>
+            <Text>ArmorPenetration</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('set')))} style={styles.filterButton}>
-            <Text>Set</Text>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('SpellDamage')))} style={styles.filterButton}>
+            <Text>SpellDamage</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA.filter(item => item.name.includes('drink')))} style={styles.filterButton}>
-            <Text>Drink</Text>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Mana') || item.tags.includes('ManaRegen')))} style={styles.filterButton}>
+            <Text>ManaRegen&Mana</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setFilteredData(ICON_DATA)} style={styles.filterButton}>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('MagicPenetration')))} style={styles.filterButton}>
+            <Text>MagicPenetration</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Health') || item.tags.includes('HealthRegen')))} style={styles.filterButton}>
+            <Text>Health&HealthRegen</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Armor')))} style={styles.filterButton}>
+            <Text>Armor</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('SpellBlock')))} style={styles.filterButton}>
+            <Text>SpellBlock</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('CooldownReduction') || item.tags.includes('AbilityHaste')))} style={styles.filterButton}>
+            <Text>CooldownReduction&AbilityHaste</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('NonbootsMovement')))} style={styles.filterButton}>
+            <Text>NonbootsMovement</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('LifeSteal') || item.tags.includes('SpellVamp')))} style={styles.filterButton}>
+            <Text>LifeSteal&SpellVamp</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Trinket')))} style={styles.filterButton}>
+            <Text>Trinket</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Consumable')))} style={styles.filterButton}>
+            <Text>Consumable</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Boots')))} style={styles.filterButton}>
+            <Text>Boots</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA)} style={styles.filterButton}>
             <Text>All</Text>
           </TouchableOpacity>
         </View>
