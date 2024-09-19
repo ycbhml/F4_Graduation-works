@@ -21,7 +21,7 @@ for champion_name, champion_data in data['data'].items():
         "title": champion_data['title'],
         "lore": champion_data['lore'],
         "blurb": champion_data['blurb'],
-        "image": "require('../../assets/lol_hero_icon/" + champion_data['image']['full']  + "')",
+        "image": champion_data['image']['full'],
         "stats": {
             "hp": champion_data['stats']['hp'],
             "hpperlevel": champion_data['stats']['hpperlevel'],
@@ -54,7 +54,7 @@ for champion_name, champion_data in data['data'].items():
                 "cooldownBurn": spell['cooldownBurn'],
                 #技能的消耗
                 #"cost": spell['cost'],
-                "image": "require('../../assets/lol_hero_icon/skills/" + spell['image']['full'] + "')"
+                "image": spell['image']['full']
             }
             for spell in champion_data['spells']
         ]
