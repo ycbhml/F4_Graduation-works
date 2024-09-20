@@ -1,5 +1,5 @@
 // src/components/LOL/LOL_items.js
-//['MagicResist', 'HealthRegen', 'ArmorPenetration', 'ManaRegen', 'MagicPenetration', 'Stealth', 'NonbootsMovement', 'Trinket', 'AbilityHaste', 'Aura', 'GoldPer', 'SpellBlock', 'CooldownReduction', 'Consumable', 'Damage', 'Lane', 'Tenacity', 'SpellVamp', 'AttackSpeed', 'Mana', 'Health', 'Jungle', 'Active', 'Slow', 'SpellDamage', 'Boots', 'CriticalStrike', 'Armor', 'LifeSteal', 'OnHit', 'Vision']
+//['Jungle', 'CriticalStrike', 'Armor', 'Lane', 'NonbootsMovement', 'Active', 'Consumable', 'CooldownReduction', 'MagicPenetration', 'Vision', 'Boots', 'SpellVamp', 'ManaRegen', 'LifeSteal', 'AbilityHaste', 'ArmorPenetration', 'MagicResist', 'Aura', 'Slow', 'OnHit', 'Damage', 'GoldPer', 'SpellDamage', 'HealthRegen', 'AttackSpeed', 'Tenacity', 'Mana', 'Health', 'Trinket', 'Stealth', 'SpellBlock']
 
 export const ITEMS_DATA = [
     {
@@ -1385,7 +1385,7 @@ export const ITEMS_DATA = [
         name_kr: '구원',
         statValues: ['200', '15', '100%', '15%'],
         statNames: ['生命值', '技能急速', '基础法力回复', '治疗和护盾强度'],
-        statNames_eng: ['hp', 'cd', 'mpregen', 'heal&shildlevel'],
+        statNames_eng: ['hp', 'cd', 'mpregen', 'healshildlevel'],
         tags: ['Health', 'ManaRegen', 'CooldownReduction', 'AbilityHaste']
     },
     {
@@ -1469,7 +1469,7 @@ export const ITEMS_DATA = [
         name_kr: '금지된 우상',
         statValues: ['50%', '8%'],
         statNames: ['基础法力回复', '治疗和护盾强度'],
-        statNames_eng: ['mpregen', 'heal&shildlevel'],
+        statNames_eng: ['mpregen', 'healshildlevel'],
         tags: ['ManaRegen']
     },
     {
@@ -1917,7 +1917,7 @@ export const ITEMS_DATA = [
         name_kr: '미카엘의 축복',
         statValues: ['250', '100%', '12%', '15'],
         statNames: ['生命值', '基础法力回复', '治疗和护盾强度', '技能急速'],
-        statNames_eng: ['hp', 'mpregen', 'heal&shildlevel', 'cd'],
+        statNames_eng: ['hp', 'mpregen', 'healshildlevel', 'cd'],
         tags: ['Health', 'ManaRegen', 'Active', 'CooldownReduction', 'Tenacity', 'AbilityHaste']
     },
     {
@@ -1987,7 +1987,7 @@ export const ITEMS_DATA = [
         name_kr: '불타는 향로',
         statValues: ['50', '8%', '125%', '8%'],
         statNames: ['法术强度', '治疗和护盾强度', '基础法力回复', '移动速度'],
-        statNames_eng: ['spelldamage', 'heal&shildlevel', 'mpregen', 'movespeed'],
+        statNames_eng: ['spelldamage', 'healshildlevel', 'mpregen', 'movespeed'],
         tags: ['AttackSpeed', 'SpellDamage', 'ManaRegen', 'NonbootsMovement']
     },
     {
@@ -2435,7 +2435,7 @@ export const ITEMS_DATA = [
         name_kr: '흐르는 물의 지팡이',
         statValues: ['40', '8%', '125%', '15'],
         statNames: ['法术强度', '治疗和护盾强度', '基础法力回复', '技能急速'],
-        statNames_eng: ['spelldamage', 'heal&shildlevel', 'mpregen', 'cd'],
+        statNames_eng: ['spelldamage', 'healshildlevel', 'mpregen', 'cd'],
         tags: ['SpellDamage', 'ManaRegen', 'CooldownReduction', 'AbilityHaste']
     },
     {
@@ -2477,7 +2477,7 @@ export const ITEMS_DATA = [
         name_kr: '새벽심장',
         statValues: ['60', '16%', '100%'],
         statNames: ['法术强度', '治疗和护盾强度', '基础法力回复'],
-        statNames_eng: ['spelldamage', 'heal&shildlevel', 'mpregen'],
+        statNames_eng: ['spelldamage', 'healshildlevel', 'mpregen'],
         tags: ['SpellDamage', 'ManaRegen']
     },
     {

@@ -39,92 +39,90 @@ const LOLItemList = ({ navigation, route }) => {
       style={styles.iconContainer}
     >
       <Image source={item.image} style={styles.iconImage} />
+      {/* 添加物品名称 */}
+      <Text style={styles.itemName}>{item.name_kr}</Text>
     </TouchableOpacity>
   );
+
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View style={styles.gridContainer}>
-        {/* 筛选栏移至左侧 */}
+        {/* 左侧筛选栏 */}
         <View style={styles.filterBar}>
-          <Text>Search Filter</Text>
           
-          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.tags(item => item.tags.includes('warrior')))} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/warrior.png')} style={styles.filterIcon} />
-          </TouchableOpacity>
-
-
-          <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Damage')))} style={styles.filterButton}>
-            <Text>Damage</Text>
+        <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Damage')))} style={styles.filterButton}>
+            <Image source={require('../../assets/images/lol/Damage.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('CriticalStrike')))} style={styles.filterButton}>
-            <Text>CriticalStrike</Text>
+            <Image source={require('../../assets/images/lol/CriticalStrike.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('AttackSpeed')))} style={styles.filterButton}>
-            <Text>AttackSpeed</Text>
+            <Image source={require('../../assets/images/lol/AttackSpeed.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('OnHit')))} style={styles.filterButton}>
-            <Text>OnHit</Text>
+            <Image source={require('../../assets/images/lol/OnHit.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('ArmorPenetration')))} style={styles.filterButton}>
-            <Text>ArmorPenetration</Text>
+            <Image source={require('../../assets/images/lol/ArmorPenetration.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('SpellDamage')))} style={styles.filterButton}>
-            <Text>SpellDamage</Text>
+            <Image source={require('../../assets/images/lol/SpellDamage.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Mana') || item.tags.includes('ManaRegen')))} style={styles.filterButton}>
-            <Text>ManaRegen&Mana</Text>
+            <Image source={require('../../assets/images/lol/ManaRegen&Mana.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('MagicPenetration')))} style={styles.filterButton}>
-            <Text>MagicPenetration</Text>
+            <Image source={require('../../assets/images/lol/MagicPenetration.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Health') || item.tags.includes('HealthRegen')))} style={styles.filterButton}>
-            <Text>Health&HealthRegen</Text>
+            <Image source={require('../../assets/images/lol/Health&HealthRegen.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Armor')))} style={styles.filterButton}>
-            <Text>Armor</Text>
+            <Image source={require('../../assets/images/lol/Armor.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('SpellBlock')))} style={styles.filterButton}>
-            <Text>SpellBlock</Text>
+            <Image source={require('../../assets/images/lol/SpellBlock.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('CooldownReduction') || item.tags.includes('AbilityHaste')))} style={styles.filterButton}>
-            <Text>CooldownReduction&AbilityHaste</Text>
+            <Image source={require('../../assets/images/lol/CooldownReduction&AbilityHaste.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('NonbootsMovement')))} style={styles.filterButton}>
-            <Text>NonbootsMovement</Text>
+            <Image source={require('../../assets/images/lol/NonbootsMovement.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('LifeSteal') || item.tags.includes('SpellVamp')))} style={styles.filterButton}>
-            <Text>LifeSteal&SpellVamp</Text>
+            <Image source={require('../../assets/images/lol/LifeSteal&SpellVamp.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Trinket')))} style={styles.filterButton}>
-            <Text>Trinket</Text>
+            <Image source={require('../../assets/images/lol/Trinket.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Consumable')))} style={styles.filterButton}>
-            <Text>Consumable</Text>
+            <Image source={require('../../assets/images/lol/Consumable.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA.filter(item => item.tags.includes('Boots')))} style={styles.filterButton}>
-            <Text>Boots</Text>
+            <Image source={require('../../assets/images/lol/Boots.png')} style={styles.filterIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => setFilteredData(ITEMS_DATA)} style={styles.filterButton}>
             <Text>All</Text>
           </TouchableOpacity>
+
         </View>
 
         {/* 图标展示区 */}
@@ -143,13 +141,14 @@ const LOLItemList = ({ navigation, route }) => {
             renderItem={renderIconItem}
             key={numColumns}  // 强制刷新 FlatList 的 key，当列数变化时重新渲染
             keyExtractor={item => item.id}
-            numColumns={numColumns}  // 动态列数
+            numColumns={numColumns}  // 每行四列
             contentContainerStyle={styles.flatListContent}
           />
         </View>
       </View>
     </ScrollView>
   );
+
 };
 
 // 将 Stack Navigator 放入这个页面，处理页面之间的导航
@@ -180,23 +179,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',  // 筛选栏和图标列表横向排列
   },
   filterBar: {
-    width: width * 0.21,
+    width: width * 0.18,
     backgroundColor: '#f0f0f0',
-    padding: height * 0.02,
+    padding: height * 0.01,
     alignItems: 'flex-start',
   },
   filterButton: {
-    padding: height * 0.015,
+    padding: height * 0.01,
     backgroundColor: '#ddd',
-    borderRadius: width * 0.02,
-    marginVertical: height * 0.01,
+    borderRadius: width * 0.06,
+    marginVertical: height * 0.003,
     width: '100%',
     alignItems: 'center',
   },
   filterIcon: {
-    width: width * 0.08,  // 图片宽度动态调整
-    height: width * 0.08, // 图片高度保持为正方形
+    width: width * 0.05,  // 图片宽度动态调整
+    height: width * 0.05, // 图片高度保持为正方形
     alignItems: 'center',
+    transform: [{scale: 1.6}],
   },
   iconListContainer: {
     flex: 1,
@@ -212,18 +212,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   flatListContent: {
-    paddingBottom: height * 0.05,
+    paddingBottom: height * 0.01,
   },
   iconContainer: {
-    flex: 1,
+    width: width * 0.17,  // 每个图标项的宽度（确保一排四个）
     justifyContent: 'center',
     alignItems: 'center',
     margin: width * 0.01,  // 图标之间的间距
   },
   iconImage: {
-    width: width * 0.15,  // 动态图片宽度（占屏幕宽度的15%）
+    width: width * 0.15,  // 动态图片宽度
     height: width * 0.15,  // 保持图片为正方形
-    marginBottom: height * 0.01,  // 动态底部间距
+    marginBottom: height * 0.001,  // 底部间距
+    borderRadius: width * 0.6,
+  },
+  itemName: {
+    textAlign: 'center',  // 名字居中显示在图片下方
+    fontSize: 0,
+    marginTop: height * 0.0002,
+    marginBottom: height * 0.004,
   },
 });
 

@@ -52,26 +52,27 @@ const HeroSelectionScreen = ({ navigation, route }) => {
 
       {/* 筛选栏 */}
       <View style={styles.filterBar}>
+
         <TouchableOpacity onPress={() => filterByRole('top')} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/top.png')} style={styles.filterIcon} />
-          <Text>Top</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => filterByRole('mid')} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/mid.png')} style={styles.filterIcon} />
-          <Text>Mid</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => filterByRole('jug')} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/jug.png')} style={styles.filterIcon} />
-          <Text>Jug</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => filterByRole('adc')} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/adc.png')} style={styles.filterIcon} />
-          <Text>ADc</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => filterByRole('sup')} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/sup.png')} style={styles.filterIcon} />
-          <Text>Sup</Text>
         </TouchableOpacity>
+        
         <TouchableOpacity onPress={() => setFilteredData(heroInfo)} style={styles.filterButton}>
           <Text>All</Text>
         </TouchableOpacity>

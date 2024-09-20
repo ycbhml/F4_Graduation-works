@@ -34,7 +34,8 @@ const LOLHeroList = ({ navigation, route }) => {
   const renderIconItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleIconPress(item)} style={styles.iconContainer}>
       <Image source={item.image} style={styles.iconImage} />
-      <Text>{item.description}</Text>
+      {/* 在图片下方添加英雄名称 */}
+      <Text style={styles.heroName}>{item.name}</Text>
     </TouchableOpacity>
   );
 
@@ -63,55 +64,56 @@ const LOLHeroList = ({ navigation, route }) => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.gridContainer}>
-        {/* 筛选栏移至左侧 */}
-        <View style={styles.filterBar}>
-          <Text>search road</Text>
-          <TouchableOpacity onPress={handleFilterByCharacterTop} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/top.png')} style={styles.filterIcon} />
-            <Text>Top</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleFilterByCharacterMid} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/mid.png')} style={styles.filterIcon} />
-            <Text>Mid</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleFilterByCharacterJug} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/jug.png')} style={styles.filterIcon} />
-            <Text>Jug</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleFilterByCharacterADc} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/adc.png')} style={styles.filterIcon} />
-            <Text>ADc</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleFilterByCharacterSup} style={styles.filterButton}>
-            <Image source={require('../../assets/images/lol/sup.png')} style={styles.filterIcon} />
-            <Text>Sup</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={resetFilter} style={styles.filterButton}>
-            <Text>All</Text>
-          </TouchableOpacity>
-        </View>
+    <View style={styles.gridContainer}>
+      {/* 左侧筛选栏 */}
+      <View style={styles.filterBar}>
+        {/*
+        <Text>search road</Text>
+        */}
 
-        {/* 图标展示区 */}
-        <View style={styles.iconListContainer}>
-          <TextInput
-            style={styles.searchBar}
-            placeholder="Search Hero..."
-            value={searchQuery}
-            onChangeText={handleSearch}
-          />
+        <TouchableOpacity onPress={handleFilterByCharacterTop} style={styles.filterButton}>
+          <Image source={require('../../assets/images/lol/top.png')} style={styles.filterIcon} />
+        </TouchableOpacity>
 
-          <FlatList
-            data={filteredData}
-            renderItem={renderIconItem}
-            keyExtractor={item => item.id}
-            numColumns={4}
-            contentContainerStyle={styles.flatListContent}
-          />
-        </View>
+        <TouchableOpacity onPress={handleFilterByCharacterMid} style={styles.filterButton}>
+          <Image source={require('../../assets/images/lol/mid.png')} style={styles.filterIcon} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleFilterByCharacterJug} style={styles.filterButton}>
+          <Image source={require('../../assets/images/lol/jug.png')} style={styles.filterIcon} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleFilterByCharacterADc} style={styles.filterButton}>
+          <Image source={require('../../assets/images/lol/adc.png')} style={styles.filterIcon} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleFilterByCharacterSup} style={styles.filterButton}>
+          <Image source={require('../../assets/images/lol/sup.png')} style={styles.filterIcon} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={resetFilter} style={styles.filterButton}>
+          <Text>All</Text>
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+  
+      {/* 右侧图标展示区，加入ScrollView或FlatList */}
+      <View style={styles.iconListContainer}>
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Search Hero..."
+          value={searchQuery}
+          onChangeText={handleSearch}
+        />
+  
+        <FlatList
+          data={filteredData}
+          renderItem={renderIconItem}
+          keyExtractor={item => item.id}
+          numColumns={4}
+          contentContainerStyle={styles.flatListContent}
+        />
+      </View>
+    </View>
   );
 };
 
@@ -137,9 +139,6 @@ const LOLHeroScreen = ({ route }) => {
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  scrollContainer: {
-    flexGrow: 1,
-  },
   gridContainer: {
     flexDirection: 'row',
     flex: 1,
@@ -149,6 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     padding: height * 0.02,
     alignItems: 'flex-start',
+    height: '100%',  // 保持筛选栏占据整个屏幕高度
   },
   filterButton: {
     padding: height * 0.015,
@@ -176,18 +176,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   flatListContent: {
-    paddingBottom: height * 0.05,
+    paddingBottom: height * 0.01,
+    justifyContent: 'flex-start', // 确保内容靠左
+    flexDirection: 'row',
+    flexWrap: 'wrap', // 使项目换行
   },
   iconContainer: {
-    flex: 1,
+    width: width * 0.18, // 控制每个图标占据屏幕的四分之一
     justifyContent: 'center',
     alignItems: 'center',
-    margin: width * 0.01,
+    marginBottom: height * 0.01,
   },
   iconImage: {
     width: width * 0.15,
     height: width * 0.15,
-    marginBottom: height * 0.01,
+    marginBottom: height * 0.001,
+  },
+  heroName: {
+    textAlign: 'center',  // 名字居中显示在图片下方
+    fontSize: 10,
+    marginTop: height * 0.0002,
+    marginBottom: height * 0.004,
   },
 });
 

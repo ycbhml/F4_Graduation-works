@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, ScrollView, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { heroInfo } from '../../components/LOL/LOL_hero_icons'; // 假设你将英雄数据导入
 
 const LOLHeroShow = ({ route, navigation }) => {
   const { item } = route.params; // 从传递的参数中获取选中的英雄数据
+  const [selectedSkill, setSelectedSkill] = useState(item.spells[0]); // 默认选择第一个技能
 
   useEffect(() => {
     // 隐藏底部导航栏
@@ -15,30 +16,45 @@ const LOLHeroShow = ({ route, navigation }) => {
     };
   }, [navigation]);
 
+  const handleSkillPress = (spell) => {
+    setSelectedSkill(spell); // 设置当前按下的技能
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* 显示英雄图片 */}
-      <Image source={item.image} style={styles.heroImage} />
-      
-      {/* 英雄名称 */}
-      <Text style={styles.heroName}>{item.name}</Text>
-
-      {/* 英雄描述 */}
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.heroDescription}>{'  '}{item.lore.replace(/。/g, '。\n\n  ')}</Text>
+      {/* 背景图片和英雄名称 */}
+      <View style={styles.heroBackgroundContainer}>
+        <Image source={item.background_image} style={styles.heroBackground} />
+        <Text style={styles.heroNameOnBackground}>{item.name}</Text>
       </View>
 
-      {/* 显示技能部分 */}
-      <View style={styles.skillContainer}>
-        {item.spells.map((spell, index) => (
-          <View style={styles.skillRow} key={index}>
-            <Image source={spell.image} style={styles.skillIcon} />
-            <Text style={styles.skillDescription}>
-              <Text style={styles.skillName}>{spell.name}</Text>: {spell.description}{"\n"}
-              CD: {spell.cooldownBurn}
-            </Text>
-          </View>
+      <View style={styles.descriptionView}>
+        <Text style={styles.descriptionText}>  {item.lore}</Text>
+      </View>
+
+      {/* 横向技能选择 */}
+      <View style={styles.skillRow}>
+        {/* 渲染包括被动技能在内的所有技能 */}
+        {[item.passive, ...item.spells].map((spell, index) => (
+          <TouchableOpacity key={index} onPress={() => handleSkillPress(spell)} style={styles.skillButton}>
+            <Image
+              source={spell.image}
+              style={[
+                styles.skillIcon,
+                selectedSkill.name === spell.name && styles.selectedSkillIcon, // 按下时放大图标
+              ]}
+            />
+          </TouchableOpacity>
         ))}
+      </View>
+
+      {/* 技能描述 */}
+      <View style={styles.skillDescriptionContainer}>
+        <Text style={styles.skillName}>{selectedSkill.name}</Text>
+        <Text style={styles.skillDescription}>
+          {selectedSkill.description}{"\n"}
+          CD: {selectedSkill.cooldownBurn}
+        </Text>
       </View>
     </ScrollView>
   );
@@ -52,47 +68,66 @@ const styles = StyleSheet.create({
     padding: width * 0.03, // 使用屏幕宽度的3%作为内边距
     alignItems: 'center',  // 让内容居中
   },
-  heroImage: {
-    width: width * 0.6,  // 图片宽度为屏幕宽度的60%
-    height: width * 0.6,  // 图片高度同宽
-    borderRadius: width * 0.3,  // 圆形图片
-    marginBottom: height * 0.02,  // 图片与下方内容间的间距，屏幕高度的2%
-  },
-  heroName: {
-    fontSize: width * 0.06, // 使用屏幕宽度的6%作为字体大小
-    fontWeight: 'bold',
-    marginBottom: height * 0.02,  // 与下方内容间距，屏幕高度的2%
-  },
-  descriptionContainer: {
-    marginBottom: height * 0.02,  // 与技能部分的间距，屏幕高度的2%
-    alignSelf: 'flex-start', // 左对齐
-    paddingHorizontal: width * 0.03, // 使用屏幕宽度的3%作为内边距
-  },
-  heroDescription: {
-    fontSize: width * 0.04, // 使用屏幕宽度的4%作为字体大小
-    textAlign: 'left', // 左对齐
-  },
-  skillContainer: {
+  heroBackgroundContainer: {
     width: '100%',
+    height: height * 0.3, // 根据屏幕高度占据大约30%的高度
+    position: 'relative',
+    marginBottom: 0, // 消除图片与下方内容间的间距
+  },
+  heroBackground: {
+    width: '110%',
+    height: '100%', // 确保背景图覆盖整个容器
+    resizeMode: 'cover', // 背景图像覆盖整个容器
+    transform: [{ translateX: -width * 0.05 }],
+  },
+  heroNameOnBackground: {
+    position: 'absolute',
+    bottom: height * 0.02, // 名字距离背景图片底部 2% 的屏幕高度
+    left: width * 0.05,   // 名字距离背景图片左边 5% 的屏幕宽度
+    fontSize: width * 0.08, // 使用屏幕宽度的8%作为字体大小
+    fontWeight: 'bold',
+    color: '#fff', // 白色文字
+    textShadowColor: 'rgba(0, 0, 0, 0.7)', // 添加黑色阴影
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
   },
   skillRow: {
     flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: height * 0.015, // 使用屏幕高度的1.5%作为上下外边距
+    justifyContent: 'space-around', // 平均分布技能图标
+    width: '100%',
+    paddingHorizontal: width * 0.01, // 水平内边距
+    marginBottom: height * 0.02, // 技能行与下方描述间距
   },
   skillIcon: {
-    width: width * 0.12, // 使用屏幕宽度的12%作为技能图标大小
-    height: width * 0.12, // 同宽高
-    borderRadius: (width * 0.12) / 2,  // 圆形技能图标
-    marginRight: width * 0.03,  // 图标与文字之间的间距，屏幕宽度的3%
+    width: width * 0.13, // 使用屏幕宽度的15%作为技能图标大小
+    height: width * 0.13, // 同宽高
+    borderRadius: (width * 0.15) / 2,  // 圆形技能图标
   },
-  skillDescription: {
-    fontSize: width * 0.04, // 使用屏幕宽度的4%作为字体大小
-    flex: 1,  // 让描述文本占据剩余空间
-    textAlign: 'left', // 左对齐
+  selectedSkillIcon: {
+    transform: [{ scale: 1.2 }], // 被选中的图标放大1.2倍
+  },
+  skillDescriptionContainer: {
+    width: '100%',
+    paddingHorizontal: width * 0.05, // 技能描述左右内边距
   },
   skillName: {
-    fontWeight: 'bold', // 技能名字加粗
+    fontSize: width * 0.06, // 使用屏幕宽度的6%作为技能名字大小
+    fontWeight: 'bold',
+    marginBottom: height * 0.01,
+  },
+  skillDescription: {
+    fontSize: width * 0.045, // 使用屏幕宽度的4.5%作为技能描述字体大小
+    textAlign: 'left',
+  },
+  descriptionView: {
+    marginBottom: height * 0.03,
+    paddingHorizontal: width * 0.05,
+    marginTop: height * 0.03,
+  },
+  descriptionText: {
+    fontSize: 15,
+    fontStyle: 'italic',
+    textAlign: 'left',
   },
 });
 

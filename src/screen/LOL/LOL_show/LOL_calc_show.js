@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Slider from '@react-native-community/slider';
 import { HERO_DATA } from '../../../components/LOL/LOL_hero_icons';
-import { ICON_DATA as ITEM_DATA } from '../../../components/LOL/LOL_items';  // 引入物品数据
+import { ITEMS_DATA } from '../../../components/LOL/LOL_items';  // 引入物品数据
 
 const DEFAULT_ITEM_IMAGE = require('../../../assets/images/lol/hero_select.png');
 
@@ -24,7 +24,7 @@ const LOLCalcShow = ({ route, navigation }) => {
     const selectedSlot = route.params?.selectedSlot;
 
     if (selectedItemId && selectedSlot !== undefined) {
-      const selectedItem = ITEM_DATA.find(item => item.id === selectedItemId);
+      const selectedItem = ITEMS_DATA.find(item => item.id === selectedItemId);
       const updateItems = [...selectedItems];
 
       updateItems[selectedSlot] = selectedItem;
@@ -34,14 +34,6 @@ const LOLCalcShow = ({ route, navigation }) => {
 
   const handleItemSelect = (slotIndex) => {
     navigation.navigate('ItemSelection', { selectedSlot: slotIndex });
-  };
-
-  // 反向传值并返回
-  const goBackToSelection = () => {
-    if (callback) {
-      callback({ selectedHero, level });
-    }
-    navigation.goBack();
   };
 
   // 动态计算英雄属性
@@ -101,31 +93,30 @@ const LOLCalcShow = ({ route, navigation }) => {
     };
 
     return [
-      { name: '血', value: formatValue(baseAttributes.hp), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '蓝', value: formatValue(baseAttributes.mp), image: require('../../../assets/images/lol/prop/1.png') },
+      { name: '血', value: formatValue(baseAttributes.hp), image: require('../../../assets/images/lol/prop/hp.png') },
+      { name: '蓝', value: formatValue(baseAttributes.mp), image: require('../../../assets/images/lol/prop/mana.png') },
 
-      { name: '攻击', value: formatValue(baseAttributes.attackdamage), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '法术强度', value: formatValue(baseAttributes.spelldamage), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '护甲', value: formatValue(baseAttributes.armor), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '魔抗', value: formatValue(baseAttributes.spellblock), image: require('../../../assets/images/lol/prop/1.png') },
+      { name: '攻击', value: formatValue(baseAttributes.attackdamage), image: require('../../../assets/images/lol/prop/damage.png') },
+      { name: '法术强度', value: formatValue(baseAttributes.spelldamage), image: require('../../../assets/images/lol/prop/spelldamage.png') },
+      { name: '护甲', value: formatValue(baseAttributes.armor), image: require('../../../assets/images/lol/prop/armor.png') },
+      { name: '魔抗', value: formatValue(baseAttributes.spellblock), image: require('../../../assets/images/lol/prop/spellblock.png') },
 
-      { name: '攻速', value: formatValue(baseAttributes.attackspeed, 3), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '冷却缩减', value: formatValue(baseAttributes.cd), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '暴击率', value: formatValue(baseAttributes.crit), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '移速', value: formatValue(baseAttributes.movespeed), image: require('../../../assets/images/lol/prop/1.png') },
+      { name: '攻速', value: formatValue(baseAttributes.attackspeed, 3), image: require('../../../assets/images/lol/prop/attackspeed.png') },
+      { name: '冷却缩减', value: formatValue(baseAttributes.cd), image: require('../../../assets/images/lol/prop/cd.png') },
+      { name: '暴击率', value: formatValue(baseAttributes.crit), image: require('../../../assets/images/lol/prop/crit.png') },
+      { name: '移速', value: formatValue(baseAttributes.movespeed), image: require('../../../assets/images/lol/prop/movespeed.png') },
 
-      { name: '生命回复', value: formatValue(baseAttributes.hpregen), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '施法资源回复', value: formatValue(baseAttributes.mpregen), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '治疗强度', value: formatValue(baseAttributes.heallevel), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '护盾强度', value: formatValue(baseAttributes.shildlevel), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '穿甲', value: formatValue(baseAttributes.amrorpenetrate), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '护甲穿透', value: formatValue(baseAttributes.amrorpenetratePercten), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '法术穿透', value: formatValue(baseAttributes.spellblockpenetrate), image: require('../../../assets/images/lol/prop/1.png') },
+      { name: '生命回复', value: formatValue(baseAttributes.hpregen), image: require('../../../assets/images/lol/prop/hpregen.png') },
+      { name: '施法资源回复', value: formatValue(baseAttributes.mpregen), image: require('../../../assets/images/lol/prop/mpregen.png') },
+      { name: '治疗和护盾强度', value: formatValue(baseAttributes.healshildlevel), image: require('../../../assets/images/lol/prop/healshildlevel.png') },
+      { name: '穿甲', value: formatValue(baseAttributes.amrorpenetrate), image: require('../../../assets/images/lol/prop/amrorpenetrate.png') },
+      { name: '护甲穿透', value: formatValue(baseAttributes.amrorpenetratePercten), image: require('../../../assets/images/lol/prop/amrorpenetratePercten.png') },
+      { name: '法术穿透', value: formatValue(baseAttributes.spellblockpenetrate), image: require('../../../assets/images/lol/prop/spellblockpenetrate.png') },
 
-      { name: '生命偷取', value: formatValue(baseAttributes.lifesteal), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '全能吸血', value: formatValue(baseAttributes.bloodsucking), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '射程', value: formatValue(baseAttributes.attackrange), image: require('../../../assets/images/lol/prop/1.png') },
-      { name: '韧性', value: formatValue(baseAttributes.toughness), image: require('../../../assets/images/lol/prop/1.png') },
+      { name: '生命偷取', value: formatValue(baseAttributes.lifesteal), image: require('../../../assets/images/lol/prop/lifesteal.png') },
+      { name: '全能吸血', value: formatValue(baseAttributes.bloodsucking), image: require('../../../assets/images/lol/prop/bloodsucking.png') },
+      { name: '射程', value: formatValue(baseAttributes.attackrange), image: require('../../../assets/images/lol/prop/attackrange.png') },
+      { name: '韧性', value: formatValue(baseAttributes.toughness), image: require('../../../assets/images/lol/prop/toughness.png') },
     ];
 };
 
@@ -178,11 +169,6 @@ const LOLCalcShow = ({ route, navigation }) => {
             </TouchableOpacity>
           ))}
         </View>
-
-        {/* 返回并传递数据 */}
-        <TouchableOpacity onPress={goBackToSelection}>
-          <Text>返回并传递数据</Text>
-        </TouchableOpacity>
       </View>
     </ScrollView>
   );
