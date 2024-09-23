@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Image, Dimensions, View, StyleSheet } from 'react-native';
-import LOLHeroScreen from './LOL_heros';
-import LOLItemsScreen from './LOL_items';  
-import LOLCalcScreen from './LOL_calc';    
+import LOLHeroScreen from './LOL_heros';  // 调整路径
+import LOLItemsScreen from './LOL_items';
+import LOLCalcScreen from './LOL_calc';
 import LOLRunesScreen from './LOL_runes';
 
 const Tab = createMaterialTopTabNavigator();
@@ -36,25 +36,24 @@ const LOLHomeScreen = () => {
                 : require('../../assets/images/lol/lol_calc.png');
             }
 
-            // 确保返回图标组件
             return (
               <Image
                 source={iconSource}
                 style={{
                   width: Dimensions.get('window').width / 18,
-                  height: Dimensions.get('window').width / 12,  // 保持图标为正方形
+                  height: Dimensions.get('window').width / 12,
                   transform: [{ scale: 1.5 }],
                 }}
               />
             );
           },
           tabBarStyle: {
-            height: Dimensions.get('window').height / 10,  // 控制 Tab 高度
+            height: Dimensions.get('window').height / 10,
             backgroundColor: 'white',
           },
           tabBarLabelStyle: {
-            fontSize: Dimensions.get('window').height / 70,  // 动态控制文字大小
-            marginTop: Dimensions.get('window').height / 70,  // 去掉顶部的默认间距
+            fontSize: Dimensions.get('window').height / 70,
+            marginTop: Dimensions.get('window').height / 70,
           },
           tabBarActiveTintColor: 'black',
           tabBarInactiveTintColor: 'gray',

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
-import { HERO_DATA, filterHeroesByName } from '../../components/LOL/LOL_hero_icons';
+import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
+import { HERO_DATA, filterHeroesByName } from '../../components/LOL/LOL_hero_icons'; // 确保路径正确
 import { createStackNavigator } from '@react-navigation/stack';
-import LOLHeroShow from './LOL_show/LOL_hero_show';
+import LOLHeroShow from './LOL_show/LOL_hero_show'; // 确保路径正确
 
 const Stack = createStackNavigator();
 
@@ -28,75 +28,48 @@ const LOLHeroList = ({ navigation, route }) => {
     if (setSwipeEnabled) {
       setSwipeEnabled(false);
     }
+    // 使用 callback 传递完整的 item
     navigation.navigate('HeroDetail', { item });
   };
 
   const renderIconItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleIconPress(item)} style={styles.iconContainer}>
       <Image source={item.image} style={styles.iconImage} />
-      {/* 在图片下方添加英雄名称 */}
       <Text style={styles.heroName}>{item.name}</Text>
     </TouchableOpacity>
   );
 
-  const handleFilterByCharacterTop = () => {
-    setFilteredData(HERO_DATA.filter(item => item.id.includes('top')));
-  };
-
-  const handleFilterByCharacterMid = () => {
-    setFilteredData(HERO_DATA.filter(item => item.id.includes('mid')));
-  };
-
-  const handleFilterByCharacterJug = () => {
-    setFilteredData(HERO_DATA.filter(item => item.id.includes('jug')));
-  };
-
-  const handleFilterByCharacterADc = () => {
-    setFilteredData(HERO_DATA.filter(item => item.id.includes('adc')));
-  };
-
-  const handleFilterByCharacterSup = () => {
-    setFilteredData(HERO_DATA.filter(item => item.id.includes('sup')));
-  };
-
-  const resetFilter = () => {
-    setFilteredData(HERO_DATA);
-  };
-
   return (
     <View style={styles.gridContainer}>
-      {/* 左侧筛选栏 */}
-      <View style={styles.filterBar}>
+       <View style={styles.filterBar}>
         {/*
         <Text>search road</Text>
         */}
 
-        <TouchableOpacity onPress={handleFilterByCharacterTop} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA.filter(item => item.id.includes('top')))} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/top.png')} style={styles.filterIcon} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={handleFilterByCharacterMid} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA.filter(item => item.id.includes('mid')))} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/mid.png')} style={styles.filterIcon} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={handleFilterByCharacterJug} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA.filter(item => item.id.includes('jug')))} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/jug.png')} style={styles.filterIcon} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={handleFilterByCharacterADc} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA.filter(item => item.id.includes('adc')))} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/adc.png')} style={styles.filterIcon} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={handleFilterByCharacterSup} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA.filter(item => item.id.includes('sup')))} style={styles.filterButton}>
           <Image source={require('../../assets/images/lol/sup.png')} style={styles.filterIcon} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={resetFilter} style={styles.filterButton}>
+        <TouchableOpacity onPress={() => setFilteredData(HERO_DATA)} style={styles.filterButton}>
           <Text>All</Text>
         </TouchableOpacity>
       </View>
-  
-      {/* 右侧图标展示区，加入ScrollView或FlatList */}
       <View style={styles.iconListContainer}>
         <TextInput
           style={styles.searchBar}
@@ -104,7 +77,6 @@ const LOLHeroList = ({ navigation, route }) => {
           value={searchQuery}
           onChangeText={handleSearch}
         />
-  
         <FlatList
           data={filteredData}
           renderItem={renderIconItem}
@@ -143,6 +115,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
   },
+  iconListContainer: {
+    flex: 1,
+    padding: width * 0.025,
+  },
   filterBar: {
     width: width * 0.21,
     backgroundColor: '#f0f0f0',
@@ -162,10 +138,6 @@ const styles = StyleSheet.create({
     width: width * 0.08,
     height: width * 0.08,
   },
-  iconListContainer: {
-    flex: 1,
-    padding: width * 0.025,
-  },
   searchBar: {
     height: height * 0.05,
     borderColor: 'gray',
@@ -177,12 +149,12 @@ const styles = StyleSheet.create({
   },
   flatListContent: {
     paddingBottom: height * 0.01,
-    justifyContent: 'flex-start', // 确保内容靠左
+    justifyContent: 'flex-start',
     flexDirection: 'row',
-    flexWrap: 'wrap', // 使项目换行
+    flexWrap: 'wrap',
   },
   iconContainer: {
-    width: width * 0.18, // 控制每个图标占据屏幕的四分之一
+    width: width * 0.18,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: height * 0.01,
@@ -193,7 +165,7 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.001,
   },
   heroName: {
-    textAlign: 'center',  // 名字居中显示在图片下方
+    textAlign: 'center',
     fontSize: 10,
     marginTop: height * 0.0002,
     marginBottom: height * 0.004,
