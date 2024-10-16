@@ -58,6 +58,7 @@ export async function fetchAndSaveFilteredMatches(puuid, folderName, limit = 100
             const apiUrl = `http://3.35.209.179:8000/api/get-match-detail-by-matchid/${matchId}/${puuid}`;
             const response = await fetch(apiUrl);
             const matchDetail = await response.json();
+            console.log("json",matchDetail);
 
             // 检查 mapId 是否为11
             if (matchDetail.match_summary && matchDetail.match_summary.mapId === 11) {
@@ -73,3 +74,19 @@ export async function fetchAndSaveFilteredMatches(puuid, folderName, limit = 100
 
     console.log(`Total saved matches: ${savedCount}`);
 }
+
+// 获取单个对局详细信息
+
+export async function get_match_full_detail(matchid, puuid) {
+    console.log('函数内macthid',matchid);
+    try {
+        const response = await fetch(`http://3.35.209.179:8000/api/get-full-match-detail/${matchid}/`);
+        const data = await response.json();
+        return data; // 返回 JSON 数据
+    } catch (error) {
+        console.error('Error fetching match details:', error);
+        throw error; // 抛出错误以供调用者处理
+    }
+}
+
+

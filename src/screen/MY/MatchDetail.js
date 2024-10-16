@@ -6,7 +6,7 @@ import { heroImageMap } from '../../components/LOL/heroImageMap'; // 导入英�
 import MatchCard from './MatchCard'; // 导入 MatchCard 组件
 import { HERO_DATA } from '../../components/LOL/LOL_hero_icons'; // 确保英雄数据已正确导入
 
-const MatchDetail = ({ route }) => {
+const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
     const { user } = route.params; // 获取传递的用户信息
     const [matches, setMatches] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -74,7 +74,8 @@ const MatchDetail = ({ route }) => {
         const winLose = matchSummary.win ? 'Win' : 'Lose';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
         const gameMode = matchSummary.mapId;
-    
+        const matchid = matchSummary.matchid;
+        console.log("matchid",matchid);
         const championKey = matchSummary.champion;
         const heroData = HERO_DATA.find(hero => hero.Key === String(championKey)); // 确保 championKey 是字符串
     
@@ -93,17 +94,16 @@ const MatchDetail = ({ route }) => {
             <MatchCard
                 imageUrl={finalImageUrl}
                 winLose={winLose}
-                
                 stats={stats}
                 gameMode={gameMode}
                 time={time}
                 onPress={() => {
                     navigation.navigate('MatchDetailPage', { matchSummary }); // 传递 matchSummary 数据
+                    console.log("matchSummary",matchSummary);
                 }}
             />
         );
     };
-    
 
     return (
         <View style={styles.container}>
