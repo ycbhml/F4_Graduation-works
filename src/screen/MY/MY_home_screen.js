@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'; 
-import MatchDetail from './M1';  
+import MatchDetail from './MatchDetail';  
 import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
-
+import MatchDetailPage from './MatchDetailPage';
 const Stack = createStackNavigator();
 
 const MyScreen = ({ navigation }) => {
@@ -157,17 +157,21 @@ const MY_home_screen = () => {
             <Stack.Screen
                 name="Main"
                 component={MyScreen}
-                options={{ headerShown: false }}
+                options={{ headerShown: false }} // 隐藏头部导航
             />
             <Stack.Screen
                 name="MatchDetail"
                 component={MatchDetail}
-                options={{ headerShown: false }}
+                options={{ headerShown: false }} // 隐藏头部导航
+            />
+            <Stack.Screen
+                name="MatchDetailPage" // 新增 MatchDetailPage
+                component={MatchDetailPage}
+                options={{ headerShown: true }} // 根据需要决定是否显示头部导航
             />
         </Stack.Navigator>
     );
 };
-
 const styles = StyleSheet.create({
     container: {
         padding: 20,

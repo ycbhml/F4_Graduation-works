@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, StyleSheet, ActivityIndicator, Image, Text } from 'react-native';
+import { View, FlatList, StyleSheet, ActivityIndicator, Image, Text, Button, Alert } from 'react-native';
 import RNFS from 'react-native-fs';
 import { fetchAndSaveFilteredMatches } from '../../../tools/get_match_info_jsons'; // 导入 fetchAndSaveFilteredMatches 函数
 import { heroImageMap } from '../../components/LOL/heroImageMap'; // 导入英雄图片静态映射
@@ -30,6 +30,7 @@ const MatchDetail = ({ route }) => {
                 const parsedContent = JSON.parse(fileContent);
                 matchDetails.push(parsedContent);
             }
+            console.log("filefod", folderPath);
             setMatches(matchDetails);
         } catch (error) {
             console.error('Error fetching or reading match data:', error);
@@ -37,12 +38,42 @@ const MatchDetail = ({ route }) => {
         setLoading(false);
     };
 
+    const updateMatches = async () => {
+        try {
+            const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
+            const currentFiles = await RNFS.readDir(folderPath);
+            const currentMatchIds = currentFiles.map(file => file.name.split('_')[0]);
+
+            // 获取新比赛数据
+            await fetchAndSaveFilteredMatches(user.puuid, user.name, 100); // 假设每次更新拉取100场
+
+            // 读取文件夹中的比赛数据，过滤本地已存在的比赛ID
+            const updatedFiles = await RNFS.readDir(folderPath);
+            const newMatches = [];
+            for (const file of updatedFiles) {
+                const matchId = file.name.split('_')[0];
+                if (!currentMatchIds.includes(matchId)) {
+                    const fileContent = await RNFS.readFile(file.path, 'utf8');
+                    const parsedContent = JSON.parse(fileContent);
+                    newMatches.push(parsedContent);
+                }
+            }
+
+            // 更新本地数据，添加新比赛数据
+            setMatches([...matches, ...newMatches]);
+            Alert.alert('提示', '战绩更新成功');
+        } catch (error) {
+            console.error('Error updating match data:', error);
+            Alert.alert('错误', '更新战绩时发生错误');
+        }
+    };
+
     // 渲染 MatchCard 组件
     const renderMatchCard = ({ item }) => {
         const matchSummary = item.match_summary;
         const winLose = matchSummary.win ? 'Win' : 'Lose';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
-        const gameMode = matchSummary.gameMode;
+        const gameMode = matchSummary.mapId;
     
         const championKey = matchSummary.champion;
         const heroData = HERO_DATA.find(hero => hero.Key === String(championKey)); // 确保 championKey 是字符串
@@ -56,19 +87,18 @@ const MatchDetail = ({ route }) => {
             finalImageUrl = heroImageMap[cleanedChampionId] || finalImageUrl; // 如果没有找到图片，使用默认图片
         }
     
-        //console.log(`Champion: ${cleanedChampionId}, Image URL: ${finalImageUrl}`); // 调试信息
-    
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
     
         return (
             <MatchCard
                 imageUrl={finalImageUrl}
                 winLose={winLose}
+                
                 stats={stats}
                 gameMode={gameMode}
                 time={time}
                 onPress={() => {
-                    console.log('Match clicked!');
+                    navigation.navigate('MatchDetailPage', { matchSummary }); // 传递 matchSummary 数据
                 }}
             />
         );
@@ -83,8 +113,11 @@ const MatchDetail = ({ route }) => {
                     style={styles.profileIcon}
                 />
                 <Text style={styles.nameTag}>{user.name}#{user.tag}</Text>
-                <Text style={styles.level}>等级: {user.summonerLevel}</Text>
+                <Text style={styles.level}>Level: {user.summonerLevel}</Text>
             </View>
+
+            {/* 添加更新按钮 */}
+            <Button title="更新战绩" onPress={updateMatches} />
 
             {loading ? (
                 <ActivityIndicator size="large" color="#0000ff" />
