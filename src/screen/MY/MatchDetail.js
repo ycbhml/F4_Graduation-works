@@ -74,25 +74,21 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
         const winLose = matchSummary.win ? 'Win' : 'Lose';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
         const gameMode = matchSummary.mapId;
-        const matchid = matchSummary.matchid;
-        console.log("matchid",matchid);
+        const matchId = matchSummary.matchId;
+        console.log("matchid",matchId);
         const championKey = matchSummary.champion;
+        const championName = matchSummary.championName;
         const heroData = HERO_DATA.find(hero => hero.Key === String(championKey)); // 确保 championKey 是字符串
+        
+        console.log('name',championName);
+        const imageUrl = `http://3.35.209.179:8000/data/get-hero-icon/${championName}.png`; // 根据 championName 拼接 API URL
     
-        let finalImageUrl = require('../../assets/lol_hero_icons/default.png'); // 默认图片路径
-    
-        if (heroData) {
-            const cleanedChampionId = heroData.id.split('_')[0].trim(); // 去除下划线及其后面的内容
-    
-            // 获取对应的图片
-            finalImageUrl = heroImageMap[cleanedChampionId] || finalImageUrl; // 如果没有找到图片，使用默认图片
-        }
-    
+      
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
     
         return (
             <MatchCard
-                imageUrl={finalImageUrl}
+                championName={championName}
                 winLose={winLose}
                 stats={stats}
                 gameMode={gameMode}

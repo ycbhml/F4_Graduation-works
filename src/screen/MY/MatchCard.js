@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { heroImageMap } from '../../components/LOL/heroImageMap'; // 导入英雄图片静态映射
 
-const MatchCard = ({ imageUrl, winLose, stats, gameMode, time, onPress }) => {
+const MatchCard = ({ championName, winLose, stats, gameMode, time, onPress }) => {
+    // 动态生成英雄图片 URL
+    const imageUrl = `http://3.35.209.179:8000/data/get-hero-icon/${championName}.png`;
+
     return (
         <TouchableOpacity onPress={onPress} style={styles.cardContainer}>
             {/* 左侧图片 */}
-            <Image source={imageUrl} style={styles.image} />
+            <Image source={{ uri: imageUrl }} style={styles.image} />
 
             {/* 右侧信息内容 */}
             <View style={styles.infoContainer}>
@@ -15,7 +17,7 @@ const MatchCard = ({ imageUrl, winLose, stats, gameMode, time, onPress }) => {
                     <Text style={[styles.winLoseText, winLose === 'Win' ? styles.winText : styles.loseText]}>
                         {winLose}
                     </Text>
-                    
+
                     {/* 战绩信息 */}
                     <Text style={styles.statsText}>{stats}</Text>
                 </View>
