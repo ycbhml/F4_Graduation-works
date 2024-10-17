@@ -105,12 +105,12 @@ const HomeScreen = () => {
             return <Image 
               source={iconName} 
               style={{ 
-                width: Dimensions.get('window').width / 9, 
-                height: Dimensions.get('window').height / 25,
+                width: Dimensions.get('window').width / 15, 
+                height: Dimensions.get('window').height / 30,
                 transform: [{ scale: 1.1 }]
               }} />;
           },
-          tabBarStyle: { height: Dimensions.get('window').height / 14 },
+          tabBarStyle: { height: Dimensions.get('window').height / 15 },
           tabBarLabelStyle: { fontSize: 20 },
           tabBarActiveTintColor: 'black',
           tabBarInactiveTintColor: 'gray',
