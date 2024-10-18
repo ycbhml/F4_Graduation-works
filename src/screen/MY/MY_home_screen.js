@@ -6,13 +6,35 @@ import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
 import MatchDetailPage from './MatchDetailPage';
+import { getVersion, version_check } from '../../../tools/get_match_info_jsons';
 const Stack = createStackNavigator();
 
 const MyScreen = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [tagLine, setTagLine] = useState('');
     const [users, setUsers] = useState([]);
+    const [version, setVersion] = useState('')
 
+    //version获取
+    useEffect(() => {
+        // 在组件加载时调用 version_check 函数
+        const fetchVersion = async () => {
+            try {
+                const data = await version_check(); // 调用 version_check 函数
+                if (data && data.version) {
+                    setVersion(data.version); // 直接存储版本号
+                }
+            } catch (error) {
+                console.error('Error fetching version:', error);
+            }
+        };
+
+        fetchVersion();
+    }, []); // 仅在组件挂载时调用
+
+    console.log("version for MY HOME",version);
+    // 调用获取 JSON 数据
+    
     // 加载存储的用户信息
     const loadUsers = async () => {
         try {
@@ -113,7 +135,7 @@ const MyScreen = ({ navigation }) => {
     const renderUser = ({ item, index }) => (
         <TouchableOpacity onPress={() => goToMatchDetail(item)} style={styles.userItem}>
             <Image
-                source={{ uri: `http://ddragon.leagueoflegends.com/cdn/11.15.1/img/profileicon/${item.profileIconId}.png` }} 
+                source={{ uri: `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${item.profileIconId}.png` }} 
                 style={styles.profileIcon}
             />
             <View style={styles.userInfo}>

@@ -88,5 +88,17 @@ export async function get_match_full_detail(matchid, puuid) {
         throw error; // 抛出错误以供调用者处理
     }
 }
+export async function version_check() {
+
+try {
+        const response = await fetch(`http://3.35.209.179:8000/data/version_check/`);
+        const data = await response.json();
+        console.log("function version",data);
+        return data; // 返回 JSON 数据
+    } catch (error) {
+        console.error('Error fetching match details:', error);
+        throw error; // 抛出错误以供调用者处理
+    }
+}
 
 

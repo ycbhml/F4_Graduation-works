@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import PlayerCard from './PlayerCard'; // 确保 PlayerCard 组件已正确实现
 import { get_match_full_detail } from '../../../tools/get_match_info_jsons'; // 导入自定义函数
-
+import { useVersion } from '../../VersionContext';
 const MatchDetailPage = ({ route }) => {
     const {matchSummary, matchid, puuid } = route.params;
     const [matchDetail, setMatchDetail] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const version = useVersion();
     useEffect(() => {
         const fetchMatchDetail = async () => {
             try {
@@ -45,7 +46,7 @@ const MatchDetailPage = ({ route }) => {
         matchDetail?.loseplayer4,
         matchDetail?.loseplayer5
     ].filter(player => player); 
-
+    console.log("matchDe.version",version);
     return (
         <ScrollView style={styles.container}>
             {/* 胜利队伍 */}
@@ -78,8 +79,9 @@ const MatchDetailPage = ({ route }) => {
                 {winPlayers.map((player, index) => (
                     <PlayerCard
                         key={index}
+                        version={version}
                         summonerName={player.summonerName || '未知召唤师'}
-                        championId={player.championName || 0}
+                        championName={player.championName || 0}
                         kills={player.kills || 0}
                         deaths={player.deaths || 0}
                         assists={player.assists || 0}
@@ -109,6 +111,7 @@ const MatchDetailPage = ({ route }) => {
                             trueDamageDealt: player.full_data?.trueDamageDealtToChampions || 0,
                             totalHeal: player.full_data?.totalHeal || 0, // 治疗
                         }}
+                        
                     />
                 ))}
             </View>
@@ -119,8 +122,9 @@ const MatchDetailPage = ({ route }) => {
                 {losePlayers.map((player, index) => (
                     <PlayerCard
                         key={index}
+                        version={version}
                         summonerName={player.summonerName}
-                        championId={player.championName}
+                        championName={player.championName}
                         kills={player.kills}
                         deaths={player.deaths}
                         assists={player.assists}
@@ -138,13 +142,17 @@ const MatchDetailPage = ({ route }) => {
                             spell1Id: player.full_data?.summoner1Id || 0,
                             spell2Id: player.full_data?.summoner2Id || 0,
                         }}
-                        detailedStats={{
+                        stats={{
                             minionsKilled: player.full_data?.totalMinionsKilled || 0,
                             towersDestroyed: player.full_data?.turretKills || 0,
-                            totalDamageDealt: player.full_data?.totalDamageDealt || 0,
-                            physicalDamageDealt: player.full_data?.physicalDamageDealt || 0,
-                            magicDamageDealt: player.full_data?.magicDamageDealt || 0,
-                            trueDamageDealt: player.full_data?.trueDamageDealt || 0,
+                            largestMultiKill: player.full_data?.largestMultiKill || 0,
+                            largestKillingSpree: player.full_data?.largestKillingSpree || 0, // 最大连杀
+                            nexusKills: player.full_data?.nexusKills || 0,
+                            totalDamageDealt: player.full_data?.totalDamageDealtToChampions || 0, // 总伤害
+                            physicalDamageDealt: player.full_data?.physicalDamageDealtToChampions || 0,
+                            magicDamageDealt: player.full_data?.magicDamageDealtToChampions || 0,
+                            trueDamageDealt: player.full_data?.trueDamageDealtToChampions || 0,
+                            totalHeal: player.full_data?.totalHeal || 0, // 治疗
                         }}
                     />
                 ))}

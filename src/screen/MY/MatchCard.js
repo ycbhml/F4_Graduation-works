@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const MatchCard = ({ championName, winLose, stats, gameMode, time, onPress }) => {
     // 动态生成英雄图片 URL
-    const imageUrl = `http://3.35.209.179:8000/data/get-hero-icon/${championName}.png`;
+    const imageUrl = `https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/${championName}.png`;
 
     return (
         <TouchableOpacity onPress={onPress} style={styles.cardContainer}>

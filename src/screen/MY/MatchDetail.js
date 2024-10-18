@@ -5,12 +5,15 @@ import { fetchAndSaveFilteredMatches } from '../../../tools/get_match_info_jsons
 import { heroImageMap } from '../../components/LOL/heroImageMap'; // 导入英雄图片静态映射
 import MatchCard from './MatchCard'; // 导入 MatchCard 组件
 import { HERO_DATA } from '../../components/LOL/LOL_hero_icons'; // 确保英雄数据已正确导入
-
+import { useVersion } from '../../VersionContext';
 const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
     const { user } = route.params; // 获取传递的用户信息
     const [matches, setMatches] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    
+    const version = useVersion();
+    //version获取
+   
     useEffect(() => {
         // 页面初始化时，调用 fetchAndSaveFilteredMatches 获取比赛数据
         fetchMatchData();
@@ -79,9 +82,8 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
         const championKey = matchSummary.champion;
         const championName = matchSummary.championName;
         const heroData = HERO_DATA.find(hero => hero.Key === String(championKey)); // 确保 championKey 是字符串
-        
-        console.log('name',championName);
-        const imageUrl = `http://3.35.209.179:8000/data/get-hero-icon/${championName}.png`; // 根据 championName 拼接 API URL
+       
+        const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`; // 根据 championName 拼接 API URL
     
       
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
@@ -105,7 +107,7 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
         <View style={styles.container}>
             <View style={styles.profileContainer}>
                 <Image
-                    source={{ uri: `http://ddragon.leagueoflegends.com/cdn/11.15.1/img/profileicon/${user.profileIconId}.png` }}
+                    source={{ uri: `http://ddragon.leagueoflegends.com/cdn/14.20.1/img/profileicon/${user.profileIconId}.png` }}
                     style={styles.profileIcon}
                 />
                 <Text style={styles.nameTag}>{user.name}#{user.tag}</Text>
