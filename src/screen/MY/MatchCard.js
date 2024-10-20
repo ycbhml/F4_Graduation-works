@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const MatchCard = ({ championName, winLose, stats, gameMode, time, onPress }) => {
+const MatchCard = ({ championName, version, winLose, stats, gameMode, time, onPress }) => {
+    const [imageUri, setImageUri] = useState(null); // 初始化为 null
+
     // 动态生成英雄图片 URL
-    const imageUrl = `https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/${championName}.png`;
+    const formattedChampionName = championName.charAt(0).toUpperCase() + championName.slice(1).toLowerCase();
+    const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${formattedChampionName}.png`;
+    const imageUrl2 = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
+
+    // 初始化为第一个URL
+    useEffect(() => {
+        setImageUri(imageUrl);
+    }, [version, championName]);
 
     return (
         <TouchableOpacity onPress={onPress} style={styles.cardContainer}>
             {/* 左侧图片 */}
-            <Image source={{ uri: imageUrl }} style={styles.image} />
+            {imageUri && ( // 检查是否有有效的 URI
+                <Image
+                    source={{ uri: imageUri }}
+                    style={styles.image}
+                    onError={() => {
+                        // 图片加载失败时切换到备用链接
+                        setImageUri(imageUrl2);
+                    }}
+                />
+            )}
 
             {/* 右侧信息内容 */}
             <View style={styles.infoContainer}>
                 <View style={styles.row}>
                     {/* Win/Lose 信息 */}
-                    <Text style={[styles.winLoseText, winLose === 'Win' ? styles.winText : styles.loseText]}>
+                    <Text style={[styles.winLoseText, winLose === '승리' ? styles.winText : styles.loseText]}>
                         {winLose}
                     </Text>
 
@@ -71,6 +89,7 @@ const styles = StyleSheet.create({
     },
     statsText: {
         fontSize: 16,
+        fontWeight: 'bold',
     },
     gameModeText: {
         marginTop: 5,

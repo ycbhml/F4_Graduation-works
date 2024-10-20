@@ -30,8 +30,8 @@ export async function checkAndCreateFolder(folderPath) {
     }
 }
 
-// 定义一个函数来获取match详情并只保存mapID为11的比赛
-export async function fetchAndSaveFilteredMatches(puuid, folderName, limit = 100) {
+// 定义一个函数来获取match详情并只保存mapID为11和12的比赛，各保存20个
+export async function fetchAndSaveFilteredMatches(puuid, folderName, limit11 = 20, limit12 = 20) {
     const folderPath = `${RNFS.DocumentDirectoryPath}/${puuid}`; // 使用puuid动态生成路径
 
     // 检查并创建文件夹
@@ -47,33 +47,45 @@ export async function fetchAndSaveFilteredMatches(puuid, folderName, limit = 100
     // 没有数据，获取最近100场比赛ID
     const matchIds = await fetch100MatchIds(puuid);
 
-    let savedCount = 0; // 已保存的符合条件的比赛计数
+    let savedCount11 = 0; // 已保存的符合条件的 mapId 11 的比赛计数
+    let savedCount12 = 0; // 已保存的符合条件的 mapId 12 的比赛计数
 
     try {
         for (let matchId of matchIds) {
-            if (savedCount >= limit) {
-                break; // 达到限制个数后停止
+            // 如果mapId为11和12的比赛都已经保存到指定数量，则跳出循环
+            if (savedCount11 >= limit11 && savedCount12 >= limit12) {
+                break;
             }
 
             const apiUrl = `http://3.35.209.179:8000/api/get-match-detail-by-matchid/${matchId}/${puuid}`;
             const response = await fetch(apiUrl);
             const matchDetail = await response.json();
-            console.log("json",matchDetail);
+            console.log("json", matchDetail);
 
-            // 检查 mapId 是否为11
-            if (matchDetail.match_summary && matchDetail.match_summary.mapId === 11) {
-                const filePath = `${folderPath}/${matchId}_${puuid}_11.json`;
-                await RNFS.writeFile(filePath, JSON.stringify(matchDetail, null, 2), 'utf8');
-                console.log(`Saved match detail with mapId 11: ${filePath}`);
-                savedCount++;
+            // 检查 mapId 是否为 11 或 12
+            if (matchDetail.match_summary) {
+                const mapId = matchDetail.match_summary.mapId;
+
+                if (mapId === 11 && savedCount11 < limit11) {
+                    const filePath = `${folderPath}/${matchId}_${puuid}_11.json`;
+                    await RNFS.writeFile(filePath, JSON.stringify(matchDetail, null, 2), 'utf8');
+                    console.log(`Saved match detail with mapId 11: ${filePath}`);
+                    savedCount11++;
+                } else if (mapId === 12 && savedCount12 < limit12) {
+                    const filePath = `${folderPath}/${matchId}_${puuid}_12.json`;
+                    await RNFS.writeFile(filePath, JSON.stringify(matchDetail, null, 2), 'utf8');
+                    console.log(`Saved match detail with mapId 12: ${filePath}`);
+                    savedCount12++;
+                }
             }
         }
     } catch (error) {
         console.error('Error fetching or saving match details:', error);
     }
 
-    console.log(`Total saved matches: ${savedCount}`);
+    console.log(`Total saved matches: MapId 11: ${savedCount11}, MapId 12: ${savedCount12}`);
 }
+
 
 // 获取单个对局详细信息
 

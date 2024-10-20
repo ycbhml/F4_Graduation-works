@@ -45,16 +45,24 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
         try {
             const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
             const currentFiles = await RNFS.readDir(folderPath);
-            const currentMatchIds = currentFiles.map(file => file.name.split('_')[0]);
-
+            
+            // 获取当前文件夹中的文件，并保留区域和比赛ID部分
+            const currentMatchIds = currentFiles.map(file => {
+                const parts = file.name.split('_');
+                return `${parts[0]}_${parts[1]}`; // 保留 kr_11132312 格式
+            });
+            
             // 获取新比赛数据
             await fetchAndSaveFilteredMatches(user.puuid, user.name, 100); // 假设每次更新拉取100场
-
+            
             // 读取文件夹中的比赛数据，过滤本地已存在的比赛ID
             const updatedFiles = await RNFS.readDir(folderPath);
             const newMatches = [];
             for (const file of updatedFiles) {
-                const matchId = file.name.split('_')[0];
+                const parts = file.name.split('_');
+                const matchId = `${parts[0]}_${parts[1]}`; // 保留 kr_11132312 格式
+                console.log("matchdel file name to matchid", matchId);
+            
                 if (!currentMatchIds.includes(matchId)) {
                     const fileContent = await RNFS.readFile(file.path, 'utf8');
                     const parsedContent = JSON.parse(fileContent);
@@ -64,17 +72,17 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
 
             // 更新本地数据，添加新比赛数据
             setMatches([...matches, ...newMatches]);
-            Alert.alert('提示', '战绩更新成功');
+            Alert.alert('메시지', '업데이트 성공');
         } catch (error) {
             console.error('Error updating match data:', error);
-            Alert.alert('错误', '更新战绩时发生错误');
+            Alert.alert('오류', '업데이트시 오류 발생했습니다.');
         }
     };
 
     // 渲染 MatchCard 组件
     const renderMatchCard = ({ item }) => {
         const matchSummary = item.match_summary;
-        const winLose = matchSummary.win ? 'Win' : 'Lose';
+        const winLose = matchSummary.win ? '승리' : '패배';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
         const gameMode = matchSummary.mapId;
         const matchId = matchSummary.matchId;
@@ -91,6 +99,7 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
         return (
             <MatchCard
                 championName={championName}
+                version={version}
                 winLose={winLose}
                 stats={stats}
                 gameMode={gameMode}
@@ -115,7 +124,7 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
             </View>
 
             {/* 添加更新按钮 */}
-            <Button title="更新战绩" onPress={updateMatches} />
+            <Button title="업데이트" onPress={updateMatches} />
 
             {loading ? (
                 <ActivityIndicator size="large" color="#0000ff" />

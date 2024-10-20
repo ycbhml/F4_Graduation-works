@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack'; 
-import MatchDetail from './MatchDetail';  
+import { createStackNavigator } from '@react-navigation/stack';
+import MatchDetail from './MatchDetail';
 import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
@@ -32,9 +32,9 @@ const MyScreen = ({ navigation }) => {
         fetchVersion();
     }, []); // 仅在组件挂载时调用
 
-    console.log("version for MY HOME",version);
+    console.log("version for MY HOME", version);
     // 调用获取 JSON 数据
-    
+
     // 加载存储的用户信息
     const loadUsers = async () => {
         try {
@@ -63,18 +63,18 @@ const MyScreen = ({ navigation }) => {
     // 搜索召唤师
     const fetchSummonerInfo = async () => {
         if (users.length >= 3) {
-            Alert.alert('提示', '最多只能添加三个用户，请删除至少一个用户再操作。');
+            Alert.alert('매시지', '사용자 최대 3명만 존재할 수 있습니다.');
             return;
         }
 
         if (!searchQuery || !tagLine) {
-            alert('请输入召唤师姓名和tag');
+            alert('name,tag 입력해주세요');
             return;
         }
 
         const userExists = users.some(user => user.name === searchQuery && user.tag === tagLine);
         if (userExists) {
-            Alert.alert('提示', '该用户已经在队列中。');
+            Alert.alert('매시지', '사용자 존재합니다');
             return;
         }
 
@@ -94,18 +94,36 @@ const MyScreen = ({ navigation }) => {
                 setUsers(updatedUsers); // 更新用户列表
                 storeUsers(updatedUsers); // 存储用户信息
             } else {
-                alert('未找到该召唤师');
+                alert('소환사 찾을 수 없습니다.');
             }
         } catch (error) {
             console.error(error);
-            alert('获取数据时出错');
+            alert('데이터 오류.');
         }
     };
 
-    // 删除用户
-    const removeUser = (index) => {
+    // 删除用户并同时删除用户文件夹
+    const removeUser = async (index) => {
+        const userToRemove = users[index]; // 获取要删除的用户
+        const folderPath = `${RNFS.DocumentDirectoryPath}/${userToRemove.puuid}`; // 用户文件夹路径
+
+        try {
+            // 删除用户文件夹
+            const folderExists = await RNFS.exists(folderPath);
+            if (folderExists) {
+                await RNFS.unlink(folderPath);
+                console.log(`풀더 삭제합니다: ${folderPath}`);
+            } else {
+                console.log(`풀더 존재하지 않습니다: ${folderPath}`);
+            }
+        } catch (error) {
+            console.error('풀더 삭제시 오류 발생했습니다.:', error);
+            alert('풀더 삭제시 오류 발생했습니다.');
+        }
+
+        // 更新用户列表并存储
         const newUsers = [...users];
-        newUsers.splice(index, 1);
+        newUsers.splice(index, 1); // 从列表中移除用户
         setUsers(newUsers);
         storeUsers(newUsers); // 更新存储的用户信息
     };
@@ -113,34 +131,34 @@ const MyScreen = ({ navigation }) => {
     // 跳转到 MatchDetail 页面
     const goToMatchDetail = async (user) => {
         const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
-    
+
         try {
             const folderExists = await RNFS.exists(folderPath);
-    
+
             if (!folderExists) {
                 await RNFS.mkdir(folderPath);
-                console.log(`文件夹已创建: ${folderPath}`);
+                console.log(`풀더 생성 성공: ${folderPath}`);
             } else {
-                console.log(`文件夹已存在: ${folderPath}`);
+                console.log(`이미 존재한 풀더입니다.: ${folderPath}`);
             }
-    
+
             navigation.navigate('MatchDetail', { user });
-    
+
         } catch (error) {
-            console.error('创建文件夹时发生错误:', error);
-            alert('创建文件夹时发生错误');
+            console.error('풀더 생성시 오류 발생했습니다:', error);
+            alert('풀더 생성시 오류 발생했습니다');
         }
     };
 
     const renderUser = ({ item, index }) => (
         <TouchableOpacity onPress={() => goToMatchDetail(item)} style={styles.userItem}>
             <Image
-                source={{ uri: `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${item.profileIconId}.png` }} 
+                source={{ uri: `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${item.profileIconId}.png` }}
                 style={styles.profileIcon}
             />
             <View style={styles.userInfo}>
                 <Text>{item.name}#{item.tag}</Text>
-                <Text>等级: {item.summonerLevel}</Text>
+                <Text>Levle: {item.summonerLevel}</Text>
             </View>
             <TouchableOpacity onPress={() => removeUser(index)} style={styles.removeButton}>
                 <Text>X</Text>
@@ -152,7 +170,7 @@ const MyScreen = ({ navigation }) => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="召唤师姓名"
+                placeholder="name"
                 value={searchQuery}
                 onChangeText={setSearchQuery}
             />
@@ -162,7 +180,7 @@ const MyScreen = ({ navigation }) => {
                 value={tagLine}
                 onChangeText={setTagLine}
             />
-            <Button title="搜索" onPress={fetchSummonerInfo} />
+            <Button title="검색" onPress={fetchSummonerInfo} />
 
             <FlatList
                 data={users}
@@ -187,9 +205,9 @@ const MY_home_screen = () => {
                 options={{ headerShown: false }} // 隐藏头部导航
             />
             <Stack.Screen
-                name="MatchDetailPage" // 新增 MatchDetailPage
-                component={MatchDetailPage}
-                options={{ headerShown: true }} // 根据需要决定是否显示头部导航
+                name="MatchDetailPage"  // 将MatchDetailPage插入导航堆栈
+                component={MatchDetailPage} // 引用MatchDetailPage组件
+                options={{ title: '상세정보' }}  // 设置标题
             />
         </Stack.Navigator>
     );

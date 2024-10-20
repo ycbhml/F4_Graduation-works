@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 
 // 默认物品图片，当物品ID为0时使用
-const defaultItemImageUri = `http://3.35.209.179:8000/data/get_item_icon/0.png`;
+const defaultItemImageUri = require(`../../assets/lol_items/0.png`);
 
-const PlayerCard = ({ version, summonerName, championName, kills, deaths, assists, items = {}, championLevel, stats, summonerSpells }) => {
+const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, assists, items = {}, championLevel, stats, summonerSpells }) => {
     const [expanded, setExpanded] = useState(false);
     const [animation] = useState(new Animated.Value(0));
     const [spellMap, setSpellMap] = useState(null); // 初始化为 null
+    const [imageUri, setImageUri] = useState(null); // 初始化为 null 而非空字符串
 
     // 获取召唤师技能的映射表
     useEffect(() => {
@@ -53,8 +54,17 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
     console.log("playercard.version", version);
     console.log("palyercard, championid", championName);
 
+    // 首先将 ChampionName 格式化为首字母大写形式
+    const formattedChampionName = championName.charAt(0).toUpperCase() + championName.slice(1).toLowerCase();
+
     // 使用API来获取英雄图标
-    const championImageUri = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
+    useEffect(() => {
+        const championImageUri = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${formattedChampionName}.png`;
+        const championImageUri2 = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
+
+        // 初始设置为第一个 URI
+        setImageUri(championImageUri);
+    }, [version, championName]);
 
     // 使用API来获取物品图标
     const itemImageUri = (itemId) => itemId !== 0
@@ -84,21 +94,32 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
             {/* 顶部英雄头像、战绩和召唤师信息 */}
             <View style={styles.header}>
                 <View style={styles.imageContainer}>
-                    <Image source={{ uri: championImageUri }} style={styles.heroImage} />
+                    {imageUri && ( // 仅当有有效的 URI 时渲染 Image 组件
+                        <Image
+                            source={{ uri: imageUri }}
+                            style={styles.heroImage}
+                            onError={() => {
+                                // 如果第一次加载失败，使用不区分大小写的图片链接
+                                const championImageUri2 = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
+                                setImageUri(championImageUri2);
+                            }}
+                        />
+                    )}
                     {/* 英雄等级 */}
                     <View style={styles.levelCircle}>
                         <Text style={styles.levelText}>{championLevel}</Text>
                     </View>
                 </View>
                 <View style={styles.info}>
-                    <Text style={styles.summonerName}>{summonerName || '알 수 없는 소환사'}</Text>
+                    <Text style={styles.summonerName}>{summonerName || '알 수 없는 소환사'}#{tag}</Text>
+
                     <Text>{kills}/{deaths}/{assists}</Text>
                     <View style={styles.itemContainer}>
                         {/* 渲染7个装备，使用默认图片代替 item 为 0 的情况 */}
                         {[...Array(7).keys()].map(index => (
                             <Image
                                 key={index}
-                                source={{ uri: itemImageUri(items[`item${index}`] || 0) }}
+                                source={{ uri: itemImageUri(items[`item${index}`] || defaultItemImageUri) }}
                                 style={styles.itemBox}
                             />
                         ))}
@@ -111,7 +132,6 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
 
             {/* 可展开部分，修改为图片中显示的布局 */}
             <Animated.View style={[styles.expandableContent, { height: contentHeight }]}>
-
                 {/* 在展开部分中显示召唤师技能图标，如果 spellMap 已加载 */}
                 {spellMap && (
                     <View style={styles.spellContainer}>
@@ -135,8 +155,7 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
                         <Text style={styles.statLabel}>최대 다중 킬:</Text>
                         <Text style={styles.statValue}>{stats?.largestMultiKill || 0}</Text>
 
-                        <Text style={styles.statLabel}>최대 연속 킬
-                        :</Text>
+                        <Text style={styles.statLabel}>최대 연속 킬:</Text>
                         <Text style={styles.statValue}>{stats?.largestKillingSpree || 0}</Text>
 
                         <Text style={styles.statLabel}>치유:</Text>
@@ -148,7 +167,7 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
 
                         <Text style={styles.statLabel}>마법 피해:</Text>
                         <Text style={styles.statValue}>{stats?.magicDamageDealt || 0}</Text>
- 
+
                         <Text style={styles.statLabel}>고유 피해:</Text>
                         <Text style={styles.statValue}>{stats?.trueDamageDealt || 0}</Text>
                     </View>
@@ -157,9 +176,7 @@ const PlayerCard = ({ version, summonerName, championName, kills, deaths, assist
                         <Text style={styles.statValue1}>{stats?.totalDamageDealt || 0}</Text>
                     </View>
                 </View>
-
             </Animated.View>
-
         </View>
     );
 };

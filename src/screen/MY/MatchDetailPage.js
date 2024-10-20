@@ -47,12 +47,18 @@ const MatchDetailPage = ({ route }) => {
         matchDetail?.loseplayer5
     ].filter(player => player); 
     console.log("matchDe.version",version);
+    console.log("winplayer1.name",winPlayers[0].summonerName,winPlayers[0].full_data.riotIdTagline,"championname",winPlayers[0].full_data.championName);
+    console.log("winplayer2.name",winPlayers[1].summonerName,winPlayers[1].full_data.riotIdTagline,"championname",winPlayers[1].full_data.championName);
+    console.log("winplayer3.name",winPlayers[2].summonerName,winPlayers[2].full_data.riotIdTagline,"championname",winPlayers[2].full_data.championName);
+    console.log("winplayer4.name",winPlayers[3].summonerName,winPlayers[3].full_data.riotIdTagline,"championname",winPlayers[3].full_data.championName);
+    console.log("winplayer5.name",winPlayers[4].summonerName,winPlayers[4].full_data.riotIdTagline,"championname",winPlayers[4].full_data.championName);
+
     return (
         <ScrollView style={styles.container}>
             {/* 胜利队伍 */}
             <View style={styles.header}>
                 <View style={styles.winContainer}>
-                    <Text style={styles.headerTitlefoWin}>胜利队伍</Text>
+                    <Text style={styles.headerTitlefoWin}>승리 팀</Text>
                     {(() => {
                         const winKills = winPlayers.reduce((sum, player) => sum + (player?.kills || 0), 0);
                         const winDeaths = winPlayers.reduce((sum, player) => sum + (player?.deaths || 0), 0);
@@ -63,7 +69,7 @@ const MatchDetailPage = ({ route }) => {
 
                 {/* 失败队伍 */}
                 <View style={styles.loseContainer}>
-                    <Text style={styles.headerTitlefoLose}>失败队伍</Text>
+                    <Text style={styles.headerTitlefoLose}>패배 팀</Text>
                     {(() => {
                         const loseKills = losePlayers.reduce((sum, player) => sum + (player?.kills || 0), 0);
                         const loseDeaths = losePlayers.reduce((sum, player) => sum + (player?.deaths || 0), 0);
@@ -75,12 +81,13 @@ const MatchDetailPage = ({ route }) => {
 
             {/* 渲染胜利队伍的玩家信息 */}
             <View style={styles.teamContainer}>
-                <Text style={styles.sectionTitlefoWin}>胜利队伍玩家</Text>
+                <Text style={styles.sectionTitlefoWin}>승리 팀</Text>
                 {winPlayers.map((player, index) => (
                     <PlayerCard
                         key={index}
                         version={version}
                         summonerName={player.summonerName || '未知召唤师'}
+                        tag={player.full_data.riotIdTagline}
                         championName={player.championName || 0}
                         kills={player.kills || 0}
                         deaths={player.deaths || 0}
@@ -118,12 +125,13 @@ const MatchDetailPage = ({ route }) => {
 
             {/* 渲染失败队伍的玩家信息 */}
             <View style={styles.teamContainer}>
-                <Text style={styles.sectionTitlefoLose}>失败队伍玩家</Text>
+                <Text style={styles.sectionTitlefoLose}>패배 팀</Text>
                 {losePlayers.map((player, index) => (
                     <PlayerCard
                         key={index}
                         version={version}
                         summonerName={player.summonerName}
+                        tag={player.full_data.riotIdTagline}
                         championName={player.championName}
                         kills={player.kills}
                         deaths={player.deaths}
