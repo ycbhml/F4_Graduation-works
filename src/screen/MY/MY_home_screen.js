@@ -5,7 +5,7 @@ import MatchDetail from './MatchDetail';
 import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
-import MatchDetailPage from './MatchDetailPage';
+import MatchDetailPage from './MatchDetailPageToMap11_12';
 import { getVersion, version_check } from '../../../tools/get_match_info_jsons';
 const Stack = createStackNavigator();
 
@@ -205,7 +205,7 @@ const MY_home_screen = () => {
                 options={{ title:'대전 기록' }} // 隐藏头部导航
             />
             <Stack.Screen
-                name="MatchDetailPage"  // 将MatchDetailPage插入导航堆栈
+                name="MatchDetailPageToMap11_12"  // 将MatchDetailPage插入导航堆栈
                 component={MatchDetailPage} // 引用MatchDetailPage组件
                 options={{ title: '상세정보' }}  // 设置标题
             />

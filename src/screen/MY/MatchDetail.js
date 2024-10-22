@@ -21,14 +21,34 @@ const MatchDetail = ({ route, navigation }) => {
     }, []);
     const gameModeName = (gameMode) => {
         switch(gameMode) {
-            case 11:
-                return "소환사의 협곡"; // 召唤师峡谷
-            case 12:
-                return "칼바람 나락"; // 极地大乱斗
+            case "CLASSIC":
+                return "소환사의 협곡"; // 召唤师峡谷 (Summoner's Rift)
+            case "ARAM":
+                return "칼바람 나락"; // 极地大乱斗 (ARAM)
+            case "URF":
+                return "우르프"; // URF (Ultra Rapid Fire)
+            case "ONEFORALL":
+                return "단일 챔피언 모드"; // 极地大乱斗 (One for All)
+            case "TFT":
+                return "전략적 팀 전투"; // 云顶之弈 (TFT)
+            case "CLASH":
+                return "클래시"; // Clash (团队锦标赛)
+            case "NEXUSBLITZ":
+                return "넥서스 블리츠"; // Nexus Blitz (无限乱斗)
+            case "TUTORIAL":
+                return "튜토리얼"; // Tutorial (教程)
+            case "PRACTICETOOL":
+                return "연습 모드"; // Practice Tool (练习工具)
+            case "RANKED_SOLO_5x5":
+                return "솔로 랭크"; // 单双排 (Ranked Solo/Duo)
+            case "RANKED_FLEX_SR":
+                return "자유 랭크"; // 灵活排位 (Ranked Flex)
             default:
-                return "기타"; // 其他
+                return "기타"; // 其他 (Others)
         }
     };
+    
+    
     const fetchInitialMatches = async () => {
         setLoading(true);
         const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
@@ -67,15 +87,16 @@ const MatchDetail = ({ route, navigation }) => {
         const matchSummary = item.match_summary;
         const winLose = matchSummary.win ? '승리' : '패배';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
-        const gameMode = matchSummary.mapId;
+        const mapId = matchSummary.mapId;
         const matchId = matchSummary.matchId;
         const championKey = matchSummary.champion;
         const championName = matchSummary.championName;
+        const gameMode = matchSummary.gameMode;
     // 只显示 mapId 为 11 或 12 的比赛
-        if (matchSummary.mapId !== 11 && matchSummary.mapId !== 12) {
+        if (matchSummary.mapId !== 11 && matchSummary.mapId !== 12 &&matchSummary.mapId !==21) {
             return null; // 跳过显示其他 mapId 的比赛
         }
-
+        console.log("gamemode",gameMode);
         const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
 
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
@@ -89,7 +110,7 @@ const MatchDetail = ({ route, navigation }) => {
                 gameMode={gameModeName(gameMode)}
                 time={time}
                 onPress={() => {
-                    navigation.navigate('MatchDetailPage', { matchSummary });
+                    navigation.navigate('MatchDetailPageToMap11_12', { matchSummary });
                 }}
             />
         );

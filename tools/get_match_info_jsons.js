@@ -16,6 +16,7 @@ export async function fetch100MatchIds(puuid) {
         }
     } catch (error) {
         console.error('Error fetching match ids:', error);
+        
         return [];
     }
 }
