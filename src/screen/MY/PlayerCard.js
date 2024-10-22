@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 
-// 默认物品图片，当物品ID为0时使用
-const defaultItemImageUri = require(`../../assets/lol_items/0.png`);
+// 默认物品图片，当物品ID为0时使用本地图标
+const defaultItemImageUri = require('../../assets/lol_items/0.png');
 
 const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, assists, items = {}, championLevel, stats, summonerSpells }) => {
     const [expanded, setExpanded] = useState(false);
@@ -51,9 +51,6 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
         outputRange: [0, 150], // Adjust this based on your content's actual height
     });
 
-    console.log("playercard.version", version);
-    console.log("palyercard, championid", championName);
-
     // 首先将 ChampionName 格式化为首字母大写形式
     const formattedChampionName = championName.charAt(0).toUpperCase() + championName.slice(1).toLowerCase();
 
@@ -66,10 +63,12 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
         setImageUri(championImageUri);
     }, [version, championName]);
 
-    // 使用API来获取物品图标
-    const itemImageUri = (itemId) => itemId !== 0
-        ? `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${itemId}.png`
-        : defaultItemImageUri;
+    // 使用API来获取物品图标，处理 ID 为 0 的情况
+    const itemImageUri = (itemId) => {
+        return itemId 
+            ? { uri: `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${itemId}.png` }
+            : defaultItemImageUri; // 使用本地默认图片
+    };
 
     // 使用API来获取召唤师技能图标
     const summonerSpellImageUri = (spellId) => {
@@ -82,7 +81,7 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
 
         // 如果找不到对应的技能名称，返回 null 避免空字符串问题
         return spellName
-            ? `https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${spellName}.png`
+            ? { uri: `https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${spellName}.png` }
             : null;
     };
 
@@ -119,7 +118,7 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
                         {[...Array(7).keys()].map(index => (
                             <Image
                                 key={index}
-                                source={{ uri: itemImageUri(items[`item${index}`] || defaultItemImageUri) }}
+                                source={itemImageUri(items[`item${index}`])}
                                 style={styles.itemBox}
                             />
                         ))}
@@ -135,8 +134,8 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
                 {/* 在展开部分中显示召唤师技能图标，如果 spellMap 已加载 */}
                 {spellMap && (
                     <View style={styles.spellContainer}>
-                        <Image source={{ uri: summonerSpellImageUri(summonerSpells?.spell1Id) }} style={styles.spellImage} />
-                        <Image source={{ uri: summonerSpellImageUri(summonerSpells?.spell2Id) }} style={styles.spellImage} />
+                        <Image source={summonerSpellImageUri(summonerSpells?.spell1Id)} style={styles.spellImage} />
+                        <Image source={summonerSpellImageUri(summonerSpells?.spell2Id)} style={styles.spellImage} />
                     </View>
                 )}
 

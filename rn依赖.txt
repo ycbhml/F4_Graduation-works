@@ -1,0 +1,18 @@
+yarn add react-native-fs \
+  react-native-zip-archive \
+  @react-navigation/material-top-tabs \
+  react-native-tab-view \
+  @react-native-async-storage/async-storage \
+  @react-native-community/slider \
+  react-native-pager-view \
+  @react-navigation/stack \
+  @react-navigation/native \
+  react-native-gesture-handler \
+  react-native-screens \
+  react-native-safe-area-context
+yarn add @react-navigation/bottom-tabs
+yarn add @react-native-async-storage/async-storage
+yarn add expo-modules-core
+yarn add expo-linear-gradient
+
+생맥주한잔주세요

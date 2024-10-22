@@ -202,7 +202,7 @@ const MY_home_screen = () => {
             <Stack.Screen
                 name="MatchDetail"
                 component={MatchDetail}
-                options={{ headerShown: false }} // 隐藏头部导航
+                options={{ title:'대전 기록' }} // 隐藏头部导航
             />
             <Stack.Screen
                 name="MatchDetailPage"  // 将MatchDetailPage插入导航堆栈

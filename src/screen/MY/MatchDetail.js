@@ -1,112 +1,95 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, StyleSheet, ActivityIndicator, Image, Text, Button, Alert } from 'react-native';
-import RNFS from 'react-native-fs';
-import { fetchAndSaveFilteredMatches } from '../../../tools/get_match_info_jsons'; // 导入 fetchAndSaveFilteredMatches 函数
-import { heroImageMap } from '../../components/LOL/heroImageMap'; // 导入英雄图片静态映射
-import MatchCard from './MatchCard'; // 导入 MatchCard 组件
-import { HERO_DATA } from '../../components/LOL/LOL_hero_icons'; // 确保英雄数据已正确导入
+import { View, FlatList, StyleSheet, ActivityIndicator, Image, Text } from 'react-native';
+import { fetchAndSaveFilteredMatchesLazy, loadMatchesFromLocal } from '../../../tools/get_match_info_jsons'; 
+import MatchCard from './MatchCard'; 
+import { HERO_DATA } from '../../components/LOL/LOL_hero_icons'; 
 import { useVersion } from '../../VersionContext';
-const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
-    const { user } = route.params; // 获取传递的用户信息
-    const [matches, setMatches] = useState([]);
-    const [loading, setLoading] = useState(true);
-    
-    const version = useVersion();
-    //version获取
-   
-    useEffect(() => {
-        // 页面初始化时，调用 fetchAndSaveFilteredMatches 获取比赛数据
-        fetchMatchData();
-    }, []);
+import RNFS from 'react-native-fs';
 
-    const fetchMatchData = async () => {
+const MatchDetail = ({ route, navigation }) => { 
+    const { user } = route.params; 
+    const [matches, setMatches] = useState([]); 
+    const [loading, setLoading] = useState(true); 
+    const [startIndex, setStartIndex] = useState(0); 
+    const [isFetchingMore, setIsFetchingMore] = useState(false); 
+    const [allDataLoaded, setAllDataLoaded] = useState(false); 
+
+    const version = useVersion();
+
+    useEffect(() => {
+        fetchInitialMatches();
+    }, []);
+    const gameModeName = (gameMode) => {
+        switch(gameMode) {
+            case 11:
+                return "소환사의 협곡"; // 召唤师峡谷
+            case 12:
+                return "칼바람 나락"; // 极地大乱斗
+            default:
+                return "기타"; // 其他
+        }
+    };
+    const fetchInitialMatches = async () => {
+        setLoading(true);
         const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
         try {
-            // 检查并获取比赛数据
-            await fetchAndSaveFilteredMatches(user.puuid, user.name, 20); // 调用获取比赛数据的函数
-            
-            // 读取文件夹中的比赛数据
-            const files = await RNFS.readDir(folderPath);
-            const matchDetails = [];
-            for (const file of files) {
-                const fileContent = await RNFS.readFile(file.path, 'utf8');
-                const parsedContent = JSON.parse(fileContent);
-                matchDetails.push(parsedContent);
+            const localMatches = await loadMatchesFromLocal(folderPath);
+            setMatches(localMatches);
+            const newMatches = await fetchAndSaveFilteredMatchesLazy(user.puuid, user.name, 0, 5);
+            if (newMatches.length > 0) {
+                setMatches([...localMatches, ...newMatches]);
             }
-            console.log("filefod", folderPath);
-            setMatches(matchDetails);
+            setStartIndex(5); 
         } catch (error) {
-            console.error('Error fetching or reading match data:', error);
+            console.error('Error fetching initial match data:', error);
         }
         setLoading(false);
     };
 
-    const updateMatches = async () => {
+    const fetchMoreMatches = async () => {
+        if (isFetchingMore || allDataLoaded) return; 
+        setIsFetchingMore(true);
         try {
-            const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
-            const currentFiles = await RNFS.readDir(folderPath);
-            
-            // 获取当前文件夹中的文件，并保留区域和比赛ID部分
-            const currentMatchIds = currentFiles.map(file => {
-                const parts = file.name.split('_');
-                return `${parts[0]}_${parts[1]}`; // 保留 kr_11132312 格式
-            });
-            
-            // 获取新比赛数据
-            await fetchAndSaveFilteredMatches(user.puuid, user.name, 100); // 假设每次更新拉取100场
-            
-            // 读取文件夹中的比赛数据，过滤本地已存在的比赛ID
-            const updatedFiles = await RNFS.readDir(folderPath);
-            const newMatches = [];
-            for (const file of updatedFiles) {
-                const parts = file.name.split('_');
-                const matchId = `${parts[0]}_${parts[1]}`; // 保留 kr_11132312 格式
-                console.log("matchdel file name to matchid", matchId);
-            
-                if (!currentMatchIds.includes(matchId)) {
-                    const fileContent = await RNFS.readFile(file.path, 'utf8');
-                    const parsedContent = JSON.parse(fileContent);
-                    newMatches.push(parsedContent);
-                }
+            const newMatches = await fetchAndSaveFilteredMatchesLazy(user.puuid, user.name, startIndex, 5);
+            if (newMatches.length === 0) {
+                setAllDataLoaded(true); 
+            } else {
+                setMatches(prevMatches => [...prevMatches, ...newMatches]);
+                setStartIndex(prevIndex => prevIndex + 5); 
             }
-
-            // 更新本地数据，添加新比赛数据
-            setMatches([...matches, ...newMatches]);
-            Alert.alert('메시지', '업데이트 성공');
         } catch (error) {
-            console.error('Error updating match data:', error);
-            Alert.alert('오류', '업데이트시 오류 발생했습니다.');
+            console.error('Error fetching more match data:', error);
         }
+        setIsFetchingMore(false);
     };
 
-    // 渲染 MatchCard 组件
     const renderMatchCard = ({ item }) => {
         const matchSummary = item.match_summary;
         const winLose = matchSummary.win ? '승리' : '패배';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
         const gameMode = matchSummary.mapId;
         const matchId = matchSummary.matchId;
-        console.log("matchid",matchId);
         const championKey = matchSummary.champion;
         const championName = matchSummary.championName;
-        const heroData = HERO_DATA.find(hero => hero.Key === String(championKey)); // 确保 championKey 是字符串
-       
-        const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`; // 根据 championName 拼接 API URL
-    
-      
+    // 只显示 mapId 为 11 或 12 的比赛
+        if (matchSummary.mapId !== 11 && matchSummary.mapId !== 12) {
+            return null; // 跳过显示其他 mapId 的比赛
+        }
+
+        const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
+
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
-    
+
         return (
             <MatchCard
                 championName={championName}
                 version={version}
                 winLose={winLose}
                 stats={stats}
-                gameMode={gameMode}
+                gameMode={gameModeName(gameMode)}
                 time={time}
                 onPress={() => {
-                    navigation.navigate('MatchDetailPage', { matchSummary }); // 传递 matchSummary 数据
-                    console.log("matchSummary",matchSummary);
+                    navigation.navigate('MatchDetailPage', { matchSummary });
                 }}
             />
         );
@@ -123,9 +106,6 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
                 <Text style={styles.level}>Level: {user.summonerLevel}</Text>
             </View>
 
-            {/* 添加更新按钮 */}
-            <Button title="업데이트" onPress={updateMatches} />
-
             {loading ? (
                 <ActivityIndicator size="large" color="#0000ff" />
             ) : (
@@ -133,6 +113,9 @@ const MatchDetail = ({ route, navigation }) => { // 传入 navigation prop
                     data={matches}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={renderMatchCard}
+                    onEndReached={fetchMoreMatches} 
+                    onEndReachedThreshold={0.5} 
+                    ListFooterComponent={isFetchingMore ? <ActivityIndicator size="small" color="#0000ff" /> : null}
                 />
             )}
         </View>
@@ -143,25 +126,37 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+        backgroundColor: '#f0f0f0', // 设置背景颜色
     },
     profileContainer: {
         alignItems: 'center',
         marginBottom: 20,
+        padding: 20,
+        backgroundColor: '#fff',
+        borderRadius: 15, // 圆角
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 5 }, // 阴影偏移
+        shadowOpacity: 0.1, // 阴影透明度
+        shadowRadius: 10, // 阴影半径
+        elevation: 6, // 安卓上的阴影
     },
     profileIcon: {
         width: 100,
         height: 100,
         borderRadius: 50,
         marginBottom: 10,
+        borderWidth: 2, 
+        borderColor: '#ddd', // 设置头像边框颜色
     },
     nameTag: {
-        fontSize: 18,
+        fontSize: 20, // 增大字体大小
         fontWeight: 'bold',
+        color: '#333', // 设置字体颜色
+        marginBottom: 5,
     },
     level: {
         fontSize: 16,
-        color: '#666',
-        marginTop: 5,
+        color: '#888', // 设置等级颜色为灰色
     },
 });
 

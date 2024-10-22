@@ -30,52 +30,65 @@ export async function checkAndCreateFolder(folderPath) {
     }
 }
 
-// 定义一个函数来获取match详情并只保存mapID为11和12的比赛，各保存20个
-export async function fetchAndSaveFilteredMatches(puuid, folderName, limit11 = 20, limit12 = 20) {
+// 从本地文件夹加载比赛数据
+export async function loadMatchesFromLocal(folderPath) {
+    try {
+        const files = await RNFS.readDir(folderPath);
+        const matches = [];
+
+        for (const file of files) {
+            const fileContent = await RNFS.readFile(file.path, 'utf8');
+            const parsedContent = JSON.parse(fileContent);
+            matches.push(parsedContent);
+        }
+        return matches; // 返回已保存的本地比赛数据
+    } catch (error) {
+        console.error('Error loading matches from local folder:', error);
+        return [];
+    }
+}
+
+// 定义懒加载函数并保存match详情，筛选mapID为11和12的比赛，每次加载5个
+export async function fetchAndSaveFilteredMatchesLazy(puuid, folderName, startIndex = 0, batchSize = 5) {
     const folderPath = `${RNFS.DocumentDirectoryPath}/${puuid}`; // 使用puuid动态生成路径
+    let savedMatches = [];
 
     // 检查并创建文件夹
     await checkAndCreateFolder(folderPath);
 
-    // 读取文件夹内容，检查是否有已保存的比赛文件
-    const files = await RNFS.readDir(folderPath);
-    if (files.length > 0) {
-        console.log('文件夹中已有保存的比赛信息，跳过重新获取。');
-        return; // 如果已经有数据，直接跳过
-    }
+    // 获取本地文件中的match ids
+    const existingFiles = await RNFS.readDir(folderPath);
+    const existingMatchIds = existingFiles.map(file => {
+        const parts = file.name.split('_');
+        return `${parts[0]}_${parts[1]}`; // 返回matchid
+    });
 
     // 没有数据，获取最近100场比赛ID
     const matchIds = await fetch100MatchIds(puuid);
 
-    let savedCount11 = 0; // 已保存的符合条件的 mapId 11 的比赛计数
-    let savedCount12 = 0; // 已保存的符合条件的 mapId 12 的比赛计数
-
     try {
-        for (let matchId of matchIds) {
-            // 如果mapId为11和12的比赛都已经保存到指定数量，则跳出循环
-            if (savedCount11 >= limit11 && savedCount12 >= limit12) {
-                break;
+        for (let i = startIndex; i < matchIds.length && savedMatches.length < batchSize; i++) {
+            const matchId = matchIds[i];
+
+            // 检查是否已存在本地
+            if (existingMatchIds.includes(matchId)) {
+                console.log(`Match ${matchId} already saved locally.`);
+                continue; // 已经存在的比赛跳过
             }
 
             const apiUrl = `http://3.35.209.179:8000/api/get-match-detail-by-matchid/${matchId}/${puuid}`;
             const response = await fetch(apiUrl);
             const matchDetail = await response.json();
-            console.log("json", matchDetail);
 
             // 检查 mapId 是否为 11 或 12
             if (matchDetail.match_summary) {
                 const mapId = matchDetail.match_summary.mapId;
 
-                if (mapId === 11 && savedCount11 < limit11) {
-                    const filePath = `${folderPath}/${matchId}_${puuid}_11.json`;
+                if (mapId === 11 || mapId === 12) {
+                    const filePath = `${folderPath}/${matchId}_${puuid}_${mapId}.json`;
                     await RNFS.writeFile(filePath, JSON.stringify(matchDetail, null, 2), 'utf8');
-                    console.log(`Saved match detail with mapId 11: ${filePath}`);
-                    savedCount11++;
-                } else if (mapId === 12 && savedCount12 < limit12) {
-                    const filePath = `${folderPath}/${matchId}_${puuid}_12.json`;
-                    await RNFS.writeFile(filePath, JSON.stringify(matchDetail, null, 2), 'utf8');
-                    console.log(`Saved match detail with mapId 12: ${filePath}`);
-                    savedCount12++;
+                    savedMatches.push(matchDetail);
+                    console.log(`Saved match detail with mapId ${mapId}: ${filePath}`);
                 }
             }
         }
@@ -83,14 +96,13 @@ export async function fetchAndSaveFilteredMatches(puuid, folderName, limit11 = 2
         console.error('Error fetching or saving match details:', error);
     }
 
-    console.log(`Total saved matches: MapId 11: ${savedCount11}, MapId 12: ${savedCount12}`);
+    console.log(`Loaded ${savedMatches.length} new matches`);
+    return savedMatches;
 }
 
-
 // 获取单个对局详细信息
-
 export async function get_match_full_detail(matchid, puuid) {
-    console.log('函数内macthid',matchid);
+    console.log('函数内matchid', matchid);
     try {
         const response = await fetch(`http://3.35.209.179:8000/api/get-full-match-detail/${matchid}/`);
         const data = await response.json();
@@ -100,17 +112,16 @@ export async function get_match_full_detail(matchid, puuid) {
         throw error; // 抛出错误以供调用者处理
     }
 }
-export async function version_check() {
 
-try {
+// 版本检查
+export async function version_check() {
+    try {
         const response = await fetch(`http://3.35.209.179:8000/data/version_check/`);
         const data = await response.json();
-        console.log("function version",data);
+        console.log("function version", data);
         return data; // 返回 JSON 数据
     } catch (error) {
-        console.error('Error fetching match details:', error);
+        console.error('Error fetching version:', error);
         throw error; // 抛出错误以供调用者处理
     }
 }
-
-
