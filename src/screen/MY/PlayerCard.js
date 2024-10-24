@@ -9,7 +9,7 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
     const [animation] = useState(new Animated.Value(0));
     const [spellMap, setSpellMap] = useState(null); // 初始化为 null
     const [imageUri, setImageUri] = useState(null); // 初始化为 null 而非空字符串
-    console.log("player:",summonerName,tag,championName,stats,summonerSpells);
+
     // 获取召唤师技能的映射表
     useEffect(() => {
         const fetchSummonerSpells = async () => {
@@ -85,7 +85,8 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
             : null;
     };
 
-
+    console.log("spell1Id", summonerSpells.spell1Id);
+    console.log("spell2Id", summonerSpells.spell2Id);
 
     return (
         <View style={styles.container}>

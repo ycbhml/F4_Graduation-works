@@ -15,10 +15,11 @@ const MatchDetail = ({ route, navigation }) => {
     const [allDataLoaded, setAllDataLoaded] = useState(false); 
 
     const version = useVersion();
-
+    console.log("matchDerail puuid", user.puuid);
     useEffect(() => {
         fetchInitialMatches();
     }, []);
+    
     const gameModeName = (gameMode) => {
         switch(gameMode) {
             case "CLASSIC":
@@ -48,14 +49,16 @@ const MatchDetail = ({ route, navigation }) => {
         }
     };
     
-    
     const fetchInitialMatches = async () => {
         setLoading(true);
         const folderPath = `${RNFS.DocumentDirectoryPath}/${user.puuid}`;
+        console.log("Fetching initial matches for puuid:", user.puuid);
         try {
             const localMatches = await loadMatchesFromLocal(folderPath);
+            console.log("Loaded local matches:", localMatches);
             setMatches(localMatches);
             const newMatches = await fetchAndSaveFilteredMatchesLazy(user.puuid, user.name, 0, 5);
+            console.log("Fetched new matches:", newMatches);
             if (newMatches.length > 0) {
                 setMatches([...localMatches, ...newMatches]);
             }
@@ -69,8 +72,10 @@ const MatchDetail = ({ route, navigation }) => {
     const fetchMoreMatches = async () => {
         if (isFetchingMore || allDataLoaded) return; 
         setIsFetchingMore(true);
+        console.log("Fetching more matches starting from index:", startIndex);
         try {
             const newMatches = await fetchAndSaveFilteredMatchesLazy(user.puuid, user.name, startIndex, 5);
+            console.log("Fetched more matches:", newMatches);
             if (newMatches.length === 0) {
                 setAllDataLoaded(true); 
             } else {
@@ -85,6 +90,10 @@ const MatchDetail = ({ route, navigation }) => {
 
     const renderMatchCard = ({ item }) => {
         const matchSummary = item.match_summary;
+        if (!matchSummary) {
+            console.error("Missing matchSummary data for item:", item);
+            return null;
+        }
         const winLose = matchSummary.win ? '승리' : '패배';
         const stats = `${matchSummary.kills}/${matchSummary.deaths}/${matchSummary.assists}`;
         const mapId = matchSummary.mapId;
@@ -92,11 +101,12 @@ const MatchDetail = ({ route, navigation }) => {
         const championKey = matchSummary.champion;
         const championName = matchSummary.championName;
         const gameMode = matchSummary.gameMode;
-    // 只显示 mapId 为 11 或 12 的比赛
-        if (matchSummary.mapId !== 11 && matchSummary.mapId !== 12 &&matchSummary.mapId !==21) {
+    
+        // 只显示 mapId 为 11 或 12 的比赛
+        if (matchSummary.mapId !== 11 && matchSummary.mapId !== 12 && matchSummary.mapId !== 21) {
             return null; // 跳过显示其他 mapId 的比赛
         }
-        console.log("gamemode",gameMode);
+        console.log("gamemode", gameMode);
         const imageUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${championName}.png`;
 
         const time = new Date(matchSummary.gameStartTimestamp).toLocaleString();
@@ -110,7 +120,8 @@ const MatchDetail = ({ route, navigation }) => {
                 gameMode={gameModeName(gameMode)}
                 time={time}
                 onPress={() => {
-                    navigation.navigate('MatchDetailPageToMap11_12', { matchSummary });
+                    console.log("Navigating to MatchDetailPage with matchSummary:", matchSummary);
+                    navigation.navigate('MatchDetailPage', { matchSummary });
                 }}
             />
         );

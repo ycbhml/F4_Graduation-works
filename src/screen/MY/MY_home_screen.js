@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MatchDetail from './MatchDetail';
 import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
-import MatchDetailPage from './MatchDetailPageToMap11_12';
+import { NavigationContainer } from '@react-navigation/native';
+import MatchDetailPage from './MatchDetailPage';
 import { getVersion, version_check } from '../../../tools/get_match_info_jsons';
 const Stack = createStackNavigator();
 
@@ -13,15 +13,16 @@ const MyScreen = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [tagLine, setTagLine] = useState('');
     const [users, setUsers] = useState([]);
-    const [version, setVersion] = useState('');
+    const [version, setVersion] = useState('')
 
-    // 版本获取
+    //version获取
     useEffect(() => {
+        // 在组件加载时调用 version_check 函数
         const fetchVersion = async () => {
             try {
-                const data = await version_check();
+                const data = await version_check(); // 调用 version_check 函数
                 if (data && data.version) {
-                    setVersion(data.version);
+                    setVersion(data.version); // 直接存储版本号
                 }
             } catch (error) {
                 console.error('Error fetching version:', error);
@@ -29,7 +30,10 @@ const MyScreen = ({ navigation }) => {
         };
 
         fetchVersion();
-    }, []);
+    }, []); // 仅在组件挂载时调用
+
+    console.log("version for MY HOME", version);
+    // 调用获取 JSON 数据
 
     // 加载存储的用户信息
     const loadUsers = async () => {
@@ -55,54 +59,6 @@ const MyScreen = ({ navigation }) => {
     useEffect(() => {
         loadUsers(); // 组件挂载时加载用户信息
     }, []);
-
-    // 更新召唤师信息
-    const updateSummonerInfo = async () => {
-        try {
-            const storedUsers = await AsyncStorage.getItem('users');
-            if (storedUsers) {
-                const usersArray = JSON.parse(storedUsers);
-                const updatedUsersArray = await Promise.all(usersArray.map(async (user) => {
-                    try {
-                        const response = await fetch(`http://3.35.209.179:8000/api/summoner-info-by-puuid/${encodeURIComponent(user.puuid)}/`);
-                        
-                        if (!response.ok) {
-                            console.error(`Error fetching data for user ${user.name}: ${response.status} ${response.statusText}`);
-                            return user;
-                        }
-
-                        const data = await response.json();
-                        
-                        if (data.status === 'success') {
-                            return {
-                                ...user,
-                                summonerLevel: data.summoner_info.summonerLevel,
-                                profileIconId: data.summoner_info.profileIconId,
-                            };
-                        } else {
-                            console.error(`Error in API response for user ${user.name}: ${data.message}`);
-                            return user;
-                        }
-                    } catch (error) {
-                        console.error('Error updating user:', error);
-                        return user;
-                    }
-                }));
-
-                setUsers(updatedUsersArray); // 更新用户状态
-                storeUsers(updatedUsersArray); // 存储更新后的用户信息
-            }
-        } catch (error) {
-            console.error('Failed to update users:', error);
-        }
-    };
-
-    // 每次页面获得焦点时更新用户信息
-    useFocusEffect(
-        useCallback(() => {
-            updateSummonerInfo();
-        }, [])
-    );
 
     // 搜索召唤师
     const fetchSummonerInfo = async () => {
@@ -135,8 +91,8 @@ const MyScreen = ({ navigation }) => {
                     puuid: data.summoner_info.puuid
                 };
                 const updatedUsers = [...users, newUser];
-                setUsers(updatedUsers);
-                storeUsers(updatedUsers);
+                setUsers(updatedUsers); // 更新用户列表
+                storeUsers(updatedUsers); // 存储用户信息
             } else {
                 alert('소환사 찾을 수 없습니다.');
             }
@@ -148,10 +104,11 @@ const MyScreen = ({ navigation }) => {
 
     // 删除用户并同时删除用户文件夹
     const removeUser = async (index) => {
-        const userToRemove = users[index];
-        const folderPath = `${RNFS.DocumentDirectoryPath}/${userToRemove.puuid}`;
+        const userToRemove = users[index]; // 获取要删除的用户
+        const folderPath = `${RNFS.DocumentDirectoryPath}/${userToRemove.puuid}`; // 用户文件夹路径
 
         try {
+            // 删除用户文件夹
             const folderExists = await RNFS.exists(folderPath);
             if (folderExists) {
                 await RNFS.unlink(folderPath);
@@ -164,10 +121,11 @@ const MyScreen = ({ navigation }) => {
             alert('풀더 삭제시 오류 발생했습니다.');
         }
 
+        // 更新用户列表并存储
         const newUsers = [...users];
-        newUsers.splice(index, 1);
+        newUsers.splice(index, 1); // 从列表中移除用户
         setUsers(newUsers);
-        storeUsers(newUsers);
+        storeUsers(newUsers); // 更新存储的用户信息
     };
 
     // 跳转到 MatchDetail 页面
@@ -233,7 +191,6 @@ const MyScreen = ({ navigation }) => {
     );
 };
 
-
 const MY_home_screen = () => {
     return (
         <Stack.Navigator>
@@ -248,7 +205,7 @@ const MY_home_screen = () => {
                 options={{ title:'대전 기록' }} // 隐藏头部导航
             />
             <Stack.Screen
-                name="MatchDetailPageToMap11_12"  // 将MatchDetailPage插入导航堆栈
+                name="MatchDetailPage"  // 将MatchDetailPage插入导航堆栈
                 component={MatchDetailPage} // 引用MatchDetailPage组件
                 options={{ title: '상세정보' }}  // 设置标题
             />

@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     gameModeText: {
         marginTop: 5,
-        fontSize: 10,
+        fontSize: 14,
         color: '#666',
     },
     timeText: {
