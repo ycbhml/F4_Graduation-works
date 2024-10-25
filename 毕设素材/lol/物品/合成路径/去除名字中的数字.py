@@ -2,7 +2,7 @@ import os
 import re
 
 # 设置要处理的目录路径
-directory = 'C:\\Users\\YAOZHIXUE\\Desktop\\WORK\\传说合成路径'  # 替换为你的文件目录路径
+directory = 'C:\Users\YAOZHIXUE\Desktop\F4_Graduation-works\毕设素材\lol\物品\合成路径\史诗合成路径校对版'  # 替换为你的文件目录路径
 
 # 遍历目录中的所有文件
 for filename in os.listdir(directory):
