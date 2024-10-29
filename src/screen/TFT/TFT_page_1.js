@@ -3,11 +3,10 @@ import { View, Text, TextInput, Button, ScrollView, StyleSheet, Dimensions, Imag
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tab1_show from './TFT_show/TFT_tab_1_show';  // 确保你有正确的 tab1_show 文件路径
+import { useVersion } from '../../VersionContext';
 
 const { width, height } = Dimensions.get('window');
-
 const Stack = createStackNavigator();
-
 // 合并后的主页面，包含 Stack Navigator
 export default function Tab1Page() {
   return (
@@ -33,8 +32,27 @@ function Tab1({ navigation }) {
   const [traits, setTraits] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState(null);
 
-  const BASE_URL = 'https://raw.communitydragon.org/14.21/game/';
-  const Data_URL = 'https://raw.communitydragon.org/14.21/cdragon/tft/zh_cn.json';
+
+
+
+
+
+  {/*版本号部分 
+  const shortVersion = useVersion() ? useVersion.slice(0, 4) : ''; 
+  console.log(shortVersion);
+  
+  const BASE_URL = `https://raw.communitydragon.org/${shortVersion}/game/`;
+  const Data_URL = `https://raw.communitydragon.org/${shortVersion}/cdragon/tft/ko_kr.json`;
+  */}
+
+  const BASE_URL = `https://raw.communitydragon.org/14.21/game/`;
+  const Data_URL = `https://raw.communitydragon.org/14.21/cdragon/tft/ko_kr.json`;
+
+
+
+
+
+
 
   useEffect(() => {
     fetch(Data_URL)
@@ -104,7 +122,7 @@ function Tab1({ navigation }) {
       <TouchableOpacity key={index} onPress={() => handlePress(item)}>
         <View style={styles.itemContainer}>
           <Image source={{ uri: imageUrl }} style={styles.image} />
-          <Text>{item.name} 花费：{item.cost}</Text>
+          <Text>{item.name} Cost {item.cost}</Text>
         </View>
       </TouchableOpacity>
     );
