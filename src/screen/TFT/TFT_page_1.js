@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, TextInput, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, FlatList, TextInput, StyleSheet, ActivityIndicator, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useVersion } from '../../VersionContext';
-import { useCdragonData } from '../../CdragonDataContext'; // 引入全局 CdragonDataContext
+import { useCdragonData } from '../../CdragonDataContext';
 import ChampionCard from '../TFT/championCard';
 
 export default function Page1() {
-    const version = useVersion(); // 从 VersionContext 获取完整的版本信息
-    const { cdragonData, loading: cdragonLoading } = useCdragonData(); // 使用全局的 cdragonData
+    const version = useVersion();
+    const { cdragonData, loading: cdragonLoading } = useCdragonData();
     const [champions, setChampions] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
+    const [selectedTraits, setSelectedTraits] = useState([]); // 存储选中的羁绊
 
-    // 为 Page1 定义独立的 AsyncStorage 键名
     const versionKey = 'version_page1';
     const championDataKey = 'championData_page1';
-
-    // 定义 API 的 URL
     const ChampionDataUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/tft-champion.json`;
 
     useEffect(() => {
@@ -25,7 +23,6 @@ export default function Page1() {
                 const storedVersion = await AsyncStorage.getItem(versionKey);
 
                 if (storedVersion !== version) {
-                    // 获取新的 championData 数据并存储
                     const championResponse = await fetch(ChampionDataUrl);
                     const championData = await championResponse.json();
 
@@ -34,7 +31,6 @@ export default function Page1() {
 
                     setChampions(championData);
                 } else {
-                    // 读取缓存的 championData 数据
                     const storedChampionData = await AsyncStorage.getItem(championDataKey);
                     setChampions(storedChampionData ? JSON.parse(storedChampionData) : []);
                 }
@@ -52,22 +48,63 @@ export default function Page1() {
         return <ActivityIndicator size="large" color="#0000ff" />;
     }
 
-    // 优化后的筛选逻辑：查找名称相同且 apiName 以 "TFT12" 开头的英雄数据
     const filteredChampionList = champions.data
-        ? Object.values(champions.data).map(champion => {
-              // 从 cdragonData 中查找名称匹配的英雄，且 apiName 前缀为 "TFT12"
-              const matchedData = cdragonData.setData
-                  ?.flatMap(set => set.champions)
-                  .find(item => item.name === champion.name && /^TFT12_/.test(item.apiName));
+        ? Object.values(champions.data).reduce((uniqueChampions, champion) => {
+            const matchedData = cdragonData.setData
+                ?.flatMap(set => set.champions)
+                .find(item => item.name === champion.name && /^TFT12_/.test(item.apiName));
 
-              // 如果找到匹配项，将 matchedData 和 cdragonData 传递给组件
-              return matchedData ? { ...champion, matchedData, cdragonData } : null;
-          }).filter(item => item !== null) // 过滤掉不匹配的项
+            if (matchedData && !uniqueChampions.has(champion.name)) {
+                uniqueChampions.set(champion.name, { ...champion, matchedData, cdragonData });
+            }
+
+            return uniqueChampions;
+        }, new Map()).values()
         : [];
 
-    // 根据搜索文本进一步过滤
-    const searchFilteredChampionList = filteredChampionList.filter(champion =>
-        champion.name.toLowerCase().includes(searchQuery.toLowerCase())
+    const uniqueChampionList = Array.from(filteredChampionList);
+
+    const searchFilteredChampionList = uniqueChampionList.filter(champion => {
+        const matchesSearchQuery = champion.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+        const matchesSelectedTraits = selectedTraits.length === 0 || selectedTraits.every(
+            trait => champion.matchedData.traits && champion.matchedData.traits.includes(trait)
+        );
+
+        return matchesSearchQuery && matchesSelectedTraits;
+    });
+
+    const getIconUrl = (path) => path
+        ? `https://raw.communitydragon.org/latest/game/${path.toLowerCase().replace('.tex', '.png')}`
+        : null;
+
+    // Trait 滚动条
+    const handleTraitPress = (traitName) => {
+        setSelectedTraits(prevSelectedTraits => {
+            if (prevSelectedTraits.includes(traitName)) {
+                return prevSelectedTraits.filter(trait => trait !== traitName);
+            } else {
+                return [...prevSelectedTraits, traitName];
+            }
+        });
+    };
+
+    const renderTraitScrollBar = () => (
+        <ScrollView horizontal style={styles.traitScrollContainer} showsHorizontalScrollIndicator={false}>
+            {cdragonData.sets["12"].traits.map((trait, index) => {
+                const isSelected = selectedTraits.includes(trait.name);
+
+                return (
+                    <TouchableOpacity key={index} onPress={() => handleTraitPress(trait.name)} style={styles.traitItem}>
+                        <Image
+                            source={{ uri: getIconUrl(trait.icon) }}
+                            style={[styles.traitIcon, { tintColor: isSelected ? 'gold' : 'gray' }]}
+                        />
+                        <Text style={[styles.traitText, { color: isSelected ? 'gold' : '#333' }]}>{trait.name}</Text>
+                    </TouchableOpacity>
+                );
+            })}
+        </ScrollView>
     );
 
     return (
@@ -77,20 +114,22 @@ export default function Page1() {
                     style={styles.searchBox}
                     placeholder="搜索英雄名称"
                     value={searchQuery}
-                    onChangeText={setSearchQuery} // 更新搜索文本
+                    onChangeText={setSearchQuery}
                 />
+                {renderTraitScrollBar()}
 
                 <FlatList
                     data={searchFilteredChampionList}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item }) => (
                         <ChampionCard
-                            champion={item} // 传递英雄数据
-                            matchedData={item.matchedData} // 传递 CdataUrl 中匹配的完整数据
-                            cdragonData={item.cdragonData} // 传递完整的 cdragonData
+                            champion={item}
+                            matchedData={item.matchedData}
+                            cdragonData={item.cdragonData}
                             shortVersion={version.split('.').slice(0, 2).join('.')}
                         />
                     )}
+                    contentContainerStyle={styles.flatListContent} // 添加内容容器样式
                 />
             </View>
         </View>
@@ -101,6 +140,27 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
+    },
+    traitScrollContainer: {
+        paddingVertical: 10,
+        paddingHorizontal: 5,
+    },
+    traitItem: {
+        alignItems: 'center',
+        marginHorizontal: 8,
+    },
+    traitIcon: {
+        width: 30,
+        height: 30,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#ddd',
+    },
+    traitText: {
+        fontSize: 10,
+        textAlign: 'center',
+        marginTop: 4,
+        color: '#333',
     },
     mainContent: {
         flex: 1,
@@ -117,5 +177,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
+    },
+    flatListContent: {
+        paddingTop: 10,
+        justifyContent: 'flex-start', // 确保内容从上到下排列
     },
 });

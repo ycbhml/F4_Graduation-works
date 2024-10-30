@@ -9,6 +9,37 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
     const [activeTab, setActiveTab] = useState('技能介绍'); // 控制标签页的切换
     console.log("champion version", shortVersion);
 
+    // 确保路径正确的属性图标
+    const attributeIcons = {
+        Health: require('../../assets/img/Health.png'),
+        Mana: require('../../assets/img/Mana.png'),
+        AttackDamage: require('../../assets/img/AD.png'),
+        Armor: require('../../assets/img/Armor.png'),
+        AttackSpeed: require('../../assets/img/AS.png'),
+        CritChance: require('../../assets/img/CritChance.png'),
+        CritDamage: require('../../assets/img/CritDamage.png'),
+        AbilityPower: require('../../assets/img/AP.png'),
+        MagicResist: require('../../assets/img/MagicResist.png'),
+        Range: require('../../assets/img/Range.png'),
+        Gold: require('../../assets/img/gold.png'),
+    };
+    const borderColor = () => {
+        switch (champion.matchedData.cost) {
+            case 1:
+                return 'silver'; // 银色
+            case 2:
+                return 'green'; // 绿色
+            case 3:
+                return 'blue'; // 蓝色
+            case 4:
+                return 'purple'; // 紫色
+            case 5:
+                return 'orange'; // 橙色
+            default:
+                return '#ccc'; // 默认颜色
+        }
+    };
+
     const toggleExpand = () => {
         setExpanded(!expanded);
         Animated.timing(animation, {
@@ -40,10 +71,55 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
     const getIconUrl = (path) => path
         ? `https://raw.communitydragon.org/${shortVersion}/game/${path.toLowerCase().replace('.tex', '.png')}`
         : null;
-    console.log("技能属性", champion.matchedData.ability.variables);
+
+    // 替换占位符和 <br> 的函数
+    // 替换占位符和 <br> 的函数
+    const replacePlaceholdersInDescription = (description, variables) => {
+        const variablesMap = {};
+
+        // 构建技能数值映射，使用整个数组
+        variables.forEach(variable => {
+            variablesMap[variable.name.toLowerCase()] = variable.value;
+        });
+
+        // 1. 替换 <br> 标签为换行符
+        let formattedDesc = description.replace(/<br\s*\/?>/g, '\n');
+
+        // 2. 删除所有尖括号及其中的内容
+        formattedDesc = formattedDesc.replace(/<[^>]*>/g, '');
+
+        // 3. 替换 @variableName@ 样式的占位符
+        formattedDesc = formattedDesc.replace(/@(\w+)@/g, (match, variableName) => {
+            // 从第二个大写字母开始提取核心变量名
+            const coreVariableName = variableName.slice(1).replace(/^[^A-Z]+/, '').toLowerCase();
+
+            // 检查是否存在包含 `coreVariableName` 的键
+            const matchingKey = Object.keys(variablesMap).find(key => key.includes(coreVariableName));
+
+            if (matchingKey) {
+                const values = variablesMap[matchingKey];
+                return `${values[1] || match}/${values[2] || match}/${values[3] || match}`; // 返回1星/2星/3星数值
+            }
+
+            // 如果未匹配到，则返回原始占位符
+            return match;
+        });
+
+        return formattedDesc;
+    };
+
+    // 使用示例
+    const formattedDescription = replacePlaceholdersInDescription(
+        matchedData.ability.desc || '技能详细介绍',
+        champion.matchedData.ability.variables || []
+    );
+
+
+
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { borderColor: borderColor() }]}>
+
             <TouchableOpacity onPress={toggleExpand} style={styles.header}>
                 <Image
                     source={{ uri: getIconUrl(champion.matchedData.tileIcon) }}
@@ -52,6 +128,7 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
                 />
                 <View style={styles.infoContainer}>
                     <Text style={styles.championName}>{champion.name}</Text>
+
                     <View style={styles.traitsContainer}>
                         {(champion.matchedData.traits || []).map((trait, index) => (
                             <View key={index} style={styles.traitItem}>
@@ -64,6 +141,12 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
                         ))}
                     </View>
                 </View>
+                <View style={[styles.goldContainer,{borderColor: borderColor()}]}>
+                    <Image source={attributeIcons.Gold} style={styles.attributeIcon} />
+                    <Text style={styles.goldText}>{champion.matchedData.cost}</Text>
+                </View>
+
+
                 <Animated.Text style={{ transform: [{ rotate: arrowRotation }] }}>⌵</Animated.Text>
             </TouchableOpacity>
 
@@ -93,19 +176,105 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
 
                                     {/* 技能名称 */}
                                     <Text style={styles.skillNameText}>{champion.matchedData.ability.name || '技能名称'}</Text>
+                                    {/* 右侧 Mana 字段 */}
+                                    <View style={styles.manaContainer}>
+                                        <Text style={styles.attributeLabel}>Mana</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.Mana} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>
+                                                {champion.matchedData.stats.initialMana} / {champion.matchedData.stats.mana}
+                                            </Text>
+                                        </View>
+                                    </View>
                                 </View>
 
                                 {/* 技能详细介绍（可滚动） */}
                                 <ScrollView
                                     style={styles.skillDescriptionContainer}
-                                    nestedScrollEnabled={true} // 启用嵌套滚动
+                                    nestedScrollEnabled={true}
                                 >
-                                    <Text style={styles.skillDescription}>{matchedData.ability.desc || '技能详细介绍'}</Text>
+                                    <Text style={styles.skillDescription}>{formattedDescription}</Text>
                                 </ScrollView>
                             </View>
                         ) : (
                             <View style={styles.attributesContainer}>
-                                <Text style={styles.emptyContentText}>属性介绍内容清空</Text>
+                                <View style={styles.attributeColumn}>
+                                    {/* 左侧五个属性 */}
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Health</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.Health} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.hp} / {Math.floor(champion.matchedData.stats.hp * 1.8)} / {Math.floor(champion.matchedData.stats.hp * 3.24)}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Attack Damage</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.AttackDamage} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.damage} / {Math.floor(champion.matchedData.stats.damage * 1.5)} / {Math.floor(champion.matchedData.stats.damage * 2.25)}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Armor</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.Armor} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.armor}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Attack Speed</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.AttackSpeed} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.attackSpeed.toFixed(2)}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Crit Chance</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.CritChance} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{(champion.matchedData.stats.critChance * 100).toFixed(0)}%</Text>
+                                        </View>
+                                    </View>
+                                </View>
+
+                                <View style={styles.attributeColumn}>
+                                    {/* 右侧五个属性 */}
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Mana</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.Mana} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.initialMana} / {champion.matchedData.stats.mana}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Ability Power</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.AbilityPower} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.abilityPower || 100}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Magic Resist</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.MagicResist} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.magicResist}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Crit Damage</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.CritDamage} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{(champion.matchedData.stats.critMultiplier * 100).toFixed(0)}%</Text>
+                                        </View>
+                                    </View>
+                                    <View style={styles.attributeRow}>
+                                        <Text style={styles.attributeLabel}>Range</Text>
+                                        <View style={styles.attributeImgRow}>
+                                            <Image source={attributeIcons.Range} style={styles.attributeIcon} />
+                                            <Text style={styles.attributeValue}>{champion.matchedData.stats.range}</Text>
+                                        </View>
+                                    </View>
+                                </View>
                             </View>
                         )}
                     </View>
@@ -117,8 +286,7 @@ const ChampionCard = ({ champion, matchedData, shortVersion }) => {
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 1,
-        borderColor: '#ccc',
+        borderWidth: 2, // 设置边框宽度
         borderRadius: 10,
         marginVertical: 10,
         padding: 10,
@@ -133,6 +301,10 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 4,
     },
+    attributeIcon: {
+        width: 13,
+        height: 13,
+    },
     infoContainer: {
         flex: 1,
         marginLeft: 10,
@@ -141,6 +313,21 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: 'black',
         fontWeight: 'bold',
+    },
+    goldContainer: {
+        flexDirection: 'row', // 横向布局
+        alignItems: 'center', // 垂直居中对齐
+        backgroundColor: 'transparent', // 背景色透明，与 container 的背景一致
+        marginTop: 10, // 可以根据需要调整间距
+        padding: 5, // 可选：给点内边距
+        borderWidth:1,
+        borderRadius: 5,
+    },
+    goldText: {
+        fontSize: 16, // 可以根据需要调整字体大小
+        color: 'black', // 字体颜色为白色
+        fontWeight: 'bold', // 加粗字体
+        marginLeft: 10, // 图标和文本之间的间距
     },
     skillRow: {
         flexDirection: 'row',
@@ -239,6 +426,43 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingVertical: 20,
     },
+    attributesContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 10,
+        backgroundColor: '#f9f9f9',
+        borderRadius: 5,
+    },
+    attributeColumn: {
+        flex: 1,
+    },
+    attributeRow: {
+        alignItems: 'center',
+        marginVertical: 5,
+    },
+    attributeImgRow: {
+        alignItems: 'center',
+        marginVertical: 0,
+        flexDirection: 'row',
+    },
+    attributeLabel: {
+        fontSize: 14,
+        color: '#333',
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    attributeValue: {
+        fontSize: 14,
+        color: '#666',
+        textAlign: 'center',
+        marginTop: 2,
+    },
+    manaContainer: {
+        position: 'absolute', // 绝对定位放置在最右边
+        right: 10,
+        alignItems: 'center',
+    },
+
 });
 
 export default ChampionCard;

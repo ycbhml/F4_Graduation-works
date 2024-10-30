@@ -48,31 +48,31 @@ const ItemCard = ({ version, item, shortVersion, cdragonData }) => {
         const usedKeys = new Set();
         let detailedAttributes = []; // 存储详细运算结果
     
+        // 先替换 <br> 标签为换行符
+        let cleanedDesc = desc.replace(/<br\s*\/?>/g, '\n');
+    
         // 删除所有尖括号及其内容
-        let cleanedDesc = '';
+        let finalDesc = '';
         let inTag = false;
     
-        for (let char of desc) {
+        for (let char of cleanedDesc) {
             if (char === '<') {
                 inTag = true; // 开始尖括号
             } else if (char === '>') {
                 inTag = false; // 结束尖括号
             } else if (!inTag) {
-                cleanedDesc += char; // 仅在不在尖括号内时添加字符
+                finalDesc += char; // 仅在不在尖括号内时添加字符
             }
         }
     
-
-    
         // 删除 %% 占位符
-        let replacedDesc = replacePlaceholdersInDesc(cleanedDesc);
+        let replacedDesc = replacePlaceholdersInDesc(finalDesc);
     
         // 替换 @占位符@
-        const keys = Object.keys(effects);
         const placeholderPattern = /@(\w+)([\*\/\+\-])?(\d+)?@/g;
-    
         let match;
-        while ((match = placeholderPattern.exec(cleanedDesc)) !== null) {
+    
+        while ((match = placeholderPattern.exec(finalDesc)) !== null) {
             const variable = match[1]; // 变量名
             const operator = match[2]; // 运算符（如果有）
             const number = match[3] ? parseFloat(match[3]) : null; // 数字（如果有）
@@ -129,8 +129,6 @@ const ItemCard = ({ version, item, shortVersion, cdragonData }) => {
     
         return replacedDesc; // 返回处理后的描述
     };
-    
-    
     
     
     const { replacedDesc, unusedEffects, detailedAttributes } = replaceEffectsInDesc(item.desc || '', item.effects || {});
