@@ -91,6 +91,7 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
     return (
         <View style={styles.container}>
             {/* 顶部英雄头像、战绩和召唤师信息 */}
+            <TouchableOpacity onPress={toggleExpand} style={styles.arrowButton}>
             <View style={styles.header}>
                 <View style={styles.imageContainer}>
                     {imageUri && ( // 仅当有有效的 URI 时渲染 Image 组件
@@ -124,10 +125,11 @@ const PlayerCard = ({ version, summonerName, tag, championName, kills, deaths, a
                         ))}
                     </View>
                 </View>
-                <TouchableOpacity onPress={toggleExpand} style={styles.arrowButton}>
+                
                     <Animated.Text style={{ transform: [{ rotate: arrowRotation }] }}>⌵</Animated.Text>
-                </TouchableOpacity>
+               
             </View>
+            </TouchableOpacity>
 
             {/* 可展开部分，修改为图片中显示的布局 */}
             <Animated.View style={[styles.expandableContent, { height: contentHeight }]}>

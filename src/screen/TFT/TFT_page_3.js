@@ -2,23 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, TextInput, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useVersion } from '../../VersionContext';
+import { useCdragonData } from '../../CdragonDataContext'; // 使用 CdragonDataContext 提供的全局缓存
 import ItemCard from '../TFT/ItemCard';
 
 export default function EquipmentScreen() {
     const version = useVersion(); // 从 context 获取完整的版本信息
+    const { cdragonData, loading: cdragonLoading } = useCdragonData(); // 使用全局的 cdragonData
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState(''); // 新增状态来保存搜索文本
 
-    // 获取短版本号（例如从 '14.21.1' 提取 '14.21'）
-    const shortVersion = version.split('.').slice(0, 2).join('.');
-
-    // 定义 Riot 和 Community Dragon API 的 URL
+    // 定义 Riot API 的 URL
     const RiotUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/tft-item.json`;
-    const CdataUrl = `https://raw.communitydragon.org/${shortVersion}/cdragon/tft/ko_kr.json`;
 
     useEffect(() => {
-        const fetchAndStoreData = async () => {
+        const fetchAndStoreRiotData = async () => {
             try {
                 const storedVersion = await AsyncStorage.getItem('version');
 
@@ -26,33 +24,25 @@ export default function EquipmentScreen() {
                     const riotResponse = await fetch(RiotUrl);
                     const riotData = await riotResponse.json();
 
-                    const cdragonResponse = await fetch(CdataUrl);
-                    const cdragonData = await cdragonResponse.json();
-
                     await AsyncStorage.setItem('riotData', JSON.stringify(riotData));
-                    await AsyncStorage.setItem('cdragonData', JSON.stringify(cdragonData));
                     await AsyncStorage.setItem('version', version);
 
-                    setItems({ riotData, cdragonData });
+                    setItems(riotData);
                 } else {
                     const storedRiotData = await AsyncStorage.getItem('riotData');
-                    const storedCdragonData = await AsyncStorage.getItem('cdragonData');
-                    setItems({
-                        riotData: storedRiotData ? JSON.parse(storedRiotData) : [],
-                        cdragonData: storedCdragonData ? JSON.parse(storedCdragonData) : [],
-                    });
+                    setItems(storedRiotData ? JSON.parse(storedRiotData) : []);
                 }
             } catch (error) {
-                console.error("Error fetching or storing items:", error);
+                console.error("Error fetching or storing riotData:", error);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchAndStoreData();
+        fetchAndStoreRiotData();
     }, [version]);
 
-    if (loading) {
+    if (loading || cdragonLoading) {
         return <ActivityIndicator size="large" color="#0000ff" />;
     }
 
@@ -74,8 +64,8 @@ export default function EquipmentScreen() {
         '도발',
     ];
 
-    const equipmentList = items.riotData?.data
-        ? Object.values(items.riotData.data)
+    const equipmentList = items?.data
+        ? Object.values(items.data)
             .map(item => {
                 const name = item.name;
 
@@ -87,7 +77,7 @@ export default function EquipmentScreen() {
                 if (seenNames.has(name)) return null;
                 seenNames.add(name);
 
-                const matchedData = items.cdragonData.items.find(cItem => cItem.name === name);
+                const matchedData = cdragonData?.items?.find(cItem => cItem.name === name);
 
                 // 确认 apiName 符合要求
                 if (matchedData && matchedData.apiName.split('_')[1] === 'Item') {
@@ -105,11 +95,6 @@ export default function EquipmentScreen() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.sidebar}>
-                <Text style={styles.sidebarText}>筛选</Text>
-                <Text style={styles.sidebarText}>(装备的类型等)</Text>
-            </View>
-
             <View style={styles.mainContent}>
                 <TextInput
                     style={styles.searchBox}
@@ -122,7 +107,7 @@ export default function EquipmentScreen() {
                     data={filteredEquipmentList} // 使用过滤后的列表
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item }) => (
-                        <ItemCard version={version} item={item} shortVersion={shortVersion} cdragonData={items.cdragonData} />
+                        <ItemCard version={version} item={item} shortVersion={version.split('.').slice(0, 2).join('.')} cdragonData={cdragonData} />
                     )}
                 />
             </View>
@@ -133,19 +118,7 @@ export default function EquipmentScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'row',
         padding: 10,
-    },
-    sidebar: {
-        width: 60,
-        backgroundColor: '#f0f0f0',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingVertical: 10,
-    },
-    sidebarText: {
-        fontSize: 12,
-        marginVertical: 5,
     },
     mainContent: {
         flex: 1,

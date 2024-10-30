@@ -1,205 +1,121 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, Button, ScrollView, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Tab1_show from './TFT_show/TFT_tab_1_show';  // 确保你有正确的 tab1_show 文件路径
+import { View, FlatList, TextInput, StyleSheet, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useVersion } from '../../VersionContext';
+import { useCdragonData } from '../../CdragonDataContext'; // 引入全局 CdragonDataContext
+import ChampionCard from '../TFT/championCard';
 
-const { width, height } = Dimensions.get('window');
-const Stack = createStackNavigator();
-// 合并后的主页面，包含 Stack Navigator
-export default function Tab1Page() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Main"
-        component={Tab1}
-        options={{ headerShown: false }}  // 隐藏头部导航
-      />
-      <Stack.Screen
-        name="TFT_tab_1_show"
-        component={Tab1_show}  // 导入的详细页面
-        options={{ headerShown: false }}  // 隐藏头部导航
-      />
-    </Stack.Navigator>
-  );
-}
+export default function Page1() {
+    const version = useVersion(); // 从 VersionContext 获取完整的版本信息
+    const { cdragonData, loading: cdragonLoading } = useCdragonData(); // 使用全局的 cdragonData
+    const [champions, setChampions] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState('');
 
-function Tab1({ navigation }) {
-  const [searchText, setSearchText] = useState('');
-  const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [traits, setTraits] = useState([]);
-  const [selectedFilter, setSelectedFilter] = useState(null);
+    // 为 Page1 定义独立的 AsyncStorage 键名
+    const versionKey = 'version_page1';
+    const championDataKey = 'championData_page1';
 
+    // 定义 API 的 URL
+    const ChampionDataUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/tft-champion.json`;
 
+    useEffect(() => {
+        const fetchAndStoreChampionData = async () => {
+            try {
+                const storedVersion = await AsyncStorage.getItem(versionKey);
 
+                if (storedVersion !== version) {
+                    // 获取新的 championData 数据并存储
+                    const championResponse = await fetch(ChampionDataUrl);
+                    const championData = await championResponse.json();
 
+                    await AsyncStorage.setItem(championDataKey, JSON.stringify(championData));
+                    await AsyncStorage.setItem(versionKey, version);
 
+                    setChampions(championData);
+                } else {
+                    // 读取缓存的 championData 数据
+                    const storedChampionData = await AsyncStorage.getItem(championDataKey);
+                    setChampions(storedChampionData ? JSON.parse(storedChampionData) : []);
+                }
+            } catch (error) {
+                console.error("Error fetching or storing champions:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-  {/*版本号部分 
-  const shortVersion = useVersion() ? useVersion.slice(0, 4) : ''; 
-  console.log(shortVersion);
-  
-  const BASE_URL = `https://raw.communitydragon.org/${shortVersion}/game/`;
-  const Data_URL = `https://raw.communitydragon.org/${shortVersion}/cdragon/tft/ko_kr.json`;
-  */}
+        fetchAndStoreChampionData();
+    }, [version]);
 
-  const BASE_URL = `https://raw.communitydragon.org/14.21/game/`;
-  const Data_URL = `https://raw.communitydragon.org/14.21/cdragon/tft/ko_kr.json`;
+    if (loading || cdragonLoading) {
+        return <ActivityIndicator size="large" color="#0000ff" />;
+    }
 
+    // 优化后的筛选逻辑：查找名称相同且 apiName 以 "TFT12" 开头的英雄数据
+    const filteredChampionList = champions.data
+        ? Object.values(champions.data).map(champion => {
+              // 从 cdragonData 中查找名称匹配的英雄，且 apiName 前缀为 "TFT12"
+              const matchedData = cdragonData.setData
+                  ?.flatMap(set => set.champions)
+                  .find(item => item.name === champion.name && /^TFT12_/.test(item.apiName));
 
+              // 如果找到匹配项，将 matchedData 和 cdragonData 传递给组件
+              return matchedData ? { ...champion, matchedData, cdragonData } : null;
+          }).filter(item => item !== null) // 过滤掉不匹配的项
+        : [];
 
-
-
-
-
-  useEffect(() => {
-    fetch(Data_URL)
-      .then(response => response.json())
-      .then(async data => {
-        const set12 = data.setData.find(set => set.number === 12);
-        if (set12) {
-          const champions = set12.champions || [];
-          const validChampions = await Promise.all(
-            champions.map(async (champion) => {
-              const iconPath = champion.icon?.toLowerCase().replace(/\.tft_set12\.tex$/, '_mobile.tft_set12.png');
-              const imageUrl = `${BASE_URL}${iconPath}`;
-
-              try {
-                const res = await fetch(imageUrl);
-                if (res.ok) return champion;
-                return null;
-              } catch (error) {
-                return null;
-              }
-            })
-          );
-          const validChampionsList = validChampions.filter(champion => champion !== null);
-          setItems(validChampionsList);
-          setFilteredItems(validChampionsList);
-          const allTraits = validChampionsList.flatMap(champion => champion.traits || []);
-          const uniqueTraits = [...new Set(allTraits)];
-          setTraits(uniqueTraits);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
-  // 搜索函数
-  const searchItems = (text) => {
-    setSearchText(text);
-    const filtered = items.filter(item => item.name.toLowerCase().includes(text.toLowerCase()));
-    setFilteredItems(filtered);
-  };
-
-  // 筛选函数
-  const filterItems = (filterTrait) => {
-    setSelectedFilter(filterTrait);
-    const filtered = items.filter(item => item.traits.includes(filterTrait));
-    setFilteredItems(filtered);
-  };
-
-  // 清除筛选函数
-  const clearFilter = () => {
-    setSelectedFilter(null);
-    setFilteredItems(items);
-  };
-
-  // 点击事件，导航到详细信息页面并传递数据
-  const handlePress = (item) => {
-    navigation.navigate('TFT_tab_1_show', { champion: item });  // 导航并传递参数
-  };
-
-  // 渲染每个 champion 的 characterName 和图标
-  const renderItem = (item, index) => {
-    const iconPath = item.icon?.toLowerCase().replace(/\.tft_set12\.tex$/, '_mobile.tft_set12.png');
-    const imageUrl = `${BASE_URL}${iconPath}`;
+    // 根据搜索文本进一步过滤
+    const searchFilteredChampionList = filteredChampionList.filter(champion =>
+        champion.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
-      <TouchableOpacity key={index} onPress={() => handlePress(item)}>
-        <View style={styles.itemContainer}>
-          <Image source={{ uri: imageUrl }} style={styles.image} />
-          <Text>{item.name} Cost {item.cost}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+        <View style={styles.container}>
+            <View style={styles.mainContent}>
+                <TextInput
+                    style={styles.searchBox}
+                    placeholder="搜索英雄名称"
+                    value={searchQuery}
+                    onChangeText={setSearchQuery} // 更新搜索文本
+                />
 
-  return (
-    <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
-      <View style={styles.container}>
-        <View style={styles.sidebar}>
-          <Text style={styles.filterTitle}>羁绊</Text>
-          {traits.length > 0 ? (
-            <>
-              {traits.map((trait, index) => (
-                <Button key={index} title={trait} onPress={() => filterItems(trait)} />
-              ))}
-              <Button title="清除筛选" onPress={clearFilter} color="red" />
-            </>
-          ) : (
-            <Text>waitting</Text>
-          )}
+                <FlatList
+                    data={searchFilteredChampionList}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
+                        <ChampionCard
+                            champion={item} // 传递英雄数据
+                            matchedData={item.matchedData} // 传递 CdataUrl 中匹配的完整数据
+                            cdragonData={item.cdragonData} // 传递完整的 cdragonData
+                            shortVersion={version.split('.').slice(0, 2).join('.')}
+                        />
+                    )}
+                />
+            </View>
         </View>
-        <View style={styles.mainContent}>
-          <TextInput
-            style={styles.searchBar}
-            placeholder="搜索..."
-            value={searchText}
-            onChangeText={text => searchItems(text)}
-          />
-          {filteredItems.map((item, index) => renderItem(item, index))}
-        </View>
-      </View>
-    </ScrollView>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-  },
-  scrollContent: {
-    flexDirection: 'row', // 使两部分横向排列
-    flexGrow: 1, // 确保两部分都可以正确伸展
-  },
-  container: {
-    flexDirection: 'row',
-    flex: 1, // 让容器占满整个 ScrollView
-  },
-  sidebar: {
-    width: width * 0.15,  // 调整为占屏幕宽度的 15%
-    backgroundColor: '#f0f0f0',
-    padding: height * 0.01,  // 动态设置 padding
-  },
-  filterTitle: {
-    fontSize: height * 0.02,  // 动态字体大小
-    marginBottom: height * 0.02,  // 动态 margin
-  },
-  mainContent: {
-    flex: 1, // 让右侧内容占满剩余空间
-    padding: height * 0.02,  // 动态 padding
-  },
-  searchBar: {
-    height: height * 0.06,  // 动态设置高度
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: height * 0.02,  // 动态 margin
-    paddingHorizontal: width * 0.03,  // 动态 padding
-  },
-  itemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: height * 0.02,  // 动态 padding
-    borderBottomWidth: 1,
-    borderColor: '#ddd',
-  },
-  image: {
-    width: width * 0.1, // 动态设置图片宽度
-    height: width * 0.1, // 动态设置图片高度，保持为正方形
-    marginRight: width * 0.03, // 动态 margin 以便文本和图片之间保持距离
-  },
+    container: {
+        flex: 1,
+        padding: 10,
+    },
+    mainContent: {
+        flex: 1,
+        padding: 10,
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#000',
+    },
+    searchBox: {
+        height: 40,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        marginBottom: 10,
+    },
 });

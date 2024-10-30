@@ -22,7 +22,7 @@ const EventHomeScreen = () => {
             />
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={handleReload}>
-                    <Text style={styles.buttonText}>공지상항 들어가==》</Text>
+                    <Text style={styles.buttonText}>돌아가기</Text>
                 </TouchableOpacity>
             </View>
         </View>

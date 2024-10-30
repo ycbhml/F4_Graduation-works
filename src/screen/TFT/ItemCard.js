@@ -62,7 +62,7 @@ const ItemCard = ({ version, item, shortVersion, cdragonData }) => {
             }
         }
     
-        console.log("cleanedDesc", cleanedDesc);
+
     
         // 删除 %% 占位符
         let replacedDesc = replacePlaceholdersInDesc(cleanedDesc);
@@ -143,6 +143,7 @@ const ItemCard = ({ version, item, shortVersion, cdragonData }) => {
 
     return (
         <View style={styles.container}>
+            <TouchableOpacity onPress={toggleExpand} style={styles.arrowButton}>
             <View style={styles.header}>
                 <Image source={{ uri: getIconUrl(item.icon) }} style={styles.itemImage} />
                 <View style={styles.infoContainer}>
@@ -166,10 +167,11 @@ const ItemCard = ({ version, item, shortVersion, cdragonData }) => {
                     </View>
                 </View>
 
-                <TouchableOpacity onPress={toggleExpand} style={styles.arrowButton}>
+                
                     <Animated.Text style={{ transform: [{ rotate: arrowRotation }] }}>⌵</Animated.Text>
-                </TouchableOpacity>
+                
             </View>
+            </TouchableOpacity>
 
             <Animated.View style={[styles.expandableContent, { height: contentHeight }]}>
                 {expanded && (
@@ -216,6 +218,7 @@ const styles = StyleSheet.create({
     itemName: {
         fontSize: 16,
         fontWeight: 'bold',
+        color:'black',
     },
     itemAttributes: {
         flexDirection: 'row',
