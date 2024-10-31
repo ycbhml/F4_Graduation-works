@@ -14,10 +14,10 @@ export default function NewPage() {
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator>
-        <Tab.Screen name="棋子" component={TabScreen1} />
-        <Tab.Screen name="海克斯" component={TabScreen2} />
-        <Tab.Screen name="装备" component={TabScreen3} />
-        <Tab.Screen name="模拟器" component={TabScreen4} />
+        <Tab.Screen name="챔피언" component={TabScreen1} />
+        <Tab.Screen name="증강체" component={TabScreen2} />
+        <Tab.Screen name="아이템" component={TabScreen3} />
+        <Tab.Screen name="배치톨" component={TabScreen4} />
       </Tab.Navigator>
     </View>
   );

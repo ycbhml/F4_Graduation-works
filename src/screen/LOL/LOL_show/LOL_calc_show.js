@@ -9,7 +9,7 @@ const DEFAULT_ITEM_IMAGE = require('../../../assets/images/lol/hero_select.png')
 const LOLCalcShow = ({ route, navigation }) => {
   const { item, setSwipeEnabled, callback } = route.params || {};
   const [selectedHero, setSelectedHero] = useState(null);
-  const [selectedItems, setSelectedItems] = useState(Array(7).fill(null));
+  const [selectedItems, setSelectedItems] = useState(Array(6).fill(null));
   const [level, setLevel] = useState(1);
 
   useEffect(() => {
@@ -93,30 +93,31 @@ const LOLCalcShow = ({ route, navigation }) => {
     };
 
     return [
-      { name: '血', value: formatValue(baseAttributes.hp), image: require('../../../assets/images/lol/prop/hp.png') },
-      { name: '蓝', value: formatValue(baseAttributes.mp), image: require('../../../assets/images/lol/prop/mana.png') },
+      { name: '체력', value: formatValue(baseAttributes.hp), image: require('../../../assets/images/lol/prop/hp.png') },
+{ name: '마나', value: formatValue(baseAttributes.mp), image: require('../../../assets/images/lol/prop/mana.png') },
 
-      { name: '攻击', value: formatValue(baseAttributes.attackdamage), image: require('../../../assets/images/lol/prop/damage.png') },
-      { name: '法术强度', value: formatValue(baseAttributes.spelldamage), image: require('../../../assets/images/lol/prop/spelldamage.png') },
-      { name: '护甲', value: formatValue(baseAttributes.armor), image: require('../../../assets/images/lol/prop/armor.png') },
-      { name: '魔抗', value: formatValue(baseAttributes.spellblock), image: require('../../../assets/images/lol/prop/spellblock.png') },
+{ name: '공격력', value: formatValue(baseAttributes.attackdamage), image: require('../../../assets/images/lol/prop/damage.png') },
+{ name: '주문력', value: formatValue(baseAttributes.spelldamage), image: require('../../../assets/images/lol/prop/spelldamage.png') },
+{ name: '방어력', value: formatValue(baseAttributes.armor), image: require('../../../assets/images/lol/prop/armor.png') },
+{ name: '마법 저항력', value: formatValue(baseAttributes.spellblock), image: require('../../../assets/images/lol/prop/spellblock.png') },
 
-      { name: '攻速', value: formatValue(baseAttributes.attackspeed, 3), image: require('../../../assets/images/lol/prop/attackspeed.png') },
-      { name: '冷却缩减', value: formatValue(baseAttributes.cd), image: require('../../../assets/images/lol/prop/cd.png') },
-      { name: '暴击率', value: formatValue(baseAttributes.crit), image: require('../../../assets/images/lol/prop/crit.png') },
-      { name: '移速', value: formatValue(baseAttributes.movespeed), image: require('../../../assets/images/lol/prop/movespeed.png') },
+{ name: '공격 속도', value: formatValue(baseAttributes.attackspeed, 3), image: require('../../../assets/images/lol/prop/attackspeed.png') },
+{ name: '재사용 대기시간 감소', value: formatValue(baseAttributes.cd), image: require('../../../assets/images/lol/prop/cd.png') },
+{ name: '치명타 확률', value: formatValue(baseAttributes.crit), image: require('../../../assets/images/lol/prop/crit.png') },
+{ name: '이동 속도', value: formatValue(baseAttributes.movespeed), image: require('../../../assets/images/lol/prop/movespeed.png') },
 
-      { name: '生命回复', value: formatValue(baseAttributes.hpregen), image: require('../../../assets/images/lol/prop/hpregen.png') },
-      { name: '施法资源回复', value: formatValue(baseAttributes.mpregen), image: require('../../../assets/images/lol/prop/mpregen.png') },
-      { name: '治疗和护盾强度', value: formatValue(baseAttributes.healshildlevel), image: require('../../../assets/images/lol/prop/healshildlevel.png') },
-      { name: '穿甲', value: formatValue(baseAttributes.amrorpenetrate), image: require('../../../assets/images/lol/prop/amrorpenetrate.png') },
-      { name: '护甲穿透', value: formatValue(baseAttributes.amrorpenetratePercten), image: require('../../../assets/images/lol/prop/amrorpenetratePercten.png') },
-      { name: '法术穿透', value: formatValue(baseAttributes.spellblockpenetrate), image: require('../../../assets/images/lol/prop/spellblockpenetrate.png') },
+{ name: '체력 재생', value: formatValue(baseAttributes.hpregen), image: require('../../../assets/images/lol/prop/hpregen.png') },
+{ name: '마나 재생', value: formatValue(baseAttributes.mpregen), image: require('../../../assets/images/lol/prop/mpregen.png') },
+{ name: '치유 및 보호막 효과', value: formatValue(baseAttributes.healshildlevel), image: require('../../../assets/images/lol/prop/healshildlevel.png') },
+{ name: '방어구 관통력', value: formatValue(baseAttributes.amrorpenetrate), image: require('../../../assets/images/lol/prop/amrorpenetrate.png') },
+{ name: '방어구 관통력(%)', value: formatValue(baseAttributes.amrorpenetratePercten), image: require('../../../assets/images/lol/prop/amrorpenetratePercten.png') },
+{ name: '마법 관통력', value: formatValue(baseAttributes.spellblockpenetrate), image: require('../../../assets/images/lol/prop/spellblockpenetrate.png') },
 
-      { name: '生命偷取', value: formatValue(baseAttributes.lifesteal), image: require('../../../assets/images/lol/prop/lifesteal.png') },
-      { name: '全能吸血', value: formatValue(baseAttributes.bloodsucking), image: require('../../../assets/images/lol/prop/bloodsucking.png') },
-      { name: '射程', value: formatValue(baseAttributes.attackrange), image: require('../../../assets/images/lol/prop/attackrange.png') },
-      { name: '韧性', value: formatValue(baseAttributes.toughness), image: require('../../../assets/images/lol/prop/toughness.png') },
+{ name: '생명력 흡수', value: formatValue(baseAttributes.lifesteal), image: require('../../../assets/images/lol/prop/lifesteal.png') },
+{ name: '만능 흡혈', value: formatValue(baseAttributes.bloodsucking), image: require('../../../assets/images/lol/prop/bloodsucking.png') },
+{ name: '사거리', value: formatValue(baseAttributes.attackrange), image: require('../../../assets/images/lol/prop/attackrange.png') },
+{ name: '강인함', value: formatValue(baseAttributes.toughness), image: require('../../../assets/images/lol/prop/toughness.png') },
+
     ];
 };
 
@@ -138,7 +139,7 @@ const LOLCalcShow = ({ route, navigation }) => {
           value={level}
           onValueChange={setLevel}
         />
-        <Text>当前等级：{level}</Text>
+        <Text>Level :{level}</Text>
 
         {/* 英雄属性框 */}
         <View style={styles.twoAttributesRow}>

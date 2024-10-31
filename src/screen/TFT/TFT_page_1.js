@@ -112,7 +112,7 @@ export default function Page1() {
             <View style={styles.mainContent}>
                 <TextInput
                     style={styles.searchBox}
-                    placeholder="搜索英雄名称"
+                    placeholder="챔피언 이름"
                     value={searchQuery}
                     onChangeText={setSearchQuery}
                 />
