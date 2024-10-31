@@ -157,6 +157,24 @@ export default function Page4() {
         setIsHexHidden(updatedHexHidden);
     };
 
+    // 过滤同样图片保证 traits 只显示一次
+    const getUniqueTraitsCount = () => {
+        const uniqueTraitsCount = {};
+        const uniqueImages = new Set();
+        hexImages.flat().forEach((image) => {
+            if (image && !uniqueImages.has(image)) {
+                uniqueImages.add(image);
+                const champion = championList.find((champion) => champion.icon === image);
+                if (champion) {
+                    champion.traits.forEach((trait) => {
+                        uniqueTraitsCount[trait] = (uniqueTraitsCount[trait] || 0) + 1;
+                    });
+                }
+            }
+        });
+        return uniqueTraitsCount;
+    };
+
     const getBorderColor = (cost) => {
         switch (cost) {
             case 1:
@@ -186,7 +204,7 @@ export default function Page4() {
         <View style={styles.container}>
             <View style={styles.traitsContent}>
                 <View style={styles.traitsRow}>
-                    {Object.keys(traitsCount).map((trait) => (
+                    {Object.keys(getUniqueTraitsCount()).map((trait) => (
                         traitsImages[trait] ? (
                             <View key={trait} style={styles.traitItemContainer}>
                                 <Image
@@ -194,7 +212,7 @@ export default function Page4() {
                                     style={[styles.traitIcon, { tintColor: 'gray' }]}
                                 />
                                 <Text style={styles.traitItem}>
-                                    {trait}: {traitsCount[trait]}
+                                    {trait}: {getUniqueTraitsCount()[trait]}
                                 </Text>
                             </View>
                         ) : null
@@ -249,9 +267,6 @@ export default function Page4() {
                     ))}
                 </View>
             </View>
-
-
-
 
             <View style={styles.mainContent}>
                 <FlatList
