@@ -306,11 +306,13 @@ const styles = StyleSheet.create({
     traitsRow: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+        
     },
     traitIcon: {
         width: SCREEN_WIDTH * 0.06,
         height: SCREEN_WIDTH * 0.06,
         marginRight: SCREEN_WIDTH * 0.02,
+        
     },
     mainContentTo6: {
         paddingVertical: SCREEN_HEIGHT * 0.01,
@@ -353,5 +355,13 @@ const styles = StyleSheet.create({
     championName: {
         fontSize: SCREEN_WIDTH * 0.03,
         textAlign: 'center',
+    },
+    traitItemContainer:{
+        borderRadius: 10,
+        margin:5,
+        padding:4,
+        borderWidth: 1,
+        borderColor: '#000',
+        marginBottom: SCREEN_HEIGHT * 0.01,
     },
 });
